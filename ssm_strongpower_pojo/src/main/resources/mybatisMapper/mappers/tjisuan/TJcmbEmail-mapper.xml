@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kylin.electricassistsys.dao.TJcmbEmailDao">
+<mapper namespace="com.kylin.electricassistsys.dao.tbbcx.TJcmbEmailDao">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcmbEmail">
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.tbbcx.TJcmbEmail">
         <id column="T_EMAIL_ID" property="tEmailId" />
         <result column="T_EMAIL_SJR" property="tEmailSjr" />
         <result column="T_EMAIL_FJR" property="tEmailFjr" />

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kylin.electricassistsys.dao.TExceljiucuomobanDao">
+<mapper namespace="com.kylin.electricassistsys.dao.excel.TExceljiucuomobanDao">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TExceljiucuomoban">
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.excel.TExceljiucuomoban">
         <result column="E_ID" property="eId" />
         <result column="E_CREATEUSERID" property="eCreateuserid" />
         <result column="E_CREATETIME" property="eCreatetime" />

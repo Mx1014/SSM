@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kylin.electricassistsys.dao.TJcsjCsByqcsDao">
+<mapper namespace="com.kylin.electricassistsys.dao.jcsj.TJcsjCsByqcsDao">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcsjCsByqcs">
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.jcsj.TJcsjCsByqcs">
         <id column="T_BYQCS_ID" property="tByqcsId" />
         <result column="T_BYQCS_XH" property="tByqcsXh" />
         <result column="T_BYQCS_XL" property="tByqcsXl" />

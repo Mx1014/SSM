@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kylin.electricassistsys.dao.TDaorubiaoshiDao">
+<mapper namespace="com.kylin.electricassistsys.dao.tbbcx.TDaorubiaoshiDao">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDaorubiaoshi">
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.tbbcx.TDaorubiaoshi">
         <id column="DR_ID" property="drId" />
         <result column="DR_CREATEUSERID" property="drCreateuserid" />
         <result column="DR_MOBANENTITY" property="drMobanentity" />
