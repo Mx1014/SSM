@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSysUserDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSysUser">
+        <id column="U_ID" property="uId" />
+        <result column="D_ID" property="dId" />
+        <result column="U_NAME" property="uName" />
+        <result column="U_SEX" property="uSex" />
+        <result column="U_EMAIL" property="uEmail" />
+        <result column="U_ADDRESS" property="uAddress" />
+        <result column="U_PHONE" property="uPhone" />
+        <result column="U_QQ" property="uQq" />
+        <result column="U_TELNUMBER" property="uTelnumber" />
+        <result column="U_CREATEDATE" property="uCreatedate" />
+        <result column="U_STATE" property="uState" />
+        <result column="U_REMARK" property="uRemark" />
+        <result column="U_YWDW" property="uYwdw" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        U_ID, D_ID, U_NAME, U_SEX, U_EMAIL, U_ADDRESS, U_PHONE, U_QQ, U_TELNUMBER, U_CREATEDATE, U_STATE, U_REMARK, U_YWDW
+    </sql>
+
+</mapper>

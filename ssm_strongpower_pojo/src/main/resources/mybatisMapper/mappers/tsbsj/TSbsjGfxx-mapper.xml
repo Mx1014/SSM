@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSbsjGfxxDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSbsjGfxx">
+        <id column="T_GFXX_ID" property="tGfxxId" />
+        <result column="T_GFXX_YEAR" property="tGfxxYear" />
+        <result column="T_GFXX_NAME" property="tGfxxName" />
+        <result column="T_GFXX_BWRL" property="tGfxxBwrl" />
+        <result column="T_GFXX_BWTS" property="tGfxxBwts" />
+        <result column="T_GFXX_RLGC" property="tGfxxRlgc" />
+        <result column="T_GFXX_TYSJ" property="tGfxxTysj" />
+        <result column="T_GFXX_BWXL" property="tGfxxBwxl" />
+        <result column="T_GFXX_JHFDL" property="tGfxxJhfdl" />
+        <result column="T_GFXX_SJFDL" property="tGfxxSjfdl" />
+        <result column="T_GFXX_NFDL" property="tGfxxNfdl" />
+        <result column="T_GFXX_FDSB" property="tGfxxFdsb" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_GFXX_ID, T_GFXX_YEAR, T_GFXX_NAME, T_GFXX_BWRL, T_GFXX_BWTS, T_GFXX_RLGC, T_GFXX_TYSJ, T_GFXX_BWXL, T_GFXX_JHFDL, T_GFXX_SJFDL, T_GFXX_NFDL, T_GFXX_FDSB
+    </sql>
+
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDljsFhycDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDljsFhyc">
+        <id column="T_FHYC_ID" property="tFhycId" />
+        <result column="T_FHYC_YHMC" property="tFhycYhmc" />
+        <result column="T_FHYC_DYDJ" property="tFhycDydj" />
+        <result column="T_FHYC_LSFH" property="tFhycLsfh" />
+        <result column="T_FHYC_YCNF" property="tFhycYcnf" />
+        <result column="T_FHYC_FHYC" property="tFhycFhyc" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_FHYC_ID, T_FHYC_YHMC, T_FHYC_DYDJ, T_FHYC_LSFH, T_FHYC_YCNF, T_FHYC_FHYC
+    </sql>
+
+</mapper>

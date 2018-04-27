@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSbsjGyxlxxDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSbsjGyxlxx">
+        <id column="T_GYXLXX_ID" property="tGyxlxxId" />
+        <result column="T_GYXLXX_XLBH" property="tGyxlxxXlbh" />
+        <result column="T_GYXLXX_XLMC" property="tGyxlxxXlmc" />
+        <result column="T_GYXLXX_SJNF" property="tGyxlxxSjnf" />
+        <result column="T_GYXLXX_DYDJ" property="tGyxlxxDydj" />
+        <result column="T_GYXLXX_SSQY" property="tGyxlxxSsqy" />
+        <result column="T_GYXLXX_YWDW" property="tGyxlxxYwdw" />
+        <result column="T_GYXLXX_SYFS" property="tGyxlxxSyfs" />
+        <result column="T_GYXLXX_YNW" property="tGyxlxxYnw" />
+        <result column="T_GYXLXX_CTBB" property="tGyxlxxCtbb" />
+        <result column="T_GYXLXX_SJQD" property="tGyxlxxSjqd" />
+        <result column="T_GYXLXX_SJZD" property="tGyxlxxSjzd" />
+        <result column="T_GYXLXX_KGBHS" property="tGyxlxxKgbhs" />
+        <result column="T_GYXLXX_KGBHM" property="tGyxlxxKgbhm" />
+        <result column="T_GYXLXX_QSGH" property="tGyxlxxQsgh" />
+        <result column="T_GYXLXX_TYSJ" property="tGyxlxxTysj" />
+        <result column="T_GYXLXX_TUIYISJ" property="tGyxlxxTuiyisj" />
+        <result column="T_GYXLXX_ZT" property="tGyxlxxZt" />
+        <result column="T_GYXLXX_DL_QX" property="tGyxlxxDlQx" />
+        <result column="T_GYXLXX_JKDX_QX" property="tGyxlxxJkdxQx" />
+        <result column="T_GYXLXX_ZC_QX" property="tGyxlxxZcQx" />
+        <result column="T_GYXLXX_ZXJMDX" property="tGyxlxxZxjmdx" />
+        <result column="T_GYXLXX_ZDYXDL" property="tGyxlxxZdyxdl" />
+        <result column="T_GYXLXX_SFYXCT" property="tGyxlxxSfyxct" />
+        <result column="T_GYXLXX_BZ" property="tGyxlxxBz" />
+        <result column="T_GYXLXX_QZTTSH" property="tGyxlxxQzttsh" />
+        <result column="T_GYXLXX_DXXH1" property="tGyxlxxDxxh1" />
+        <result column="T_GYXLXX_DXXH2" property="tGyxlxxDxxh2" />
+        <result column="T_GYXLXX_DXXH3" property="tGyxlxxDxxh3" />
+        <result column="T_GYXLXX_JSFS" property="tGyxlxxJsfs" />
+        <result column="T_GYXLXX_DZ" property="tGyxlxxDz" />
+        <result column="T_GYXLXX_DK" property="tGyxlxxDk" />
+        <result column="T_GYXLXX_ZDGH" property="tGyxlxxZdgh" />
+        <result column="T_GYXLXX_GQLX" property="tGyxlxxGqlx" />
+        <result column="T_GYXLXX_QDLX" property="tGyxlxxQdlx" />
+        <result column="T_GYXLXX_ZDLX" property="tGyxlxxZdlx" />
+        <result column="T_GYXLXX_DLXH" property="tGyxlxxDlxh" />
+        <result column="T_GYXLXX_FDS" property="tGyxlxxFds" />
+        <result column="T_GYXLXX_FDCD" property="tGyxlxxFdcd" />
+        <result column="T_GYXLXX_FSFS" property="tGyxlxxFsfs" />
+        <result column="T_GYXLXX_GDQSX" property="tGyxlxxGdqsx" />
+        <result column="T_GYXLXX_GDXZ" property="tGyxlxxGdxz" />
+        <result column="T_GYXLXX_N_1" property="tGyxlxxN1" />
+        <result column="T_GYXLXX_DWJG" property="tGyxlxxDwjg" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_GYXLXX_ID, T_GYXLXX_XLBH, T_GYXLXX_XLMC, T_GYXLXX_SJNF, T_GYXLXX_DYDJ, T_GYXLXX_SSQY, T_GYXLXX_YWDW, T_GYXLXX_SYFS, T_GYXLXX_YNW, T_GYXLXX_CTBB, T_GYXLXX_SJQD, T_GYXLXX_SJZD, T_GYXLXX_KGBHS, T_GYXLXX_KGBHM, T_GYXLXX_QSGH, T_GYXLXX_TYSJ, T_GYXLXX_TUIYISJ, T_GYXLXX_ZT, T_GYXLXX_DL_QX, T_GYXLXX_JKDX_QX, T_GYXLXX_ZC_QX, T_GYXLXX_ZXJMDX, T_GYXLXX_ZDYXDL, T_GYXLXX_SFYXCT, T_GYXLXX_BZ, T_GYXLXX_QZTTSH, T_GYXLXX_DXXH1, T_GYXLXX_DXXH2, T_GYXLXX_DXXH3, T_GYXLXX_JSFS, T_GYXLXX_DZ, T_GYXLXX_DK, T_GYXLXX_ZDGH, T_GYXLXX_GQLX, T_GYXLXX_QDLX, T_GYXLXX_ZDLX, T_GYXLXX_DLXH, T_GYXLXX_FDS, T_GYXLXX_FDCD, T_GYXLXX_FSFS, T_GYXLXX_GDQSX, T_GYXLXX_GDXZ, T_GYXLXX_N_1, T_GYXLXX_DWJG
+    </sql>
+
+</mapper>

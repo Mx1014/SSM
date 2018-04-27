@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwyxFdydjdwyxsjDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwyxFdydjdwyxsj">
+        <id column="T_FDYDJDWYXSJ_ID" property="tFdydjdwyxsjId" />
+        <result column="T_FDYDJDWYXSJ_GDGS" property="tFdydjdwyxsjGdgs" />
+        <result column="T_FDYDJDWYXSJ_P_ID" property="tFdydjdwyxsjPId" />
+        <result column="T_FDYDJDWYXSJ_YEAR" property="tFdydjdwyxsjYear" />
+        <result column="T_FDYDJDWYXSJ_GYCRL" property="tFdydjdwyxsjGycrl" />
+        <result column="T_FDYDJDWYXSJ_ZYCRL" property="tFdydjdwyxsjZycrl" />
+        <result column="T_FDYDJDWYXSJ_DYCRL" property="tFdydjdwyxsjDycrl" />
+        <result column="T_FDYDJDWYXSJ_CJ_DYDJ" property="tFdydjdwyxsjCjDydj" />
+        <result column="T_FDYDJDWYXSJ_CJ_ZDFH" property="tFdydjdwyxsjCjZdfh" />
+        <result column="T_FDYDJDWYXSJ_CJ_FSSK" property="tFdydjdwyxsjCjFssk" />
+        <result column="T_FDYDJDWYXSJ_CJ_ZCFSXZDFH" property="tFdydjdwyxsjCjZcfsxzdfh" />
+        <result column="T_FDYDJDWYXSJ_CJ_WGDL" property="tFdydjdwyxsjCjWgdl" />
+        <result column="T_FDYDJDWYXSJ_CJ_XSS" property="tFdydjdwyxsjCjXss" />
+        <result column="T_FDYDJDWYXSJ_XJ_DYDJ" property="tFdydjdwyxsjXjDydj" />
+        <result column="T_FDYDJDWYXSJ_XJ_ZDFH" property="tFdydjdwyxsjXjZdfh" />
+        <result column="T_FDYDJDWYXSJ_XJ_FSSK" property="tFdydjdwyxsjXjFssk" />
+        <result column="T_FDYDJDWYXSJ_XJ_ZCFSXZDFH" property="tFdydjdwyxsjXjZcfsxzdfh" />
+        <result column="T_FDYDJDWYXSJ_XJ_WGDL" property="tFdydjdwyxsjXjWgdl" />
+        <result column="T_FDYDJDWYXSJ_XJ_XSS" property="tFdydjdwyxsjXjXss" />
+        <result column="T_FDYDJDWYXSJ_QJ_DYDJ" property="tFdydjdwyxsjQjDydj" />
+        <result column="T_FDYDJDWYXSJ_QJ_ZDFH" property="tFdydjdwyxsjQjZdfh" />
+        <result column="T_FDYDJDWYXSJ_QJ_FSSK" property="tFdydjdwyxsjQjFssk" />
+        <result column="T_FDYDJDWYXSJ_QJ_GQQJZDFH" property="tFdydjdwyxsjQjGqqjzdfh" />
+        <result column="T_FDYDJDWYXSJ_QJ_WGDL" property="tFdydjdwyxsjQjWgdl" />
+        <result column="T_FDYDJDWYXSJ_QJ_XSS" property="tFdydjdwyxsjQjXss" />
+        <result column="T_FDYDJDWYXSJ_DJ_DYDJ" property="tFdydjdwyxsjDjDydj" />
+        <result column="T_FDYDJDWYXSJ_DJ_ZDFH" property="tFdydjdwyxsjDjZdfh" />
+        <result column="T_FDYDJDWYXSJ_DJ_FSSK" property="tFdydjdwyxsjDjFssk" />
+        <result column="T_FDYDJDWYXSJ_DJ_CJZDFH" property="tFdydjdwyxsjDjCjzdfh" />
+        <result column="T_FDYDJDWYXSJ_DJ_WGDL" property="tFdydjdwyxsjDjWgdl" />
+        <result column="T_FDYDJDWYXSJ_DJ_XSS" property="tFdydjdwyxsjDjXss" />
+        <result column="T_FDYDJDWYXSJ_ZGQW" property="tFdydjdwyxsjZgqw" />
+        <result column="T_FDYDJDWYXSJ_ZDQW" property="tFdydjdwyxsjZdqw" />
+        <result column="T_FDYDJDWYXSJ_REMARK" property="tFdydjdwyxsjRemark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_FDYDJDWYXSJ_ID, T_FDYDJDWYXSJ_GDGS, T_FDYDJDWYXSJ_P_ID, T_FDYDJDWYXSJ_YEAR, T_FDYDJDWYXSJ_GYCRL, T_FDYDJDWYXSJ_ZYCRL, T_FDYDJDWYXSJ_DYCRL, T_FDYDJDWYXSJ_CJ_DYDJ, T_FDYDJDWYXSJ_CJ_ZDFH, T_FDYDJDWYXSJ_CJ_FSSK, T_FDYDJDWYXSJ_CJ_ZCFSXZDFH, T_FDYDJDWYXSJ_CJ_WGDL, T_FDYDJDWYXSJ_CJ_XSS, T_FDYDJDWYXSJ_XJ_DYDJ, T_FDYDJDWYXSJ_XJ_ZDFH, T_FDYDJDWYXSJ_XJ_FSSK, T_FDYDJDWYXSJ_XJ_ZCFSXZDFH, T_FDYDJDWYXSJ_XJ_WGDL, T_FDYDJDWYXSJ_XJ_XSS, T_FDYDJDWYXSJ_QJ_DYDJ, T_FDYDJDWYXSJ_QJ_ZDFH, T_FDYDJDWYXSJ_QJ_FSSK, T_FDYDJDWYXSJ_QJ_GQQJZDFH, T_FDYDJDWYXSJ_QJ_WGDL, T_FDYDJDWYXSJ_QJ_XSS, T_FDYDJDWYXSJ_DJ_DYDJ, T_FDYDJDWYXSJ_DJ_ZDFH, T_FDYDJDWYXSJ_DJ_FSSK, T_FDYDJDWYXSJ_DJ_CJZDFH, T_FDYDJDWYXSJ_DJ_WGDL, T_FDYDJDWYXSJ_DJ_XSS, T_FDYDJDWYXSJ_ZGQW, T_FDYDJDWYXSJ_ZDQW, T_FDYDJDWYXSJ_REMARK
+    </sql>
+
+</mapper>

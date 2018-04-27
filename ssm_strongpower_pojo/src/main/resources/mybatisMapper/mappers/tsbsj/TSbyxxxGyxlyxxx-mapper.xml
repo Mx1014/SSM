@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSbyxxxGyxlyxxxDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSbyxxxGyxlyxxx">
+        <id column="T_GYXLYXXX_ID" property="tGyxlyxxxId" />
+        <result column="T_GYXLYXXX_SJNY" property="tGyxlyxxxSjny" />
+        <result column="T_GYXLYXXX_YG" property="tGyxlyxxxYg" />
+        <result column="T_GYXLYXXX_WG" property="tGyxlyxxxWg" />
+        <result column="T_GYXLYXXX_ZG" property="tGyxlyxxxZg" />
+        <result column="T_GYXLYXXX_DL" property="tGyxlyxxxDl" />
+        <result column="T_GYXLYXXX_ZDFHSK" property="tGyxlyxxxZdfhsk" />
+        <result column="T_GYXLYXXX_FZL" property="tGyxlyxxxFzl" />
+        <result column="T_GYXLYXXX_ZXYG" property="tGyxlyxxxZxyg" />
+        <result column="T_GYXLYXXX_SZGL" property="tGyxlyxxxSzgl" />
+        <result column="T_GYXLYXXX_GLYS" property="tGyxlyxxxGlys" />
+        <result column="T_GYXLYXXX_GYXL_ID" property="tGyxlyxxxGyxlId" />
+        <result column="T_GYXLYXXX_REMARKS" property="tGyxlyxxxRemarks" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_GYXLYXXX_ID, T_GYXLYXXX_SJNY, T_GYXLYXXX_YG, T_GYXLYXXX_WG, T_GYXLYXXX_ZG, T_GYXLYXXX_DL, T_GYXLYXXX_ZDFHSK, T_GYXLYXXX_FZL, T_GYXLYXXX_ZXYG, T_GYXLYXXX_SZGL, T_GYXLYXXX_GLYS, T_GYXLYXXX_GYXL_ID, T_GYXLYXXX_REMARKS
+    </sql>
+
+</mapper>

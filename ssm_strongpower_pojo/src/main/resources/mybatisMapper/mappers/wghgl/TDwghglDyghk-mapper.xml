@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwghglDyghkDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwghglDyghk">
+        <id column="T_DYGHK_ID" property="tDyghkId" />
+        <result column="T_DYGHK_NF" property="tDyghkNf" />
+        <result column="T_DYGHK_QY_ID" property="tDyghkQyId" />
+        <result column="T_DYGHK_XLTS" property="tDyghkXlts" />
+        <result column="T_DYGHK_JYXTS" property="tDyghkJyxts" />
+        <result column="T_DYGHK_LDXTS" property="tDyghkLdxts" />
+        <result column="T_DYGHK_JYXCD" property="tDyghkJyxcd" />
+        <result column="T_DYGHK_LDXCD" property="tDyghkLdxcd" />
+        <result column="T_DYGHK_XLCD" property="tDyghkXlcd" />
+        <result column="T_DYGHK_XMTZ" property="tDyghkXmtz" />
+        <result column="T_DYGHK_YWDW" property="tDyghkYwdw" />
+        <result column="T_DYGHK_GQLX" property="tDyghkGqlx" />
+        <result column="T_DYGHK_REMARKS" property="tDyghkRemarks" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_DYGHK_ID, T_DYGHK_NF, T_DYGHK_QY_ID, T_DYGHK_XLTS, T_DYGHK_JYXTS, T_DYGHK_LDXTS, T_DYGHK_JYXCD, T_DYGHK_LDXCD, T_DYGHK_XLCD, T_DYGHK_XMTZ, T_DYGHK_YWDW, T_DYGHK_GQLX, T_DYGHK_REMARKS
+    </sql>
+
+</mapper>

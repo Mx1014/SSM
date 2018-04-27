@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSbsjByqlsDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSbsjByqls">
+        <id column="T_BYQLS_ID" property="tByqlsId" />
+        <result column="T_BYQXX_ID" property="tByqxxId" />
+        <result column="T_BYQLS_NUM" property="tByqlsNum" />
+        <result column="T_BYQLS_XGSJ" property="tByqlsXgsj" />
+        <result column="T_BYQLS_XGR" property="tByqlsXgr" />
+        <result column="T_BYQLS_NAME" property="tByqlsName" />
+        <result column="T_BYQLS_YEAR" property="tByqlsYear" />
+        <result column="T_BYQLS_DYDJ" property="tByqlsDydj" />
+        <result column="T_BYQLS_QYID" property="tByqlsQyid" />
+        <result column="T_BYQLS_YWDW" property="tByqlsYwdw" />
+        <result column="T_BYQLS_EDDY" property="tByqlsEddy" />
+        <result column="T_BYQLS_TSFS" property="tByqlsTsfs" />
+        <result column="T_BYQLS_RZXS" property="tByqlsRzxs" />
+        <result column="T_BYQLS_MPXH" property="tByqlsMpxh" />
+        <result column="T_BYQLS_BDRL" property="tByqlsBdrl" />
+        <result column="T_BYQLS_MPBB" property="tByqlsMpbb" />
+        <result column="T_BYQLS_BTYSJ" property="tByqlsBtysj" />
+        <result column="T_BYQLS_ETYSJ" property="tByqlsEtysj" />
+        <result column="T_BYQLS_ZT" property="tByqlsZt" />
+        <result column="T_BYQLS_REMARK" property="tByqlsRemark" />
+        <result column="T_BYQLS_G_ZZK" property="tByqlsGZzk" />
+        <result column="T_BYQLS_Z_DZK" property="tByqlsZDzk" />
+        <result column="T_BYQLS_G_DZK" property="tByqlsGDzk" />
+        <result column="T_BYQLS_G_ZSH" property="tByqlsGZsh" />
+        <result column="T_BYQLS_Z_DSH" property="tByqlsZDsh" />
+        <result column="T_BYQLS_G_DSH" property="tByqlsGDsh" />
+        <result column="T_BYQLS_G_ZDZ" property="tByqlsGZdz" />
+        <result column="T_BYQLS_Z_DDZ" property="tByqlsZDdz" />
+        <result column="T_BYQLS_G_DDZ" property="tByqlsGDdz" />
+        <result column="T_BYQLS_G_ZDK" property="tByqlsGZdk" />
+        <result column="T_BYQLS_Z_DDK" property="tByqlsZDdk" />
+        <result column="T_BYQLS_G_DDK" property="tByqlsGDdk" />
+        <result column="T_BYQLS_WGBCRL" property="tByqlsWgbcrl" />
+        <result column="T_BYQLS_WGBCGC" property="tByqlsWgbcgc" />
+        <result column="T_BYQLS_WGBCD" property="tByqlsWgbcd" />
+        <result column="T_BYQLS_BDZID" property="tByqlsBdzid" />
+        <result column="T_BYQLS_GQLXID" property="tByqlsGqlxid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_BYQLS_ID, T_BYQXX_ID, T_BYQLS_NUM, T_BYQLS_XGSJ, T_BYQLS_XGR, T_BYQLS_NAME, T_BYQLS_YEAR, T_BYQLS_DYDJ, T_BYQLS_QYID, T_BYQLS_YWDW, T_BYQLS_EDDY, T_BYQLS_TSFS, T_BYQLS_RZXS, T_BYQLS_MPXH, T_BYQLS_BDRL, T_BYQLS_MPBB, T_BYQLS_BTYSJ, T_BYQLS_ETYSJ, T_BYQLS_ZT, T_BYQLS_REMARK, T_BYQLS_G_ZZK, T_BYQLS_Z_DZK, T_BYQLS_G_DZK, T_BYQLS_G_ZSH, T_BYQLS_Z_DSH, T_BYQLS_G_DSH, T_BYQLS_G_ZDZ, T_BYQLS_Z_DDZ, T_BYQLS_G_DDZ, T_BYQLS_G_ZDK, T_BYQLS_Z_DDK, T_BYQLS_G_DDK, T_BYQLS_WGBCRL, T_BYQLS_WGBCGC, T_BYQLS_WGBCD, T_BYQLS_BDZID, T_BYQLS_GQLXID
+    </sql>
+
+</mapper>

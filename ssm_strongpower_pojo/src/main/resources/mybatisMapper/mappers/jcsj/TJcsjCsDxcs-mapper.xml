@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TJcsjCsDxcsDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcsjCsDxcs">
+        <id column="T_DXCS_DXID" property="tDxcsDxid" />
+        <result column="T_DXCS_XHMC" property="tDxcsXhmc" />
+        <result column="T_DXCS_BZ" property="tDxcsBz" />
+        <result column="T_DXCS_XHTYPE" property="tDxcsXhtype" />
+        <result column="T_DXCS_R1" property="tDxcsR1" />
+        <result column="T_DXCS_R0" property="tDxcsR0" />
+        <result column="T_DXCS_X1" property="tDxcsX1" />
+        <result column="T_DXCS_X0" property="tDxcsX0" />
+        <result column="T_DXCS_B1" property="tDxcsB1" />
+        <result column="T_DXCS_B0" property="tDxcsB0" />
+        <result column="T_DXCS_DXJM" property="tDxcsDxjm" />
+        <result column="T_DXCS_AQDLXZ" property="tDxcsAqdlxz" />
+        <result column="T_DXCS_JJDLMD" property="tDxcsJjdlmd" />
+        <result column="T_DXCS_MINVALUE" property="tDxcsMinvalue" />
+        <result column="T_DXCS_MAXVALUE" property="tDxcsMaxvalue" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_DXCS_DXID, T_DXCS_XHMC, T_DXCS_BZ, T_DXCS_XHTYPE, T_DXCS_R1, T_DXCS_R0, T_DXCS_X1, T_DXCS_X0, T_DXCS_B1, T_DXCS_B0, T_DXCS_DXJM, T_DXCS_AQDLXZ, T_DXCS_JJDLMD, T_DXCS_MINVALUE, T_DXCS_MAXVALUE
+    </sql>
+
+</mapper>

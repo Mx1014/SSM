@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwyxFbdzdwyxsjDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwyxFbdzdwyxsj">
+        <id column="T_FBDZDWYXSJ_ID" property="tFbdzdwyxsjId" />
+        <result column="T_FBDZDWYXSJ_P_ID" property="tFbdzdwyxsjPId" />
+        <result column="T_FBDZDWYXSJ_YWDW" property="tFbdzdwyxsjYwdw" />
+        <result column="T_FBDZDWYXSJ_BDZNAME" property="tFbdzdwyxsjBdzname" />
+        <result column="T_FBDZDWYXSJ_YEAR" property="tFbdzdwyxsjYear" />
+        <result column="T_FBDZDWYXSJ_DYDJID" property="tFbdzdwyxsjDydjid" />
+        <result column="T_FBDZDWYXSJ_GDFQID" property="tFbdzdwyxsjGdfqid" />
+        <result column="T_FBDZDWYXSJ_BZ_ZBNAME1" property="tFbdzdwyxsjBzZbname1" />
+        <result column="T_FBDZDWYXSJ_BZ_ZBNAME2" property="tFbdzdwyxsjBzZbname2" />
+        <result column="T_FBDZDWYXSJ_BZ_ZBNAME3" property="tFbdzdwyxsjBzZbname3" />
+        <result column="T_FBDZDWYXSJ_BZ_GYC" property="tFbdzdwyxsjBzGyc" />
+        <result column="T_FBDZDWYXSJ_BZ_ZYC" property="tFbdzdwyxsjBzZyc" />
+        <result column="T_FBDZDWYXSJ_BZ_DYC" property="tFbdzdwyxsjBzDyc" />
+        <result column="T_FBDZDWYXSJ_BZ_GYCRL" property="tFbdzdwyxsjBzGycrl" />
+        <result column="T_FBDZDWYXSJ_BZ_ZYCRL" property="tFbdzdwyxsjBzZycrl" />
+        <result column="T_FBDZDWYXSJ_BZ_DYCRL" property="tFbdzdwyxsjBzDycrl" />
+        <result column="T_FBDZDWYXSJ_BZ_ZDFHSK" property="tFbdzdwyxsjBzZdfhsk" />
+        <result column="T_FBDZDWYXSJ_BZ_YG" property="tFbdzdwyxsjBzYg" />
+        <result column="T_FBDZDWYXSJ_BZ_WG" property="tFbdzdwyxsjBzWg" />
+        <result column="T_FBDZDWYXSJ_BZ_DL" property="tFbdzdwyxsjBzDl" />
+        <result column="T_FBDZDWYXSJ_BZ_GLYS" property="tFbdzdwyxsjBzGlys" />
+        <result column="T_FBDZDWYXSJ_ZD_ZBNAME1" property="tFbdzdwyxsjZdZbname1" />
+        <result column="T_FBDZDWYXSJ_ZD_ZBNAME2" property="tFbdzdwyxsjZdZbname2" />
+        <result column="T_FBDZDWYXSJ_ZD_ZBNAME3" property="tFbdzdwyxsjZdZbname3" />
+        <result column="T_FBDZDWYXSJ_ZD_GYC" property="tFbdzdwyxsjZdGyc" />
+        <result column="T_FBDZDWYXSJ_ZD_ZYC" property="tFbdzdwyxsjZdZyc" />
+        <result column="T_FBDZDWYXSJ_ZD_DYC" property="tFbdzdwyxsjZdDyc" />
+        <result column="T_FBDZDWYXSJ_ZD_GYCRL" property="tFbdzdwyxsjZdGycrl" />
+        <result column="T_FBDZDWYXSJ_ZD_ZYCRL" property="tFbdzdwyxsjZdZycrl" />
+        <result column="T_FBDZDWYXSJ_ZD_DYCRL" property="tFbdzdwyxsjZdDycrl" />
+        <result column="T_FBDZDWYXSJ_ZD_ZDFHSK" property="tFbdzdwyxsjZdZdfhsk" />
+        <result column="T_FBDZDWYXSJ_ZD_YG" property="tFbdzdwyxsjZdYg" />
+        <result column="T_FBDZDWYXSJ_ZD_WG" property="tFbdzdwyxsjZdWg" />
+        <result column="T_FBDZDWYXSJ_ZD_DL" property="tFbdzdwyxsjZdDl" />
+        <result column="T_FBDZDWYXSJ_ZD_GLYS" property="tFbdzdwyxsjZdGlys" />
+        <result column="T_FBDZDWYXSJ_GQ_ZBNAME1" property="tFbdzdwyxsjGqZbname1" />
+        <result column="T_FBDZDWYXSJ_GQ_ZBNAME2" property="tFbdzdwyxsjGqZbname2" />
+        <result column="T_FBDZDWYXSJ_GQ_ZBNAME3" property="tFbdzdwyxsjGqZbname3" />
+        <result column="T_FBDZDWYXSJ_GQ_GYC" property="tFbdzdwyxsjGqGyc" />
+        <result column="T_FBDZDWYXSJ_GQ_ZYC" property="tFbdzdwyxsjGqZyc" />
+        <result column="T_FBDZDWYXSJ_GQ_DYC" property="tFbdzdwyxsjGqDyc" />
+        <result column="T_FBDZDWYXSJ_GQ_GYCRL" property="tFbdzdwyxsjGqGycrl" />
+        <result column="T_FBDZDWYXSJ_GQ_ZYCRL" property="tFbdzdwyxsjGqZycrl" />
+        <result column="T_FBDZDWYXSJ_GQ_DYCRL" property="tFbdzdwyxsjGqDycrl" />
+        <result column="T_FBDZDWYXSJ_GQ_ZDFHSK" property="tFbdzdwyxsjGqZdfhsk" />
+        <result column="T_FBDZDWYXSJ_GQ_YG" property="tFbdzdwyxsjGqYg" />
+        <result column="T_FBDZDWYXSJ_GQ_WG" property="tFbdzdwyxsjGqWg" />
+        <result column="T_FBDZDWYXSJ_GQ_DL" property="tFbdzdwyxsjGqDl" />
+        <result column="T_FBDZDWYXSJ_GQ_GLYS" property="tFbdzdwyxsjGqGlys" />
+        <result column="T_FBDZDWYXSJ_CJ_ZBNAME1" property="tFbdzdwyxsjCjZbname1" />
+        <result column="T_FBDZDWYXSJ_CJ_ZBNAME2" property="tFbdzdwyxsjCjZbname2" />
+        <result column="T_FBDZDWYXSJ_CJ_ZBNAME3" property="tFbdzdwyxsjCjZbname3" />
+        <result column="T_FBDZDWYXSJ_CJ_GYC" property="tFbdzdwyxsjCjGyc" />
+        <result column="T_FBDZDWYXSJ_CJ_ZYC" property="tFbdzdwyxsjCjZyc" />
+        <result column="T_FBDZDWYXSJ_CJ_DYC" property="tFbdzdwyxsjCjDyc" />
+        <result column="T_FBDZDWYXSJ_CJ_GYCRL" property="tFbdzdwyxsjCjGycrl" />
+        <result column="T_FBDZDWYXSJ_CJ_ZYCRL" property="tFbdzdwyxsjCjZycrl" />
+        <result column="T_FBDZDWYXSJ_CJ_DYCRL" property="tFbdzdwyxsjCjDycrl" />
+        <result column="T_FBDZDWYXSJ_CJ_ZDFHFSSK" property="tFbdzdwyxsjCjZdfhfssk" />
+        <result column="T_FBDZDWYXSJ_CJ_YG" property="tFbdzdwyxsjCjYg" />
+        <result column="T_FBDZDWYXSJ_CJ_WG" property="tFbdzdwyxsjCjWg" />
+        <result column="T_FBDZDWYXSJ_CJ_DL" property="tFbdzdwyxsjCjDl" />
+        <result column="T_FBDZDWYXSJ_CJ_GLYS" property="tFbdzdwyxsjCjGlys" />
+        <result column="T_FBDZDWYXSJ_REMARK" property="tFbdzdwyxsjRemark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_FBDZDWYXSJ_ID, T_FBDZDWYXSJ_P_ID, T_FBDZDWYXSJ_YWDW, T_FBDZDWYXSJ_BDZNAME, T_FBDZDWYXSJ_YEAR, T_FBDZDWYXSJ_DYDJID, T_FBDZDWYXSJ_GDFQID, T_FBDZDWYXSJ_BZ_ZBNAME1, T_FBDZDWYXSJ_BZ_ZBNAME2, T_FBDZDWYXSJ_BZ_ZBNAME3, T_FBDZDWYXSJ_BZ_GYC, T_FBDZDWYXSJ_BZ_ZYC, T_FBDZDWYXSJ_BZ_DYC, T_FBDZDWYXSJ_BZ_GYCRL, T_FBDZDWYXSJ_BZ_ZYCRL, T_FBDZDWYXSJ_BZ_DYCRL, T_FBDZDWYXSJ_BZ_ZDFHSK, T_FBDZDWYXSJ_BZ_YG, T_FBDZDWYXSJ_BZ_WG, T_FBDZDWYXSJ_BZ_DL, T_FBDZDWYXSJ_BZ_GLYS, T_FBDZDWYXSJ_ZD_ZBNAME1, T_FBDZDWYXSJ_ZD_ZBNAME2, T_FBDZDWYXSJ_ZD_ZBNAME3, T_FBDZDWYXSJ_ZD_GYC, T_FBDZDWYXSJ_ZD_ZYC, T_FBDZDWYXSJ_ZD_DYC, T_FBDZDWYXSJ_ZD_GYCRL, T_FBDZDWYXSJ_ZD_ZYCRL, T_FBDZDWYXSJ_ZD_DYCRL, T_FBDZDWYXSJ_ZD_ZDFHSK, T_FBDZDWYXSJ_ZD_YG, T_FBDZDWYXSJ_ZD_WG, T_FBDZDWYXSJ_ZD_DL, T_FBDZDWYXSJ_ZD_GLYS, T_FBDZDWYXSJ_GQ_ZBNAME1, T_FBDZDWYXSJ_GQ_ZBNAME2, T_FBDZDWYXSJ_GQ_ZBNAME3, T_FBDZDWYXSJ_GQ_GYC, T_FBDZDWYXSJ_GQ_ZYC, T_FBDZDWYXSJ_GQ_DYC, T_FBDZDWYXSJ_GQ_GYCRL, T_FBDZDWYXSJ_GQ_ZYCRL, T_FBDZDWYXSJ_GQ_DYCRL, T_FBDZDWYXSJ_GQ_ZDFHSK, T_FBDZDWYXSJ_GQ_YG, T_FBDZDWYXSJ_GQ_WG, T_FBDZDWYXSJ_GQ_DL, T_FBDZDWYXSJ_GQ_GLYS, T_FBDZDWYXSJ_CJ_ZBNAME1, T_FBDZDWYXSJ_CJ_ZBNAME2, T_FBDZDWYXSJ_CJ_ZBNAME3, T_FBDZDWYXSJ_CJ_GYC, T_FBDZDWYXSJ_CJ_ZYC, T_FBDZDWYXSJ_CJ_DYC, T_FBDZDWYXSJ_CJ_GYCRL, T_FBDZDWYXSJ_CJ_ZYCRL, T_FBDZDWYXSJ_CJ_DYCRL, T_FBDZDWYXSJ_CJ_ZDFHFSSK, T_FBDZDWYXSJ_CJ_YG, T_FBDZDWYXSJ_CJ_WG, T_FBDZDWYXSJ_CJ_DL, T_FBDZDWYXSJ_CJ_GLYS, T_FBDZDWYXSJ_REMARK
+    </sql>
+
+</mapper>

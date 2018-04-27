@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TYxBdzjfdlDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TYxBdzjfdl">
+        <id column="T_JFDL_ID" property="tJfdlId" />
+        <result column="T_JFDL_BDZID" property="tJfdlBdzid" />
+        <result column="T_JFDL_ZONGZHI" property="tJfdlZongzhi" />
+        <result column="T_JFDL_ZHENGZHI" property="tJfdlZhengzhi" />
+        <result column="T_JFDL_FUZHI" property="tJfdlFuzhi" />
+        <result column="T_JFDL_DATA" property="tJfdlData" />
+        <result column="T_JFDL_TQJG" property="tJfdlTqjg" />
+        <result column="T_JFDL_OPENSBID" property="tJfdlOpensbid" />
+        <result column="T_JFDL_TYPE" property="tJfdlType" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_JFDL_ID, T_JFDL_BDZID, T_JFDL_ZONGZHI, T_JFDL_ZHENGZHI, T_JFDL_FUZHI, T_JFDL_DATA, T_JFDL_TQJG, T_JFDL_OPENSBID, T_JFDL_TYPE
+    </sql>
+
+</mapper>

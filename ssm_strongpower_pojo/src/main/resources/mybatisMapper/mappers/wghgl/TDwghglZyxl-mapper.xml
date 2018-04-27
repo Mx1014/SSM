@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwghglZyxlDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwghglZyxl">
+        <id column="T_DWGHGL_ID" property="tDwghglId" />
+        <result column="T_ZYGHK_ID" property="tZyghkId" />
+        <result column="T_DWGHGL_XMMC" property="tDwghglXmmc" />
+        <result column="T_DWGHGL_XMTZ" property="tDwghglXmtz" />
+        <result column="T_DWGHGL_XMXZ" property="tDwghglXmxz" />
+        <result column="T_DWGHGL_SSBDZ" property="tDwghglSsbdz" />
+        <result column="T_DWGHGL_XLJSFS" property="tDwghglXljsfs" />
+        <result column="T_DWGHGL_TYSJ" property="tDwghglTysj" />
+        <result column="T_DWGHGL_XMMS" property="tDwghglXmms" />
+        <result column="T_DWGHGL_JKJYX_QX" property="tDwghglJkjyxQx" />
+        <result column="T_DWGHGL_JKLDX_QX" property="tDwghglJkldxQx" />
+        <result column="T_DWGHGL_DL_QX" property="tDwghglDlQx" />
+        <result column="T_DWGHGL_ZC_QX" property="tDwghglZcQx" />
+        <result column="T_DWGHGL_JKJYX_ZGX" property="tDwghglJkjyxZgx" />
+        <result column="T_DWGHGL_JKLDX_ZGX" property="tDwghglJkldxZgx" />
+        <result column="T_DWGHGL_DL_ZGX" property="tDwghglDlZgx" />
+        <result column="T_DWGHGL_ZC_ZGX" property="tDwghglZcZgx" />
+        <result column="T_DWGHGL_DXXH1" property="tDwghglDxxh1" />
+        <result column="T_DWGHGL_DXXH2" property="tDwghglDxxh2" />
+        <result column="T_DWGHGL_DXXH3" property="tDwghglDxxh3" />
+        <result column="T_DWGHGL_GBTS" property="tDwghglGbts" />
+        <result column="T_DWGHGL_GBRL" property="tDwghglGbrl" />
+        <result column="T_DWGHGL_ZBTS" property="tDwghglZbts" />
+        <result column="T_DWGHGL_ZBRL" property="tDwghglZbrl" />
+        <result column="T_DWGHGL_ZTS" property="tDwghglZts" />
+        <result column="T_DWGHGL_ZRL" property="tDwghglZrl" />
+        <result column="T_DWGHGL_HWG" property="tDwghglHwg" />
+        <result column="T_DWGHGL_DLFZX" property="tDwghglDlfzx" />
+        <result column="T_DWGHGL_ZSKG" property="tDwghglZskg" />
+        <result column="T_DWGHGL_DLQ" property="tDwghglDlq" />
+        <result column="T_DWGHGL_WGBCT" property="tDwghglWgbct" />
+        <result column="T_DWGHGL_WGBCRL" property="tDwghglWgbcrl" />
+        <result column="T_DWGHGL_KBS" property="tDwghglKbs" />
+        <result column="T_DWGHGL_ZYJG" property="tDwghglZyjg" />
+        <result column="T_DWGHGL_LLXSL" property="tDwghglLlxsl" />
+        <result column="T_DWGHGL_FDS" property="tDwghglFds" />
+        <result column="T_DWGHGL_GLTS" property="tDwghglGlts" />
+        <result column="T_DWGHGL_GLCD" property="tDwghglGlcd" />
+        <result column="T_DWGHGL_XLTS" property="tDwghglXlts" />
+        <result column="T_DWGHGL_XLCD" property="tDwghglXlcd" />
+        <result column="T_DWGHGL_GSPBTS" property="tDwghglGspbts" />
+        <result column="T_DWGHGL_GSPBRL" property="tDwghglGspbrl" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_DWGHGL_ID, T_ZYGHK_ID, T_DWGHGL_XMMC, T_DWGHGL_XMTZ, T_DWGHGL_XMXZ, T_DWGHGL_SSBDZ, T_DWGHGL_XLJSFS, T_DWGHGL_TYSJ, T_DWGHGL_XMMS, T_DWGHGL_JKJYX_QX, T_DWGHGL_JKLDX_QX, T_DWGHGL_DL_QX, T_DWGHGL_ZC_QX, T_DWGHGL_JKJYX_ZGX, T_DWGHGL_JKLDX_ZGX, T_DWGHGL_DL_ZGX, T_DWGHGL_ZC_ZGX, T_DWGHGL_DXXH1, T_DWGHGL_DXXH2, T_DWGHGL_DXXH3, T_DWGHGL_GBTS, T_DWGHGL_GBRL, T_DWGHGL_ZBTS, T_DWGHGL_ZBRL, T_DWGHGL_ZTS, T_DWGHGL_ZRL, T_DWGHGL_HWG, T_DWGHGL_DLFZX, T_DWGHGL_ZSKG, T_DWGHGL_DLQ, T_DWGHGL_WGBCT, T_DWGHGL_WGBCRL, T_DWGHGL_KBS, T_DWGHGL_ZYJG, T_DWGHGL_LLXSL, T_DWGHGL_FDS, T_DWGHGL_GLTS, T_DWGHGL_GLCD, T_DWGHGL_XLTS, T_DWGHGL_XLCD, T_DWGHGL_GSPBTS, T_DWGHGL_GSPBRL
+    </sql>
+
+</mapper>

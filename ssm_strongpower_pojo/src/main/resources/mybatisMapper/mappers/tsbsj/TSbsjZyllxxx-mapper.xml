@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSbsjZyllxxxDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSbsjZyllxxx">
+        <id column="T_ZYLLXXX_ID" property="tZyllxxxId" />
+        <result column="T_ZYLLXXX_XLBH" property="tZyllxxxXlbh" />
+        <result column="T_ZYLLXXX_XLMC" property="tZyllxxxXlmc" />
+        <result column="T_ZYLLXXX_WGBCRL" property="tZyllxxxWgbcrl" />
+        <result column="T_ZYLLXXX_SJNF" property="tZyllxxxSjnf" />
+        <result column="T_ZYLLXXX_KGBH" property="tZyllxxxKgbh" />
+        <result column="T_ZYLLXXX_SSQY" property="tZyllxxxSsqy" />
+        <result column="T_ZYLLXXX_YWDW" property="tZyllxxxYwdw" />
+        <result column="T_ZYLLXXX_SSBDZ" property="tZyllxxxSsbdz" />
+        <result column="T_ZYLLXXX_YNW" property="tZyllxxxYnw" />
+        <result column="T_ZYLLXXX_SYFS" property="tZyllxxxSyfs" />
+        <result column="T_ZYLLXXX_TYSJ" property="tZyllxxxTysj" />
+        <result column="T_ZYLLXXX_TUIYISJ" property="tZyllxxxTuiyisj" />
+        <result column="T_ZYLLXXX_ZT" property="tZyllxxxZt" />
+        <result column="T_ZYLLXXX_BZ" property="tZyllxxxBz" />
+        <result column="T_ZYLLXXX_JKJYDX_QX" property="tZyllxxxJkjydxQx" />
+        <result column="T_ZYLLXXX_JKLDX_QX" property="tZyllxxxJkldxQx" />
+        <result column="T_ZYLLXXX_DL_QX" property="tZyllxxxDlQx" />
+        <result column="T_ZYLLXXX_ZC_QX" property="tZyllxxxZcQx" />
+        <result column="T_ZYLLXXX_JKJYDX_ZGX" property="tZyllxxxJkjydxZgx" />
+        <result column="T_ZYLLXXX_JKLDX_ZGX" property="tZyllxxxJkldxZgx" />
+        <result column="T_ZYLLXXX_DLZGX" property="tZyllxxxDlzgx" />
+        <result column="T_ZYLLXXX_ZCZGX" property="tZyllxxxZczgx" />
+        <result column="T_ZYLLXXX_DXXH1" property="tZyllxxxDxxh1" />
+        <result column="T_ZYLLXXX_DXXH2" property="tZyllxxxDxxh2" />
+        <result column="T_ZYLLXXX_DXXH3" property="tZyllxxxDxxh3" />
+        <result column="T_ZYLLXXX_GBTS" property="tZyllxxxGbts" />
+        <result column="T_ZYLLXXX_GBRL" property="tZyllxxxGbrl" />
+        <result column="T_ZYLLXXX_ZBTS" property="tZyllxxxZbts" />
+        <result column="T_ZYLLXXX_ZBRL" property="tZyllxxxZbrl" />
+        <result column="T_ZYLLXXX_ZTS" property="tZyllxxxZts" />
+        <result column="T_ZYLLXXX_ZRL" property="tZyllxxxZrl" />
+        <result column="T_ZYLLXXX_HWG" property="tZyllxxxHwg" />
+        <result column="T_ZYLLXXX_DLFZX" property="tZyllxxxDlfzx" />
+        <result column="T_ZYLLXXX_ZSKG" property="tZyllxxxZskg" />
+        <result column="T_ZYLLXXX_DLQ" property="tZyllxxxDlq" />
+        <result column="T_ZYLLXXX_WGBCD" property="tZyllxxxWgbcd" />
+        <result column="T_ZYLLXXX_JXMS" property="tZyllxxxJxms" />
+        <result column="T_ZYLLXXX_LLXSL" property="tZyllxxxLlxsl" />
+        <result column="T_ZYLLXXX_FDS" property="tZyllxxxFds" />
+        <result column="T_ZYLLXXX_ZLLLX1" property="tZyllxxxZlllx1" />
+        <result column="T_ZYLLXXX_ZLLLX2" property="tZyllxxxZlllx2" />
+        <result column="T_ZYLLXXX_ZLLLX3" property="tZyllxxxZlllx3" />
+        <result column="T_ZYLLXXX_ZJLLX1" property="tZyllxxxZjllx1" />
+        <result column="T_ZYLLXXX_ZJLLX2" property="tZyllxxxZjllx2" />
+        <result column="T_ZYLLXXX_ZJLLX3" property="tZyllxxxZjllx3" />
+        <result column="T_ZYLLXXX_ZGXZDYXZLL" property="tZyllxxxZgxzdyxzll" />
+        <result column="T_ZYLLXXX_CTYCEDDL" property="tZyllxxxCtyceddl" />
+        <result column="T_ZYLLXXX_ZXJMDXZLL" property="tZyllxxxZxjmdxzll" />
+        <result column="T_ZYLLXXX_QTYYXZZDZLL" property="tZyllxxxQtyyxzzdzll" />
+        <result column="T_ZYLLXXX_AQDL" property="tZyllxxxAqdl" />
+        <result column="T_ZYLLXXX_JXCSLL" property="tZyllxxxJxcsll" />
+        <result column="T_ZYLLXXX_GSPBTS" property="tZyllxxxGspbts" />
+        <result column="T_ZYLLXXX_GSPBRL" property="tZyllxxxGspbrl" />
+        <result column="T_ZYLLXXX_GQLX" property="tZyllxxxGqlx" />
+        <result column="T_ZYLLXXX_ZYXL" property="tZyllxxxZyxl" />
+        <result column="T_ZYLLXXX_HWGZY" property="tZyllxxxHwgzy" />
+        <result column="T_ZYLLXXX_DLFZXZY" property="tZyllxxxDlfzxzy" />
+        <result column="T_ZYLLXXX_ZSKGZY" property="tZyllxxxZskgzy" />
+        <result column="T_ZYLLXXX_DLQZY" property="tZyllxxxDlqzy" />
+        <result column="T_ZYLLXXX_HWGZS" property="tZyllxxxHwgzs" />
+        <result column="T_ZYLLXXX_DLFZXZS" property="tZyllxxxDlfzxzs" />
+        <result column="T_ZYLLXXX_ZSKGZS" property="tZyllxxxZskgzs" />
+        <result column="T_ZYLLXXX_DLQZS" property="tZyllxxxDlqzs" />
+        <result column="T_ZYLLXXX_DLXH" property="tZyllxxxDlxh" />
+        <result column="T_ZYLLXXX_FDSS" property="tZyllxxxFdss" />
+        <result column="T_ZYLLXXX_FDCD" property="tZyllxxxFdcd" />
+        <result column="T_ZYLLXXX_FSFS" property="tZyllxxxFsfs" />
+        <result column="T_ZYLLXXX_ZLLLX4" property="tZyllxxxZlllx4" />
+        <result column="T_ZYLLXXX_ZJLLX4" property="tZyllxxxZjllx4" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_ZYLLXXX_ID, T_ZYLLXXX_XLBH, T_ZYLLXXX_XLMC, T_ZYLLXXX_WGBCRL, T_ZYLLXXX_SJNF, T_ZYLLXXX_KGBH, T_ZYLLXXX_SSQY, T_ZYLLXXX_YWDW, T_ZYLLXXX_SSBDZ, T_ZYLLXXX_YNW, T_ZYLLXXX_SYFS, T_ZYLLXXX_TYSJ, T_ZYLLXXX_TUIYISJ, T_ZYLLXXX_ZT, T_ZYLLXXX_BZ, T_ZYLLXXX_JKJYDX_QX, T_ZYLLXXX_JKLDX_QX, T_ZYLLXXX_DL_QX, T_ZYLLXXX_ZC_QX, T_ZYLLXXX_JKJYDX_ZGX, T_ZYLLXXX_JKLDX_ZGX, T_ZYLLXXX_DLZGX, T_ZYLLXXX_ZCZGX, T_ZYLLXXX_DXXH1, T_ZYLLXXX_DXXH2, T_ZYLLXXX_DXXH3, T_ZYLLXXX_GBTS, T_ZYLLXXX_GBRL, T_ZYLLXXX_ZBTS, T_ZYLLXXX_ZBRL, T_ZYLLXXX_ZTS, T_ZYLLXXX_ZRL, T_ZYLLXXX_HWG, T_ZYLLXXX_DLFZX, T_ZYLLXXX_ZSKG, T_ZYLLXXX_DLQ, T_ZYLLXXX_WGBCD, T_ZYLLXXX_JXMS, T_ZYLLXXX_LLXSL, T_ZYLLXXX_FDS, T_ZYLLXXX_ZLLLX1, T_ZYLLXXX_ZLLLX2, T_ZYLLXXX_ZLLLX3, T_ZYLLXXX_ZJLLX1, T_ZYLLXXX_ZJLLX2, T_ZYLLXXX_ZJLLX3, T_ZYLLXXX_ZGXZDYXZLL, T_ZYLLXXX_CTYCEDDL, T_ZYLLXXX_ZXJMDXZLL, T_ZYLLXXX_QTYYXZZDZLL, T_ZYLLXXX_AQDL, T_ZYLLXXX_JXCSLL, T_ZYLLXXX_GSPBTS, T_ZYLLXXX_GSPBRL, T_ZYLLXXX_GQLX, T_ZYLLXXX_ZYXL, T_ZYLLXXX_HWGZY, T_ZYLLXXX_DLFZXZY, T_ZYLLXXX_ZSKGZY, T_ZYLLXXX_DLQZY, T_ZYLLXXX_HWGZS, T_ZYLLXXX_DLFZXZS, T_ZYLLXXX_ZSKGZS, T_ZYLLXXX_DLQZS, T_ZYLLXXX_DLXH, T_ZYLLXXX_FDSS, T_ZYLLXXX_FDCD, T_ZYLLXXX_FSFS, T_ZYLLXXX_ZLLLX4, T_ZYLLXXX_ZJLLX4
+    </sql>
+
+</mapper>

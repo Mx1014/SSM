@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSbsjZyxllxDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSbsjZyxllx">
+        <id column="T_ZYXLLX_ID" property="tZyxllxId" />
+        <result column="T_ZYXLLX_BID" property="tZyxllxBid" />
+        <result column="T_ZYXLLX_EID" property="tZyxllxEid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_ZYXLLX_ID, T_ZYXLLX_BID, T_ZYXLLX_EID
+    </sql>
+
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TZbcsZbzbDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TZbcsZbzb">
+        <id column="T_ZBZB_ID" property="tZbzbId" />
+        <result column="T_ZBZB_GQLX" property="tZbzbGqlx" />
+        <result column="T_ZBZB_QHLZ" property="tZbzbQhlz" />
+        <result column="T_ZBZB_BHWZ" property="tZbzbBhwz" />
+        <result column="T_ZBZB_QHWZ" property="tZbzbQhwz" />
+        <result column="T_ZBZB_ZB63" property="tZbzbZb63" />
+        <result column="T_ZBZB_ZB50" property="tZbzbZb50" />
+        <result column="T_ZBZB_ZB40" property="tZbzbZb40" />
+        <result column="T_ZBZB_ZB31" property="tZbzbZb31" />
+        <result column="T_ZBZB_ZB20" property="tZbzbZb20" />
+        <result column="T_ZBZB_ZBXY20" property="tZbzbZbxy20" />
+        <result column="T_ZBZB_XLCDD600" property="tZbzbXlcdd600" />
+        <result column="T_ZBZB_XLCD600" property="tZbzbXlcd600" />
+        <result column="T_ZBZB_XLCD480" property="tZbzbXlcd480" />
+        <result column="T_ZBZB_XLCD400" property="tZbzbXlcd400" />
+        <result column="T_ZBZB_XLCD300" property="tZbzbXlcd300" />
+        <result column="T_ZBZB_XLCD240" property="tZbzbXlcd240" />
+        <result column="T_ZBZB_XLCD185" property="tZbzbXlcd185" />
+        <result column="T_ZBZB_XLCD150" property="tZbzbXlcd150" />
+        <result column="T_ZBZB_XLCD120" property="tZbzbXlcd120" />
+        <result column="T_ZBZB_XLCDX120" property="tZbzbXlcdx120" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_ZBZB_ID, T_ZBZB_GQLX, T_ZBZB_QHLZ, T_ZBZB_BHWZ, T_ZBZB_QHWZ, T_ZBZB_ZB63, T_ZBZB_ZB50, T_ZBZB_ZB40, T_ZBZB_ZB31, T_ZBZB_ZB20, T_ZBZB_ZBXY20, T_ZBZB_XLCDD600, T_ZBZB_XLCD600, T_ZBZB_XLCD480, T_ZBZB_XLCD400, T_ZBZB_XLCD300, T_ZBZB_XLCD240, T_ZBZB_XLCD185, T_ZBZB_XLCD150, T_ZBZB_XLCD120, T_ZBZB_XLCDX120
+    </sql>
+
+</mapper>

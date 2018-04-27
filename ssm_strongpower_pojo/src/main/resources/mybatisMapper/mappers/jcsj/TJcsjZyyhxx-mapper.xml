@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TJcsjZyyhxxDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcsjZyyhxx">
+        <id column="T_ZYYHXX_ID" property="tZyyhxxId" />
+        <result column="T_ZYYHXX_YHMC" property="tZyyhxxYhmc" />
+        <result column="T_ZYYHXX_XMMC" property="tZyyhxxXmmc" />
+        <result column="T_ZYYHXX_XMDZ" property="tZyyhxxXmdz" />
+        <result column="T_ZYYHXX_GDFQ" property="tZyyhxxGdfq" />
+        <result column="T_ZYYHXX_XMXZ" property="tZyyhxxXmxz" />
+        <result column="T_ZYYHXX_ZDMJ" property="tZyyhxxZdmj" />
+        <result column="T_ZYYHXX_JZMJ" property="tZyyhxxJzmj" />
+        <result column="T_ZYYHXX_HS" property="tZyyhxxHs" />
+        <result column="T_ZYYHXX_ZDFH" property="tZyyhxxZdfh" />
+        <result column="T_ZYYHXX_SQYDSJ" property="tZyyhxxSqydsj" />
+        <result column="T_ZYYHXX_TDSJ" property="tZyyhxxTdsj" />
+        <result column="T_ZYYHXX_TYSJ" property="tZyyhxxTysj" />
+        <result column="T_ZYYHXX_BZ" property="tZyyhxxBz" />
+        <result column="T_ZYYHXX_ZGRL" property="tZyyhxxZgrl" />
+        <result column="T_ZYYHXX_BYRL" property="tZyyhxxByrl" />
+        <result column="T_ZYYHXX_BARL" property="tZyyhxxBarl" />
+        <result column="T_ZYYHXX_DYDJ" property="tZyyhxxDydj" />
+        <result column="T_ZYYHXX_BDZ" property="tZyyhxxBdz" />
+        <result column="T_ZYYHXX_PDS" property="tZyyhxxPds" />
+        <result column="T_ZYYHXX_HWG" property="tZyyhxxHwg" />
+        <result column="T_ZYYHXX_GDGS" property="tZyyhxxGdgs" />
+        <result column="T_ZYYHXX_NYDL" property="tZyyhxxNydl" />
+        <result column="T_ZYYHXX_ZGXL" property="tZyyhxxZgxl" />
+        <result column="T_ZYYHXX_BYXL" property="tZyyhxxByxl" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_ZYYHXX_ID, T_ZYYHXX_YHMC, T_ZYYHXX_XMMC, T_ZYYHXX_XMDZ, T_ZYYHXX_GDFQ, T_ZYYHXX_XMXZ, T_ZYYHXX_ZDMJ, T_ZYYHXX_JZMJ, T_ZYYHXX_HS, T_ZYYHXX_ZDFH, T_ZYYHXX_SQYDSJ, T_ZYYHXX_TDSJ, T_ZYYHXX_TYSJ, T_ZYYHXX_BZ, T_ZYYHXX_ZGRL, T_ZYYHXX_BYRL, T_ZYYHXX_BARL, T_ZYYHXX_DYDJ, T_ZYYHXX_BDZ, T_ZYYHXX_PDS, T_ZYYHXX_HWG, T_ZYYHXX_GDGS, T_ZYYHXX_NYDL, T_ZYYHXX_ZGXL, T_ZYYHXX_BYXL
+    </sql>
+
+</mapper>

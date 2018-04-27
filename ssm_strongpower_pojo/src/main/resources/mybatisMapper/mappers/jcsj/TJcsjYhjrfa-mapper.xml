@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TJcsjYhjrfaDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcsjYhjrfa">
+        <result column="T_YHJR_ID" property="tYhjrId" />
+        <result column="T_YHJR_YHMC" property="tYhjrYhmc" />
+        <result column="T_YHJR_YDSBRL" property="tYhjrYdsbrl" />
+        <result column="T_YHJR_JSYGFH" property="tYhjrJsygfh" />
+        <result column="T_YHJR_YJFH" property="tYhjrYjfh" />
+        <result column="T_YHJR_EJFH" property="tYhjrEjfh" />
+        <result column="T_YHJR_SJFH" property="tYhjrSjfh" />
+        <result column="T_YHJR_BAFHJFS" property="tYhjrBafhjfs" />
+        <result column="T_YHJR_YDSJ" property="tYhjrYdsj" />
+        <result column="T_YHJR_REMARK" property="tYhjrRemark" />
+        <result column="T_YHJR_DY1" property="tYhjrDy1" />
+        <result column="T_YHJR_DY2" property="tYhjrDy2" />
+        <result column="T_YHJR_QTMS" property="tYhjrQtms" />
+        <result column="T_YHJR_BQDY" property="tYhjrBqdy" />
+        <result column="T_YHJR_ZQDY" property="tYhjrZqdy" />
+        <result column="T_YHJR_ZGDY_BDZ" property="tYhjrZgdyBdz" />
+        <result column="T_YHJR_ZGDY_JG" property="tYhjrZgdyJg" />
+        <result column="T_YHJR_ZGDY_SFYYJG" property="tYhjrZgdySfyyjg" />
+        <result column="T_YHJR_ZGDY_YYJGSM" property="tYhjrZgdyYyjgsm" />
+        <result column="T_YHJR_ZGDY_XYJG" property="tYhjrZgdyXyjg" />
+        <result column="T_YHJR_ZGDY_JJFA" property="tYhjrZgdyJjfa" />
+        <result column="T_YHJR_BGDY_BDZ" property="tYhjrBgdyBdz" />
+        <result column="T_YHJR_BGDY_JG" property="tYhjrBgdyJg" />
+        <result column="T_YHJR_BGDY_SFYYJG" property="tYhjrBgdySfyyjg" />
+        <result column="T_YHJR_BGDY_YYJGSM" property="tYhjrBgdyYyjgsm" />
+        <result column="T_YHJR_BGDY_XYJG" property="tYhjrBgdyXyjg" />
+        <result column="T_YHJR_BGDY_JJFA" property="tYhjrBgdyJjfa" />
+        <result column="T_YHJR_ZGDY_XH1" property="tYhjrZgdyXh1" />
+        <result column="T_YHJR_ZGDY_CD1" property="tYhjrZgdyCd1" />
+        <result column="T_YHJR_ZGDY_XH2" property="tYhjrZgdyXh2" />
+        <result column="T_YHJR_ZGDY_CD2" property="tYhjrZgdyCd2" />
+        <result column="T_YHJR_ZGDY_XH3" property="tYhjrZgdyXh3" />
+        <result column="T_YHJR_ZGDY_CD3" property="tYhjrZgdyCd3" />
+        <result column="T_YHJR_ZGDY_ZCD" property="tYhjrZgdyZcd" />
+        <result column="T_YHJR_BGDY_XH1" property="tYhjrBgdyXh1" />
+        <result column="T_YHJR_BGDY_CD1" property="tYhjrBgdyCd1" />
+        <result column="T_YHJR_BGDY_XH2" property="tYhjrBgdyXh2" />
+        <result column="T_YHJR_BGDY_CD2" property="tYhjrBgdyCd2" />
+        <result column="T_YHJR_BGDY_XH3" property="tYhjrBgdyXh3" />
+        <result column="T_YHJR_BGDY_CD3" property="tYhjrBgdyCd3" />
+        <result column="T_YHJR_BGDY_ZCD" property="tYhjrBgdyZcd" />
+        <result column="T_YHJR_ZGDY_TDXYJG" property="tYhjrZgdyTdxyjg" />
+        <result column="T_YHJR_BGDY_TDXYJG" property="tYhjrBgdyTdxyjg" />
+        <result column="T_YHJR_ZGDY_LJMS" property="tYhjrZgdyLjms" />
+        <result column="T_YHJR_BGDY_LJMS" property="tYhjrBgdyLjms" />
+        <result column="T_YHJR_FJ" property="tYhjrFj" />
+        <result column="T_YHJR_QT" property="tYhjrQt" />
+        <result column="T_YHJR_YHJG" property="tYhjrYhjg" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_YHJR_ID, T_YHJR_YHMC, T_YHJR_YDSBRL, T_YHJR_JSYGFH, T_YHJR_YJFH, T_YHJR_EJFH, T_YHJR_SJFH, T_YHJR_BAFHJFS, T_YHJR_YDSJ, T_YHJR_REMARK, T_YHJR_DY1, T_YHJR_DY2, T_YHJR_QTMS, T_YHJR_BQDY, T_YHJR_ZQDY, T_YHJR_ZGDY_BDZ, T_YHJR_ZGDY_JG, T_YHJR_ZGDY_SFYYJG, T_YHJR_ZGDY_YYJGSM, T_YHJR_ZGDY_XYJG, T_YHJR_ZGDY_JJFA, T_YHJR_BGDY_BDZ, T_YHJR_BGDY_JG, T_YHJR_BGDY_SFYYJG, T_YHJR_BGDY_YYJGSM, T_YHJR_BGDY_XYJG, T_YHJR_BGDY_JJFA, T_YHJR_ZGDY_XH1, T_YHJR_ZGDY_CD1, T_YHJR_ZGDY_XH2, T_YHJR_ZGDY_CD2, T_YHJR_ZGDY_XH3, T_YHJR_ZGDY_CD3, T_YHJR_ZGDY_ZCD, T_YHJR_BGDY_XH1, T_YHJR_BGDY_CD1, T_YHJR_BGDY_XH2, T_YHJR_BGDY_CD2, T_YHJR_BGDY_XH3, T_YHJR_BGDY_CD3, T_YHJR_BGDY_ZCD, T_YHJR_ZGDY_TDXYJG, T_YHJR_BGDY_TDXYJG, T_YHJR_ZGDY_LJMS, T_YHJR_BGDY_LJMS, T_YHJR_FJ, T_YHJR_QT, T_YHJR_YHJG
+    </sql>
+
+</mapper>

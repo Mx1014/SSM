@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwyxFhydwyxsjDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwyxFhydwyxsj">
+        <id column="T_FHYDWYX_ID" property="tFhydwyxId" />
+        <result column="T_FHYDWYX_PID" property="tFhydwyxPid" />
+        <result column="T_FHYDWYX_GDGS" property="tFhydwyxGdgs" />
+        <result column="T_FHYDWYX_YEAR" property="tFhydwyxYear" />
+        <result column="T_FHYDWYX_DYCY_HS" property="tFhydwyxDycyHs" />
+        <result column="T_FHYDWYX_DYCY_YDRL" property="tFhydwyxDycyYdrl" />
+        <result column="T_FHYDWYX_DYCY_GDHS" property="tFhydwyxDycyGdhs" />
+        <result column="T_FHYDWYX_DYCY_NZDFH" property="tFhydwyxDycyNzdfh" />
+        <result column="T_FHYDWYX_DYCY_ZDFHSK" property="tFhydwyxDycyZdfhsk" />
+        <result column="T_FHYDWYX_DYCY_NPJFH" property="tFhydwyxDycyNpjfh" />
+        <result column="T_FHYDWYX_DYCY_ZCNZDFH" property="tFhydwyxDycyZcnzdfh" />
+        <result column="T_FHYDWYX_DECY_HS" property="tFhydwyxDecyHs" />
+        <result column="T_FHYDWYX_DECY_YDRL" property="tFhydwyxDecyYdrl" />
+        <result column="T_FHYDWYX_DECY_GDHS" property="tFhydwyxDecyGdhs" />
+        <result column="T_FHYDWYX_DECY_NZDFH" property="tFhydwyxDecyNzdfh" />
+        <result column="T_FHYDWYX_DECY_ZDFHSK" property="tFhydwyxDecyZdfhsk" />
+        <result column="T_FHYDWYX_DECY_NPJFH" property="tFhydwyxDecyNpjfh" />
+        <result column="T_FHYDWYX_DECY_ZCNZDFH" property="tFhydwyxDecyZcnzdfh" />
+        <result column="T_FHYDWYX_DSCY_HS" property="tFhydwyxDscyHs" />
+        <result column="T_FHYDWYX_DSCY_YDRL" property="tFhydwyxDscyYdrl" />
+        <result column="T_FHYDWYX_DSCY_GDHS" property="tFhydwyxDscyGdhs" />
+        <result column="T_FHYDWYX_DSCY_NZDFH" property="tFhydwyxDscyNzdfh" />
+        <result column="T_FHYDWYX_DSCY_ZDFHSK" property="tFhydwyxDscyZdfhsk" />
+        <result column="T_FHYDWYX_DSCY_NPJFH" property="tFhydwyxDscyNpjfh" />
+        <result column="T_FHYDWYX_DSCY_ZCNZDFH" property="tFhydwyxDscyZcnzdfh" />
+        <result column="T_FHYDWYX_CXJMSH_HS" property="tFhydwyxCxjmshHs" />
+        <result column="T_FHYDWYX_CXJMSH_YDRL" property="tFhydwyxCxjmshYdrl" />
+        <result column="T_FHYDWYX_CXJMSH_GDHS" property="tFhydwyxCxjmshGdhs" />
+        <result column="T_FHYDWYX_CXJMSH_NZDFH" property="tFhydwyxCxjmshNzdfh" />
+        <result column="T_FHYDWYX_CXJMSH_ZDFHSK" property="tFhydwyxCxjmshZdfhsk" />
+        <result column="T_FHYDWYX_CXJMSH_NPJFH" property="tFhydwyxCxjmshNpjfh" />
+        <result column="T_FHYDWYX_CXJMSH_ZCNZDFH" property="tFhydwyxCxjmshZcnzdfh" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_FHYDWYX_ID, T_FHYDWYX_PID, T_FHYDWYX_GDGS, T_FHYDWYX_YEAR, T_FHYDWYX_DYCY_HS, T_FHYDWYX_DYCY_YDRL, T_FHYDWYX_DYCY_GDHS, T_FHYDWYX_DYCY_NZDFH, T_FHYDWYX_DYCY_ZDFHSK, T_FHYDWYX_DYCY_NPJFH, T_FHYDWYX_DYCY_ZCNZDFH, T_FHYDWYX_DECY_HS, T_FHYDWYX_DECY_YDRL, T_FHYDWYX_DECY_GDHS, T_FHYDWYX_DECY_NZDFH, T_FHYDWYX_DECY_ZDFHSK, T_FHYDWYX_DECY_NPJFH, T_FHYDWYX_DECY_ZCNZDFH, T_FHYDWYX_DSCY_HS, T_FHYDWYX_DSCY_YDRL, T_FHYDWYX_DSCY_GDHS, T_FHYDWYX_DSCY_NZDFH, T_FHYDWYX_DSCY_ZDFHSK, T_FHYDWYX_DSCY_NPJFH, T_FHYDWYX_DSCY_ZCNZDFH, T_FHYDWYX_CXJMSH_HS, T_FHYDWYX_CXJMSH_YDRL, T_FHYDWYX_CXJMSH_GDHS, T_FHYDWYX_CXJMSH_NZDFH, T_FHYDWYX_CXJMSH_ZDFHSK, T_FHYDWYX_CXJMSH_NPJFH, T_FHYDWYX_CXJMSH_ZCNZDFH
+    </sql>
+
+</mapper>

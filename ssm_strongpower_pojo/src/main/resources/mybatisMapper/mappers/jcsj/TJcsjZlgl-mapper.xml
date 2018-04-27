@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TJcsjZlglDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcsjZlgl">
+        <id column="T_ZLGL_ID" property="tZlglId" />
+        <result column="T_ZLGL_MC" property="tZlglMc" />
+        <result column="T_ZLGL_URL" property="tZlglUrl" />
+        <result column="T_ZLGL_USER" property="tZlglUser" />
+        <result column="T_ZLGL_SJ" property="tZlglSj" />
+        <result column="T_ZLGL_LX" property="tZlglLx" />
+        <result column="T_ZLGL_BZ" property="tZlglBz" />
+        <result column="T_ZLGL_WJM" property="tZlglWjm" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_ZLGL_ID, T_ZLGL_MC, T_ZLGL_URL, T_ZLGL_USER, T_ZLGL_SJ, T_ZLGL_LX, T_ZLGL_BZ, T_ZLGL_WJM
+    </sql>
+
+</mapper>

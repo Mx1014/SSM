@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TJcsjZyyhDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcsjZyyh">
+        <id column="T_ZYYH_IU_ID" property="tZyyhIuId" />
+        <result column="T_ZYYH_IU_YEAR" property="tZyyhIuYear" />
+        <result column="T_ZYYH_USERNAME" property="tZyyhUsername" />
+        <result column="T_ZYYH_POWERUP_VOLTAGECLASS" property="tZyyhPowerupVoltageclass" />
+        <result column="T_ZYYH_LOADLEVEL" property="tZyyhLoadlevel" />
+        <result column="T_ZYYH_SE_ID" property="tZyyhSeId" />
+        <result column="T_ZYYH_TRANSFORMERCAPACITY" property="tZyyhTransformercapacity" />
+        <result column="T_ZYYH_POWERSUPPLYONE" property="tZyyhPowersupplyone" />
+        <result column="T_ZYYH_POWERSUPPLYTWO" property="tZyyhPowersupplytwo" />
+        <result column="T_ZYYH_SECURITYITEMS_NAME" property="tZyyhSecurityitemsName" />
+        <result column="T_ZYYH_ISMAKEPLANS" property="tZyyhIsmakeplans" />
+        <result column="T_ZYYH_IU_ENDYEAR" property="tZyyhIuEndyear" />
+        <result column="T_ZYYH_GQLX" property="tZyyhGqlx" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_ZYYH_IU_ID, T_ZYYH_IU_YEAR, T_ZYYH_USERNAME, T_ZYYH_POWERUP_VOLTAGECLASS, T_ZYYH_LOADLEVEL, T_ZYYH_SE_ID, T_ZYYH_TRANSFORMERCAPACITY, T_ZYYH_POWERSUPPLYONE, T_ZYYH_POWERSUPPLYTWO, T_ZYYH_SECURITYITEMS_NAME, T_ZYYH_ISMAKEPLANS, T_ZYYH_IU_ENDYEAR, T_ZYYH_GQLX
+    </sql>
+
+</mapper>

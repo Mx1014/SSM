@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TZyglEelgsDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TZyglEelgs">
+        <id column="T_EELGS_ID" property="tEelgsId" />
+        <result column="T_EELGS_BDZID" property="tEelgsBdzid" />
+        <result column="T_EELGS_JGMC" property="tEelgsJgmc" />
+        <result column="T_EELGS_SYZT" property="tEelgsSyzt" />
+        <result column="T_EELGS_JXMC" property="tEelgsJxmc" />
+        <result column="T_EELGS_DYDJ" property="tEelgsDydj" />
+        <result column="T_EELGS_QNZDFH" property="tEelgsQnzdfh" />
+        <result column="T_EELGS_FZL" property="tEelgsFzl" />
+        <result column="T_EELGS_SJ" property="tEelgsSj" />
+        <result column="T_EELGS_BZ" property="tEelgsBz" />
+        <result column="T_EELGS_NUM" property="tEelgsNum" />
+        <result column="T_EELGS_TYPE" property="tEelgsType" />
+        <result column="FAC_ID" property="facId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_EELGS_ID, T_EELGS_BDZID, T_EELGS_JGMC, T_EELGS_SYZT, T_EELGS_JXMC, T_EELGS_DYDJ, T_EELGS_QNZDFH, T_EELGS_FZL, T_EELGS_SJ, T_EELGS_BZ, T_EELGS_NUM, T_EELGS_TYPE, FAC_ID
+    </sql>
+
+</mapper>

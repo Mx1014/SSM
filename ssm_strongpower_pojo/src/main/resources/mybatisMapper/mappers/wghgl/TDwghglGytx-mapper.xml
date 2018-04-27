@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwghglGytxDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwghglGytx">
+        <id column="T_GYTX_ID" property="tGytxId" />
+        <result column="T_DWGHGL_ID" property="tDwghglId" />
+        <result column="T_GYTX_NAME" property="tGytxName" />
+        <result column="T_GYTX_TYPE" property="tGytxType" />
+        <result column="T_GYTX_XMTZ" property="tGytxXmtz" />
+        <result column="T_GYTX_GLCD" property="tGytxGlcd" />
+        <result column="T_GYTX_GLTS" property="tGytxGlts" />
+        <result column="T_GYTX_GSBSL" property="tGytxGsbsl" />
+        <result column="T_GYTX_GBSL" property="tGytxGbsl" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_GYTX_ID, T_DWGHGL_ID, T_GYTX_NAME, T_GYTX_TYPE, T_GYTX_XMTZ, T_GYTX_GLCD, T_GYTX_GLTS, T_GYTX_GSBSL, T_GYTX_GBSL
+    </sql>
+
+</mapper>

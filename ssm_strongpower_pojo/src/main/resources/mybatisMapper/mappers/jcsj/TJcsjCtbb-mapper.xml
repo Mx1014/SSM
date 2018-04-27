@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TJcsjCtbbDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcsjCtbb">
+        <id column="T_CTBB_ID" property="tCtbbId" />
+        <result column="T_CTBB_NAME" property="tCtbbName" />
+        <result column="T_CTBB_REMARK" property="tCtbbRemark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_CTBB_ID, T_CTBB_NAME, T_CTBB_REMARK
+    </sql>
+
+</mapper>

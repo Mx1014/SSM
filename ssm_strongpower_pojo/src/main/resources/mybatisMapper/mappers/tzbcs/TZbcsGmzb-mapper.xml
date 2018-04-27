@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TZbcsGmzbDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TZbcsGmzb">
+        <id column="T_GMZB_ID" property="tGmzbId" />
+        <result column="T_GMZB_GQLX" property="tGmzbGqlx" />
+        <result column="T_GMZB_BDZZS" property="tGmzbBdzzs" />
+        <result column="T_GMZB_DZS" property="tGmzbDzs" />
+        <result column="T_GMZB_ZQGM" property="tGmzbZqgm" />
+        <result column="T_GMZB_XZGM" property="tGmzbXzgm" />
+        <result column="T_GMZB_XZBDZRL" property="tGmzbXzbdzrl" />
+        <result column="T_GMZB_ZJGS" property="tGmzbZjgs" />
+        <result column="T_GMZB_ZXJGS" property="tGmzbZxjgs" />
+        <result column="T_GMZB_SYJGS" property="tGmzbSyjgs" />
+        <result column="T_GMZB_XLZTS" property="tGmzbXlzts" />
+        <result column="T_GMZB_XLZCD" property="tGmzbXlzcd" />
+        <result column="T_GMZB_DLXLCD" property="tGmzbDlxlcd" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_GMZB_ID, T_GMZB_GQLX, T_GMZB_BDZZS, T_GMZB_DZS, T_GMZB_ZQGM, T_GMZB_XZGM, T_GMZB_XZBDZRL, T_GMZB_ZJGS, T_GMZB_ZXJGS, T_GMZB_SYJGS, T_GMZB_XLZTS, T_GMZB_XLZCD, T_GMZB_DLXLCD
+    </sql>
+
+</mapper>

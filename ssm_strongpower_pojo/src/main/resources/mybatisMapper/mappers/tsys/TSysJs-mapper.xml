@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSysJsDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSysJs">
+        <id column="T_JSID" property="tJsid" />
+        <result column="T_P_ID" property="tPId" />
+        <result column="T_JSNAME" property="tJsname" />
+        <result column="T_INDEX" property="tIndex" />
+        <result column="T_STATE" property="tState" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_JSID, T_P_ID, T_JSNAME, T_INDEX, T_STATE
+    </sql>
+
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwghglGybyqDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwghglGybyq">
+        <id column="T_GYBYQ_ID" property="tGybyqId" />
+        <result column="T_BDZ_ID" property="tBdzId" />
+        <result column="T_DWGHGL_ID" property="tDwghglId" />
+        <result column="T_GYBYQ_NAME" property="tGybyqName" />
+        <result column="T_GYBYQ_EDDY" property="tGybyqEddy" />
+        <result column="T_GYBYQ_RL" property="tGybyqRl" />
+        <result column="T_GYBYQ_MPXH" property="tGybyqMpxh" />
+        <result column="T_GYBYQ_MPBB" property="tGybyqMpbb" />
+        <result column="T_GYBYQ_TYFS" property="tGybyqTyfs" />
+        <result column="T_GYBYQ_REMARK" property="tGybyqRemark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_GYBYQ_ID, T_BDZ_ID, T_DWGHGL_ID, T_GYBYQ_NAME, T_GYBYQ_EDDY, T_GYBYQ_RL, T_GYBYQ_MPXH, T_GYBYQ_MPBB, T_GYBYQ_TYFS, T_GYBYQ_REMARK
+    </sql>
+
+</mapper>

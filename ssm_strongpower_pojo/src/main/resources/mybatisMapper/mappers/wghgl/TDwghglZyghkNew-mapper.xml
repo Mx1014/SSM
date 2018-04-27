@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwghglZyghkNewDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwghglZyghkNew">
+        <id column="T_ZYGHK_ID" property="tZyghkId" />
+        <result column="T_ZYGHK_XMMC" property="tZyghkXmmc" />
+        <result column="T_ZYGHK_XMBM" property="tZyghkXmbm" />
+        <result column="T_ZYGHK_JSXZ" property="tZyghkJsxz" />
+        <result column="T_ZYGHK_GCXZ" property="tZyghkGcxz" />
+        <result column="T_ZYGHK_GCJSNR" property="tZyghkGcjsnr" />
+        <result column="T_ZYGHK_ISZNHXM" property="tZyghkIsznhxm" />
+        <result column="T_ZYGHK_SSQY" property="tZyghkSsqy" />
+        <result column="T_ZYGHK_GQLX" property="tZyghkGqlx" />
+        <result column="T_ZYGHK_XMLX" property="tZyghkXmlx" />
+        <result column="T_ZYGHK_DYDJ" property="tZyghkDydj" />
+        <result column="T_ZYGHK_YWDW" property="tZyghkYwdw" />
+        <result column="T_ZYGHK_KGSJ" property="tZyghkKgsj" />
+        <result column="T_ZYGHK_JGSJ" property="tZyghkJgsj" />
+        <result column="T_ZYGHK_SYFS" property="tZyghkSyfs" />
+        <result column="T_ZYGHK_CNW" property="tZyghkCnw" />
+        <result column="T_ZYGHK_XMTZ" property="tZyghkXmtz" />
+        <result column="T_ZYGHK_XLZTS" property="tZyghkXlzts" />
+        <result column="T_ZYGHK_XLZCD" property="tZyghkXlzcd" />
+        <result column="T_ZYGHK_PBTS" property="tZyghkPbts" />
+        <result column="T_ZYGHK_PBRL" property="tZyghkPbrl" />
+        <result column="T_ZYGHK_ZGXCD" property="tZyghkZgxcd" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_ZYGHK_ID, T_ZYGHK_XMMC, T_ZYGHK_XMBM, T_ZYGHK_JSXZ, T_ZYGHK_GCXZ, T_ZYGHK_GCJSNR, T_ZYGHK_ISZNHXM, T_ZYGHK_SSQY, T_ZYGHK_GQLX, T_ZYGHK_XMLX, T_ZYGHK_DYDJ, T_ZYGHK_YWDW, T_ZYGHK_KGSJ, T_ZYGHK_JGSJ, T_ZYGHK_SYFS, T_ZYGHK_CNW, T_ZYGHK_XMTZ, T_ZYGHK_XLZTS, T_ZYGHK_XLZCD, T_ZYGHK_PBTS, T_ZYGHK_PBRL, T_ZYGHK_ZGXCD
+    </sql>
+
+</mapper>

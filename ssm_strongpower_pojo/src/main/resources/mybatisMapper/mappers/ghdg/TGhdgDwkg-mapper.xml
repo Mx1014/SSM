@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TGhdgDwkgDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TGhdgDwkg">
+        <id column="T_DWKG_ID" property="tDwkgId" />
+        <result column="T_DWKG_GQLX" property="tDwkgGqlx" />
+        <result column="T_DWKG_DYDJ" property="tDwkgDydj" />
+        <result column="T_DWKG_KGZSS" property="tDwkgKgzss" />
+        <result column="T_DWKG_HWGSS" property="tDwkgHwgss" />
+        <result column="T_DWKG_DLFZXSS" property="tDwkgDlfzxss" />
+        <result column="T_DWKG_ZSKGSS" property="tDwkgZskgss" />
+        <result column="T_DWKG_KGTS" property="tDwkgKgts" />
+        <result column="T_DWKG_DLQ" property="tDwkgDlq" />
+        <result column="T_DWKG_FHKG" property="tDwkgFhkg" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_DWKG_ID, T_DWKG_GQLX, T_DWKG_DYDJ, T_DWKG_KGZSS, T_DWKG_HWGSS, T_DWKG_DLFZXSS, T_DWKG_ZSKGSS, T_DWKG_KGTS, T_DWKG_DLQ, T_DWKG_FHKG
+    </sql>
+
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TJcmbEmailDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcmbEmail">
+        <id column="T_EMAIL_ID" property="tEmailId" />
+        <result column="T_EMAIL_SJR" property="tEmailSjr" />
+        <result column="T_EMAIL_FJR" property="tEmailFjr" />
+        <result column="T_EMAIL_YJZT" property="tEmailYjzt" />
+        <result column="T_EMAIL_YJNR" property="tEmailYjnr" />
+        <result column="T_EMAIL_FJNAME" property="tEmailFjname" />
+        <result column="T_EMAIL_FJURL" property="tEmailFjurl" />
+        <result column="T_EMAIL_FSSJ" property="tEmailFssj" />
+        <result column="T_EMAIL_YJFL" property="tEmailYjfl" />
+        <result column="T_EMAIL_SFBJ" property="tEmailSfbj" />
+        <result column="T_EMAIL_SFYD" property="tEmailSfyd" />
+        <result column="T_EMAIL_SFYFS" property="tEmailSfyfs" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_EMAIL_ID, T_EMAIL_SJR, T_EMAIL_FJR, T_EMAIL_YJZT, T_EMAIL_YJNR, T_EMAIL_FJNAME, T_EMAIL_FJURL, T_EMAIL_FSSJ, T_EMAIL_YJFL, T_EMAIL_SFBJ, T_EMAIL_SFYD, T_EMAIL_SFYFS
+    </sql>
+
+</mapper>

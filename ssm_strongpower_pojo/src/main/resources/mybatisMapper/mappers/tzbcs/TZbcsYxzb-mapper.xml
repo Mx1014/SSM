@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TZbcsYxzbDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TZbcsYxzb">
+        <id column="T_YXZB_ID" property="tYxzbId" />
+        <result column="T_YXZB_GQLX" property="tYxzbGqlx" />
+        <result column="T_YXZB_RZB" property="tYxzbRzb" />
+        <result column="T_YXZB_MZN_1ZBTS" property="tYxzbMzn1zbts" />
+        <result column="T_YXZB_MZN_1XLTS" property="tYxzbMzn1xlts" />
+        <result column="T_YXZB_ZBMAXFZLPJZ" property="tYxzbZbmaxfzlpjz" />
+        <result column="T_YXZB_XLMAXFZLPJZ" property="tYxzbXlmaxfzlpjz" />
+        <result column="T_YXZB_CZXLYTSBL" property="tYxzbCzxlytsbl" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_YXZB_ID, T_YXZB_GQLX, T_YXZB_RZB, T_YXZB_MZN_1ZBTS, T_YXZB_MZN_1XLTS, T_YXZB_ZBMAXFZLPJZ, T_YXZB_XLMAXFZLPJZ, T_YXZB_CZXLYTSBL
+    </sql>
+
+</mapper>

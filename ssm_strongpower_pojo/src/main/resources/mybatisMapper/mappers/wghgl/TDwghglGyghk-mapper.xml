@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwghglGyghkDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwghglGyghk">
+        <id column="T_DWGHGL_ID" property="tDwghglId" />
+        <result column="T_DWGHGL_XMMC" property="tDwghglXmmc" />
+        <result column="T_DWGHGL_QY_ID" property="tDwghglQyId" />
+        <result column="T_DWGHGL_DYDJ" property="tDwghglDydj" />
+        <result column="T_DWGHGL_KGSJ" property="tDwghglKgsj" />
+        <result column="T_DWGHGL_JGSJ" property="tDwghglJgsj" />
+        <result column="T_DWGHGL_XMTZ" property="tDwghglXmtz" />
+        <result column="T_DWGHGL_SYFS" property="tDwghglSyfs" />
+        <result column="T_DWGHGL_CNW" property="tDwghglCnw" />
+        <result column="T_DWGHGL_GQLX" property="tDwghglGqlx" />
+        <result column="T_DWGHGL_REMARKS" property="tDwghglRemarks" />
+        <result column="T_DWGHGL_YWDW" property="tDwghglYwdw" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_DWGHGL_ID, T_DWGHGL_XMMC, T_DWGHGL_QY_ID, T_DWGHGL_DYDJ, T_DWGHGL_KGSJ, T_DWGHGL_JGSJ, T_DWGHGL_XMTZ, T_DWGHGL_SYFS, T_DWGHGL_CNW, T_DWGHGL_GQLX, T_DWGHGL_REMARKS, T_DWGHGL_YWDW
+    </sql>
+
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TZbcsPdzdhDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TZbcsPdzdh">
+        <id column="T_PDZDH_ID" property="tPdzdhId" />
+        <result column="T_PDZDH_GQLX" property="tPdzdhGqlx" />
+        <result column="T_PDZDH_ZNFBS" property="tPdzdhZnfbs" />
+        <result column="T_PDZDH_JZS" property="tPdzdhJzs" />
+        <result column="T_PDZDH_JDCHQS" property="tPdzdhJdchqs" />
+        <result column="T_PDZDH_GZZSQS" property="tPdzdhGzzsqs" />
+        <result column="T_PDZDH_KXZDHFGL" property="tPdzdhKxzdhfgl" />
+        <result column="T_PDZDH_PDZDYYBL" property="tPdzdhPdzdyybl" />
+        <result column="T_PDZDH_PDZDEYBL" property="tPdzdhPdzdeybl" />
+        <result column="T_PDZDH_PDZDSYBL" property="tPdzdhPdzdsybl" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_PDZDH_ID, T_PDZDH_GQLX, T_PDZDH_ZNFBS, T_PDZDH_JZS, T_PDZDH_JDCHQS, T_PDZDH_GZZSQS, T_PDZDH_KXZDHFGL, T_PDZDH_PDZDYYBL, T_PDZDH_PDZDEYBL, T_PDZDH_PDZDSYBL
+    </sql>
+
+</mapper>

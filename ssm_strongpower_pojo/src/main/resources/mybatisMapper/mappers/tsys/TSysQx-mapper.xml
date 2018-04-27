@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSysQxDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSysQx">
+        <result column="T_QXID" property="tQxid" />
+        <result column="T_P_QXID" property="tPQxid" />
+        <result column="T_QXNAME" property="tQxname" />
+        <result column="T_URL" property="tUrl" />
+        <result column="T_TXURL" property="tTxurl" />
+        <result column="T_QXLX" property="tQxlx" />
+        <result column="T_QXINDEX" property="tQxindex" />
+        <result column="T_MODELNAME" property="tModelname" />
+        <result column="T_STATE" property="tState" />
+        <result column="T_MODETYPE" property="tModetype" />
+        <result column="TABLEID" property="tableid" />
+        <result column="T_KEY" property="tKey" />
+        <result column="T_VALUE" property="tValue" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_QXID, T_P_QXID, T_QXNAME, T_URL, T_TXURL, T_QXLX, T_QXINDEX, T_MODELNAME, T_STATE, T_MODETYPE, TABLEID, T_KEY, T_VALUE
+    </sql>
+
+</mapper>

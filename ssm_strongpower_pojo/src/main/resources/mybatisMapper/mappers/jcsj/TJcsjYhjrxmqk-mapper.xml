@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TJcsjYhjrxmqkDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcsjYhjrxmqk">
+        <result column="T_XMQK_ID" property="tXmqkId" />
+        <result column="T_XMQK_YHJRID" property="tXmqkYhjrid" />
+        <result column="T_XMQK_QISHU" property="tXmqkQishu" />
+        <result column="T_XMQK_YDSBRL" property="tXmqkYdsbrl" />
+        <result column="T_XMQK_YGFH" property="tXmqkYgfh" />
+        <result column="T_XMQK_YJFH" property="tXmqkYjfh" />
+        <result column="T_XMQK_EJFH" property="tXmqkEjfh" />
+        <result column="T_XMQK_SJFH" property="tXmqkSjfh" />
+        <result column="T_XMQK_BAFHANDBAFS" property="tXmqkBafhandbafs" />
+        <result column="T_XMQK_YDSJ" property="tXmqkYdsj" />
+        <result column="T_XMQK_REMARK" property="tXmqkRemark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_XMQK_ID, T_XMQK_YHJRID, T_XMQK_QISHU, T_XMQK_YDSBRL, T_XMQK_YGFH, T_XMQK_YJFH, T_XMQK_EJFH, T_XMQK_SJFH, T_XMQK_BAFHANDBAFS, T_XMQK_YDSJ, T_XMQK_REMARK
+    </sql>
+
+</mapper>

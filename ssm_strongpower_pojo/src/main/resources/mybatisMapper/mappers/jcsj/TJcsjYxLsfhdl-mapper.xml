@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TJcsjYxLsfhdlDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcsjYxLsfhdl">
+        <id column="T_LSFHDL_ID" property="tLsfhdlId" />
+        <result column="T_LSFHDL_QUID" property="tLsfhdlQuid" />
+        <result column="T_LSFHDL_YEAR" property="tLsfhdlYear" />
+        <result column="T_LSFHDL_MAXIMUMLOAD" property="tLsfhdlMaximumload" />
+        <result column="T_LSFHDL_MAXIMUMLOADTIME" property="tLsfhdlMaximumloadtime" />
+        <result column="T_LSFHDL_ALLSOCIETYYDL" property="tLsfhdlAllsocietyydl" />
+        <result column="T_LSFHDL_FIRSTINDUSTRYYDL" property="tLsfhdlFirstindustryydl" />
+        <result column="T_LSFHDL_SECONDINDUSTRYYDL" property="tLsfhdlSecondindustryydl" />
+        <result column="T_LSFHDL_THIRDINDUSTRYYDL" property="tLsfhdlThirdindustryydl" />
+        <result column="T_LSFHDL_RESIDENTYDL" property="tLsfhdlResidentydl" />
+        <result column="T_LSFHDL_FARMINGYDL" property="tLsfhdlFarmingydl" />
+        <result column="T_LSFHDL_FORESTRYYDL" property="tLsfhdlForestryydl" />
+        <result column="T_LSFHDL_STOCKRAISINGYDL" property="tLsfhdlStockraisingydl" />
+        <result column="T_LSFHDL_AVOCATIONYDL" property="tLsfhdlAvocationydl" />
+        <result column="T_LSFHDL_FISHERYYDL" property="tLsfhdlFisheryydl" />
+        <result column="T_LSFHDL_INDUSTRYYDL" property="tLsfhdlIndustryydl" />
+        <result column="T_LSFHDL_BUSINESSYDL" property="tLsfhdlBusinessydl" />
+        <result column="T_LSFHDL_NETSPOWER_SUPPLY" property="tLsfhdlNetspowerSupply" />
+        <result column="T_LSFHDL_MONTHMAXIMUMLOAD" property="tLsfhdlMonthmaximumload" />
+        <result column="T_LSFHDL_SUPPLLOAD" property="tLsfhdlSupplload" />
+        <result column="T_LSFHDL_GQLX" property="tLsfhdlGqlx" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_LSFHDL_ID, T_LSFHDL_QUID, T_LSFHDL_YEAR, T_LSFHDL_MAXIMUMLOAD, T_LSFHDL_MAXIMUMLOADTIME, T_LSFHDL_ALLSOCIETYYDL, T_LSFHDL_FIRSTINDUSTRYYDL, T_LSFHDL_SECONDINDUSTRYYDL, T_LSFHDL_THIRDINDUSTRYYDL, T_LSFHDL_RESIDENTYDL, T_LSFHDL_FARMINGYDL, T_LSFHDL_FORESTRYYDL, T_LSFHDL_STOCKRAISINGYDL, T_LSFHDL_AVOCATIONYDL, T_LSFHDL_FISHERYYDL, T_LSFHDL_INDUSTRYYDL, T_LSFHDL_BUSINESSYDL, T_LSFHDL_NETSPOWER_SUPPLY, T_LSFHDL_MONTHMAXIMUMLOAD, T_LSFHDL_SUPPLLOAD, T_LSFHDL_GQLX
+    </sql>
+
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TJcsjBfsjDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcsjBfsj">
+        <result column="T_BFSJ_ID" property="tBfsjId" />
+        <result column="T_BFSJ_NAME" property="tBfsjName" />
+        <result column="T_BFSJ_URL" property="tBfsjUrl" />
+        <result column="T_BFSJ_DATA" property="tBfsjData" />
+        <result column="T_BFSJ_USER" property="tBfsjUser" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_BFSJ_ID, T_BFSJ_NAME, T_BFSJ_URL, T_BFSJ_DATA, T_BFSJ_USER
+    </sql>
+
+</mapper>

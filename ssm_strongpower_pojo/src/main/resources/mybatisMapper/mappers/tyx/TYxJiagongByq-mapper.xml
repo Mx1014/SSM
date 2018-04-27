@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TYxJiagongByqDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TYxJiagongByq">
+        <result column="JGID" property="jgid" />
+        <result column="JGNF" property="jgnf" />
+        <result column="BYQID" property="byqid" />
+        <result column="YOUGONG" property="yougong" />
+        <result column="WUGONG" property="wugong" />
+        <result column="DIANLIU" property="dianliu" />
+        <result column="TQTYPE" property="tqtype" />
+        <result column="CMTYPE" property="cmtype" />
+        <result column="ZDFHFSSK" property="zdfhfssk" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        JGID, JGNF, BYQID, YOUGONG, WUGONG, DIANLIU, TQTYPE, CMTYPE, ZDFHFSSK, REMARK
+    </sql>
+
+</mapper>

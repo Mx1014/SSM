@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSbyxxxQyyxxxDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSbyxxxQyyxxx">
+        <id column="T_QYYXXX_ID" property="tQyyxxxId" />
+        <result column="T_QYYXXX_SJNY" property="tQyyxxxSjny" />
+        <result column="T_QYYXXX_BDZ_ID" property="tQyyxxxBdzId" />
+        <result column="T_QYYXXX_BYQ_ID" property="tQyyxxxByqId" />
+        <result column="T_QYYXXX_RL" property="tQyyxxxRl" />
+        <result column="T_QYYXXX_ZDFHSK" property="tQyyxxxZdfhsk" />
+        <result column="T_QYYXXX_YG" property="tQyyxxxYg" />
+        <result column="T_QYYXXX_WG" property="tQyyxxxWg" />
+        <result column="T_QYYXXX_DL" property="tQyyxxxDl" />
+        <result column="T_QYYXXX_FZL" property="tQyyxxxFzl" />
+        <result column="T_QYYXXX_SZGL" property="tQyyxxxSzgl" />
+        <result column="T_QYYXXX_GLYS" property="tQyyxxxGlys" />
+        <result column="T_QYYXXX_SJLX" property="tQyyxxxSjlx" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_QYYXXX_ID, T_QYYXXX_SJNY, T_QYYXXX_BDZ_ID, T_QYYXXX_BYQ_ID, T_QYYXXX_RL, T_QYYXXX_ZDFHSK, T_QYYXXX_YG, T_QYYXXX_WG, T_QYYXXX_DL, T_QYYXXX_FZL, T_QYYXXX_SZGL, T_QYYXXX_GLYS, T_QYYXXX_SJLX
+    </sql>
+
+</mapper>

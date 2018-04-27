@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSysGdgsDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSysGdgs">
+        <id column="T_GDGS_ID" property="tGdgsId" />
+        <result column="T_GDGS_P_ID" property="tGdgsPId" />
+        <result column="T_GDGS_DWMC" property="tGdgsDwmc" />
+        <result column="T_GDGS_PX" property="tGdgsPx" />
+        <result column="T_GDGS_ZT" property="tGdgsZt" />
+        <result column="T_GDGS_BZ" property="tGdgsBz" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_GDGS_ID, T_GDGS_P_ID, T_GDGS_DWMC, T_GDGS_PX, T_GDGS_ZT, T_GDGS_BZ
+    </sql>
+
+</mapper>

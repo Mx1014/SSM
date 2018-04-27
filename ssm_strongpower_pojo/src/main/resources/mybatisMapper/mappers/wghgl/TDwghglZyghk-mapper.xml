@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwghglZyghkDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwghglZyghk">
+        <id column="T_ZYGHK_ID" property="tZyghkId" />
+        <result column="T_ZYGHK_XMMC" property="tZyghkXmmc" />
+        <result column="T_ZYGHK_XMBM" property="tZyghkXmbm" />
+        <result column="T_ZYGHK_JSXZ" property="tZyghkJsxz" />
+        <result column="T_ZYGHK_GCXZ" property="tZyghkGcxz" />
+        <result column="T_ZYGHK_GCJSNR" property="tZyghkGcjsnr" />
+        <result column="T_ZYGHK_ISZNHXM" property="tZyghkIsznhxm" />
+        <result column="T_ZYGHK_SSQY" property="tZyghkSsqy" />
+        <result column="T_ZYGHK_BDZ" property="tZyghkBdz" />
+        <result column="T_ZYGHK_GQLX" property="tZyghkGqlx" />
+        <result column="T_ZYGHK_XMLX" property="tZyghkXmlx" />
+        <result column="T_ZYGHK_DYDJ" property="tZyghkDydj" />
+        <result column="T_ZYGHK_YWDW" property="tZyghkYwdw" />
+        <result column="T_ZYGHK_KGSJ" property="tZyghkKgsj" />
+        <result column="T_ZYGHK_JGSJ" property="tZyghkJgsj" />
+        <result column="T_ZYGHK_SYFS" property="tZyghkSyfs" />
+        <result column="T_ZYGHK_CNW" property="tZyghkCnw" />
+        <result column="T_ZYGHK_XMTZ" property="tZyghkXmtz" />
+        <result column="T_ZYGHK_XLZTS" property="tZyghkXlzts" />
+        <result column="T_ZYGHK_XLZCD" property="tZyghkXlzcd" />
+        <result column="T_ZYGHK_PBTS" property="tZyghkPbts" />
+        <result column="T_ZYGHK_PBRL" property="tZyghkPbrl" />
+        <result column="T_ZYGHK_ZGXCD" property="tZyghkZgxcd" />
+        <result column="T_DWGHGL_JKDXXH" property="tDwghglJkdxxh" />
+        <result column="T_DWGHGL_JKDXCD" property="tDwghglJkdxcd" />
+        <result column="T_DWGHGL_JKDXTZ" property="tDwghglJkdxtz" />
+        <result column="T_DWGHGL_DLXH" property="tDwghglDlxh" />
+        <result column="T_DWGHGL_DLCD" property="tDwghglDlcd" />
+        <result column="T_DWGHGL_DLTZ" property="tDwghglDltz" />
+        <result column="T_DWGHGL_DYXLXH" property="tDwghglDyxlxh" />
+        <result column="T_DWGHGL_DYXLCD" property="tDwghglDyxlcd" />
+        <result column="T_DWGHGL_DYXLTZ" property="tDwghglDyxltz" />
+        <result column="T_DWGHGL_PBTS" property="tDwghglPbts" />
+        <result column="T_DWGHGL_PBRL" property="tDwghglPbrl" />
+        <result column="T_DWGHGL_PBTZ" property="tDwghglPbtz" />
+        <result column="T_DWGHGL_BZHTQGZTS" property="tDwghglBzhtqgzts" />
+        <result column="T_DWGHGL_BZHTQGZTZ" property="tDwghglBzhtqgztz" />
+        <result column="T_DWGHGL_ZSKGTS" property="tDwghglZskgts" />
+        <result column="T_DWGHGL_ZSKGTZ" property="tDwghglZskgtz" />
+        <result column="T_DWGHGL_JLZZTS" property="tDwghglJlzzts" />
+        <result column="T_DWGHGL_JLZZTZ" property="tDwghglJlzztz" />
+        <result column="T_DWGHGL_HWGGM" property="tDwghglHwggm" />
+        <result column="T_DWGHGL_HWGTS" property="tDwghglHwgts" />
+        <result column="T_DWGHGL_HWGTZ" property="tDwghglHwgtz" />
+        <result column="T_DWGHGL_DLFZXGM" property="tDwghglDlfzxgm" />
+        <result column="T_DWGHGL_DLFZXTS" property="tDwghglDlfzxts" />
+        <result column="T_DWGHGL_DLFZXTZ" property="tDwghglDlfzxtz" />
+        <result column="T_DWGHGL_KBSHLS" property="tDwghglKbshls" />
+        <result column="T_DWGHGL_KBSTZ" property="tDwghglKbstz" />
+        <result column="T_DWGHGL_DGFG" property="tDwghglDgfg" />
+        <result column="T_DWGHGL_DGYG" property="tDwghglDgyg" />
+        <result column="T_DWGHGL_DGTZ" property="tDwghglDgtz" />
+        <result column="T_DWGHGL_PID" property="tDwghglPid" />
+        <result column="T_DWGHGL_NWJSXZ1" property="tDwghglNwjsxz1" />
+        <result column="T_DWGHGL_NWJSXZ2" property="tDwghglNwjsxz2" />
+        <result column="T_DWGHGL_NWJSXZ3" property="tDwghglNwjsxz3" />
+        <result column="T_DWGHGL_ZYXL_JKCD" property="tDwghglZyxlJkcd" />
+        <result column="T_DWGHGL_ZYXL_DLCD" property="tDwghglZyxlDlcd" />
+        <result column="T_DWGHGL_ZYXL_GDBJ" property="tDwghglZyxlGdbj" />
+        <result column="T_DWGHGL_ZYXL_WGBCRL" property="tDwghglZyxlWgbcrl" />
+        <result column="T_DWGHGL_ZYXL_TZ" property="tDwghglZyxlTz" />
+        <result column="T_DWGHGL_ZYKG_KBS" property="tDwghglZykgKbs" />
+        <result column="T_DWGHGL_ZYKG_DLFZX" property="tDwghglZykgDlfzx" />
+        <result column="T_DWGHGL_ZYKG_TZ" property="tDwghglZykgTz" />
+        <result column="T_DWGHGL_ZYKG_HWGZS" property="tDwghglZykgHwgzs" />
+        <result column="T_DWGHGL_ZYKG_HWGFD" property="tDwghglZykgHwgfd" />
+        <result column="T_DWGHGL_ZYKG_HWGLL" property="tDwghglZykgHwgll" />
+        <result column="T_DWGHGL_ZYKG_ZSKGZS" property="tDwghglZykgZskgzs" />
+        <result column="T_DWGHGL_ZYKG_ZSKGFD" property="tDwghglZykgZskgfd" />
+        <result column="T_DWGHGL_ZYKG_ZSKGLL" property="tDwghglZykgZskgll" />
+        <result column="T_DWGHGL_ZYPB_WGBCRL" property="tDwghglZypbWgbcrl" />
+        <result column="T_DWGHGL_ZYPB_TZ" property="tDwghglZypbTz" />
+        <result column="T_DWGHGL_ZYPB_ZSBTS" property="tDwghglZypbZsbts" />
+        <result column="T_DWGHGL_ZYPB_ZSBRL" property="tDwghglZypbZsbrl" />
+        <result column="T_DWGHGL_ZYPB_FJHJPBTS" property="tDwghglZypbFjhjpbts" />
+        <result column="T_DWGHGL_ZYPB_FJHJPBRL" property="tDwghglZypbFjhjpbrl" />
+        <result column="T_DWGHGL_ZYPB_PDSZS" property="tDwghglZypbPdszs" />
+        <result column="T_DWGHGL_ZYPB_PDSTS" property="tDwghglZypbPdsts" />
+        <result column="T_DWGHGL_ZYPB_PDSRL" property="tDwghglZypbPdsrl" />
+        <result column="T_DWGHGL_ZYPB_XBZS" property="tDwghglZypbXbzs" />
+        <result column="T_DWGHGL_ZYPB_XBTS" property="tDwghglZypbXbts" />
+        <result column="T_DWGHGL_ZYPB_XBRL" property="tDwghglZypbXbrl" />
+        <result column="T_DWGHGL_DYWPT_JKXLTS" property="tDwghglDywptJkxlts" />
+        <result column="T_DWGHGL_DYWPT_JKXLCD" property="tDwghglDywptJkxlcd" />
+        <result column="T_DWGHGL_DYWPT_JKXLTZ" property="tDwghglDywptJkxltz" />
+        <result column="T_DWGHGL_DYWPT_DLTS" property="tDwghglDywptDlts" />
+        <result column="T_DWGHGL_DYWPT_DLCD" property="tDwghglDywptDlcd" />
+        <result column="T_DWGHGL_DYWPT_DLTZ" property="tDwghglDywptDltz" />
+        <result column="T_DWGHGL_HB_HB" property="tDwghglHbHb" />
+        <result column="T_DWGHGL_HB_JHX" property="tDwghglHbJhx" />
+        <result column="T_DWGHGL_HB_HBTZ" property="tDwghglHbHbtz" />
+        <result column="T_DWGHGL_ZJLY_ZYJH" property="tDwghglZjlyZyjh" />
+        <result column="T_DWGHGL_ZJLY_GSZC" property="tDwghglZjlyGszc" />
+        <result column="T_DWGHGL_ZJLY_XJGDQYZC" property="tDwghglZjlyXjgdqyzc" />
+        <result column="T_DWGHGL_ZJLY_YHTZ" property="tDwghglZjlyYhtz" />
+        <result column="T_DWGHGL_ZJLY_XQPTF" property="tDwghglZjlyXqptf" />
+        <result column="T_DWGHGL_ZJLY_ZFDZ" property="tDwghglZjlyZfdz" />
+        <result column="T_DWGHGL_ZJLY_QT" property="tDwghglZjlyQt" />
+        <result column="T_DWGHGL_GCSX" property="tDwghglGcsx" />
+        <result column="T_DWGHGL_GZ_ZTS" property="tDwghglGzZts" />
+        <result column="T_DWGHGL_GZ_QZRL" property="tDwghglGzQzrl" />
+        <result column="T_DWGHGL_GZ_HZRL" property="tDwghglGzHzrl" />
+        <result column="T_DWGHGL_GZ_GSTS" property="tDwghglGzGsts" />
+        <result column="T_DWGHGL_GZ_GSRL" property="tDwghglGzGsrl" />
+        <result column="T_DWGHGL_GZ_FJTS" property="tDwghglGzFjts" />
+        <result column="T_DWGHGL_GZ_FJRL" property="tDwghglGzFjrl" />
+        <result column="T_DWGHGL_GZ_WGZS" property="tDwghglGzWgzs" />
+        <result column="T_DWGHGL_GZ_WGZRL" property="tDwghglGzWgzrl" />
+        <result column="T_DWGHGL_GZ_WGTZ" property="tDwghglGzWgtz" />
+        <result column="T_DWGHGL_GZ_DLQ" property="tDwghglGzDlq" />
+        <result column="T_DWGHGL_GZ_FHKG" property="tDwghglGzFhkg" />
+        <result column="T_DWGHGL_GZ_HWG" property="tDwghglGzHwg" />
+        <result column="T_DWGHGL_GZ_DLFZX" property="tDwghglGzDlfzx" />
+        <result column="T_DWGHGL_GZ_KGTZ" property="tDwghglGzKgtz" />
+        <result column="T_DWGHGL_GZ_JKXLCD" property="tDwghglGzJkxlcd" />
+        <result column="T_DWGHGL_GZ_JYDXCD" property="tDwghglGzJydxcd" />
+        <result column="T_DWGHGL_GZ_JKXLTZ" property="tDwghglGzJkxltz" />
+        <result column="T_DWGHGL_GZ_DLXLCD" property="tDwghglGzDlxlcd" />
+        <result column="T_DWGHGL_GZ_GDCD" property="tDwghglGzGdcd" />
+        <result column="T_DWGHGL_GZ_DLXLTZ" property="tDwghglGzDlxltz" />
+        <result column="T_DWGHGL_GZ_PBTZ" property="tDwghglGzPbtz" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_ZYGHK_ID, T_ZYGHK_XMMC, T_ZYGHK_XMBM, T_ZYGHK_JSXZ, T_ZYGHK_GCXZ, T_ZYGHK_GCJSNR, T_ZYGHK_ISZNHXM, T_ZYGHK_SSQY, T_ZYGHK_BDZ, T_ZYGHK_GQLX, T_ZYGHK_XMLX, T_ZYGHK_DYDJ, T_ZYGHK_YWDW, T_ZYGHK_KGSJ, T_ZYGHK_JGSJ, T_ZYGHK_SYFS, T_ZYGHK_CNW, T_ZYGHK_XMTZ, T_ZYGHK_XLZTS, T_ZYGHK_XLZCD, T_ZYGHK_PBTS, T_ZYGHK_PBRL, T_ZYGHK_ZGXCD, T_DWGHGL_JKDXXH, T_DWGHGL_JKDXCD, T_DWGHGL_JKDXTZ, T_DWGHGL_DLXH, T_DWGHGL_DLCD, T_DWGHGL_DLTZ, T_DWGHGL_DYXLXH, T_DWGHGL_DYXLCD, T_DWGHGL_DYXLTZ, T_DWGHGL_PBTS, T_DWGHGL_PBRL, T_DWGHGL_PBTZ, T_DWGHGL_BZHTQGZTS, T_DWGHGL_BZHTQGZTZ, T_DWGHGL_ZSKGTS, T_DWGHGL_ZSKGTZ, T_DWGHGL_JLZZTS, T_DWGHGL_JLZZTZ, T_DWGHGL_HWGGM, T_DWGHGL_HWGTS, T_DWGHGL_HWGTZ, T_DWGHGL_DLFZXGM, T_DWGHGL_DLFZXTS, T_DWGHGL_DLFZXTZ, T_DWGHGL_KBSHLS, T_DWGHGL_KBSTZ, T_DWGHGL_DGFG, T_DWGHGL_DGYG, T_DWGHGL_DGTZ, T_DWGHGL_PID, T_DWGHGL_NWJSXZ1, T_DWGHGL_NWJSXZ2, T_DWGHGL_NWJSXZ3, T_DWGHGL_ZYXL_JKCD, T_DWGHGL_ZYXL_DLCD, T_DWGHGL_ZYXL_GDBJ, T_DWGHGL_ZYXL_WGBCRL, T_DWGHGL_ZYXL_TZ, T_DWGHGL_ZYKG_KBS, T_DWGHGL_ZYKG_DLFZX, T_DWGHGL_ZYKG_TZ, T_DWGHGL_ZYKG_HWGZS, T_DWGHGL_ZYKG_HWGFD, T_DWGHGL_ZYKG_HWGLL, T_DWGHGL_ZYKG_ZSKGZS, T_DWGHGL_ZYKG_ZSKGFD, T_DWGHGL_ZYKG_ZSKGLL, T_DWGHGL_ZYPB_WGBCRL, T_DWGHGL_ZYPB_TZ, T_DWGHGL_ZYPB_ZSBTS, T_DWGHGL_ZYPB_ZSBRL, T_DWGHGL_ZYPB_FJHJPBTS, T_DWGHGL_ZYPB_FJHJPBRL, T_DWGHGL_ZYPB_PDSZS, T_DWGHGL_ZYPB_PDSTS, T_DWGHGL_ZYPB_PDSRL, T_DWGHGL_ZYPB_XBZS, T_DWGHGL_ZYPB_XBTS, T_DWGHGL_ZYPB_XBRL, T_DWGHGL_DYWPT_JKXLTS, T_DWGHGL_DYWPT_JKXLCD, T_DWGHGL_DYWPT_JKXLTZ, T_DWGHGL_DYWPT_DLTS, T_DWGHGL_DYWPT_DLCD, T_DWGHGL_DYWPT_DLTZ, T_DWGHGL_HB_HB, T_DWGHGL_HB_JHX, T_DWGHGL_HB_HBTZ, T_DWGHGL_ZJLY_ZYJH, T_DWGHGL_ZJLY_GSZC, T_DWGHGL_ZJLY_XJGDQYZC, T_DWGHGL_ZJLY_YHTZ, T_DWGHGL_ZJLY_XQPTF, T_DWGHGL_ZJLY_ZFDZ, T_DWGHGL_ZJLY_QT, T_DWGHGL_GCSX, T_DWGHGL_GZ_ZTS, T_DWGHGL_GZ_QZRL, T_DWGHGL_GZ_HZRL, T_DWGHGL_GZ_GSTS, T_DWGHGL_GZ_GSRL, T_DWGHGL_GZ_FJTS, T_DWGHGL_GZ_FJRL, T_DWGHGL_GZ_WGZS, T_DWGHGL_GZ_WGZRL, T_DWGHGL_GZ_WGTZ, T_DWGHGL_GZ_DLQ, T_DWGHGL_GZ_FHKG, T_DWGHGL_GZ_HWG, T_DWGHGL_GZ_DLFZX, T_DWGHGL_GZ_KGTZ, T_DWGHGL_GZ_JKXLCD, T_DWGHGL_GZ_JYDXCD, T_DWGHGL_GZ_JKXLTZ, T_DWGHGL_GZ_DLXLCD, T_DWGHGL_GZ_GDCD, T_DWGHGL_GZ_DLXLTZ, T_DWGHGL_GZ_PBTZ
+    </sql>
+
+</mapper>

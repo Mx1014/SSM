@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSysCwhlDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSysCwhl">
+        <id column="T_CWHL_ID" property="tCwhlId" />
+        <result column="T_CWHL_SJID" property="tCwhlSjid" />
+        <result column="T_CWHL_BIAO" property="tCwhlBiao" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_CWHL_ID, T_CWHL_SJID, T_CWHL_BIAO
+    </sql>
+
+</mapper>

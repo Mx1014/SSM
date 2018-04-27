@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwyxDdfhsjDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwyxDdfhsj">
+        <id column="T_DDFHSJ_ID" property="tDdfhsjId" />
+        <result column="T_DDFHSJ_RZDFH" property="tDdfhsjRzdfh" />
+        <result column="T_DDFHSJ_RZXFH" property="tDdfhsjRzxfh" />
+        <result column="T_DDFHSJ_RPJFH" property="tDdfhsjRpjfh" />
+        <result column="T_DDFHSJ_RFHL" property="tDdfhsjRfhl" />
+        <result column="T_DDFHSJ_RZXFHL" property="tDdfhsjRzxfhl" />
+        <result column="T_DDFHSJ_RFGC" property="tDdfhsjRfgc" />
+        <result column="T_DDFHSJ_RFGCL" property="tDdfhsjRfgcl" />
+        <result column="T_DDFHSJ_ZDFH1" property="tDdfhsjZdfh1" />
+        <result column="T_DDFHSJ_ZDFH2" property="tDdfhsjZdfh2" />
+        <result column="T_DDFHSJ_ZDFH3" property="tDdfhsjZdfh3" />
+        <result column="T_DDFHSJ_ZDFH4" property="tDdfhsjZdfh4" />
+        <result column="T_DDFHSJ_ZDFH5" property="tDdfhsjZdfh5" />
+        <result column="T_DDFHSJ_ZDFH6" property="tDdfhsjZdfh6" />
+        <result column="T_DDFHSJ_ZDFH7" property="tDdfhsjZdfh7" />
+        <result column="T_DDFHSJ_ZDFH8" property="tDdfhsjZdfh8" />
+        <result column="T_DDFHSJ_ZDFH9" property="tDdfhsjZdfh9" />
+        <result column="T_DDFHSJ_ZDFH10" property="tDdfhsjZdfh10" />
+        <result column="T_DDFHSJ_ZDFH11" property="tDdfhsjZdfh11" />
+        <result column="T_DDFHSJ_ZDFH12" property="tDdfhsjZdfh12" />
+        <result column="T_DDFHSJ_ZDFH13" property="tDdfhsjZdfh13" />
+        <result column="T_DDFHSJ_ZDFH14" property="tDdfhsjZdfh14" />
+        <result column="T_DDFHSJ_ZDFH15" property="tDdfhsjZdfh15" />
+        <result column="T_DDFHSJ_ZDFH16" property="tDdfhsjZdfh16" />
+        <result column="T_DDFHSJ_ZDFH17" property="tDdfhsjZdfh17" />
+        <result column="T_DDFHSJ_ZDFH18" property="tDdfhsjZdfh18" />
+        <result column="T_DDFHSJ_ZDFH19" property="tDdfhsjZdfh19" />
+        <result column="T_DDFHSJ_ZDFH20" property="tDdfhsjZdfh20" />
+        <result column="T_DDFHSJ_ZDFH21" property="tDdfhsjZdfh21" />
+        <result column="T_DDFHSJ_ZDFH22" property="tDdfhsjZdfh22" />
+        <result column="T_DDFHSJ_ZDFH23" property="tDdfhsjZdfh23" />
+        <result column="T_DDFHSJ_ZDFH24" property="tDdfhsjZdfh24" />
+        <result column="T_DDFHSJ_GDGS" property="tDdfhsjGdgs" />
+        <result column="T_DDFHSJ_DATA" property="tDdfhsjData" />
+        <result column="T_DDFHSJ_PID" property="tDdfhsjPid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_DDFHSJ_ID, T_DDFHSJ_RZDFH, T_DDFHSJ_RZXFH, T_DDFHSJ_RPJFH, T_DDFHSJ_RFHL, T_DDFHSJ_RZXFHL, T_DDFHSJ_RFGC, T_DDFHSJ_RFGCL, T_DDFHSJ_ZDFH1, T_DDFHSJ_ZDFH2, T_DDFHSJ_ZDFH3, T_DDFHSJ_ZDFH4, T_DDFHSJ_ZDFH5, T_DDFHSJ_ZDFH6, T_DDFHSJ_ZDFH7, T_DDFHSJ_ZDFH8, T_DDFHSJ_ZDFH9, T_DDFHSJ_ZDFH10, T_DDFHSJ_ZDFH11, T_DDFHSJ_ZDFH12, T_DDFHSJ_ZDFH13, T_DDFHSJ_ZDFH14, T_DDFHSJ_ZDFH15, T_DDFHSJ_ZDFH16, T_DDFHSJ_ZDFH17, T_DDFHSJ_ZDFH18, T_DDFHSJ_ZDFH19, T_DDFHSJ_ZDFH20, T_DDFHSJ_ZDFH21, T_DDFHSJ_ZDFH22, T_DDFHSJ_ZDFH23, T_DDFHSJ_ZDFH24, T_DDFHSJ_GDGS, T_DDFHSJ_DATA, T_DDFHSJ_PID
+    </sql>
+
+</mapper>

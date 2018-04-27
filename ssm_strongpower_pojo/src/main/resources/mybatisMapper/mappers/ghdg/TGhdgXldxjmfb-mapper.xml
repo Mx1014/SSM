@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TGhdgXldxjmfbDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TGhdgXldxjmfb">
+        <id column="T_XLDXJMFB_ID" property="tXldxjmfbId" />
+        <result column="T_XLDXJMFB_GQLX" property="tXldxjmfbGqlx" />
+        <result column="T_XLDXJMFB_DYXLLX" property="tXldxjmfbDyxllx" />
+        <result column="T_XLDXJMFB_DXJM1" property="tXldxjmfbDxjm1" />
+        <result column="T_XLDXJMFB_DXJMCD1" property="tXldxjmfbDxjmcd1" />
+        <result column="T_XLDXJMFB_DXJM2" property="tXldxjmfbDxjm2" />
+        <result column="T_XLDXJMFB_DXJMCD2" property="tXldxjmfbDxjmcd2" />
+        <result column="T_XLDXJMFB_DXJM3" property="tXldxjmfbDxjm3" />
+        <result column="T_XLDXJMFB_DXJMCD3" property="tXldxjmfbDxjmcd3" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_XLDXJMFB_ID, T_XLDXJMFB_GQLX, T_XLDXJMFB_DYXLLX, T_XLDXJMFB_DXJM1, T_XLDXJMFB_DXJMCD1, T_XLDXJMFB_DXJM2, T_XLDXJMFB_DXJMCD2, T_XLDXJMFB_DXJM3, T_XLDXJMFB_DXJMCD3
+    </sql>
+
+</mapper>

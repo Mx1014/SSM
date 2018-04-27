@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TJcsjMpxhDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcsjMpxh">
+        <id column="T_MPXH_ID" property="tMpxhId" />
+        <result column="T_MPXH_NAME" property="tMpxhName" />
+        <result column="T_MPXH_PX" property="tMpxhPx" />
+        <result column="T_MPXH_REMARK" property="tMpxhRemark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_MPXH_ID, T_MPXH_NAME, T_MPXH_PX, T_MPXH_REMARK
+    </sql>
+
+</mapper>

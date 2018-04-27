@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwyxFydxzdwydsjDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwyxFydxzdwydsj">
+        <id column="T_FYDXZDWYXSJ_ID" property="tFydxzdwyxsjId" />
+        <result column="T_FYDXZDWYXSJ_YHS" property="tFydxzdwyxsjYhs" />
+        <result column="T_FYDXZDWYXSJ_DYDJ" property="tFydxzdwyxsjDydj" />
+        <result column="T_FYDXZDWYXSJ_DRL" property="tFydxzdwyxsjDrl" />
+        <result column="T_FYDXZDWYXSJ_XJZDFHSK" property="tFydxzdwyxsjXjzdfhsk" />
+        <result column="T_FYDXZDWYXSJ_XJZDFH" property="tFydxzdwyxsjXjzdfh" />
+        <result column="T_FYDXZDWYXSJ_DJZDFH" property="tFydxzdwyxsjDjzdfh" />
+        <result column="T_FYDXZDWYXSJ_DJZDFHSK" property="tFydxzdwyxsjDjzdfhsk" />
+        <result column="T_FYDXZDWYXSJ_RZB" property="tFydxzdwyxsjRzb" />
+        <result column="T_FYDXZDWYXSJ_BZ" property="tFydxzdwyxsjBz" />
+        <result column="T_FYDXZDWYXSJ_FSZDFH" property="tFydxzdwyxsjFszdfh" />
+        <result column="T_FYDXZDWYXSJ_FSZDFHSK" property="tFydxzdwyxsjFszdfhsk" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_FYDXZDWYXSJ_ID, T_FYDXZDWYXSJ_YHS, T_FYDXZDWYXSJ_DYDJ, T_FYDXZDWYXSJ_DRL, T_FYDXZDWYXSJ_XJZDFHSK, T_FYDXZDWYXSJ_XJZDFH, T_FYDXZDWYXSJ_DJZDFH, T_FYDXZDWYXSJ_DJZDFHSK, T_FYDXZDWYXSJ_RZB, T_FYDXZDWYXSJ_BZ, T_FYDXZDWYXSJ_FSZDFH, T_FYDXZDWYXSJ_FSZDFHSK
+    </sql>
+
+</mapper>

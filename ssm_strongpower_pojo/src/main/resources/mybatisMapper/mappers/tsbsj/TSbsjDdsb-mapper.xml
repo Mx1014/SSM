@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSbsjDdsbDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSbsjDdsb">
+        <id column="T_TDSB_ID" property="tTdsbId" />
+        <result column="T_TDSB_DYDJ" property="tTdsbDydj" />
+        <result column="T_TDSB_SBBM" property="tTdsbSbbm" />
+        <result column="T_TDSB_SBNAME" property="tTdsbSbname" />
+        <result column="T_TDSB_LX" property="tTdsbLx" />
+        <result column="T_TDSB_RQ" property="tTdsbRq" />
+        <result column="T_TDSB_BZ" property="tTdsbBz" />
+        <result column="T_TDSB_SBBDZ" property="tTdsbSbbdz" />
+        <result column="T_TDSB_GLSBNAME" property="tTdsbGlsbname" />
+        <result column="T_TDSB_GLBDZ" property="tTdsbGlbdz" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_TDSB_ID, T_TDSB_DYDJ, T_TDSB_SBBM, T_TDSB_SBNAME, T_TDSB_LX, T_TDSB_RQ, T_TDSB_BZ, T_TDSB_SBBDZ, T_TDSB_GLSBNAME, T_TDSB_GLBDZ
+    </sql>
+
+</mapper>

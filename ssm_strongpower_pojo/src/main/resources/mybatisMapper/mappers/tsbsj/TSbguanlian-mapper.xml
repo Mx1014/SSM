@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSbguanlianDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSbguanlian">
+        <result column="GLID" property="glid" />
+        <result column="OPENSBID" property="opensbid" />
+        <result column="OPENSBNAME" property="opensbname" />
+        <result column="OPENFAC_ID" property="openfacId" />
+        <result column="SBTYPE" property="sbtype" />
+        <result column="MYSBID" property="mysbid" />
+        <result column="SBGLTIME" property="sbgltime" />
+        <result column="GLTYPE" property="gltype" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        GLID, OPENSBID, OPENSBNAME, OPENFAC_ID, SBTYPE, MYSBID, SBGLTIME, GLTYPE, REMARK
+    </sql>
+
+</mapper>

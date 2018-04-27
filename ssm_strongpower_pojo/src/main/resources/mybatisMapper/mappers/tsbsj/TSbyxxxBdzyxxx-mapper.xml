@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSbyxxxBdzyxxxDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSbyxxxBdzyxxx">
+        <id column="T_BDZYXXX_ID" property="tBdzyxxxId" />
+        <result column="T_BDZYXXX_SJNY" property="tBdzyxxxSjny" />
+        <result column="T_BDZYXXX_BDZ_ID" property="tBdzyxxxBdzId" />
+        <result column="T_BDZYXXX_BYQ_ID" property="tBdzyxxxByqId" />
+        <result column="T_BDZYXXX_RL" property="tBdzyxxxRl" />
+        <result column="T_BDZYXXX_ZDFHSK" property="tBdzyxxxZdfhsk" />
+        <result column="T_BDZYXXX_YG" property="tBdzyxxxYg" />
+        <result column="T_BDZYXXX_WG" property="tBdzyxxxWg" />
+        <result column="T_BDZYXXX_DL" property="tBdzyxxxDl" />
+        <result column="T_BDZYXXX_FZL" property="tBdzyxxxFzl" />
+        <result column="T_BDZYXXX_SZGL" property="tBdzyxxxSzgl" />
+        <result column="T_BDZYXXX_GLYS" property="tBdzyxxxGlys" />
+        <result column="T_BDZYXXX_SJLX" property="tBdzyxxxSjlx" />
+        <result column="T_BDZYXXX_G_ZDFHSK" property="tBdzyxxxGZdfhsk" />
+        <result column="T_BDZYXXX_G_YG" property="tBdzyxxxGYg" />
+        <result column="T_BDZYXXX_G_WG" property="tBdzyxxxGWg" />
+        <result column="T_BDZYXXX_G_DL" property="tBdzyxxxGDl" />
+        <result column="T_BDZYXXX_Z_ZDFHSK" property="tBdzyxxxZZdfhsk" />
+        <result column="T_BDZYXXX_Z_YG" property="tBdzyxxxZYg" />
+        <result column="T_BDZYXXX_Z_WG" property="tBdzyxxxZWg" />
+        <result column="T_BDZYXXX_Z_DL" property="tBdzyxxxZDl" />
+        <result column="T_BDZYXXX_D_ZDFHSK" property="tBdzyxxxDZdfhsk" />
+        <result column="T_BDZYXXX_D_YG" property="tBdzyxxxDYg" />
+        <result column="T_BDZYXXX_D_WG" property="tBdzyxxxDWg" />
+        <result column="T_BDZYXXX_D_DL" property="tBdzyxxxDDl" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_BDZYXXX_ID, T_BDZYXXX_SJNY, T_BDZYXXX_BDZ_ID, T_BDZYXXX_BYQ_ID, T_BDZYXXX_RL, T_BDZYXXX_ZDFHSK, T_BDZYXXX_YG, T_BDZYXXX_WG, T_BDZYXXX_DL, T_BDZYXXX_FZL, T_BDZYXXX_SZGL, T_BDZYXXX_GLYS, T_BDZYXXX_SJLX, T_BDZYXXX_G_ZDFHSK, T_BDZYXXX_G_YG, T_BDZYXXX_G_WG, T_BDZYXXX_G_DL, T_BDZYXXX_Z_ZDFHSK, T_BDZYXXX_Z_YG, T_BDZYXXX_Z_WG, T_BDZYXXX_Z_DL, T_BDZYXXX_D_ZDFHSK, T_BDZYXXX_D_YG, T_BDZYXXX_D_WG, T_BDZYXXX_D_DL
+    </sql>
+
+</mapper>

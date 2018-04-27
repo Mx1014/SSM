@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TZbcsJgzbDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TZbcsJgzb">
+        <id column="T_JGZB_ID" property="tJgzbId" />
+        <result column="T_JGZB_GQLX" property="tJgzbGqlx" />
+        <result column="T_JGZB_TL" property="tJgzbTl" />
+        <result column="T_JGZB_SL" property="tJgzbSl" />
+        <result column="T_JGZB_OL" property="tJgzbOl" />
+        <result column="T_JGZB_SHW" property="tJgzbShw" />
+        <result column="T_JGZB_DHW" property="tJgzbDhw" />
+        <result column="T_JGZB_SFS" property="tJgzbSfs" />
+        <result column="T_JGZB_DFS" property="tJgzbDfs" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_JGZB_ID, T_JGZB_GQLX, T_JGZB_TL, T_JGZB_SL, T_JGZB_OL, T_JGZB_SHW, T_JGZB_DHW, T_JGZB_SFS, T_JGZB_DFS
+    </sql>
+
+</mapper>

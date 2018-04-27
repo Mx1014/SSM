@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwyxXdqkDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwyxXdqk">
+        <id column="T_XDQK_ID" property="tXdqkId" />
+        <result column="T_XDQK_XLMC" property="tXdqkXlmc" />
+        <result column="T_XDQK_DYDJ" property="tXdqkDydj" />
+        <result column="T_XDQK_LXXZ" property="tXdqkLxxz" />
+        <result column="T_XDQK_QSSJ" property="tXdqkQssj" />
+        <result column="T_XDQK_LXFH" property="tXdqkLxfh" />
+        <result column="T_XDQK_HFSJ" property="tXdqkHfsj" />
+        <result column="T_XDQK_ZDLXFH" property="tXdqkZdlxfh" />
+        <result column="T_XDQK_PJLXFH" property="tXdqkPjlxfh" />
+        <result column="T_XDQK_LJLXDL" property="tXdqkLjlxdl" />
+        <result column="T_XDQK_ZDYFFH" property="tXdqkZdyffh" />
+        <result column="T_XDQK_YFSSDL" property="tXdqkYfssdl" />
+        <result column="T_XDQK_YFZYDL" property="tXdqkYfzydl" />
+        <result column="T_XDQK_ZDCF" property="tXdqkZdcf" />
+        <result column="T_XDQK_ZDBF" property="tXdqkZdbf" />
+        <result column="T_XDQK_ZDFKXD" property="tXdqkZdfkxd" />
+        <result column="T_XDQK_LXTS" property="tXdqkLxts" />
+        <result column="T_XDQK_YFTS" property="tXdqkYfts" />
+        <result column="T_XDQK_PID" property="tXdqkPid" />
+        <result column="T_XDQK_GDGS" property="tXdqkGdgs" />
+        <result column="T_XDQK_BZ" property="tXdqkBz" />
+        <result column="T_XDQK_NY" property="tXdqkNy" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_XDQK_ID, T_XDQK_XLMC, T_XDQK_DYDJ, T_XDQK_LXXZ, T_XDQK_QSSJ, T_XDQK_LXFH, T_XDQK_HFSJ, T_XDQK_ZDLXFH, T_XDQK_PJLXFH, T_XDQK_LJLXDL, T_XDQK_ZDYFFH, T_XDQK_YFSSDL, T_XDQK_YFZYDL, T_XDQK_ZDCF, T_XDQK_ZDBF, T_XDQK_ZDFKXD, T_XDQK_LXTS, T_XDQK_YFTS, T_XDQK_PID, T_XDQK_GDGS, T_XDQK_BZ, T_XDQK_NY
+    </sql>
+
+</mapper>

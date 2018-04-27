@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TDwghglGybdzDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TDwghglGybdz">
+        <id column="T_GYBDZ_ID" property="tGybdzId" />
+        <result column="T_DWGHGL_ID" property="tDwghglId" />
+        <result column="T_GYBDZ_NAME" property="tGybdzName" />
+        <result column="T_GYBDZ_TYPE" property="tGybdzType" />
+        <result column="T_GYBDZ_DYDJ" property="tGybdzDydj" />
+        <result column="T_GYBDZ_SSQY" property="tGybdzSsqy" />
+        <result column="T_GYBDZ_GQLX" property="tGybdzGqlx" />
+        <result column="T_GYBDZ_YWDW" property="tGybdzYwdw" />
+        <result column="T_GYBDZ_BTYSJ" property="tGybdzBtysj" />
+        <result column="T_GYBDZ_BDZS" property="tGybdzBdzs" />
+        <result column="T_GYBDZ_BDRL" property="tGybdzBdrl" />
+        <result column="T_GYBDZ_ZBTS" property="tGybdzZbts" />
+        <result column="T_GYBDZ_WGBCRL" property="tGybdzWgbcrl" />
+        <result column="T_GYBDZ_GYJG" property="tGybdzGyjg" />
+        <result column="T_GYBDZ_XMTZ" property="tGybdzXmtz" />
+        <result column="T_GYBDZ_JSFS" property="tGybdzJsfs" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_GYBDZ_ID, T_DWGHGL_ID, T_GYBDZ_NAME, T_GYBDZ_TYPE, T_GYBDZ_DYDJ, T_GYBDZ_SSQY, T_GYBDZ_GQLX, T_GYBDZ_YWDW, T_GYBDZ_BTYSJ, T_GYBDZ_BDZS, T_GYBDZ_BDRL, T_GYBDZ_ZBTS, T_GYBDZ_WGBCRL, T_GYBDZ_GYJG, T_GYBDZ_XMTZ, T_GYBDZ_JSFS
+    </sql>
+
+</mapper>

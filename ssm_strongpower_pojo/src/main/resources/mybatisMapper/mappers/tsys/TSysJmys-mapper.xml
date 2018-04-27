@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TSysJmysDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TSysJmys">
+        <id column="T_YMYSID" property="tYmysid" />
+        <result column="T_YMYSDLYBT" property="tYmysdlybt" />
+        <result column="T_YMYSDLYTP" property="tYmysdlytp" />
+        <result column="T_YMYSDLKBT" property="tYmysdlkbt" />
+        <result column="T_YMYSZYTP" property="tYmyszytp" />
+        <result column="T_YMYSBTLBTY" property="tYmysbtlbty" />
+        <result column="T_YMYSBTLTPY" property="tYmysbtltpy" />
+        <result column="T_YMYSBTLBTE" property="tYmysbtlbte" />
+        <result column="T_YMYSBTLTPE" property="tYmysbtltpe" />
+        <result column="T_YMYSBTLBTS" property="tYmysbtlbts" />
+        <result column="T_YMYSBTLTPS" property="tYmysbtltps" />
+        <result column="T_YMYSRWLBTY" property="tYmysrwlbty" />
+        <result column="T_YMYSRWLTPY" property="tYmysrwltpy" />
+        <result column="T_YMYSRWLBTE" property="tYmysrwlbte" />
+        <result column="T_YMYSRWLTPE" property="tYmysrwltpe" />
+        <result column="T_YMYSRWLBTS" property="tYmysrwlbts" />
+        <result column="T_YMYSRWLTPS" property="tYmysrwltps" />
+        <result column="T_YMYSRWLBTF" property="tYmysrwlbtf" />
+        <result column="T_YMYSRWLTPF" property="tYmysrwltpf" />
+        <result column="T_YMYSXZFA" property="tYmysxzfa" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_YMYSID, T_YMYSDLYBT, T_YMYSDLYTP, T_YMYSDLKBT, T_YMYSZYTP, T_YMYSBTLBTY, T_YMYSBTLTPY, T_YMYSBTLBTE, T_YMYSBTLTPE, T_YMYSBTLBTS, T_YMYSBTLTPS, T_YMYSRWLBTY, T_YMYSRWLTPY, T_YMYSRWLBTE, T_YMYSRWLTPE, T_YMYSRWLBTS, T_YMYSRWLTPS, T_YMYSRWLBTF, T_YMYSRWLTPF, T_YMYSXZFA
+    </sql>
+
+</mapper>

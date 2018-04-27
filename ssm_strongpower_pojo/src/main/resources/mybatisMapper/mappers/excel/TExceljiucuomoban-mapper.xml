@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TExceljiucuomobanDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TExceljiucuomoban">
+        <result column="E_ID" property="eId" />
+        <result column="E_CREATEUSERID" property="eCreateuserid" />
+        <result column="E_CREATETIME" property="eCreatetime" />
+        <result column="E_NAME" property="eName" />
+        <result column="E_MOBANENTITY" property="eMobanentity" />
+        <result column="E_MOBANSEACH" property="eMobanseach" />
+        <result column="E_MOBANZIDUAN" property="eMobanziduan" />
+        <result column="E_INDEX" property="eIndex" />
+        <result column="E_ISMOREN" property="eIsmoren" />
+        <result column="E_REMARK" property="eRemark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        E_ID, E_CREATEUSERID, E_CREATETIME, E_NAME, E_MOBANENTITY, E_MOBANSEACH, E_MOBANZIDUAN, E_INDEX, E_ISMOREN, E_REMARK
+    </sql>
+
+</mapper>

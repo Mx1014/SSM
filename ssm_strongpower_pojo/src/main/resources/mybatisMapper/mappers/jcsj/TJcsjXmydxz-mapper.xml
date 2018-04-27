@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.TJcsjXmydxzDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.TJcsjXmydxz">
+        <id column="T_XMYDXZ_ID" property="tXmydxzId" />
+        <result column="T_XMYDXZ_NAME" property="tXmydxzName" />
+        <result column="T_XMYDXZ_INDEX" property="tXmydxzIndex" />
+        <result column="T_XMYDXZ_REMARK" property="tXmydxzRemark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        T_XMYDXZ_ID, T_XMYDXZ_NAME, T_XMYDXZ_INDEX, T_XMYDXZ_REMARK
+    </sql>
+
+</mapper>
