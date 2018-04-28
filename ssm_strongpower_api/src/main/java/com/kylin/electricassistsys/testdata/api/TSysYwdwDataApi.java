@@ -16,5 +16,9 @@ public interface TSysYwdwDataApi {
 
     public List<TSysYwdwDto> getList();
 
+    public void update(TSysYwdwDto tSysYwdwDto);
+
+    public void insert(TSysYwdwDto tSysYwdwDto);
+
     public Page<TSysYwdwDto> getPages(Page<TSysYwdwDto> page);
 }

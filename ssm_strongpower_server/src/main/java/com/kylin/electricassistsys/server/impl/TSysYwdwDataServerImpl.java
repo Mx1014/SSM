@@ -20,10 +20,22 @@ public class TSysYwdwDataServerImpl implements TSysYwdwDataApi {
     @Autowired
     private TSysYwdwService tSysYwdwService;
 
+    public void insert(TSysYwdwDto tSysYwdwDto) {
+        TSysYwdw tSysYwdw = new TSysYwdw();
+        MyBeanUtils.copyProperties(tSysYwdwDto,tSysYwdw);
+        tSysYwdwService.insert(tSysYwdw);
+    }
+
     public List<TSysYwdwDto> getList() {
         EntityWrapper entityWrapper = new EntityWrapper();
         entityWrapper.setEntity(new TSysYwdw());
         return MyBeanUtils.copyPropertiesList(tSysYwdwService.selectList(entityWrapper), TSysYwdwDto.class);
+    }
+
+    public void update(TSysYwdwDto tSysYwdwDto) {
+        TSysYwdw tSysYwdw = new TSysYwdw();
+        MyBeanUtils.copyProperties(tSysYwdwDto,tSysYwdw);
+        tSysYwdwService.insertOrUpdate(tSysYwdw);
     }
 
     public Page<TSysYwdwDto> getPages(Page<TSysYwdwDto> page) {
