@@ -1,6 +1,8 @@
 package com.kylin.electricassistsys.pojo.jcsj;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableName;
 
 import java.io.Serializable;
 
@@ -19,6 +21,7 @@ public class TJcsjCsDycs extends Model<TJcsjCsDycs> {
     /**
      * 电压编号
      */
+    @TableId("T_DYCS_ID")
     private String tDycsId;
     /**
      * 电压名称

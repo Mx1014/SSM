@@ -1,6 +1,8 @@
 package com.kylin.electricassistsys.pojo.tsbsj;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
@@ -19,6 +21,7 @@ public class TSbsjBdzxx extends Model<TSbsjBdzxx> {
     /**
      * 数据标识列
      */
+    @TableId("T_BDZXX_ID")
     private String tBdzxxId;
     /**
      * 年份
@@ -121,7 +124,7 @@ public class TSbsjBdzxx extends Model<TSbsjBdzxx> {
      */
     private String tBdzxxBtysj;
     /**
-     * 运维单位
+     * 运维单位城农网
      */
     private String tBdzxxYwdw;
     /**
@@ -219,6 +222,7 @@ public class TSbsjBdzxx extends Model<TSbsjBdzxx> {
     /**
      * 是否满足N_1
      */
+    @TableField("T_BDZXX_N_1")
     private String tBdzxxN1;
     /**
      * 电网结构

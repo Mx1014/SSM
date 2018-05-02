@@ -45,26 +45,12 @@ public class TSysYwdwDataController {
 
     @RequestMapping("page")
     public Page getPages(@RequestBody TSysYwdwDto tSysYwdwDto) {
-        System.out.println("#####################################################");
-        System.out.println("************************************");
-        System.out.println(tSysYwdwDto.getPage());
-        System.out.println("************************************");
-        System.out.println("#####################################################");
         Page page1 = new Page(tSysYwdwDto.getPage(), tSysYwdwDto.getLimit());
         return tSysYwdwDataServerImpl.getPages(page1,tSysYwdwDto);
     }
     @RequestMapping(value = "update" , produces = "application/json;charset=UTF-8" ,method = RequestMethod.POST,headers = "Accept=application/json")
     public String update(@RequestBody TSysYwdwDto tSysYwdwDto) {
-       /* TSysYwdwDto tSysYwdwDto = new TSysYwdwDto();
-        tSysYwdwDto.settSysId(id);
-        tSysYwdwDto.settSysDwmz("测试更新");*/
         try{
-            System.out.println("#####################################################");
-            System.out.println("************************************");
-            System.out.println(tSysYwdwDto);
-            tSysYwdwDto.settSysBz("测试测试");
-            System.out.println("************************************");
-            System.out.println("#####################################################");
             tSysYwdwDataServerImpl.update(tSysYwdwDto);
             return "保存成功";
         }catch (Exception e){
@@ -79,13 +65,8 @@ public class TSysYwdwDataController {
     @RequestMapping("insert")
     public String insert(@RequestBody TSysYwdwDto tSysYwdwDto) {
         try{
-            System.out.println("#####################################################");
-            System.out.println("************************************");
             String uuidStr = UUID.randomUUID().toString().replace("-","").toLowerCase();
             tSysYwdwDto.settSysId(uuidStr);
-            System.out.println(tSysYwdwDto);
-            System.out.println("************************************");
-            System.out.println("#####################################################");
             tSysYwdwDataServerImpl.insert(tSysYwdwDto);
             return "保存成功";
         }catch (Exception e){
@@ -100,11 +81,6 @@ public class TSysYwdwDataController {
     @RequestMapping("del")
     public String delete(@RequestBody String id) {
         try{
-            System.out.println("#####################################################");
-            System.out.println("************************************");
-            System.out.println(id);
-            System.out.println("************************************");
-            System.out.println("#####################################################");
             tSysYwdwDataServerImpl.delete(id);
             return "保存成功";
         }catch (Exception e){

@@ -18,7 +18,7 @@ import java.util.List;
 
 @Service
 public class TSysYwdwDataServerImpl implements TSysYwdwDataApi {
-    @Resource
+    @Autowired
     private TSysYwdwService tSysYwdwService;
 
     public void delete(String id) {

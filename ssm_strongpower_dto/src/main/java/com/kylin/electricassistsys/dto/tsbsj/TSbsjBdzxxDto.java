@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.tsbsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 变电站信息
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.tsbsj;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSbsjBdzxxDto {
+public class TSbsjBdzxxDto extends BaseDto{
 
     private static final long serialVersionUID = 1L;
 
