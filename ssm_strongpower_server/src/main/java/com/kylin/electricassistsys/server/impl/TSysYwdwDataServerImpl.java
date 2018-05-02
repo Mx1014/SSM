@@ -20,6 +20,10 @@ public class TSysYwdwDataServerImpl implements TSysYwdwDataApi {
     @Autowired
     private TSysYwdwService tSysYwdwService;
 
+    public void delete(String id) {
+        tSysYwdwService.deleteById(id);
+    }
+
     public void insert(TSysYwdwDto tSysYwdwDto) {
         TSysYwdw tSysYwdw = new TSysYwdw();
         MyBeanUtils.copyProperties(tSysYwdwDto,tSysYwdw);
@@ -35,7 +39,7 @@ public class TSysYwdwDataServerImpl implements TSysYwdwDataApi {
     public void update(TSysYwdwDto tSysYwdwDto) {
         TSysYwdw tSysYwdw = new TSysYwdw();
         MyBeanUtils.copyProperties(tSysYwdwDto,tSysYwdw);
-        tSysYwdwService.insertOrUpdate(tSysYwdw);
+        tSysYwdwService.updateById(tSysYwdw);
     }
 
     public Page<TSysYwdwDto> getPages(Page<TSysYwdwDto> page) {

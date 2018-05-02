@@ -19,6 +19,7 @@ public interface TSysYwdwDataApi {
     public void update(TSysYwdwDto tSysYwdwDto);
 
     public void insert(TSysYwdwDto tSysYwdwDto);
+    public void delete(String id);
 
     public Page<TSysYwdwDto> getPages(Page<TSysYwdwDto> page);
 }

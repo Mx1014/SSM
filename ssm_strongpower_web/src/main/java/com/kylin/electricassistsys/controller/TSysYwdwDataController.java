@@ -57,7 +57,6 @@ public class TSysYwdwDataController {
             System.out.println("#####################################################");
             System.out.println("************************************");
             System.out.println(tSysYwdwDto);
-            tSysYwdwDto.settSysId(tSysYwdwDto.gettSysId()+"!");
             tSysYwdwDto.settSysBz("测试测试");
             System.out.println("************************************");
             System.out.println("#####################################################");
@@ -83,6 +82,25 @@ public class TSysYwdwDataController {
             System.out.println("************************************");
             System.out.println("#####################################################");
             tSysYwdwDataServerImpl.insert(tSysYwdwDto);
+            return "保存成功";
+        }catch (Exception e){
+            System.out.println("获得一个错误：" + e.getMessage());
+            e.printStackTrace();
+            throw e;
+            //throw new Exception("保存失败");
+        }
+
+
+    }
+    @RequestMapping("del")
+    public String delete(@RequestBody String id) {
+        try{
+            System.out.println("#####################################################");
+            System.out.println("************************************");
+            System.out.println(id);
+            System.out.println("************************************");
+            System.out.println("#####################################################");
+            tSysYwdwDataServerImpl.delete(id);
             return "保存成功";
         }catch (Exception e){
             System.out.println("获得一个错误：" + e.getMessage());
