@@ -13,5 +13,10 @@ import com.kylin.electricassistsys.pojo.tsys.TSysYwdw;
  * @since 2018-04-24
  */
 public interface TSysYwdwService extends IService<TSysYwdw> {
+    /**
+     * 根据id删除数据
+     * @param id
+     */
+    public void deleteById(String id);
 
 }

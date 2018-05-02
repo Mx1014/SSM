@@ -44,9 +44,14 @@ public class TSysYwdwDataController {
     }
 
     @RequestMapping("page")
-    public Page getPages(Integer page,Integer limit) {
-        Page page1 = new Page(page, limit);
-        return tSysYwdwDataServerImpl.getPages(page1);
+    public Page getPages(@RequestBody TSysYwdwDto tSysYwdwDto) {
+        System.out.println("#####################################################");
+        System.out.println("************************************");
+        System.out.println(tSysYwdwDto.getPage());
+        System.out.println("************************************");
+        System.out.println("#####################################################");
+        Page page1 = new Page(tSysYwdwDto.getPage(), tSysYwdwDto.getLimit());
+        return tSysYwdwDataServerImpl.getPages(page1,tSysYwdwDto);
     }
     @RequestMapping(value = "update" , produces = "application/json;charset=UTF-8" ,method = RequestMethod.POST,headers = "Accept=application/json")
     public String update(@RequestBody TSysYwdwDto tSysYwdwDto) {

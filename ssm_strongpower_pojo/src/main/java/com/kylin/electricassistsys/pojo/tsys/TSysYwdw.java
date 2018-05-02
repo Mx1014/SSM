@@ -1,6 +1,8 @@
 package com.kylin.electricassistsys.pojo.tsys;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableName;
 
 import java.io.Serializable;
 
@@ -12,10 +14,11 @@ import java.io.Serializable;
  * @author 陈文旭
  * @since 2018-04-24
  */
+@TableName("t_sys_ywdw")
 public class TSysYwdw extends Model<TSysYwdw> {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId("t_sys_id")
     private String tSysId;
     private String tSysSx;
     private String tSysDwmz;

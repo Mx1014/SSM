@@ -17,4 +17,9 @@
         T_SYS_ID, T_SYS_SX, T_SYS_DWMZ, T_SYS_PX, T_SYS_ZT, T_SYS_BZ
     </sql>
 
+    <delete id="deleteById" parameterType="java.lang.String">
+
+         DELETE  from T_SYS_YWDW where T_SYS_ID =#{id}
+    </delete>
+
 </mapper>

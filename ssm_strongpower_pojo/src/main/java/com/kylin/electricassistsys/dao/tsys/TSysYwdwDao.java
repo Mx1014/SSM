@@ -16,5 +16,10 @@ import com.kylin.electricassistsys.pojo.tsys.TSysYwdw;
 	
 @MyBatisRepository
 public interface TSysYwdwDao extends BaseMapper<TSysYwdw> {
+    /**
+     * 根据id删除数据
+     * @param id
+     */
+    public void deleteById(String id);
 
 }

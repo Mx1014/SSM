@@ -21,5 +21,5 @@ public interface TSysYwdwDataApi {
     public void insert(TSysYwdwDto tSysYwdwDto);
     public void delete(String id);
 
-    public Page<TSysYwdwDto> getPages(Page<TSysYwdwDto> page);
+    public Page<TSysYwdwDto> getPages(Page<TSysYwdwDto> page,TSysYwdwDto tSysYwdwDto);
 }
