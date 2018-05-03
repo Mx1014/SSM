@@ -3,6 +3,7 @@ package com.kylin.electricassistsys.controller;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.kylin.electricassistsys.dto.jcsj.TJcsjCsDycsDto;
 import com.kylin.electricassistsys.dto.tsbsj.TSbsjBdzxxDto;
+import com.kylin.electricassistsys.dto.tsbsj.TSbsjBdzxxSelDto;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
 import com.kylin.electricassistsys.server.impl.TJcsjCsDycsDataServerImpl;
 import com.kylin.electricassistsys.server.impl.TSbsjBdzxxDataServerImpl;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -39,6 +41,12 @@ public class TSbsjBdzxxDataController {
     public List<TSbsjBdzxxDto> list() {
 
         return tSbsjBdzxxDataServerImpl.getList();
+    }
+
+    @RequestMapping("alllist")
+    public Page<TSbsjBdzxxSelDto> allList(@RequestBody TSbsjBdzxxSelDto tSbsjBdzxxSelDto) {
+        Page page = new Page(tSbsjBdzxxSelDto.getPage(), tSbsjBdzxxSelDto.getLimit());
+        return tSbsjBdzxxDataServerImpl.getAllList(page);
     }
 
     @RequestMapping("page")

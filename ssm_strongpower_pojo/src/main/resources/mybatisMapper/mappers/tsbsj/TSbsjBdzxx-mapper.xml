@@ -4,64 +4,161 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.tsbsj.TSbsjBdzxx">
-        <id column="T_BDZXX_ID" property="tBdzxxId" />
-        <result column="T_BDZXX_YEAR" property="tBdzxxYear" />
-        <result column="T_BDZXX_NUM" property="tBdzxxNum" />
-        <result column="T_BDZXX_NAME" property="tBdzxxName" />
-        <result column="T_BDZXX_DYDJ" property="tBdzxxDydj" />
-        <result column="T_BDZXX_DZ" property="tBdzxxDz" />
-        <result column="T_BDZXX_SYFS" property="tBdzxxSyfs" />
-        <result column="T_BDZXX_CNW" property="tBdzxxCnw" />
-        <result column="T_BDZXX_ZBZRL" property="tBdzxxZbzrl" />
-        <result column="T_BDZXX_BYQSL" property="tBdzxxByqsl" />
-        <result column="T_BDZXX_RLGC" property="tBdzxxRlgc" />
-        <result column="T_BDZXX_WGBCRL" property="tBdzxxWgbcrl" />
-        <result column="T_BDZXX_WGBCGC" property="tBdzxxWgbcgc" />
-        <result column="T_BDZXX_WGBCD" property="tBdzxxWgbcd" />
-        <result column="T_BDZXX_GYCZJX1" property="tBdzxxGyczjx1" />
-        <result column="T_BDZXX_ZYCZJX1" property="tBdzxxZyczjx1" />
-        <result column="T_BDZXX_DYCZJX1" property="tBdzxxDyczjx1" />
-        <result column="T_BDZXX_CXJG220KV" property="tBdzxxCxjg220kv" />
-        <result column="T_BDZXX_CXJG110KV" property="tBdzxxCxjg110kv" />
-        <result column="T_BDZXX_CXJG35KV" property="tBdzxxCxjg35kv" />
-        <result column="T_BDZXX_CXJG10KV" property="tBdzxxCxjg10kv" />
-        <result column="T_BDZXX_YY220KV" property="tBdzxxYy220kv" />
-        <result column="T_BDZXX_YY110KV" property="tBdzxxYy110kv" />
-        <result column="T_BDZXX_YY35KV" property="tBdzxxYy35kv" />
-        <result column="T_BDZXX_YY10KV" property="tBdzxxYy10kv" />
-        <result column="T_BDZXX_BTYSJ" property="tBdzxxBtysj" />
-        <result column="T_BDZXX_YWDW" property="tBdzxxYwdw" />
-        <result column="T_BDZXX_AZXS" property="tBdzxxAzxs" />
-        <result column="T_BDZXX_ZDMJ" property="tBdzxxZdmj" />
-        <result column="T_BDZXX_ZB" property="tBdzxxZb" />
-        <result column="T_BDZXX_GDGS" property="tBdzxxGdgs" />
-        <result column="T_BDZXX_GYPDZZLB" property="tBdzxxGypdzzlb" />
-        <result column="T_BDZXX_GDQYID" property="tBdzxxGdqyid" />
-        <result column="T_BDZXX_ETYSJ" property="tBdzxxEtysj" />
-        <result column="T_BDZXX_YXZT" property="tBdzxxYxzt" />
-        <result column="T_BDZXX_JXTZ" property="tBdzxxJxtz" />
-        <result column="T_BDZXX_GQLXID" property="tBdzxxGqlxid" />
-        <result column="T_BDZXX_REMARK" property="tBdzxxRemark" />
-        <result column="T_BDZXX_GYCDYDJ" property="tBdzxxGycdydj" />
-        <result column="T_BDZXX_ZYCDYDJ" property="tBdzxxZycdydj" />
-        <result column="T_BDZXX_DYCDYDJ" property="tBdzxxDycdydj" />
-        <result column="T_BDZXX_ZQJGGS" property="tBdzxxZqjggs" />
-        <result column="T_BDZXX_GYCZJX2" property="tBdzxxGyczjx2" />
-        <result column="T_BDZXX_GYCZJX3" property="tBdzxxGyczjx3" />
-        <result column="T_BDZXX_ZYCZJX2" property="tBdzxxZyczjx2" />
-        <result column="T_BDZXX_ZYCZJX3" property="tBdzxxZyczjx3" />
-        <result column="T_BDZXX_DYCZJX2" property="tBdzxxDyczjx2" />
-        <result column="T_BDZXX_DYCZJX3" property="tBdzxxDyczjx3" />
-        <result column="T_BDZXX_GDQSX" property="tBdzxxGdqsx" />
-        <result column="T_BDZXX_GDXZ" property="tBdzxxGdxz" />
-        <result column="T_BDZXX_N_1" property="tBdzxxN1" />
-        <result column="T_BDZXX_DWJG" property="tBdzxxDwjg" />
-        <result column="T_BDZXX_DLQ" property="tBdzxxDlq" />
+        <id column="T_BDZXX_ID" property="tBdzxxId"/>
+        <result column="T_BDZXX_YEAR" property="tBdzxxYear"/>
+        <result column="T_BDZXX_NUM" property="tBdzxxNum"/>
+        <result column="T_BDZXX_NAME" property="tBdzxxName"/>
+        <result column="T_BDZXX_DYDJ" property="tBdzxxDydj"/>
+        <result column="T_BDZXX_DZ" property="tBdzxxDz"/>
+        <result column="T_BDZXX_SYFS" property="tBdzxxSyfs"/>
+        <result column="T_BDZXX_CNW" property="tBdzxxCnw"/>
+        <result column="T_BDZXX_ZBZRL" property="tBdzxxZbzrl"/>
+        <result column="T_BDZXX_BYQSL" property="tBdzxxByqsl"/>
+        <result column="T_BDZXX_RLGC" property="tBdzxxRlgc"/>
+        <result column="T_BDZXX_WGBCRL" property="tBdzxxWgbcrl"/>
+        <result column="T_BDZXX_WGBCGC" property="tBdzxxWgbcgc"/>
+        <result column="T_BDZXX_WGBCD" property="tBdzxxWgbcd"/>
+        <result column="T_BDZXX_GYCZJX1" property="tBdzxxGyczjx1"/>
+        <result column="T_BDZXX_ZYCZJX1" property="tBdzxxZyczjx1"/>
+        <result column="T_BDZXX_DYCZJX1" property="tBdzxxDyczjx1"/>
+        <result column="T_BDZXX_CXJG220KV" property="tBdzxxCxjg220kv"/>
+        <result column="T_BDZXX_CXJG110KV" property="tBdzxxCxjg110kv"/>
+        <result column="T_BDZXX_CXJG35KV" property="tBdzxxCxjg35kv"/>
+        <result column="T_BDZXX_CXJG10KV" property="tBdzxxCxjg10kv"/>
+        <result column="T_BDZXX_YY220KV" property="tBdzxxYy220kv"/>
+        <result column="T_BDZXX_YY110KV" property="tBdzxxYy110kv"/>
+        <result column="T_BDZXX_YY35KV" property="tBdzxxYy35kv"/>
+        <result column="T_BDZXX_YY10KV" property="tBdzxxYy10kv"/>
+        <result column="T_BDZXX_BTYSJ" property="tBdzxxBtysj"/>
+        <result column="T_BDZXX_YWDW" property="tBdzxxYwdw"/>
+        <result column="T_BDZXX_AZXS" property="tBdzxxAzxs"/>
+        <result column="T_BDZXX_ZDMJ" property="tBdzxxZdmj"/>
+        <result column="T_BDZXX_ZB" property="tBdzxxZb"/>
+        <result column="T_BDZXX_GDGS" property="tBdzxxGdgs"/>
+        <result column="T_BDZXX_GYPDZZLB" property="tBdzxxGypdzzlb"/>
+        <result column="T_BDZXX_GDQYID" property="tBdzxxGdqyid"/>
+        <result column="T_BDZXX_ETYSJ" property="tBdzxxEtysj"/>
+        <result column="T_BDZXX_YXZT" property="tBdzxxYxzt"/>
+        <result column="T_BDZXX_JXTZ" property="tBdzxxJxtz"/>
+        <result column="T_BDZXX_GQLXID" property="tBdzxxGqlxid"/>
+        <result column="T_BDZXX_REMARK" property="tBdzxxRemark"/>
+        <result column="T_BDZXX_GYCDYDJ" property="tBdzxxGycdydj"/>
+        <result column="T_BDZXX_ZYCDYDJ" property="tBdzxxZycdydj"/>
+        <result column="T_BDZXX_DYCDYDJ" property="tBdzxxDycdydj"/>
+        <result column="T_BDZXX_ZQJGGS" property="tBdzxxZqjggs"/>
+        <result column="T_BDZXX_GYCZJX2" property="tBdzxxGyczjx2"/>
+        <result column="T_BDZXX_GYCZJX3" property="tBdzxxGyczjx3"/>
+        <result column="T_BDZXX_ZYCZJX2" property="tBdzxxZyczjx2"/>
+        <result column="T_BDZXX_ZYCZJX3" property="tBdzxxZyczjx3"/>
+        <result column="T_BDZXX_DYCZJX2" property="tBdzxxDyczjx2"/>
+        <result column="T_BDZXX_DYCZJX3" property="tBdzxxDyczjx3"/>
+        <result column="T_BDZXX_GDQSX" property="tBdzxxGdqsx"/>
+        <result column="T_BDZXX_GDXZ" property="tBdzxxGdxz"/>
+        <result column="T_BDZXX_N_1" property="tBdzxxN1"/>
+        <result column="T_BDZXX_DWJG" property="tBdzxxDwjg"/>
+        <result column="T_BDZXX_DLQ" property="tBdzxxDlq"/>
+    </resultMap>
+    <resultMap id="SelResultMap" type="com.kylin.electricassistsys.pojo.tsbsj.TSbsjBdzxxSel">
+        <id column="T_BDZXX_ID" property="tBdzxxId"/>
+        <result column="T_BDZXX_YEAR" property="tBdzxxYear"/>
+        <result column="T_BDZXX_NUM" property="tBdzxxNum"/>
+        <result column="T_BDZXX_NAME" property="tBdzxxName"/>
+        <result column="T_BDZXX_DYDJ" property="tBdzxxDydj"/>
+        <result column="T_BDZXX_DZ" property="tBdzxxDz"/>
+        <result column="T_BDZXX_SYFS" property="tBdzxxSyfs"/>
+        <result column="T_BDZXX_CNW" property="tBdzxxCnw"/>
+        <result column="T_BDZXX_ZBZRL" property="tBdzxxZbzrl"/>
+        <result column="T_BDZXX_BYQSL" property="tBdzxxByqsl"/>
+        <result column="T_BDZXX_RLGC" property="tBdzxxRlgc"/>
+        <result column="T_BDZXX_WGBCRL" property="tBdzxxWgbcrl"/>
+        <result column="T_BDZXX_WGBCGC" property="tBdzxxWgbcgc"/>
+        <result column="T_BDZXX_WGBCD" property="tBdzxxWgbcd"/>
+        <result column="T_BDZXX_GYCZJX1" property="tBdzxxGyczjx1"/>
+        <result column="T_BDZXX_ZYCZJX1" property="tBdzxxZyczjx1"/>
+        <result column="T_BDZXX_DYCZJX1" property="tBdzxxDyczjx1"/>
+        <result column="T_BDZXX_CXJG220KV" property="tBdzxxCxjg220kv"/>
+        <result column="T_BDZXX_CXJG110KV" property="tBdzxxCxjg110kv"/>
+        <result column="T_BDZXX_CXJG35KV" property="tBdzxxCxjg35kv"/>
+        <result column="T_BDZXX_CXJG10KV" property="tBdzxxCxjg10kv"/>
+        <result column="T_BDZXX_YY220KV" property="tBdzxxYy220kv"/>
+        <result column="T_BDZXX_YY110KV" property="tBdzxxYy110kv"/>
+        <result column="T_BDZXX_YY35KV" property="tBdzxxYy35kv"/>
+        <result column="T_BDZXX_YY10KV" property="tBdzxxYy10kv"/>
+        <result column="T_BDZXX_BTYSJ" property="tBdzxxBtysj"/>
+        <result column="T_BDZXX_YWDW" property="tBdzxxYwdw"/>
+        <result column="T_BDZXX_AZXS" property="tBdzxxAzxs"/>
+        <result column="T_BDZXX_ZDMJ" property="tBdzxxZdmj"/>
+        <result column="T_BDZXX_ZB" property="tBdzxxZb"/>
+        <result column="T_BDZXX_GDGS" property="tBdzxxGdgs"/>
+        <result column="T_BDZXX_GYPDZZLB" property="tBdzxxGypdzzlb"/>
+        <result column="T_BDZXX_GDQYID" property="tBdzxxGdqyid"/>
+        <result column="T_BDZXX_ETYSJ" property="tBdzxxEtysj"/>
+        <result column="T_BDZXX_YXZT" property="tBdzxxYxzt"/>
+        <result column="T_BDZXX_JXTZ" property="tBdzxxJxtz"/>
+        <result column="T_BDZXX_GQLXID" property="tBdzxxGqlxid"/>
+        <result column="T_BDZXX_REMARK" property="tBdzxxRemark"/>
+        <result column="T_BDZXX_GYCDYDJ" property="tBdzxxGycdydj"/>
+        <result column="T_BDZXX_ZYCDYDJ" property="tBdzxxZycdydj"/>
+        <result column="T_BDZXX_DYCDYDJ" property="tBdzxxDycdydj"/>
+        <result column="T_BDZXX_ZQJGGS" property="tBdzxxZqjggs"/>
+        <result column="T_BDZXX_GYCZJX2" property="tBdzxxGyczjx2"/>
+        <result column="T_BDZXX_GYCZJX3" property="tBdzxxGyczjx3"/>
+        <result column="T_BDZXX_ZYCZJX2" property="tBdzxxZyczjx2"/>
+        <result column="T_BDZXX_ZYCZJX3" property="tBdzxxZyczjx3"/>
+        <result column="T_BDZXX_DYCZJX2" property="tBdzxxDyczjx2"/>
+        <result column="T_BDZXX_DYCZJX3" property="tBdzxxDyczjx3"/>
+        <result column="T_BDZXX_GDQSX" property="tBdzxxGdqsx"/>
+        <result column="T_BDZXX_GDXZ" property="tBdzxxGdxz"/>
+        <result column="T_BDZXX_N_1" property="tBdzxxN1"/>
+        <result column="T_BDZXX_DWJG" property="tBdzxxDwjg"/>
+        <result column="T_BDZXX_DLQ" property="tBdzxxDlq"/>
+        <result column="T_DYCS_NAME" property="tDycsName"/>
+        <result column="T_GQLX_NAME" property="tGqlxName"/>
+        <result column="T_GDFQ_NAME" property="tGdfqName"/>
+        <result column="T_SYS_DWMZ" property="tSysDwmz"/>
+        <result column="T_SYFS_NAME" property="tSyfsName"/>
+        <result column="T_CNW_NAME" property="tCnwName"/>
+        <result column="T_AZXS_NAME" property="tAzxsName"/>
+        <result column="T_GYPDZZLX_NAME" property="tGypdzzlxName"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         T_BDZXX_ID, T_BDZXX_YEAR, T_BDZXX_NUM, T_BDZXX_NAME, T_BDZXX_DYDJ, T_BDZXX_DZ, T_BDZXX_SYFS, T_BDZXX_CNW, T_BDZXX_ZBZRL, T_BDZXX_BYQSL, T_BDZXX_RLGC, T_BDZXX_WGBCRL, T_BDZXX_WGBCGC, T_BDZXX_WGBCD, T_BDZXX_GYCZJX1, T_BDZXX_ZYCZJX1, T_BDZXX_DYCZJX1, T_BDZXX_CXJG220KV, T_BDZXX_CXJG110KV, T_BDZXX_CXJG35KV, T_BDZXX_CXJG10KV, T_BDZXX_YY220KV, T_BDZXX_YY110KV, T_BDZXX_YY35KV, T_BDZXX_YY10KV, T_BDZXX_BTYSJ, T_BDZXX_YWDW, T_BDZXX_AZXS, T_BDZXX_ZDMJ, T_BDZXX_ZB, T_BDZXX_GDGS, T_BDZXX_GYPDZZLB, T_BDZXX_GDQYID, T_BDZXX_ETYSJ, T_BDZXX_YXZT, T_BDZXX_JXTZ, T_BDZXX_GQLXID, T_BDZXX_REMARK, T_BDZXX_GYCDYDJ, T_BDZXX_ZYCDYDJ, T_BDZXX_DYCDYDJ, T_BDZXX_ZQJGGS, T_BDZXX_GYCZJX2, T_BDZXX_GYCZJX3, T_BDZXX_ZYCZJX2, T_BDZXX_ZYCZJX3, T_BDZXX_DYCZJX2, T_BDZXX_DYCZJX3, T_BDZXX_GDQSX, T_BDZXX_GDXZ, T_BDZXX_N_1, T_BDZXX_DWJG, T_BDZXX_DLQ
     </sql>
+    <select id="getList" resultMap="SelResultMap" >
+        select T_SBSJ_BDZXX.T_BDZXX_ID, T_SBSJ_BDZXX.T_BDZXX_NAME, T_SBSJ_BDZXX.T_BDZXX_NUM, T_SBSJ_BDZXX.T_BDZXX_YEAR,
+        T_SBSJ_BDZXX.T_BDZXX_DYDJ, T_JCSJ_CS_DYCS.T_DYCS_NAME, T_SBSJ_BDZXX.T_BDZXX_GQLXID, T_JCSJ_FQ_GQLX.T_GQLX_NAME,
+        T_SBSJ_BDZXX.T_BDZXX_GDQYID, T_JCSJ_FQ_GDFQ.T_GDFQ_NAME, T_SBSJ_BDZXX.T_BDZXX_GDQSX, T_SBSJ_BDZXX.T_BDZXX_GDXZ,
+        T_SBSJ_BDZXX.T_BDZXX_YWDW, T_SYS_YWDW.T_SYS_DWMZ, T_SBSJ_BDZXX.T_BDZXX_SYFS, T_JCSJ_SYFS.T_SYFS_NAME,
+        T_SBSJ_BDZXX.T_BDZXX_CNW, T_JCSJ_CNW.T_CNW_NAME, T_SBSJ_BDZXX.T_BDZXX_AZXS, T_JCSJ_AZXS.T_AZXS_NAME,
+        T_SBSJ_BDZXX.T_BDZXX_GYPDZZLB, T_JCSJ_GYPDZZLX.T_GYPDZZLX_NAME, T_SBSJ_BDZXX.T_BDZXX_ZDMJ,
+        T_SBSJ_BDZXX.T_BDZXX_BTYSJ, T_SBSJ_BDZXX.T_BDZXX_ETYSJ, T_SBSJ_BDZXX.T_BDZXX_YXZT, T_SBSJ_BDZXX.T_BDZXX_DZ,
+        T_SBSJ_BDZXX.T_BDZXX_ZB, T_SBSJ_BDZXX.T_BDZXX_JXTZ, fun_GetBdzBYQTSByBdzId(T_SBSJ_BDZXX.T_BDZXX_ID)
+        T_BDZXX_BYQSL , fun_GetBdzRlByBdzId(T_SBSJ_BDZXX.T_BDZXX_ID) T_BDZXX_ZBZRL ,
+        fun_GetBdzRlGouChengByBdzId(T_SBSJ_BDZXX.T_BDZXX_ID) T_BDZXX_RLGC , T_SBSJ_BDZXX.T_BDZXX_WGBCRL,
+        T_SBSJ_BDZXX.T_BDZXX_WGBCGC, T_SBSJ_BDZXX.T_BDZXX_WGBCD, T_SBSJ_BDZXX.T_BDZXX_GYCZJX1,
+        T_SBSJ_BDZXX.T_BDZXX_ZYCZJX1, T_SBSJ_BDZXX.T_BDZXX_DYCZJX1, T_SBSJ_BDZXX.T_BDZXX_GYCZJX2,
+        T_SBSJ_BDZXX.T_BDZXX_ZYCZJX2, T_SBSJ_BDZXX.T_BDZXX_DYCZJX2, T_SBSJ_BDZXX.T_BDZXX_GYCZJX3,
+        T_SBSJ_BDZXX.T_BDZXX_ZYCZJX3, T_SBSJ_BDZXX.T_BDZXX_DYCZJX3, FUN_GET220kVCXJGZSBYID(T_SBSJ_BDZXX.T_BDZXX_ID)
+        T_BDZXX_CXJG220KV , FUN_GET110kVCXJGZSBYID(T_SBSJ_BDZXX.T_BDZXX_ID) T_BDZXX_CXJG110KV ,
+        FUN_GET35kVCXJGZSBYID(T_SBSJ_BDZXX.T_BDZXX_ID) T_BDZXX_CXJG35KV , FUN_GET10kVCXJGZSBYID(T_SBSJ_BDZXX.T_BDZXX_ID)
+        T_BDZXX_CXJG10KV , FUN_GET220kVYYCXJGZSBYID(T_SBSJ_BDZXX.T_BDZXX_ID) T_BDZXX_YY220KV ,
+        FUN_GET110kVYYCXJGZSBYID(T_SBSJ_BDZXX.T_BDZXX_ID) T_BDZXX_YY110KV ,
+        FUN_GET35kVYYCXJGZSBYID(T_SBSJ_BDZXX.T_BDZXX_ID) T_BDZXX_YY35KV ,
+        FUN_GET10kVYYCXJGZSBYID(T_SBSJ_BDZXX.T_BDZXX_ID) T_BDZXX_YY10KV , T_SBSJ_BDZXX.T_BDZXX_REMARK,
+        fun_GetBdzXgcishuBYBDZID(T_SBSJ_BDZXX.T_BDZXX_ID) T_Bdzxx_Xgcs , Fun_GetDyNameById(T_SBSJ_BDZXX.T_BDZXX_GYCDYDJ)
+        T_BDZXX_GYDYDJ , T_SBSJ_BDZXX.T_BDZXX_GYCDYDJ, Fun_GetDyNameById(T_SBSJ_BDZXX.T_BDZXX_ZYCDYDJ) T_BDZXX_ZYDYDJ ,
+        T_SBSJ_BDZXX.T_BDZXX_ZYCDYDJ, Fun_GetDyNameById(T_SBSJ_BDZXX.T_BDZXX_DYCDYDJ) T_BDZXX_DYDYDJ ,
+        T_SBSJ_BDZXX.T_BDZXX_DYCDYDJ, T_SBSJ_BDZXX.T_BDZXX_ZQJGGS, T_SBSJ_BDZXX.T_BDZXX_N_1, T_SBSJ_BDZXX.T_BDZXX_DWJG,
+        T_SBSJ_BDZXX.T_BDZXX_DLQ from T_SBSJ_BDZXX
+        left join T_JCSJ_CS_DYCS on (T_JCSJ_CS_DYCS.T_DYCS_ID = T_SBSJ_BDZXX.T_BDZXX_DYDJ ) left join T_JCSJ_FQ_GQLX on
+        (T_JCSJ_FQ_GQLX.T_GQLX_ID = T_SBSJ_BDZXX.T_BDZXX_GQLXID ) left join T_JCSJ_FQ_GDFQ on (T_JCSJ_FQ_GDFQ.T_GDFQ_ID
+        = T_SBSJ_BDZXX.T_BDZXX_GDQYID ) left join T_SYS_YWDW on (T_SYS_YWDW.T_SYS_ID = T_SBSJ_BDZXX.T_BDZXX_YWDW ) left
+        join T_JCSJ_SYFS on (T_JCSJ_SYFS.T_SYFS_ID = T_SBSJ_BDZXX.T_BDZXX_SYFS ) left join T_JCSJ_CNW on
+        (T_JCSJ_CNW.T_CNW_ID = T_SBSJ_BDZXX.T_BDZXX_CNW ) left join T_JCSJ_AZXS on (T_JCSJ_AZXS.T_AZXS_ID =
+        T_SBSJ_BDZXX.T_BDZXX_AZXS ) left join T_JCSJ_GYPDZZLX on (T_JCSJ_GYPDZZLX.T_GYPDZZLX_ID =
+        T_SBSJ_BDZXX.T_BDZXX_GYPDZZLB )
+    </select>
 
 </mapper>
