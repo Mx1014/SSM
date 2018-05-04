@@ -266,6 +266,19 @@ public class TSbsjBdzxxSel extends Model<TSbsjBdzxxSel> {
      * 高压配电装置类型中文
      */
     private String tGypdzzlxName;
+    /**
+     * 修改次数
+     */
+    private String tBdzxxXgcs;
+
+    public String gettBdzxxXgcs() {
+        return tBdzxxXgcs;
+    }
+
+    public void settBdzxxXgcs(String tBdzxxXgcs) {
+        this.tBdzxxXgcs = tBdzxxXgcs;
+    }
+
 
     public String gettDycsName() {
         return tDycsName;

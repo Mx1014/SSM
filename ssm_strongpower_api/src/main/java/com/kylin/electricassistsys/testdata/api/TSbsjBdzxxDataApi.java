@@ -17,7 +17,7 @@ import java.util.Map;
 public interface TSbsjBdzxxDataApi {
     public List<TSbsjBdzxxDto> getList();
 
-    public Page getAllList(Page page);
+    public Page getAllList(Page page, TSbsjBdzxxSelDto tSbsjBdzxxSelDto);
 
     public void update(TSbsjBdzxxDto tSbsjBdzxxDto);
 

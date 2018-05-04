@@ -46,7 +46,7 @@ public class TSbsjBdzxxDataController {
     @RequestMapping("alllist")
     public Page<TSbsjBdzxxSelDto> allList(@RequestBody TSbsjBdzxxSelDto tSbsjBdzxxSelDto) {
         Page page = new Page(tSbsjBdzxxSelDto.getPage(), tSbsjBdzxxSelDto.getLimit());
-        return tSbsjBdzxxDataServerImpl.getAllList(page);
+        return tSbsjBdzxxDataServerImpl.getAllList(page,tSbsjBdzxxSelDto);
     }
 
     @RequestMapping("page")

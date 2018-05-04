@@ -32,7 +32,23 @@ public class BaseBdzxxDto {
      * 变电站属性中文
      */
     private String tSyfsName;
+    /**
+     * 城农网中文
+     */
 
+    private String tCnwName;
+    /**
+     * 安装形式中文
+     */
+    private String tAzxsName;
+    /**
+     * 高压配电装置类型中文
+     */
+    private String tGypdzzlxName;
+
+    /**
+     * 修改次数
+     */
     public String gettDycsName() {
         return tDycsName;
     }
@@ -97,19 +113,16 @@ public class BaseBdzxxDto {
         this.tGypdzzlxName = tGypdzzlxName;
     }
 
-    /**
-     * 城农网中文
-     */
 
-    private String tCnwName;
-    /**
-     * 安装形式中文
-     */
-    private String tAzxsName;
-    /**
-     * 高压配电装置类型中文
-     */
-    private String tGypdzzlxName;
+    private String tBdzxxXgcs;
+
+    public String gettBdzxxXgcs() {
+        return tBdzxxXgcs;
+    }
+
+    public void settBdzxxXgcs(String tBdzxxXgcs) {
+        this.tBdzxxXgcs = tBdzxxXgcs;
+    }
 
     public Integer getPage() {
         return page;
