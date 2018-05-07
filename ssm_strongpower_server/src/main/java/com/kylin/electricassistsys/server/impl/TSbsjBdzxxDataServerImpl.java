@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.kylin.electricassistsys.dto.tsbsj.TSbsjBdzxxDto;
 import com.kylin.electricassistsys.dto.tsbsj.TSbsjBdzxxSelDto;
 import com.kylin.electricassistsys.dto.tsys.TSysYwdwDto;
+import com.kylin.electricassistsys.entitywrapperutils.EntityWrapperUtil;
 import com.kylin.electricassistsys.mybeanutils.MyBeanUtils;
 import com.kylin.electricassistsys.pojo.tsbsj.TSbsjBdzxx;
 import com.kylin.electricassistsys.pojo.tsbsj.TSbsjBdzxxSel;
@@ -41,11 +42,13 @@ public class TSbsjBdzxxDataServerImpl implements TSbsjBdzxxDataApi {
         TSbsjBdzxxSel tSbsjBdzxxSel = new TSbsjBdzxxSel();
         MyBeanUtils.copyProperties(tSbsjBdzxxSelDto, tSbsjBdzxxSel);
         entityWrapper.setEntity(tSbsjBdzxxSel);
-        entityWrapper.where(tSbsjBdzxxSel.gettBdzxxName() != null, "T_SBSJ_BDZXX.T_BDZXX_NAME like {0}", "%" + tSbsjBdzxxSel.gettBdzxxName() + "%");
+        entityWrapper = EntityWrapperUtil.getEntityWrapperWithCondition(entityWrapper, tSbsjBdzxxSel);
+        /*entityWrapper.where(tSbsjBdzxxSel.gettBdzxxName() != null, "T_SBSJ_BDZXX.T_BDZXX_NAME like {0}", "%" + tSbsjBdzxxSel.gettBdzxxName() + "%");
         entityWrapper.where(tSbsjBdzxxSel.gettDycsName() != null, "T_JCSJ_CS_DYCS.T_DYCS_NAME = {0}", tSbsjBdzxxSel.gettDycsName());
-        entityWrapper.where(tSbsjBdzxxSel.gettGqlxName() != null, "T_JCSJ_FQ_GQLX.T_GQLX_NAME = {0}", tSbsjBdzxxSel.gettGqlxName());
+        entityWrapper.where(tSbsjBdzxxSel.gettBdzxxGqlxid() != null, "T_SBSJ_BDZXX.T_BDZXX_GQLXID = {0}", tSbsjBdzxxSel.gettBdzxxGqlxid());
         entityWrapper.where(tSbsjBdzxxSel.gettSyfsName() != null, "T_JCSJ_SYFS.T_SYFS_NAME = {0}", tSbsjBdzxxSel.gettSyfsName());
-        entityWrapper.where(tSbsjBdzxxSel.gettGdfqName() != null, "T_JCSJ_FQ_GDFQ.T_GDFQ_NAME = {0}", tSbsjBdzxxSel.gettGdfqName());
+        entityWrapper.where(tSbsjBdzxxSel.gettGdfqName() != null, "T_JCSJ_FQ_GDFQ.T_GDFQ_NAME = {0}", tSbsjBdzxxSel.gettGdfqName());*/
+
         System.out.println(entityWrapper.getSqlSegment());
         Page pagepojo = new Page();
         MyBeanUtils.toPageBean(page, pagepojo, new TSbsjBdzxxSel());

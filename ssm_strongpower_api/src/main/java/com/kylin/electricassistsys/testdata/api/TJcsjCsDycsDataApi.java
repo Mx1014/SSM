@@ -6,11 +6,9 @@ import com.kylin.electricassistsys.dto.jcsj.TJcsjCsDycsDto;
 import java.util.List;
 
 /**
- * @author 吴华强
- * @ClassName: ${type_name}
- * @Description: ${todo}
- * @date ${date} ${time}
- * ${tags}
+ * @Auther: whq
+ * @Date: 2018/5/7 11:28
+ * @Description:
  */
 public interface TJcsjCsDycsDataApi {
     public List<TJcsjCsDycsDto> getList();

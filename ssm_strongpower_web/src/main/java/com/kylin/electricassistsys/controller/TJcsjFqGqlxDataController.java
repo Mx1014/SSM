@@ -1,9 +1,11 @@
 package com.kylin.electricassistsys.controller;
 
 import com.baomidou.mybatisplus.plugins.Page;
-import com.kylin.electricassistsys.dto.jcsj.TJcsjCsDycsDto;
+import com.kylin.electricassistsys.dto.jcsj.TJcsjFqGdfqDto;
+import com.kylin.electricassistsys.dto.jcsj.TJcsjFqGqlxDto;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
-import com.kylin.electricassistsys.server.impl.TJcsjCsDycsDataServerImpl;
+import com.kylin.electricassistsys.server.impl.TJcsjFqGdfqDataServerImpl;
+import com.kylin.electricassistsys.server.impl.TJcsjFqGqlxDataServerImpl;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,24 +18,24 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/dycs")
-@Api(value = "dycs", description = "电压参数", produces = MediaType.APPLICATION_JSON)
-public class TJcsjCsDycsDataController {
+@RequestMapping("/gqlx")
+@Api(value = "gqlx", description = "供区类型划分", produces = MediaType.APPLICATION_JSON)
+public class TJcsjFqGqlxDataController {
     @Resource
-    private TJcsjCsDycsDataServerImpl tJcsjCsDycsDataServerImpl;
+    private TJcsjFqGqlxDataServerImpl tJcsjFqGqlxDataServerImpl;
     @Resource
     private RedisCacheService redisCacheService;
 
     @RequestMapping("page")
-    public Page getPages(@RequestBody TJcsjCsDycsDto tJcsjCsDycsDto) {
-        Page page1 = new Page(tJcsjCsDycsDto.getPage(), tJcsjCsDycsDto.getLimit());
-        return tJcsjCsDycsDataServerImpl.getPages(page1, tJcsjCsDycsDto);
+    public Page getPages(@RequestBody TJcsjFqGqlxDto tJcsjFqGqlxDto) {
+        Page page1 = new Page(tJcsjFqGqlxDto.getPage(), tJcsjFqGqlxDto.getLimit());
+        return tJcsjFqGqlxDataServerImpl.getPages(page1, tJcsjFqGqlxDto);
     }
 
     @RequestMapping(value = "update", produces = "application/json;charset=UTF-8", method = RequestMethod.POST, headers = "Accept=application/json")
-    public String update(@RequestBody TJcsjCsDycsDto tJcsjCsDycsDto) {
+    public String update(@RequestBody TJcsjFqGqlxDto tJcsjFqGqlxDto) {
         try {
-            tJcsjCsDycsDataServerImpl.update(tJcsjCsDycsDto);
+            tJcsjFqGqlxDataServerImpl.update(tJcsjFqGqlxDto);
             return "保存成功";
         } catch (Exception e) {
             System.out.println("获得一个错误：" + e.getMessage());
@@ -46,11 +48,11 @@ public class TJcsjCsDycsDataController {
     }
 
     @RequestMapping("insert")
-    public String insert(@RequestBody TJcsjCsDycsDto tJcsjCsDycsDto) {
+    public String insert(@RequestBody TJcsjFqGqlxDto tJcsjFqGqlxDto) {
         try {
             String uuidStr = UUID.randomUUID().toString().replace("-", "").toLowerCase();
-            tJcsjCsDycsDto.settDycsId(uuidStr);
-            tJcsjCsDycsDataServerImpl.insert(tJcsjCsDycsDto);
+            tJcsjFqGqlxDto.settGqlxId(uuidStr);
+            tJcsjFqGqlxDataServerImpl.insert(tJcsjFqGqlxDto);
             return "保存成功";
         } catch (Exception e) {
             System.out.println("获得一个错误：" + e.getMessage());
@@ -65,7 +67,7 @@ public class TJcsjCsDycsDataController {
     @RequestMapping("list")
     public List setList() {
         try {
-            return tJcsjCsDycsDataServerImpl.getList();
+            return tJcsjFqGqlxDataServerImpl.getList();
         } catch (Exception e) {
             System.out.println("获得一个错误：" + e.getMessage());
             e.printStackTrace();
@@ -80,7 +82,7 @@ public class TJcsjCsDycsDataController {
     @RequestMapping("del")
     public String delete(@RequestBody String id) {
         try {
-            tJcsjCsDycsDataServerImpl.delete(id);
+            tJcsjFqGqlxDataServerImpl.delete(id);
             return "保存成功";
         } catch (Exception e) {
             System.out.println("获得一个错误：" + e.getMessage());
