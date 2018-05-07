@@ -1,6 +1,8 @@
 package com.kylin.electricassistsys.pojo.jcsj;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
+import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
 
@@ -15,7 +17,7 @@ import java.io.Serializable;
 public class TJcsjFqGdfq extends Model<TJcsjFqGdfq> {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId("T_GDFQ_ID")
     private String tGdfqId;
     private String tGdfqName;
     private String tGdfqSsx;
