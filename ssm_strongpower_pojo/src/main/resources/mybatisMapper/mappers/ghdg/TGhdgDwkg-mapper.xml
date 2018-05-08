@@ -20,5 +20,30 @@
     <sql id="Base_Column_List">
         T_DWKG_ID, T_DWKG_GQLX, T_DWKG_DYDJ, T_DWKG_KGZSS, T_DWKG_HWGSS, T_DWKG_DLFZXSS, T_DWKG_ZSKGSS, T_DWKG_KGTS, T_DWKG_DLQ, T_DWKG_FHKG
     </sql>
+    <select id="" parameterType="" resultMap="">
+        SELECT
+            T_JCSJ_CS_DYCS.T_DYCS_NAME,
+            T_JCSJ_FQ_GQLX.T_GQLX_NAME,
+            T_GHDG_DWKG.T_DWKG_ID,
+            T_GHDG_DWKG.T_DWKG_GQLX,
+            T_GHDG_DWKG.T_DWKG_DYDJ,
+            T_GHDG_DWKG.T_DWKG_KGZSS,
+            T_GHDG_DWKG.T_DWKG_HWGSS,
+            T_GHDG_DWKG.T_DWKG_DLFZXSS,
+            T_GHDG_DWKG.T_DWKG_ZSKGSS,
+            T_GHDG_DWKG.T_DWKG_KGTS,
+            T_GHDG_DWKG.T_DWKG_DLQ,
+            T_GHDG_DWKG.T_DWKG_FHKG
+        FROM
+            T_GHDG_DWKG
+            LEFT JOIN T_JCSJ_CS_DYCS ON (
+                T_JCSJ_CS_DYCS.T_DYCS_ID = T_GHDG_DWKG.T_DWKG_DYDJ
+            )
+            LEFT JOIN T_JCSJ_FQ_GQLX ON (
+                T_JCSJ_FQ_GQLX.T_GQLX_ID = T_GHDG_DWKG.T_DWKG_GQLX
+            )
+        WHERE
+            1 = 1 ${ew.sqlSegment}
+    </select>
 
 </mapper>
