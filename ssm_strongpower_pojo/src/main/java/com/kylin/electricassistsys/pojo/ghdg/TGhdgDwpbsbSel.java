@@ -1,7 +1,6 @@
 package com.kylin.electricassistsys.pojo.ghdg;
 
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
@@ -13,10 +12,10 @@ import java.io.Serializable;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TGhdgDwpbsb extends Model<TGhdgDwpbsb> {
+public class TGhdgDwpbsbSel extends Model<TGhdgDwpbsbSel> {
 
     private static final long serialVersionUID = 1L;
-    @TableId("T_DWPBSB_ID")
+
     private String tDwpbsbId;
     private String tDwpbsbType;
     private String tDwpbsbDydj;
@@ -33,6 +32,30 @@ public class TGhdgDwpbsb extends Model<TGhdgDwpbsb> {
     private String tDwpbspGypbgspbts;
     private String tDwpbsbZypbts;
     private String tDwpbsbZypbrl;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
+    /**
+     * 电压参数中文
+     */
+    private String tDycsName;
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettDycsName() {
+        return tDycsName;
+    }
+
+    public void settDycsName(String tDycsName) {
+        this.tDycsName = tDycsName;
+    }
 
 
     public String gettDwpbsbId() {

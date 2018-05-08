@@ -1,22 +1,19 @@
-package com.kylin.electricassistsys.pojo.ghdg;
+package com.kylin.electricassistsys.dto.ghdg;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableId;
-
-import java.io.Serializable;
+import com.kylin.electricassistsys.dto.base.BaseDto;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TGhdgDwyxzb extends Model<TGhdgDwyxzb> {
+public class TGhdgDwyxzbSelDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
-    @TableId("T_DWYXZB_ID")
+
     private String tDwyxzbId;
     private String tDwyxzbGqlx;
     private String tDwyxzbDydj;
@@ -27,6 +24,30 @@ public class TGhdgDwyxzb extends Model<TGhdgDwyxzb> {
     private String tDwyxzbZbbl;
     private String tDwyxzbXlts;
     private String tDwyxzbXlbl;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
+    /**
+     * 电压参数中文
+     */
+    private String tDycsName;
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettDycsName() {
+        return tDycsName;
+    }
+
+    public void settDycsName(String tDycsName) {
+        this.tDycsName = tDycsName;
+    }
 
 
     public String gettDwyxzbId() {
@@ -110,23 +131,18 @@ public class TGhdgDwyxzb extends Model<TGhdgDwyxzb> {
     }
 
     @Override
-    protected Serializable pkVal() {
-        return this.tDwyxzbId;
-    }
-
-    @Override
     public String toString() {
         return "TGhdgDwyxzb{" +
-        "tDwyxzbId=" + tDwyxzbId +
-        ", tDwyxzbGqlx=" + tDwyxzbGqlx +
-        ", tDwyxzbDydj=" + tDwyxzbDydj +
-        ", tDwyxzbRzb=" + tDwyxzbRzb +
-        ", tDwyxzbDzs=" + tDwyxzbDzs +
-        ", tDwyxzbDbl=" + tDwyxzbDbl +
-        ", tDwyxzbZbts=" + tDwyxzbZbts +
-        ", tDwyxzbZbbl=" + tDwyxzbZbbl +
-        ", tDwyxzbXlts=" + tDwyxzbXlts +
-        ", tDwyxzbXlbl=" + tDwyxzbXlbl +
-        "}";
+                "tDwyxzbId=" + tDwyxzbId +
+                ", tDwyxzbGqlx=" + tDwyxzbGqlx +
+                ", tDwyxzbDydj=" + tDwyxzbDydj +
+                ", tDwyxzbRzb=" + tDwyxzbRzb +
+                ", tDwyxzbDzs=" + tDwyxzbDzs +
+                ", tDwyxzbDbl=" + tDwyxzbDbl +
+                ", tDwyxzbZbts=" + tDwyxzbZbts +
+                ", tDwyxzbZbbl=" + tDwyxzbZbbl +
+                ", tDwyxzbXlts=" + tDwyxzbXlts +
+                ", tDwyxzbXlbl=" + tDwyxzbXlbl +
+                "}";
     }
 }

@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.ghdg;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.ghdg;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TGhdgDwyxzbDto{
+public class TGhdgDwyxzbDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 

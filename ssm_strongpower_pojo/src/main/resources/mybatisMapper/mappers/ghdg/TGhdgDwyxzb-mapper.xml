@@ -16,9 +16,50 @@
         <result column="T_DWYXZB_XLBL" property="tDwyxzbXlbl" />
     </resultMap>
 
+    <!-- 自定义查询映射结果 -->
+    <resultMap id="SelResultMap" type="com.kylin.electricassistsys.pojo.ghdg.TGhdgDwyxzbSel">
+        <id column="T_DWYXZB_ID" property="tDwyxzbId" />
+        <result column="T_DWYXZB_GQLX" property="tDwyxzbGqlx" />
+        <result column="T_DWYXZB_DYDJ" property="tDwyxzbDydj" />
+        <result column="T_DWYXZB_RZB" property="tDwyxzbRzb" />
+        <result column="T_DWYXZB_DZS" property="tDwyxzbDzs" />
+        <result column="T_DWYXZB_DBL" property="tDwyxzbDbl" />
+        <result column="T_DWYXZB_ZBTS" property="tDwyxzbZbts" />
+        <result column="T_DWYXZB_ZBBL" property="tDwyxzbZbbl" />
+        <result column="T_DWYXZB_XLTS" property="tDwyxzbXlts" />
+        <result column="T_DWYXZB_XLBL" property="tDwyxzbXlbl" />
+        <result column="T_GQLX_NAME" property="tGqlxName"/>
+        <result column="T_DYCS_NAME" property="tDycsName"/>
+    </resultMap>
+
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         T_DWYXZB_ID, T_DWYXZB_GQLX, T_DWYXZB_DYDJ, T_DWYXZB_RZB, T_DWYXZB_DZS, T_DWYXZB_DBL, T_DWYXZB_ZBTS, T_DWYXZB_ZBBL, T_DWYXZB_XLTS, T_DWYXZB_XLBL
     </sql>
+    <select id="selectPage" parameterType="com.kylin.electricassistsys.pojo.ghdg.TGhdgDwyxzbSel" resultMap="SelResultMap">
+        SELECT
+            T_GHDG_DWYXZB.T_DWYXZB_ID,
+            T_GHDG_DWYXZB.T_DWYXZB_DYDJ,
+            T_JCSJ_CS_DYCS.T_DYCS_NAME,
+            T_GHDG_DWYXZB.T_DWYXZB_GQLX,
+            T_JCSJ_FQ_GQLX.T_GQLX_NAME,
+            T_GHDG_DWYXZB.T_DWYXZB_RZB,
+            T_GHDG_DWYXZB.T_DWYXZB_DZS,
+            T_GHDG_DWYXZB.T_DWYXZB_DBL,
+            T_GHDG_DWYXZB.T_DWYXZB_ZBTS,
+            T_GHDG_DWYXZB.T_DWYXZB_ZBBL,
+            T_GHDG_DWYXZB.T_DWYXZB_XLTS,
+            T_GHDG_DWYXZB.T_DWYXZB_XLBL
+        FROM
+            T_GHDG_DWYXZB
+            LEFT JOIN T_JCSJ_CS_DYCS ON (
+                T_JCSJ_CS_DYCS.T_DYCS_ID = T_GHDG_DWYXZB.T_DWYXZB_DYDJ
+            )
+            LEFT JOIN T_JCSJ_FQ_GQLX ON (
+                T_JCSJ_FQ_GQLX.T_GQLX_ID = T_GHDG_DWYXZB.T_DWYXZB_GQLX
+            )
+        WHERE
+            1 = 1 ${ew.sqlSegment}
+    </select>
 
 </mapper>

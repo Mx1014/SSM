@@ -22,9 +22,62 @@
         <result column="T_DWPBSB_ZYPBRL" property="tDwpbsbZypbrl" />
     </resultMap>
 
+    <!-- 自定义查询映射结果 -->
+    <resultMap id="SelResultMap" type="com.kylin.electricassistsys.pojo.ghdg.TGhdgDwpbsbSel">
+        <id column="T_DWPBSB_ID" property="tDwpbsbId" />
+        <result column="T_DWPBSB_TYPE" property="tDwpbsbType" />
+        <result column="T_DWPBSB_DYDJ" property="tDwpbsbDydj" />
+        <result column="T_DWPBSB_PDSZS" property="tDwpbsbPdszs" />
+        <result column="T_DWPBSB_PDSRL" property="tDwpbsbPdsrl" />
+        <result column="T_DWPBSB_XBZS" property="tDwpbsbXbzs" />
+        <result column="T_DWPBSB_XBRL" property="tDwpbsbXbrl" />
+        <result column="T_DWPBSB_ZSBTS" property="tDwpbsbZsbts" />
+        <result column="T_DWPBSB_ZSBRL" property="tDwpbsbZsbrl" />
+        <result column="T_DWPBSB_GYPBTS" property="tDwpbsbGypbts" />
+        <result column="T_DWPBSB_GYPBRL" property="tDwpbsbGypbrl" />
+        <result column="T_DWPBSB_GYPBFJHJPBTS" property="tDwpbsbGypbfjhjpbts" />
+        <result column="T_DWPBSB_GYPBFJHJPBRL" property="tDwpbsbGypbfjhjpbrl" />
+        <result column="T_DWPBSP_GYPBGSPBTS" property="tDwpbspGypbgspbts" />
+        <result column="T_DWPBSB_ZYPBTS" property="tDwpbsbZypbts" />
+        <result column="T_DWPBSB_ZYPBRL" property="tDwpbsbZypbrl" />
+        <result column="T_GQLX_NAME" property="tGqlxName"/>
+        <result column="T_DYCS_NAME" property="tDycsName"/>
+    </resultMap>
+
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         T_DWPBSB_ID, T_DWPBSB_TYPE, T_DWPBSB_DYDJ, T_DWPBSB_PDSZS, T_DWPBSB_PDSRL, T_DWPBSB_XBZS, T_DWPBSB_XBRL, T_DWPBSB_ZSBTS, T_DWPBSB_ZSBRL, T_DWPBSB_GYPBTS, T_DWPBSB_GYPBRL, T_DWPBSB_GYPBFJHJPBTS, T_DWPBSB_GYPBFJHJPBRL, T_DWPBSP_GYPBGSPBTS, T_DWPBSB_ZYPBTS, T_DWPBSB_ZYPBRL
     </sql>
+    <select id="selectPage" parameterType="com.kylin.electricassistsys.pojo.ghdg.TGhdgDwpbsbSel" resultMap="SelResultMap">
+        SELECT
+            T_JCSJ_CS_DYCS.T_DYCS_NAME,
+            T_JCSJ_FQ_GQLX.T_GQLX_NAME,
+            T_GHDG_DWPBSB.T_DWPBSB_ID,
+            T_GHDG_DWPBSB.T_DWPBSB_TYPE,
+            T_GHDG_DWPBSB.T_DWPBSB_DYDJ,
+            T_GHDG_DWPBSB.T_DWPBSB_PDSZS,
+            T_GHDG_DWPBSB.T_DWPBSB_PDSRL,
+            T_GHDG_DWPBSB.T_DWPBSB_XBZS,
+            T_GHDG_DWPBSB.T_DWPBSB_XBRL,
+            T_GHDG_DWPBSB.T_DWPBSB_ZSBTS,
+            T_GHDG_DWPBSB.T_DWPBSB_ZSBRL,
+            T_GHDG_DWPBSB.T_DWPBSB_GYPBTS,
+            T_GHDG_DWPBSB.T_DWPBSB_GYPBRL,
+            T_GHDG_DWPBSB.T_DWPBSB_GYPBFJHJPBTS,
+            T_GHDG_DWPBSB.T_DWPBSB_GYPBFJHJPBRL,
+            T_GHDG_DWPBSB.T_DWPBSP_GYPBGSPBTS,
+            T_GHDG_DWPBSB.T_DWPBSB_ZYPBTS,
+            T_GHDG_DWPBSB.T_DWPBSB_ZYPBRL
+        FROM
+            T_GHDG_DWPBSB
+            LEFT JOIN T_JCSJ_CS_DYCS ON (
+                T_JCSJ_CS_DYCS.T_DYCS_ID = T_GHDG_DWPBSB.T_DWPBSB_DYDJ
+            )
+            LEFT JOIN T_JCSJ_FQ_GQLX ON (
+                T_JCSJ_FQ_GQLX.T_GQLX_ID = T_GHDG_DWPBSB.T_DWPBSB_TYPE
+            )
+        WHERE
+            1 = 1 ${ew.sqlSegment}
+    </select>
 
 </mapper>
