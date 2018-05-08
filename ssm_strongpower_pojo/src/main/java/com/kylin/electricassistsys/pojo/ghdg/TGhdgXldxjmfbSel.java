@@ -1,17 +1,18 @@
-package com.kylin.electricassistsys.dto.ghdg;
+package com.kylin.electricassistsys.pojo.ghdg;
 
+import com.baomidou.mybatisplus.activerecord.Model;
 
-import com.kylin.electricassistsys.dto.base.BaseDto;
+import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TGhdgXldxjmfbDto extends BaseDto {
+public class TGhdgXldxjmfbSel extends Model<TGhdgXldxjmfbSel> {
 
     private static final long serialVersionUID = 1L;
 
@@ -24,7 +25,18 @@ public class TGhdgXldxjmfbDto extends BaseDto {
     private String tXldxjmfbDxjmcd2;
     private String tXldxjmfbDxjm3;
     private String tXldxjmfbDxjmcd3;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
 
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
 
     public String gettXldxjmfbId() {
         return tXldxjmfbId;
@@ -98,19 +110,23 @@ public class TGhdgXldxjmfbDto extends BaseDto {
         this.tXldxjmfbDxjmcd3 = tXldxjmfbDxjmcd3;
     }
 
+    @Override
+    protected Serializable pkVal() {
+        return this.tXldxjmfbId;
+    }
 
     @Override
     public String toString() {
         return "TGhdgXldxjmfb{" +
-        "tXldxjmfbId=" + tXldxjmfbId +
-        ", tXldxjmfbGqlx=" + tXldxjmfbGqlx +
-        ", tXldxjmfbDyxllx=" + tXldxjmfbDyxllx +
-        ", tXldxjmfbDxjm1=" + tXldxjmfbDxjm1 +
-        ", tXldxjmfbDxjmcd1=" + tXldxjmfbDxjmcd1 +
-        ", tXldxjmfbDxjm2=" + tXldxjmfbDxjm2 +
-        ", tXldxjmfbDxjmcd2=" + tXldxjmfbDxjmcd2 +
-        ", tXldxjmfbDxjm3=" + tXldxjmfbDxjm3 +
-        ", tXldxjmfbDxjmcd3=" + tXldxjmfbDxjmcd3 +
-        "}";
+                "tXldxjmfbId=" + tXldxjmfbId +
+                ", tXldxjmfbGqlx=" + tXldxjmfbGqlx +
+                ", tXldxjmfbDyxllx=" + tXldxjmfbDyxllx +
+                ", tXldxjmfbDxjm1=" + tXldxjmfbDxjm1 +
+                ", tXldxjmfbDxjmcd1=" + tXldxjmfbDxjmcd1 +
+                ", tXldxjmfbDxjm2=" + tXldxjmfbDxjm2 +
+                ", tXldxjmfbDxjmcd2=" + tXldxjmfbDxjmcd2 +
+                ", tXldxjmfbDxjm3=" + tXldxjmfbDxjm3 +
+                ", tXldxjmfbDxjmcd3=" + tXldxjmfbDxjmcd3 +
+                "}";
     }
 }

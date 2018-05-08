@@ -1,22 +1,21 @@
 package com.kylin.electricassistsys.pojo.ghdg;
 
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TGhdgJmfb extends Model<TGhdgJmfb> {
+public class TGhdgJmfbSel extends Model<TGhdgJmfbSel> {
 
     private static final long serialVersionUID = 1L;
-    @TableId("T_JMFB_ID")
+
     private String tJmfbId;
     private String tJmfbType;
     private String tJmfbDydj;
@@ -30,7 +29,18 @@ public class TGhdgJmfb extends Model<TGhdgJmfb> {
     private String tJmfbDlxlcd300;
     private String tJmfbDlxlcd240;
     private String tJmfbDlxlcd185;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
 
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
 
     public String gettJmfbId() {
         return tJmfbId;
@@ -144,19 +154,19 @@ public class TGhdgJmfb extends Model<TGhdgJmfb> {
     @Override
     public String toString() {
         return "TGhdgJmfb{" +
-        "tJmfbId=" + tJmfbId +
-        ", tJmfbType=" + tJmfbType +
-        ", tJmfbDydj=" + tJmfbDydj +
-        ", tJmfbJkxlcd240=" + tJmfbJkxlcd240 +
-        ", tJmfbJkxlcd185=" + tJmfbJkxlcd185 +
-        ", tJmfbJkxlcd150=" + tJmfbJkxlcd150 +
-        ", tJmfbJkxlcd120=" + tJmfbJkxlcd120 +
-        ", tJmfbJkxlcd95=" + tJmfbJkxlcd95 +
-        ", tJmfbJkxlcd70=" + tJmfbJkxlcd70 +
-        ", tJmfbDlxlcd400=" + tJmfbDlxlcd400 +
-        ", tJmfbDlxlcd300=" + tJmfbDlxlcd300 +
-        ", tJmfbDlxlcd240=" + tJmfbDlxlcd240 +
-        ", tJmfbDlxlcd185=" + tJmfbDlxlcd185 +
-        "}";
+                "tJmfbId=" + tJmfbId +
+                ", tJmfbType=" + tJmfbType +
+                ", tJmfbDydj=" + tJmfbDydj +
+                ", tJmfbJkxlcd240=" + tJmfbJkxlcd240 +
+                ", tJmfbJkxlcd185=" + tJmfbJkxlcd185 +
+                ", tJmfbJkxlcd150=" + tJmfbJkxlcd150 +
+                ", tJmfbJkxlcd120=" + tJmfbJkxlcd120 +
+                ", tJmfbJkxlcd95=" + tJmfbJkxlcd95 +
+                ", tJmfbJkxlcd70=" + tJmfbJkxlcd70 +
+                ", tJmfbDlxlcd400=" + tJmfbDlxlcd400 +
+                ", tJmfbDlxlcd300=" + tJmfbDlxlcd300 +
+                ", tJmfbDlxlcd240=" + tJmfbDlxlcd240 +
+                ", tJmfbDlxlcd185=" + tJmfbDlxlcd185 +
+                "}";
     }
 }

@@ -1,9 +1,7 @@
-package com.kylin.electricassistsys.pojo.ghdg;
+package com.kylin.electricassistsys.dto.ghdg;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableId;
 
-import java.io.Serializable;
+import com.kylin.electricassistsys.dto.base.BaseDto;
 
 /**
  * <p>
@@ -13,10 +11,9 @@ import java.io.Serializable;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TGhdgJmfb extends Model<TGhdgJmfb> {
+public class TGhdgJmfbSelDto extends BaseDto {
 
-    private static final long serialVersionUID = 1L;
-    @TableId("T_JMFB_ID")
+
     private String tJmfbId;
     private String tJmfbType;
     private String tJmfbDydj;
@@ -30,6 +27,18 @@ public class TGhdgJmfb extends Model<TGhdgJmfb> {
     private String tJmfbDlxlcd300;
     private String tJmfbDlxlcd240;
     private String tJmfbDlxlcd185;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
 
 
     public String gettJmfbId() {
@@ -136,10 +145,6 @@ public class TGhdgJmfb extends Model<TGhdgJmfb> {
         this.tJmfbDlxlcd185 = tJmfbDlxlcd185;
     }
 
-    @Override
-    protected Serializable pkVal() {
-        return this.tJmfbId;
-    }
 
     @Override
     public String toString() {

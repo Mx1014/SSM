@@ -20,4 +20,40 @@
         T_XLDXJMFB_ID, T_XLDXJMFB_GQLX, T_XLDXJMFB_DYXLLX, T_XLDXJMFB_DXJM1, T_XLDXJMFB_DXJMCD1, T_XLDXJMFB_DXJM2, T_XLDXJMFB_DXJMCD2, T_XLDXJMFB_DXJM3, T_XLDXJMFB_DXJMCD3
     </sql>
 
+    <!-- 自定义查询映射结果 -->
+    <resultMap id="SelResultMap" type="com.kylin.electricassistsys.pojo.ghdg.TGhdgXldxjmfbSel">
+        <id column="T_XLDXJMFB_ID" property="tXldxjmfbId" />
+        <result column="T_XLDXJMFB_GQLX" property="tXldxjmfbGqlx" />
+        <result column="T_XLDXJMFB_DYXLLX" property="tXldxjmfbDyxllx" />
+        <result column="T_XLDXJMFB_DXJM1" property="tXldxjmfbDxjm1" />
+        <result column="T_XLDXJMFB_DXJMCD1" property="tXldxjmfbDxjmcd1" />
+        <result column="T_XLDXJMFB_DXJM2" property="tXldxjmfbDxjm2" />
+        <result column="T_XLDXJMFB_DXJMCD2" property="tXldxjmfbDxjmcd2" />
+        <result column="T_XLDXJMFB_DXJM3" property="tXldxjmfbDxjm3" />
+        <result column="T_XLDXJMFB_DXJMCD3" property="tXldxjmfbDxjmcd3" />
+        <result column="T_GQLX_NAME" property="tGqlxName"/>
+    </resultMap>
+
+    <!-- 自定义查询语句 -->
+    <select id="selectPage" parameterType="com.kylin.electricassistsys.pojo.ghdg.TGhdgXldxjmfbSel" resultMap="SelResultMap">
+        SELECT
+            T_GHDG_XLDXJMFB.T_XLDXJMFB_ID,
+            T_GHDG_XLDXJMFB.T_XLDXJMFB_GQLX,
+            T_JCSJ_FQ_GQLX.T_GQLX_NAME,
+            T_GHDG_XLDXJMFB.T_XLDXJMFB_DYXLLX,
+            T_GHDG_XLDXJMFB.T_XLDXJMFB_DXJM1,
+            T_GHDG_XLDXJMFB.T_XLDXJMFB_DXJMCD1,
+            T_GHDG_XLDXJMFB.T_XLDXJMFB_DXJM2,
+            T_GHDG_XLDXJMFB.T_XLDXJMFB_DXJMCD2,
+            T_GHDG_XLDXJMFB.T_XLDXJMFB_DXJM3,
+            T_GHDG_XLDXJMFB.T_XLDXJMFB_DXJMCD3
+        FROM
+            T_GHDG_XLDXJMFB
+            LEFT JOIN T_JCSJ_FQ_GQLX ON (
+                T_JCSJ_FQ_GQLX.T_GQLX_ID = T_GHDG_XLDXJMFB.T_XLDXJMFB_GQLX
+            )
+        WHERE
+            1 = 1 ${ew.sqlSegment}
+    </select>
+
 </mapper>

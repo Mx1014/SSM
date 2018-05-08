@@ -11,7 +11,7 @@ import com.kylin.electricassistsys.dto.base.BaseDto;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TGhdgXldxjmfbDto extends BaseDto {
+public class TGhdgXldxjmfbSelDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -24,6 +24,18 @@ public class TGhdgXldxjmfbDto extends BaseDto {
     private String tXldxjmfbDxjmcd2;
     private String tXldxjmfbDxjm3;
     private String tXldxjmfbDxjmcd3;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
 
 
     public String gettXldxjmfbId() {

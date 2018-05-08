@@ -18,10 +18,8 @@
         <result column="T_JMFB_DLXLCD240" property="tJmfbDlxlcd240" />
         <result column="T_JMFB_DLXLCD185" property="tJmfbDlxlcd185" />
     </resultMap>
-
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         T_JMFB_ID, T_JMFB_TYPE, T_JMFB_DYDJ, T_JMFB_JKXLCD240, T_JMFB_JKXLCD185, T_JMFB_JKXLCD150, T_JMFB_JKXLCD120, T_JMFB_JKXLCD95, T_JMFB_JKXLCD70, T_JMFB_DLXLCD400, T_JMFB_DLXLCD300, T_JMFB_DLXLCD240, T_JMFB_DLXLCD185
     </sql>
-
 </mapper>
