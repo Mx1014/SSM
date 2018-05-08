@@ -4,18 +4,52 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.ghdg.TGhdgPdzdh">
-        <id column="T_PDZDH_ID" property="tPdzdhId" />
-        <result column="T_PDZDH_TYPE" property="tPdzdhType" />
-        <result column="T_PDZDH_DYDJ" property="tPdzdhDydj" />
-        <result column="T_PDZDH_ZDHFGL" property="tPdzdhZdhfgl" />
-        <result column="T_PDZDH_PDZDYYBL" property="tPdzdhPdzdyybl" />
-        <result column="T_PDZDH_PDZDEYBL" property="tPdzdhPdzdeybl" />
-        <result column="T_PDZDH_PDZDSYBL" property="tPdzdhPdzdsybl" />
+        <id column="T_PDZDH_ID" property="tPdzdhId"/>
+        <result column="T_PDZDH_TYPE" property="tPdzdhType"/>
+        <result column="T_PDZDH_DYDJ" property="tPdzdhDydj"/>
+        <result column="T_PDZDH_ZDHFGL" property="tPdzdhZdhfgl"/>
+        <result column="T_PDZDH_PDZDYYBL" property="tPdzdhPdzdyybl"/>
+        <result column="T_PDZDH_PDZDEYBL" property="tPdzdhPdzdeybl"/>
+        <result column="T_PDZDH_PDZDSYBL" property="tPdzdhPdzdsybl"/>
+    </resultMap>
+    <!-- 自定义查询映射结果 -->
+    <resultMap id="SelResultMap" type="com.kylin.electricassistsys.pojo.ghdg.TGhdgPdzdhSel">
+        <id column="T_PDZDH_ID" property="tPdzdhId"/>
+        <result column="T_PDZDH_TYPE" property="tPdzdhType"/>
+        <result column="T_PDZDH_DYDJ" property="tPdzdhDydj"/>
+        <result column="T_PDZDH_ZDHFGL" property="tPdzdhZdhfgl"/>
+        <result column="T_PDZDH_PDZDYYBL" property="tPdzdhPdzdyybl"/>
+        <result column="T_PDZDH_PDZDEYBL" property="tPdzdhPdzdeybl"/>
+        <result column="T_PDZDH_PDZDSYBL" property="tPdzdhPdzdsybl"/>
+        <result column="T_GQLX_NAME" property="tGqlxName"/>
+        <result column="T_DYCS_NAME" property="tDycsName"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         T_PDZDH_ID, T_PDZDH_TYPE, T_PDZDH_DYDJ, T_PDZDH_ZDHFGL, T_PDZDH_PDZDYYBL, T_PDZDH_PDZDEYBL, T_PDZDH_PDZDSYBL
     </sql>
+    <select id="selectPage" resultMap="SelResultMap" parameterType="com.kylin.electricassistsys.pojo.ghdg.TGhdgPdzdhSel">
+        SELECT
+                T_GHDG_PDZDH.T_PDZDH_ID,
+                T_GHDG_PDZDH.T_PDZDH_TYPE,
+                T_JCSJ_FQ_GQLX.T_GQLX_NAME,
+                T_GHDG_PDZDH.T_PDZDH_DYDJ,
+                T_JCSJ_CS_DYCS.T_DYCS_NAME,
+                T_GHDG_PDZDH.T_PDZDH_ZDHFGL,
+                T_GHDG_PDZDH.T_PDZDH_PDZDYYBL,
+                T_GHDG_PDZDH.T_PDZDH_PDZDEYBL,
+                T_GHDG_PDZDH.T_PDZDH_PDZDSYBL
+        FROM
+                T_GHDG_PDZDH
+                LEFT JOIN T_JCSJ_FQ_GQLX ON (
+                    T_JCSJ_FQ_GQLX.T_GQLX_ID = T_GHDG_PDZDH.T_PDZDH_TYPE
+                )
+                LEFT JOIN T_JCSJ_CS_DYCS ON (
+                    T_JCSJ_CS_DYCS.T_DYCS_ID = T_GHDG_PDZDH.T_PDZDH_DYDJ
+                )
+        WHERE
+                1=1  ${ew.sqlSegment}
+    </select>
 
 </mapper>

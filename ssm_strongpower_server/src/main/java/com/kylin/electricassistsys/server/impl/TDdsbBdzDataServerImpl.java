@@ -6,7 +6,7 @@ import com.kylin.electricassistsys.dto.ddsb.TDdsbBdzDto;
 import com.kylin.electricassistsys.mybeanutils.MyBeanUtils;
 import com.kylin.electricassistsys.pojo.ddsb.TDdsbBdz;
 import com.kylin.electricassistsys.service.ddsb.TDdsbBdzService;
-import com.kylin.electricassistsys.testdata.api.TDdsbBdzDataApi;
+import com.kylin.electricassistsys.data.api.TDdsbBdzDataApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

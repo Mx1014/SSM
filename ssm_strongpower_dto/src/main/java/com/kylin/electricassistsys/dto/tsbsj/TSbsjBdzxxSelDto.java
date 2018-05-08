@@ -1,6 +1,5 @@
 package com.kylin.electricassistsys.dto.tsbsj;
 
-import com.kylin.electricassistsys.dto.base.BaseBdzxxDto;
 import com.kylin.electricassistsys.dto.base.BaseDto;
 
 /**
@@ -11,7 +10,7 @@ import com.kylin.electricassistsys.dto.base.BaseDto;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSbsjBdzxxSelDto extends BaseBdzxxDto{
+public class TSbsjBdzxxSelDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -227,7 +226,119 @@ public class TSbsjBdzxxSelDto extends BaseBdzxxDto{
      * 断路器
      */
     private String tBdzxxDlq;
+    /**
+     * 电压等级中文
+     */
+    private String tDycsName;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
+    /**
+     * 区域中文
+     */
+    private String tGdfqName;
+    /**
+     * 运维单位中文
+     */
+    private String tSysDwmz;
 
+
+    /**
+     * 变电站属性中文
+     */
+    private String tSyfsName;
+    /**
+     * 城农网中文
+     */
+
+    private String tCnwName;
+    /**
+     * 安装形式中文
+     */
+    private String tAzxsName;
+    /**
+     * 高压配电装置类型中文
+     */
+    private String tGypdzzlxName;
+
+    /**
+     * 修改次数
+     */
+    public String gettDycsName() {
+        return tDycsName;
+    }
+
+    public void settDycsName(String tDycsName) {
+        this.tDycsName = tDycsName;
+    }
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettGdfqName() {
+        return tGdfqName;
+    }
+
+    public void settGdfqName(String tGdfqName) {
+        this.tGdfqName = tGdfqName;
+    }
+
+    public String gettSysDwmz() {
+        return tSysDwmz;
+    }
+
+    public void settSysDwmz(String tSysDwmz) {
+        this.tSysDwmz = tSysDwmz;
+    }
+
+    public String gettSyfsName() {
+        return tSyfsName;
+    }
+
+    public void settSyfsName(String tSyfsName) {
+        this.tSyfsName = tSyfsName;
+    }
+
+    public String gettCnwName() {
+        return tCnwName;
+    }
+
+    public void settCnwName(String tCnwName) {
+        this.tCnwName = tCnwName;
+    }
+
+    public String gettAzxsName() {
+        return tAzxsName;
+    }
+
+    public void settAzxsName(String tAzxsName) {
+        this.tAzxsName = tAzxsName;
+    }
+
+    public String gettGypdzzlxName() {
+        return tGypdzzlxName;
+    }
+
+    public void settGypdzzlxName(String tGypdzzlxName) {
+        this.tGypdzzlxName = tGypdzzlxName;
+    }
+
+
+    private String tBdzxxXgcs;
+
+    public String gettBdzxxXgcs() {
+        return tBdzxxXgcs;
+    }
+
+    public void settBdzxxXgcs(String tBdzxxXgcs) {
+        this.tBdzxxXgcs = tBdzxxXgcs;
+    }
 
     public String gettBdzxxId() {
         return tBdzxxId;
@@ -657,59 +768,59 @@ public class TSbsjBdzxxSelDto extends BaseBdzxxDto{
     @Override
     public String toString() {
         return "TSbsjBdzxx{" +
-        "tBdzxxId=" + tBdzxxId +
-        ", tBdzxxYear=" + tBdzxxYear +
-        ", tBdzxxNum=" + tBdzxxNum +
-        ", tBdzxxName=" + tBdzxxName +
-        ", tBdzxxDydj=" + tBdzxxDydj +
-        ", tBdzxxDz=" + tBdzxxDz +
-        ", tBdzxxSyfs=" + tBdzxxSyfs +
-        ", tBdzxxCnw=" + tBdzxxCnw +
-        ", tBdzxxZbzrl=" + tBdzxxZbzrl +
-        ", tBdzxxByqsl=" + tBdzxxByqsl +
-        ", tBdzxxRlgc=" + tBdzxxRlgc +
-        ", tBdzxxWgbcrl=" + tBdzxxWgbcrl +
-        ", tBdzxxWgbcgc=" + tBdzxxWgbcgc +
-        ", tBdzxxWgbcd=" + tBdzxxWgbcd +
-        ", tBdzxxGyczjx1=" + tBdzxxGyczjx1 +
-        ", tBdzxxZyczjx1=" + tBdzxxZyczjx1 +
-        ", tBdzxxDyczjx1=" + tBdzxxDyczjx1 +
-        ", tBdzxxCxjg220kv=" + tBdzxxCxjg220kv +
-        ", tBdzxxCxjg110kv=" + tBdzxxCxjg110kv +
-        ", tBdzxxCxjg35kv=" + tBdzxxCxjg35kv +
-        ", tBdzxxCxjg10kv=" + tBdzxxCxjg10kv +
-        ", tBdzxxYy220kv=" + tBdzxxYy220kv +
-        ", tBdzxxYy110kv=" + tBdzxxYy110kv +
-        ", tBdzxxYy35kv=" + tBdzxxYy35kv +
-        ", tBdzxxYy10kv=" + tBdzxxYy10kv +
-        ", tBdzxxBtysj=" + tBdzxxBtysj +
-        ", tBdzxxYwdw=" + tBdzxxYwdw +
-        ", tBdzxxAzxs=" + tBdzxxAzxs +
-        ", tBdzxxZdmj=" + tBdzxxZdmj +
-        ", tBdzxxZb=" + tBdzxxZb +
-        ", tBdzxxGdgs=" + tBdzxxGdgs +
-        ", tBdzxxGypdzzlb=" + tBdzxxGypdzzlb +
-        ", tBdzxxGdqyid=" + tBdzxxGdqyid +
-        ", tBdzxxEtysj=" + tBdzxxEtysj +
-        ", tBdzxxYxzt=" + tBdzxxYxzt +
-        ", tBdzxxJxtz=" + tBdzxxJxtz +
-        ", tBdzxxGqlxid=" + tBdzxxGqlxid +
-        ", tBdzxxRemark=" + tBdzxxRemark +
-        ", tBdzxxGycdydj=" + tBdzxxGycdydj +
-        ", tBdzxxZycdydj=" + tBdzxxZycdydj +
-        ", tBdzxxDycdydj=" + tBdzxxDycdydj +
-        ", tBdzxxZqjggs=" + tBdzxxZqjggs +
-        ", tBdzxxGyczjx2=" + tBdzxxGyczjx2 +
-        ", tBdzxxGyczjx3=" + tBdzxxGyczjx3 +
-        ", tBdzxxZyczjx2=" + tBdzxxZyczjx2 +
-        ", tBdzxxZyczjx3=" + tBdzxxZyczjx3 +
-        ", tBdzxxDyczjx2=" + tBdzxxDyczjx2 +
-        ", tBdzxxDyczjx3=" + tBdzxxDyczjx3 +
-        ", tBdzxxGdqsx=" + tBdzxxGdqsx +
-        ", tBdzxxGdxz=" + tBdzxxGdxz +
-        ", tBdzxxN1=" + tBdzxxN1 +
-        ", tBdzxxDwjg=" + tBdzxxDwjg +
-        ", tBdzxxDlq=" + tBdzxxDlq +
-        "}";
+                "tBdzxxId=" + tBdzxxId +
+                ", tBdzxxYear=" + tBdzxxYear +
+                ", tBdzxxNum=" + tBdzxxNum +
+                ", tBdzxxName=" + tBdzxxName +
+                ", tBdzxxDydj=" + tBdzxxDydj +
+                ", tBdzxxDz=" + tBdzxxDz +
+                ", tBdzxxSyfs=" + tBdzxxSyfs +
+                ", tBdzxxCnw=" + tBdzxxCnw +
+                ", tBdzxxZbzrl=" + tBdzxxZbzrl +
+                ", tBdzxxByqsl=" + tBdzxxByqsl +
+                ", tBdzxxRlgc=" + tBdzxxRlgc +
+                ", tBdzxxWgbcrl=" + tBdzxxWgbcrl +
+                ", tBdzxxWgbcgc=" + tBdzxxWgbcgc +
+                ", tBdzxxWgbcd=" + tBdzxxWgbcd +
+                ", tBdzxxGyczjx1=" + tBdzxxGyczjx1 +
+                ", tBdzxxZyczjx1=" + tBdzxxZyczjx1 +
+                ", tBdzxxDyczjx1=" + tBdzxxDyczjx1 +
+                ", tBdzxxCxjg220kv=" + tBdzxxCxjg220kv +
+                ", tBdzxxCxjg110kv=" + tBdzxxCxjg110kv +
+                ", tBdzxxCxjg35kv=" + tBdzxxCxjg35kv +
+                ", tBdzxxCxjg10kv=" + tBdzxxCxjg10kv +
+                ", tBdzxxYy220kv=" + tBdzxxYy220kv +
+                ", tBdzxxYy110kv=" + tBdzxxYy110kv +
+                ", tBdzxxYy35kv=" + tBdzxxYy35kv +
+                ", tBdzxxYy10kv=" + tBdzxxYy10kv +
+                ", tBdzxxBtysj=" + tBdzxxBtysj +
+                ", tBdzxxYwdw=" + tBdzxxYwdw +
+                ", tBdzxxAzxs=" + tBdzxxAzxs +
+                ", tBdzxxZdmj=" + tBdzxxZdmj +
+                ", tBdzxxZb=" + tBdzxxZb +
+                ", tBdzxxGdgs=" + tBdzxxGdgs +
+                ", tBdzxxGypdzzlb=" + tBdzxxGypdzzlb +
+                ", tBdzxxGdqyid=" + tBdzxxGdqyid +
+                ", tBdzxxEtysj=" + tBdzxxEtysj +
+                ", tBdzxxYxzt=" + tBdzxxYxzt +
+                ", tBdzxxJxtz=" + tBdzxxJxtz +
+                ", tBdzxxGqlxid=" + tBdzxxGqlxid +
+                ", tBdzxxRemark=" + tBdzxxRemark +
+                ", tBdzxxGycdydj=" + tBdzxxGycdydj +
+                ", tBdzxxZycdydj=" + tBdzxxZycdydj +
+                ", tBdzxxDycdydj=" + tBdzxxDycdydj +
+                ", tBdzxxZqjggs=" + tBdzxxZqjggs +
+                ", tBdzxxGyczjx2=" + tBdzxxGyczjx2 +
+                ", tBdzxxGyczjx3=" + tBdzxxGyczjx3 +
+                ", tBdzxxZyczjx2=" + tBdzxxZyczjx2 +
+                ", tBdzxxZyczjx3=" + tBdzxxZyczjx3 +
+                ", tBdzxxDyczjx2=" + tBdzxxDyczjx2 +
+                ", tBdzxxDyczjx3=" + tBdzxxDyczjx3 +
+                ", tBdzxxGdqsx=" + tBdzxxGdqsx +
+                ", tBdzxxGdxz=" + tBdzxxGdxz +
+                ", tBdzxxN1=" + tBdzxxN1 +
+                ", tBdzxxDwjg=" + tBdzxxDwjg +
+                ", tBdzxxDlq=" + tBdzxxDlq +
+                "}";
     }
 }

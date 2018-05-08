@@ -2,18 +2,14 @@ package com.kylin.electricassistsys.server.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
-import com.kylin.electricassistsys.dto.ddsb.TDdsbBdzDto;
 import com.kylin.electricassistsys.dto.tsys.TSysYwdwDto;
 import com.kylin.electricassistsys.mybeanutils.MyBeanUtils;
-import com.kylin.electricassistsys.pojo.ddsb.TDdsbBdz;
 import com.kylin.electricassistsys.pojo.tsys.TSysYwdw;
 import com.kylin.electricassistsys.service.tsys.TSysYwdwService;
-import com.kylin.electricassistsys.testdata.api.TDdsbBdzDataApi;
-import com.kylin.electricassistsys.testdata.api.TSysYwdwDataApi;
+import com.kylin.electricassistsys.data.api.TSysYwdwDataApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service

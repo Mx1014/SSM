@@ -1,6 +1,8 @@
-package com.kylin.electricassistsys.dto.ghdg;
+package com.kylin.electricassistsys.pojo.ghdg;
 
-import com.kylin.electricassistsys.dto.base.BaseDto;
+import com.baomidou.mybatisplus.activerecord.Model;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -10,7 +12,7 @@ import com.kylin.electricassistsys.dto.base.BaseDto;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TGhdgPdzdhDto extends BaseDto {
+public class TGhdgPdzdhSel extends Model<TGhdgPdzdhSel> {
 
     private static final long serialVersionUID = 1L;
 
@@ -21,7 +23,30 @@ public class TGhdgPdzdhDto extends BaseDto {
     private String tPdzdhPdzdyybl;
     private String tPdzdhPdzdeybl;
     private String tPdzdhPdzdsybl;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
+    /**
+     * 电压参数中文
+     */
+    private String tDycsName;
 
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettDycsName() {
+        return tDycsName;
+    }
+
+    public void settDycsName(String tDycsName) {
+        this.tDycsName = tDycsName;
+    }
 
     public String gettPdzdhId() {
         return tPdzdhId;
@@ -79,7 +104,10 @@ public class TGhdgPdzdhDto extends BaseDto {
         this.tPdzdhPdzdsybl = tPdzdhPdzdsybl;
     }
 
-
+    @Override
+    protected Serializable pkVal() {
+        return this.tPdzdhId;
+    }
 
     @Override
     public String toString() {

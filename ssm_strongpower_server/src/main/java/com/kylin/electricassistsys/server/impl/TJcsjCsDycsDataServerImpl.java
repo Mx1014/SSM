@@ -6,7 +6,7 @@ import com.kylin.electricassistsys.dto.jcsj.TJcsjCsDycsDto;
 import com.kylin.electricassistsys.mybeanutils.MyBeanUtils;
 import com.kylin.electricassistsys.pojo.jcsj.TJcsjCsDycs;
 import com.kylin.electricassistsys.service.jcsj.TJcsjCsDycsService;
-import com.kylin.electricassistsys.testdata.api.TJcsjCsDycsDataApi;
+import com.kylin.electricassistsys.data.api.TJcsjCsDycsDataApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

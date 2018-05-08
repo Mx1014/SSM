@@ -10,7 +10,7 @@ import com.kylin.electricassistsys.dto.base.BaseDto;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TGhdgPdzdhDto extends BaseDto {
+public class TGhdgPdzdhSelDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -21,7 +21,30 @@ public class TGhdgPdzdhDto extends BaseDto {
     private String tPdzdhPdzdyybl;
     private String tPdzdhPdzdeybl;
     private String tPdzdhPdzdsybl;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
+    /**
+     * 电压参数中文
+     */
+    private String tDycsName;
 
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettDycsName() {
+        return tDycsName;
+    }
+
+    public void settDycsName(String tDycsName) {
+        this.tDycsName = tDycsName;
+    }
 
     public String gettPdzdhId() {
         return tPdzdhId;
