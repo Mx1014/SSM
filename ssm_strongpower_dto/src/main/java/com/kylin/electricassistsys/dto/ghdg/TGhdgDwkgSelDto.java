@@ -11,7 +11,7 @@ import com.kylin.electricassistsys.dto.base.BaseDto;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TGhdgDwkgDto extends BaseDto {
+public class TGhdgDwkgSelDto extends BaseDto {
     private String tDwkgId;
     private String tDwkgGqlx;
     private String tDwkgDydj;
@@ -22,6 +22,30 @@ public class TGhdgDwkgDto extends BaseDto {
     private String tDwkgKgts;
     private String tDwkgDlq;
     private String tDwkgFhkg;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
+    /**
+     * 电压参数中文
+     */
+    private String tDycsName;
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettDycsName() {
+        return tDycsName;
+    }
+
+    public void settDycsName(String tDycsName) {
+        this.tDycsName = tDycsName;
+    }
 
 
     public String gettDwkgId() {

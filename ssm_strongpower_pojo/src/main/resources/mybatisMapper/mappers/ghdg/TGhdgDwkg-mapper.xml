@@ -16,11 +16,30 @@
         <result column="T_DWKG_FHKG" property="tDwkgFhkg" />
     </resultMap>
 
+
+
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         T_DWKG_ID, T_DWKG_GQLX, T_DWKG_DYDJ, T_DWKG_KGZSS, T_DWKG_HWGSS, T_DWKG_DLFZXSS, T_DWKG_ZSKGSS, T_DWKG_KGTS, T_DWKG_DLQ, T_DWKG_FHKG
     </sql>
-    <select id="" parameterType="" resultMap="">
+
+    <!-- 自定义查询映射结果 -->
+    <resultMap id="SelResultMap" type="com.kylin.electricassistsys.pojo.ghdg.TGhdgDwkgSel">
+        <id column="T_DWKG_ID" property="tDwkgId" />
+        <result column="T_DWKG_GQLX" property="tDwkgGqlx" />
+        <result column="T_DWKG_DYDJ" property="tDwkgDydj" />
+        <result column="T_DWKG_KGZSS" property="tDwkgKgzss" />
+        <result column="T_DWKG_HWGSS" property="tDwkgHwgss" />
+        <result column="T_DWKG_DLFZXSS" property="tDwkgDlfzxss" />
+        <result column="T_DWKG_ZSKGSS" property="tDwkgZskgss" />
+        <result column="T_DWKG_KGTS" property="tDwkgKgts" />
+        <result column="T_DWKG_DLQ" property="tDwkgDlq" />
+        <result column="T_DWKG_FHKG" property="tDwkgFhkg" />
+        <result column="T_GQLX_NAME" property="tGqlxName"/>
+        <result column="T_DYCS_NAME" property="tDycsName"/>
+    </resultMap>
+
+    <select id="selectPage" parameterType="com.kylin.electricassistsys.pojo.ghdg.TGhdgDwkgSel" resultMap="SelResultMap">
         SELECT
             T_JCSJ_CS_DYCS.T_DYCS_NAME,
             T_JCSJ_FQ_GQLX.T_GQLX_NAME,
@@ -45,5 +64,4 @@
         WHERE
             1 = 1 ${ew.sqlSegment}
     </select>
-
 </mapper>
