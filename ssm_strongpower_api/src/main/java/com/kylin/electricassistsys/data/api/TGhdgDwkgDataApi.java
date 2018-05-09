@@ -7,13 +7,19 @@ import com.kylin.electricassistsys.dto.ghdg.TGhdgDwkgSelDto;
 import java.util.List;
 
 /**
- * @author 吴华强
- * @ClassName: ${type_name}
- * @Description: ${todo}
- * @date ${date} ${time}
- * ${tags}
+ * @Auther: whq
+ * @ClassName: TGhdgDwkgDataApi
+ * @Date: 2018/5/9 16:21
+ * @Description: 
  */
 public interface TGhdgDwkgDataApi {
+    /**
+     * 功能描述:
+     * @param: 无
+     * @return: 实体集合
+     * @auther: whq
+     * @date: 2018/5/9 15:51
+     */
     public List<TGhdgDwkgDto> getList();
 
     public Page getAllList(Page page, TGhdgDwkgSelDto tGhdgDwkgSelDto);

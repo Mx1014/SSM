@@ -31,13 +31,25 @@ public class TGhdgJmfbSelDto extends BaseDto {
      * 供区类型中文
      */
     private String tGqlxName;
+    /**
+     * 电压参数中文
+     */
+    private String tDycsName;
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
 
     public void settGqlxName(String tGqlxName) {
         this.tGqlxName = tGqlxName;
     }
 
-    public String gettGqlxName() {
-        return tGqlxName;
+    public String gettDycsName() {
+        return tDycsName;
+    }
+
+    public void settDycsName(String tDycsName) {
+        this.tDycsName = tDycsName;
     }
 
 

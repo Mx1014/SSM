@@ -1,6 +1,7 @@
 package com.kylin.electricassistsys.pojo.ghdg;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
@@ -15,7 +16,7 @@ import java.io.Serializable;
 public class TGhdgDczjb extends Model<TGhdgDczjb> {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId("T_DCZJB_ID")
     private String tDczjbId;
     private String tDczjbBh;
     private String tDczjbLx;

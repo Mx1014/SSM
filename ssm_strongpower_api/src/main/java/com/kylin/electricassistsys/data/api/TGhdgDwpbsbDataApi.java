@@ -7,11 +7,10 @@ import com.kylin.electricassistsys.dto.ghdg.TGhdgDwpbsbSelDto;
 import java.util.List;
 
 /**
- * @author 吴华强
- * @ClassName: ${type_name}
- * @Description: ${todo}
- * @date ${date} ${time}
- * ${tags}
+ * @Auther: whq
+ * @ClassName: TGhdgDwpbsbDataApi
+ * @Date: 2018/5/9 16:19
+ * @Description:电网配变设备Api
  */
 public interface TGhdgDwpbsbDataApi {
     public List<TGhdgDwpbsbDto> getList();
