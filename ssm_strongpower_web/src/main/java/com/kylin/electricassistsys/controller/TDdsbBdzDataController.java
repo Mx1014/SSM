@@ -1,9 +1,9 @@
 package com.kylin.electricassistsys.controller;
 
 import com.baomidou.mybatisplus.plugins.Page;
+import com.kylin.electricassistsys.data.api.TDdsbBdzDataApi;
 import com.kylin.electricassistsys.dto.ddsb.TDdsbBdzDto;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
-import com.kylin.electricassistsys.server.impl.TDdsbBdzDataServerImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -22,7 +22,7 @@ import java.util.List;
 @Api(value = "Test信息", description = "用户信息", produces = MediaType.APPLICATION_JSON)
 public class TDdsbBdzDataController {
     @Resource
-    private TDdsbBdzDataServerImpl tDdsbBdzDataServerImpl;
+    private TDdsbBdzDataApi tDdsbBdzDataApi;
     @Resource
     private RedisCacheService redisCacheService;
 
@@ -39,14 +39,14 @@ public class TDdsbBdzDataController {
     @ResponseBody
     public List<TDdsbBdzDto> list() {
 
-        return tDdsbBdzDataServerImpl.getList();
+        return tDdsbBdzDataApi.getList();
     }
 
     @RequestMapping("page")
     @ResponseBody
     public Page getPages() {
         Page page = new Page(1, 5);
-        return tDdsbBdzDataServerImpl.getPages(page);
+        return tDdsbBdzDataApi.getPages(page);
     }
 
 }

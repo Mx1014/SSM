@@ -1,12 +1,13 @@
 package com.kylin.electricassistsys.pojo.jcsj;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
@@ -15,7 +16,7 @@ import java.io.Serializable;
 public class TJcsjTyfs extends Model<TJcsjTyfs> {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId("T_TYFS_ID")
     private String tTyfsId;
     private String tTyfsName;
     private String tTyfsRemark;
@@ -53,9 +54,9 @@ public class TJcsjTyfs extends Model<TJcsjTyfs> {
     @Override
     public String toString() {
         return "TJcsjTyfs{" +
-        "tTyfsId=" + tTyfsId +
-        ", tTyfsName=" + tTyfsName +
-        ", tTyfsRemark=" + tTyfsRemark +
-        "}";
+                "tTyfsId=" + tTyfsId +
+                ", tTyfsName=" + tTyfsName +
+                ", tTyfsRemark=" + tTyfsRemark +
+                "}";
     }
 }

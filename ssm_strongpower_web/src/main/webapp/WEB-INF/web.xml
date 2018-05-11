@@ -51,7 +51,7 @@
     <!--过滤XSS注入 -->
     <filter>
         <filter-name>XssEscape</filter-name>
-        <filter-class>com.kylin.electricassistsys.sqlfilter.XssFilter</filter-class>
+        <filter-class>com.kylin.electricassistsys.tools.sqlfilter.XssFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>XssEscape</filter-name>
@@ -61,7 +61,7 @@
     <!--过滤SQL注入 -->
     <filter>
         <filter-name>SqlFilter</filter-name>
-        <filter-class>com.kylin.electricassistsys.sqlfilter.SqlFilter</filter-class>
+        <filter-class>com.kylin.electricassistsys.tools.sqlfilter.SqlFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>SqlFilter</filter-name>

@@ -1,6 +1,7 @@
 package com.kylin.electricassistsys.pojo.jcsj;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
@@ -15,7 +16,7 @@ import java.io.Serializable;
 public class TJcsjAzxs extends Model<TJcsjAzxs> {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId("T_AZXS_ID")
     private String tAzxsId;
     private String tAzxsName;
     private String tAzxsRemark;

@@ -1,6 +1,7 @@
 package com.kylin.electricassistsys.pojo.jcsj;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
@@ -15,7 +16,7 @@ import java.io.Serializable;
 public class TJcsjBzfs extends Model<TJcsjBzfs> {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId("T_BZFS_ID")
     private String tBzfsId;
     private String tBzfsName;
     private String tBzfsRemark;
