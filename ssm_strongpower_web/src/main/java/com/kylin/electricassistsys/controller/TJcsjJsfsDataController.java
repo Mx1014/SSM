@@ -3,6 +3,7 @@ package com.kylin.electricassistsys.controller;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.kylin.electricassistsys.data.api.TJcsjJsfsDataApi;
 import com.kylin.electricassistsys.dto.jcsj.TJcsjJsfsDto;
+import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.ws.rs.core.MediaType;
-import java.util.List;
 import java.util.UUID;
 
 /**
@@ -31,83 +31,72 @@ public class TJcsjJsfsDataController {
     private RedisCacheService redisCacheService;
 
     @RequestMapping("page")
-    public Page getPages(@RequestBody TJcsjJsfsDto tJcsjJsfsDto) {
-        Page page1 = new Page(tJcsjJsfsDto.getPage(), tJcsjJsfsDto.getLimit());
-        return tJcsjJsfsDataApi.getPages(page1, tJcsjJsfsDto);
+    public Object getPages(@RequestBody TJcsjJsfsDto tJcsjJsfsDto) {
+        JSONResult jsonResult = null;
+        try {
+            Page page = tJcsjJsfsDataApi.getPages(new Page(tJcsjJsfsDto.getPage(), tJcsjJsfsDto.getLimit()), tJcsjJsfsDto);
+            jsonResult = JSONResult.success(page);
+        } catch (Exception e) {
+            jsonResult = JSONResult.failure("服务器错误请联系管理员");
+        }
+        return jsonResult;
     }
 
     @RequestMapping(value = "update", produces = "application/json;charset=UTF-8", method = RequestMethod.POST, headers = "Accept=application/json")
-    public String update(@RequestBody TJcsjJsfsDto tJcsjJsfsDto) {
+    public Object update(@RequestBody TJcsjJsfsDto tJcsjJsfsDto) {
         try {
             tJcsjJsfsDataApi.update(tJcsjJsfsDto);
-            return "保存成功";
+            return JSONResult.success("更新成功");
         } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            return JSONResult.failure("更新失败");
         }
 
 
     }
 
     @RequestMapping("insert")
-    public String insert(@RequestBody TJcsjJsfsDto tJcsjJsfsDto) {
+    public Object insert(@RequestBody TJcsjJsfsDto tJcsjJsfsDto) {
         try {
             String uuidStr = UUID.randomUUID().toString().replace("-", "").toLowerCase();
             tJcsjJsfsDto.settJsfsId(uuidStr);
             tJcsjJsfsDataApi.insert(tJcsjJsfsDto);
-            return "保存成功";
+            return JSONResult.success("保存成功");
         } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            return JSONResult.failure("保存失败");
         }
 
 
     }
 
     @RequestMapping("list")
-    public List setList() {
+    public Object setList() {
         try {
-            return tJcsjJsfsDataApi.getList();
+            return JSONResult.success(tJcsjJsfsDataApi.getList());
         } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            return JSONResult.failure("服务器错误请联系管理员");
         }
-
-
     }
 
 
     @RequestMapping("del")
-    public String delete(@RequestBody String id) {
+    public Object delete(@RequestBody String id) {
         try {
             tJcsjJsfsDataApi.delete(id);
-            return "保存成功";
+            return JSONResult.success("删除成功");
         } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            return JSONResult.failure("删除失败");
         }
 
 
     }
 
     @RequestMapping("batchDel")
-    public String batchDelete(@RequestBody String ids) {
+    public Object batchDelete(@RequestBody String ids) {
         try {
             tJcsjJsfsDataApi.batchDelete(ids);
-            return "保存成功";
+            return JSONResult.success("批量删除成功");
         } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            return JSONResult.failure("批量删除失败");
         }
 
 

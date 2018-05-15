@@ -11,6 +11,6 @@ public interface TSystemLogApi {
     /**
      *添加日志记录信息
      */
-    public void insertSystemLog(TSystemLogDto systemLogDto);
+    public void insertSystem(TSystemLogDto systemLogDto);
 
 }

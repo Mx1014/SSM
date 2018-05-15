@@ -1,9 +1,9 @@
 package com.kylin.electricassistsys.service.impl.system;
 
-import com.kylin.electricassistsys.pojo.system.TSystemLog;
 import com.kylin.electricassistsys.dao.system.TSystemLogDao;
+import com.kylin.electricassistsys.pojo.system.TSystemLog;
 import com.kylin.electricassistsys.service.system.TSystemLogService;
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +17,17 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional
-public class TSystemLogServiceImap extends ServiceImpl<TSystemLogDao, TSystemLog> implements TSystemLogService {
+public class TSystemLogServiceImap  implements TSystemLogService {
+   @Autowired
+    private TSystemLogDao tSystemLogDao;
+    /**
+     * 添加系统日志信息
+     * @param log
+     */
+    @Transactional
+    public void insertSystem(TSystemLog log){
+        tSystemLogDao.insertSystem(log);
+
+    }
 
 }

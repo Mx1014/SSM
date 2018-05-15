@@ -1,6 +1,5 @@
 package com.kylin.electricassistsys.pojo.system;
 
-import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
 /**
@@ -11,7 +10,7 @@ import java.io.Serializable;
  * @author 陈文旭
  * @since 2018-05-10
  */
-public class TSystemLog extends Model<TSystemLog> {
+public class TSystemLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -101,10 +100,6 @@ public class TSystemLog extends Model<TSystemLog> {
         this.userOperationLegitimate = userOperationLegitimate;
     }
 
-    @Override
-    protected Serializable pkVal() {
-        return this.id;
-    }
 
     @Override
     public String toString() {

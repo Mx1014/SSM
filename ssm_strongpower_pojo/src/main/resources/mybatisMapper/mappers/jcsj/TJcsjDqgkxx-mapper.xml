@@ -4,21 +4,21 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.jcsj.TJcsjDqgkxx">
-        <result column="T_DQGKXX_ID" property="tDqgkxxId" />
-        <result column="T_DQGKXX_YEAR" property="tDqgkxxYear" />
-        <result column="T_DQGKXX_QYID" property="tDqgkxxQyid" />
-        <result column="T_DQGKXX_GQLX" property="tDqgkxxGqlx" />
-        <result column="T_DQGKXX_NPJQW" property="tDqgkxxNpjqw" />
-        <result column="T_DQGKXX_PJZGQW" property="tDqgkxxPjzgqw" />
-        <result column="T_DQGKXX_PJZDQW" property="tDqgkxxPjzdqw" />
-        <result column="T_DQGKXX_JD" property="tDqgkxxJd" />
-        <result column="T_DQGKXX_WD" property="tDqgkxxWd" />
-        <result column="T_DQGKXX_CSRK" property="tDqgkxxCsrk" />
-        <result column="T_DQGKXX_NCRK" property="tDqgkxxNcrk" />
-        <result column="T_DQGKXX_TDMJ" property="tDqgkxxTdmj" />
-        <result column="T_DQGKXX_NMZRK" property="tDqgkxxNmzrk" />
-        <result column="T_DQGKXX_JCQMJ" property="tDqgkxxJcqmj" />
-        <result column="T_DQGKXX_RKMD" property="tDqgkxxRkmd" />
+        <result column="T_DQGKXX_ID" property="tDqgkxxId"/>
+        <result column="T_DQGKXX_YEAR" property="tDqgkxxYear"/>
+        <result column="T_DQGKXX_QYID" property="tDqgkxxQyid"/>
+        <result column="T_DQGKXX_GQLX" property="tDqgkxxGqlx"/>
+        <result column="T_DQGKXX_NPJQW" property="tDqgkxxNpjqw"/>
+        <result column="T_DQGKXX_PJZGQW" property="tDqgkxxPjzgqw"/>
+        <result column="T_DQGKXX_PJZDQW" property="tDqgkxxPjzdqw"/>
+        <result column="T_DQGKXX_JD" property="tDqgkxxJd"/>
+        <result column="T_DQGKXX_WD" property="tDqgkxxWd"/>
+        <result column="T_DQGKXX_CSRK" property="tDqgkxxCsrk"/>
+        <result column="T_DQGKXX_NCRK" property="tDqgkxxNcrk"/>
+        <result column="T_DQGKXX_TDMJ" property="tDqgkxxTdmj"/>
+        <result column="T_DQGKXX_NMZRK" property="tDqgkxxNmzrk"/>
+        <result column="T_DQGKXX_JCQMJ" property="tDqgkxxJcqmj"/>
+        <result column="T_DQGKXX_RKMD" property="tDqgkxxRkmd"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
@@ -26,4 +26,56 @@
         T_DQGKXX_ID, T_DQGKXX_YEAR, T_DQGKXX_QYID, T_DQGKXX_GQLX, T_DQGKXX_NPJQW, T_DQGKXX_PJZGQW, T_DQGKXX_PJZDQW, T_DQGKXX_JD, T_DQGKXX_WD, T_DQGKXX_CSRK, T_DQGKXX_NCRK, T_DQGKXX_TDMJ, T_DQGKXX_NMZRK, T_DQGKXX_JCQMJ, T_DQGKXX_RKMD
     </sql>
 
+    <!-- 自定义查询映射结果 -->
+    <resultMap id="SelResultMap" type="com.kylin.electricassistsys.pojo.jcsj.TJcsjDqgkxxSel">
+        <result column="T_DQGKXX_ID" property="tDqgkxxId"/>
+        <result column="T_DQGKXX_YEAR" property="tDqgkxxYear"/>
+        <result column="T_DQGKXX_QYID" property="tDqgkxxQyid"/>
+        <result column="T_DQGKXX_GQLX" property="tDqgkxxGqlx"/>
+        <result column="T_DQGKXX_NPJQW" property="tDqgkxxNpjqw"/>
+        <result column="T_DQGKXX_PJZGQW" property="tDqgkxxPjzgqw"/>
+        <result column="T_DQGKXX_PJZDQW" property="tDqgkxxPjzdqw"/>
+        <result column="T_DQGKXX_JD" property="tDqgkxxJd"/>
+        <result column="T_DQGKXX_WD" property="tDqgkxxWd"/>
+        <result column="T_DQGKXX_CSRK" property="tDqgkxxCsrk"/>
+        <result column="T_DQGKXX_NCRK" property="tDqgkxxNcrk"/>
+        <result column="T_DQGKXX_TDMJ" property="tDqgkxxTdmj"/>
+        <result column="T_DQGKXX_NMZRK" property="tDqgkxxNmzrk"/>
+        <result column="T_DQGKXX_JCQMJ" property="tDqgkxxJcqmj"/>
+        <result column="T_DQGKXX_RKMD" property="tDqgkxxRkmd"/>
+        <result column="T_GQLX_NAME" property="tGqlxName"/>
+        <result column="T_GDFQ_NAME" property="tGdfqName"/>
+    </resultMap>
+
+    <!-- 自定义查询语句-->
+    <select id="selectPage" parameterType="com.kylin.electricassistsys.pojo.jcsj.TJcsjDqgkxxSel" resultMap="SelResultMap">
+        SELECT
+            T_JCSJ_DQGKXX.T_DQGKXX_ID,
+            T_JCSJ_DQGKXX.T_DQGKXX_YEAR,
+            T_JCSJ_DQGKXX.T_DQGKXX_QYID,
+            T_JCSJ_FQ_GDFQ.T_GDFQ_NAME,
+            T_JCSJ_DQGKXX.T_DQGKXX_GQLX,
+            T_JCSJ_FQ_GQLX.T_GQLX_NAME,
+            T_JCSJ_DQGKXX.T_DQGKXX_TDMJ,
+            T_JCSJ_DQGKXX.T_DQGKXX_NMZRK,
+            T_JCSJ_DQGKXX.T_DQGKXX_RKMD,
+            T_JCSJ_DQGKXX.T_DQGKXX_NPJQW,
+            T_JCSJ_DQGKXX.T_DQGKXX_JD,
+            T_JCSJ_DQGKXX.T_DQGKXX_WD,
+            T_JCSJ_DQGKXX.T_DQGKXX_CSRK,
+            T_JCSJ_DQGKXX.T_DQGKXX_NCRK,
+            T_JCSJ_DQGKXX.T_DQGKXX_PJZGQW,
+            T_JCSJ_DQGKXX.T_DQGKXX_PJZDQW,
+            T_JCSJ_DQGKXX.T_DQGKXX_JCQMJ
+        FROM
+            T_JCSJ_DQGKXX
+            LEFT JOIN T_JCSJ_FQ_GDFQ ON (
+                T_JCSJ_FQ_GDFQ.T_GDFQ_ID = T_JCSJ_DQGKXX.T_DQGKXX_QYID
+            )
+            LEFT JOIN T_JCSJ_FQ_GQLX ON (
+                T_JCSJ_FQ_GQLX.T_GQLX_ID = T_JCSJ_DQGKXX.T_DQGKXX_GQLX
+            )
+        WHERE
+            1 = 1 ${ew.sqlSegment} ORDER BY T_JCSJ_DQGKXX.T_DQGKXX_ID
+    </select>
 </mapper>

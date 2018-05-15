@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.system.TSystemLogDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.system.TSystemLog">
+        <result column="ID" property="id" jdbcType="VARCHAR" />
+        <result column="USER_IP" property="userIp" jdbcType="VARCHAR"/>
+        <result column="USER_METHOD" property="userMethod"  jdbcType="VARCHAR"/>
+        <result column="USER_PARAMETERS" property="userParameters" jdbcType="CLOB" javaType = "java.lang.String" />
+        <result column="USER_OPERATION_TIME" property="userOperationTime" jdbcType="VARCHAR"/>
+        <result column="USER_NAME" property="userName"  jdbcType="VARCHAR"/>
+        <result column="USER_OPERATION_LEGITIMATE" property="userOperationLegitimate" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, USER_IP, USER_METHOD, USER_PARAMETERS, USER_OPERATION_TIME, USER_NAME, USER_OPERATION_LEGITIMATE
+    </sql>
+
+<insert id="insertSystem" parameterType="com.kylin.electricassistsys.pojo.system.TSystemLog">
+    insert  into t_system_log
+    ( ID, USER_IP, USER_METHOD, USER_PARAMETERS, USER_OPERATION_TIME, USER_NAME, USER_OPERATION_LEGITIMATE)
+     values (
+   #{id,jdbcType=VARCHAR},
+    #{userIp,jdbcType=VARCHAR},
+    #{userMethod,jdbcType=VARCHAR},
+    #{userParameters,jdbcType=CLOB},
+    #{userOperationTime,jdbcType=VARCHAR},
+    #{userName,jdbcType=VARCHAR},
+    #{userOperationLegitimate,jdbcType=VARCHAR}
+    )
+</insert>
+
+</mapper>

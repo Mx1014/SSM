@@ -2,6 +2,7 @@ package com.kylin.electricassistsys.tools.sqlfilter;
 
 import org.apache.commons.lang3.StringUtils;
 
+import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
@@ -14,6 +15,8 @@ import java.util.regex.Pattern;
 
 /**
  * 验证参数合法性
+ * cwx
+ * 2018/5/8
  */
 public class SqlRegular {
 
@@ -27,7 +30,12 @@ public class SqlRegular {
         return false;
     }
 
-    //
+    /**
+     * 将request中的值放转换为string
+     * @param request
+     * @return
+     * @throws IOException
+     */
     public static String getBody(HttpServletRequest request) throws IOException {
         String body = null;
         StringBuilder stringBuilder = new StringBuilder();
@@ -35,7 +43,7 @@ public class SqlRegular {
         try {
             InputStream inputStream = request.getInputStream();
             if (inputStream != null) {
-                bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"utf-8"));
                 char[] charBuffer = new char[128];
                 int bytesRead = -1;
                 while ((bytesRead = bufferedReader.read(charBuffer)) > 0) {
@@ -61,11 +69,12 @@ public class SqlRegular {
      * @param body
      * @return
      */
-    public static ServletRequest getRequest(ServletRequest request , String body){
-        String enctype = request.getContentType();
-        if (StringUtils.isNotEmpty(enctype) && enctype.contains("application/json")){
-            return new PostServletRequest((HttpServletRequest) request,body);
-        }
+    public static ServletRequest getRequest(ServletRequest request , String body) throws IOException,ServletException {
+            request.setCharacterEncoding("UTF-8");
+            String enctype = request.getContentType();
+            if (StringUtils.isNotEmpty(enctype) && enctype.contains("application/json")){
+                return new PostServletRequest((HttpServletRequest) request,body);
+            }
         return request;
     }
 

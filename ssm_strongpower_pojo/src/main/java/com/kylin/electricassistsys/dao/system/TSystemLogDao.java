@@ -2,7 +2,6 @@ package com.kylin.electricassistsys.dao.system;
 
 import com.kylin.electricassistsys.annotation.MyBatisRepository;
 import com.kylin.electricassistsys.pojo.system.TSystemLog;
-import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
  * <p>
@@ -13,6 +12,11 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * @since 2018-05-10
  */
 @MyBatisRepository
-public interface TSystemLogDao extends BaseMapper<TSystemLog> {
+public interface TSystemLogDao {
+    /**
+     * 添加系统日志信息
+     * @param log
+     */
+    public void insertSystem(TSystemLog log);
 
 }

@@ -24,7 +24,7 @@ public class PostServletInputStream extends ServletInputStream {
 
     private InputStream acquireInputStream() throws IOException {
         if(inputStream == null) {
-            inputStream = new ByteArrayInputStream(body.getBytes());//通过解析之后传入的文本生成inputStream以便后面control调用
+            inputStream = new ByteArrayInputStream(body.getBytes("utf-8"));//通过解析之后传入的文本生成inputStream以便后面control调用
         }
 
         return inputStream;

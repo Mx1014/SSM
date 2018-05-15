@@ -40,4 +40,79 @@
         T_BYQCS_ID, T_BYQCS_XH, T_BYQCS_XL, T_BYQCS_DR, T_BYQCS_DYDJ, T_BYQCS_DYCDYDJ, T_BYQCS_DYXL, T_BYQCS_GYCEDDY, T_BYQCS_DYCEDDY, T_BYQCS_KZSH, T_BYQCS_DLDY, T_BYQCS_DLSH, T_BYQCS_KZDL, T_BYQCS_MPBB, T_BYQCS_EDDY, T_BYQCS_TYFS, T_BYQCS_RZFS, T_BYQCS_GZZK, T_BYQCS_ZDZK, T_BYQCS_GDZK, T_BYQCS_GZHS, T_BYQCS_ZDHS, T_BYQCS_GDHS, T_BYQCS_GZDZ, T_BYQCS_ZDDZ, T_BYQCS_GDDZ, T_BYQCS_GZDK, T_BYQCS_ZDDK, T_BYQCS_GDDK
     </sql>
 
+    <!-- 自定义查询映射结果 -->
+    <resultMap id="SelResultMap" type="com.kylin.electricassistsys.pojo.jcsj.TJcsjCsByqcsSel">
+        <id column="T_BYQCS_ID" property="tByqcsId" />
+        <result column="T_BYQCS_XH" property="tByqcsXh" />
+        <result column="T_BYQCS_XL" property="tByqcsXl" />
+        <result column="T_BYQCS_DR" property="tByqcsDr" />
+        <result column="T_BYQCS_DYDJ" property="tByqcsDydj" />
+        <result column="T_BYQCS_DYCDYDJ" property="tByqcsDycdydj" />
+        <result column="T_BYQCS_DYXL" property="tByqcsDyxl" />
+        <result column="T_BYQCS_GYCEDDY" property="tByqcsGyceddy" />
+        <result column="T_BYQCS_DYCEDDY" property="tByqcsDyceddy" />
+        <result column="T_BYQCS_KZSH" property="tByqcsKzsh" />
+        <result column="T_BYQCS_DLDY" property="tByqcsDldy" />
+        <result column="T_BYQCS_DLSH" property="tByqcsDlsh" />
+        <result column="T_BYQCS_KZDL" property="tByqcsKzdl" />
+        <result column="T_BYQCS_MPBB" property="tByqcsMpbb" />
+        <result column="T_BYQCS_EDDY" property="tByqcsEddy" />
+        <result column="T_BYQCS_TYFS" property="tByqcsTyfs" />
+        <result column="T_BYQCS_RZFS" property="tByqcsRzfs" />
+        <result column="T_BYQCS_GZZK" property="tByqcsGzzk" />
+        <result column="T_BYQCS_ZDZK" property="tByqcsZdzk" />
+        <result column="T_BYQCS_GDZK" property="tByqcsGdzk" />
+        <result column="T_BYQCS_GZHS" property="tByqcsGzhs" />
+        <result column="T_BYQCS_ZDHS" property="tByqcsZdhs" />
+        <result column="T_BYQCS_GDHS" property="tByqcsGdhs" />
+        <result column="T_BYQCS_GZDZ" property="tByqcsGzdz" />
+        <result column="T_BYQCS_ZDDZ" property="tByqcsZddz" />
+        <result column="T_BYQCS_GDDZ" property="tByqcsGddz" />
+        <result column="T_BYQCS_GZDK" property="tByqcsGzdk" />
+        <result column="T_BYQCS_ZDDK" property="tByqcsZddk" />
+        <result column="T_BYQCS_GDDK" property="tByqcsGddk" />
+        <result column="T_DYCS_NAME" property="tDycsName"/>
+    </resultMap>
+    <!-- 自定义查询语句 -->
+    <select id="selectPage" parameterType="com.kylin.electricassistsys.pojo.jcsj.TJcsjCsByqcsSel" resultMap="SelResultMap">
+        SELECT
+            T_JCSJ_CS_DYCS.T_DYCS_NAME,
+            T_JCSJ_CS_BYQCS.T_BYQCS_ID,
+            T_JCSJ_CS_BYQCS.T_BYQCS_XH,
+            T_JCSJ_CS_BYQCS.T_BYQCS_XL,
+            T_JCSJ_CS_BYQCS.T_BYQCS_DR,
+            T_JCSJ_CS_BYQCS.T_BYQCS_DYDJ,
+            T_JCSJ_CS_BYQCS.T_BYQCS_DYCDYDJ,
+            T_JCSJ_CS_BYQCS.T_BYQCS_DYXL,
+            T_JCSJ_CS_BYQCS.T_BYQCS_GYCEDDY,
+            T_JCSJ_CS_BYQCS.T_BYQCS_DYCEDDY,
+            T_JCSJ_CS_BYQCS.T_BYQCS_KZSH,
+            T_JCSJ_CS_BYQCS.T_BYQCS_DLDY,
+            T_JCSJ_CS_BYQCS.T_BYQCS_DLSH,
+            T_JCSJ_CS_BYQCS.T_BYQCS_KZDL,
+            T_JCSJ_CS_BYQCS.T_BYQCS_MPBB,
+            T_JCSJ_CS_BYQCS.T_BYQCS_EDDY,
+            T_JCSJ_CS_BYQCS.T_BYQCS_TYFS,
+            T_JCSJ_CS_BYQCS.T_BYQCS_RZFS,
+            T_JCSJ_CS_BYQCS.T_BYQCS_GZZK,
+            T_JCSJ_CS_BYQCS.T_BYQCS_ZDZK,
+            T_JCSJ_CS_BYQCS.T_BYQCS_GDZK,
+            T_JCSJ_CS_BYQCS.T_BYQCS_GZHS,
+            T_JCSJ_CS_BYQCS.T_BYQCS_ZDHS,
+            T_JCSJ_CS_BYQCS.T_BYQCS_GDHS,
+            T_JCSJ_CS_BYQCS.T_BYQCS_GZDZ,
+            T_JCSJ_CS_BYQCS.T_BYQCS_ZDDZ,
+            T_JCSJ_CS_BYQCS.T_BYQCS_GDDZ,
+            T_JCSJ_CS_BYQCS.T_BYQCS_GZDK,
+            T_JCSJ_CS_BYQCS.T_BYQCS_ZDDK,
+            T_JCSJ_CS_BYQCS.T_BYQCS_GDDK
+        FROM
+            T_JCSJ_CS_BYQCS
+            LEFT JOIN T_JCSJ_CS_DYCS ON (
+                T_JCSJ_CS_DYCS.T_DYCS_ID = T_JCSJ_CS_BYQCS.T_BYQCS_DYDJ
+            )
+        WHERE
+            1 = 1 ${ew.sqlSegment}
+    </select>
+
 </mapper>

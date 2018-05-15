@@ -19,15 +19,15 @@ public class TSystemLogServerImpl implements TSystemLogApi {
     /**
      * 这个是日志的service访问接口
      */
-     @Resource
+     @Autowired
     private TSystemLogService tSystemLogService;
 
-    public void insertSystemLog(TSystemLogDto systemLogDto){
+    public void insertSystem(TSystemLogDto systemLogDto){
         TSystemLog syslog= new TSystemLog();
+        MyBeanUtils.copyProperties(systemLogDto,syslog);
         syslog.setId(UUIDKey.getKey());
         syslog.setUserOperationTime(UUIDKey.getDate());
-        MyBeanUtils.copyProperties(systemLogDto,syslog);
-        tSystemLogService.insert(syslog);
+        tSystemLogService.insertSystem(syslog);
 
     }
 }

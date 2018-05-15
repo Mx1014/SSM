@@ -32,4 +32,69 @@
         T_LSFHDL_ID, T_LSFHDL_QUID, T_LSFHDL_YEAR, T_LSFHDL_MAXIMUMLOAD, T_LSFHDL_MAXIMUMLOADTIME, T_LSFHDL_ALLSOCIETYYDL, T_LSFHDL_FIRSTINDUSTRYYDL, T_LSFHDL_SECONDINDUSTRYYDL, T_LSFHDL_THIRDINDUSTRYYDL, T_LSFHDL_RESIDENTYDL, T_LSFHDL_FARMINGYDL, T_LSFHDL_FORESTRYYDL, T_LSFHDL_STOCKRAISINGYDL, T_LSFHDL_AVOCATIONYDL, T_LSFHDL_FISHERYYDL, T_LSFHDL_INDUSTRYYDL, T_LSFHDL_BUSINESSYDL, T_LSFHDL_NETSPOWER_SUPPLY, T_LSFHDL_MONTHMAXIMUMLOAD, T_LSFHDL_SUPPLLOAD, T_LSFHDL_GQLX
     </sql>
 
+    <!-- 自定义查询映射结果 -->
+    <resultMap id="SelResultMap" type="com.kylin.electricassistsys.pojo.jcsj.TJcsjYxLsfhdlSel">
+        <id column="T_LSFHDL_ID" property="tLsfhdlId" />
+        <result column="T_LSFHDL_QUID" property="tLsfhdlQuid" />
+        <result column="T_LSFHDL_YEAR" property="tLsfhdlYear" />
+        <result column="T_LSFHDL_MAXIMUMLOAD" property="tLsfhdlMaximumload" />
+        <result column="T_LSFHDL_MAXIMUMLOADTIME" property="tLsfhdlMaximumloadtime" />
+        <result column="T_LSFHDL_ALLSOCIETYYDL" property="tLsfhdlAllsocietyydl" />
+        <result column="T_LSFHDL_FIRSTINDUSTRYYDL" property="tLsfhdlFirstindustryydl" />
+        <result column="T_LSFHDL_SECONDINDUSTRYYDL" property="tLsfhdlSecondindustryydl" />
+        <result column="T_LSFHDL_THIRDINDUSTRYYDL" property="tLsfhdlThirdindustryydl" />
+        <result column="T_LSFHDL_RESIDENTYDL" property="tLsfhdlResidentydl" />
+        <result column="T_LSFHDL_FARMINGYDL" property="tLsfhdlFarmingydl" />
+        <result column="T_LSFHDL_FORESTRYYDL" property="tLsfhdlForestryydl" />
+        <result column="T_LSFHDL_STOCKRAISINGYDL" property="tLsfhdlStockraisingydl" />
+        <result column="T_LSFHDL_AVOCATIONYDL" property="tLsfhdlAvocationydl" />
+        <result column="T_LSFHDL_FISHERYYDL" property="tLsfhdlFisheryydl" />
+        <result column="T_LSFHDL_INDUSTRYYDL" property="tLsfhdlIndustryydl" />
+        <result column="T_LSFHDL_BUSINESSYDL" property="tLsfhdlBusinessydl" />
+        <result column="T_LSFHDL_NETSPOWER_SUPPLY" property="tLsfhdlNetspowerSupply" />
+        <result column="T_LSFHDL_MONTHMAXIMUMLOAD" property="tLsfhdlMonthmaximumload" />
+        <result column="T_LSFHDL_SUPPLLOAD" property="tLsfhdlSupplload" />
+        <result column="T_LSFHDL_GQLX" property="tLsfhdlGqlx" />
+        <result column="T_GQLX_NAME" property="tGqlxName"/>
+        <result column="T_GDFQ_NAME" property="tGdfqName"/>
+    </resultMap>
+
+    <!-- 自定义查询语句-->
+    <select id="selectPage" parameterType="com.kylin.electricassistsys.pojo.jcsj.TJcsjYxLsfhdlSel" resultMap="SelResultMap">
+        SELECT
+            T_JCSJ_FQ_GDFQ.T_GDFQ_NAME,
+            T_JCSJ_FQ_GQLX.T_GQLX_NAME,
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_ID, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_QUID, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_YEAR, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_MAXIMUMLOAD, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_MAXIMUMLOADTIME, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_ALLSOCIETYYDL, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_FIRSTINDUSTRYYDL, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_SECONDINDUSTRYYDL, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_THIRDINDUSTRYYDL, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_RESIDENTYDL, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_FARMINGYDL, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_FORESTRYYDL, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_STOCKRAISINGYDL, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_AVOCATIONYDL, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_FISHERYYDL, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_INDUSTRYYDL, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_BUSINESSYDL, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_NETSPOWER_SUPPLY, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_MONTHMAXIMUMLOAD, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_SUPPLLOAD, 
+            T_JCSJ_YX_LSFHDL.T_LSFHDL_GQLX
+        FROM
+            T_JCSJ_YX_LSFHDL
+            LEFT JOIN T_JCSJ_FQ_GDFQ ON (
+                T_JCSJ_FQ_GDFQ.T_GDFQ_ID = T_JCSJ_YX_LSFHDL.T_LSFHDL_QUID
+            )
+            LEFT JOIN T_JCSJ_FQ_GQLX ON (
+                T_JCSJ_FQ_GQLX.T_GQLX_ID = T_JCSJ_YX_LSFHDL.T_LSFHDL_GQLX
+            )
+        WHERE
+            1 = 1 ${ew.sqlSegment} ORDER BY T_JCSJ_YX_LSFHDL.T_LSFHDL_ID
+    </select>
+
 </mapper>
