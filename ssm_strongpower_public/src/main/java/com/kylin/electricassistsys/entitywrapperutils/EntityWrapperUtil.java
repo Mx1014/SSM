@@ -36,7 +36,7 @@ public class EntityWrapperUtil {
                     System.out.println("Table field name:" + fieldName);
                     System.out.println("attribute name:" + name);
                     System.out.println("attribute value:" + object);
-                    if (fieldName.endsWith("_NAME")) {
+                    if (fieldName.endsWith("_NAME")||fieldName.endsWith("MC")) {
                         entityWrapper.where(className + "." + fieldName + " like {0}", "%" + object + "%");
                     } else {
                         entityWrapper.where(className + "." + fieldName + " = {0}", object);
