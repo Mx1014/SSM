@@ -42,21 +42,25 @@ public class SqlFilter implements Filter{
             }
             if ("POST".equalsIgnoreCase(method)) {
                 String body = SqlRegular.getBody((HttpServletRequest) request);
-                try {
-                    /**
-                     * 简单的json数据格式转换
-                     */
-                    map = gson.fromJson(body, map.getClass());
-                    falg = SqlRegular.ForMap(map);
-                } catch (Exception e) {
-                    /**
-                     * 复杂的json数据格式转换
-                     */
-                    map = JsonUtils.json2Map(body);
-                    falg = SqlRegular.ForMap(map);
-                }
+               boolean d= SqlRegular.jsonRegex(body);
+               if(d) {
+                   try {
+                       /**
+                        * 简单的json数据格式转换
+                        */
+                       map = gson.fromJson(body, map.getClass());
+                       falg = SqlRegular.ForMap(map);
+                   } catch (Exception e) {
+                       /**
+                        * 复杂的json数据格式转换
+                        */
+                       map = JsonUtils.json2Map(body);
+                       falg = SqlRegular.ForMap(map);
+                   }
+               }else {
+                   falg = SqlRegular.sqlValidateRegex(body);
+               }
                 req = (HttpServletRequest) SqlRegular.getRequest(req, body);
-
             }
             if ("GET".equalsIgnoreCase(method)) {
                 params = req.getParameterNames();

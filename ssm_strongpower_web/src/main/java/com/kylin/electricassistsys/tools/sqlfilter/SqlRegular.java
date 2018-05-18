@@ -1,5 +1,6 @@
 package com.kylin.electricassistsys.tools.sqlfilter;
 
+import net.sf.json.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.ServletException;
@@ -21,13 +22,18 @@ import java.util.regex.Pattern;
 public class SqlRegular {
 
     public static boolean ForMap(Map<String, Object>map){
-        for (Object value : map.values()) {
-          boolean fals=sqlValidateRegex(value+"");
-          if(fals){
-              return  true;
-          }
+        try {
+            for (Object value : map.values()) {
+                boolean fals=sqlValidateRegex(value+"");
+                if(fals){
+                    return  true;
+                }
+            }
+        }catch (Exception e){
+            return false;
         }
         return false;
+
     }
 
     /**
@@ -142,8 +148,23 @@ public class SqlRegular {
             return true;
         }
         return false;
+    }
+
+    /**
+     * 判斷數據是否是json格式
+     * @param str
+     * @return
+     */
+    public static boolean jsonRegex(String str){
+        try {
+        JSONObject.fromObject(str);
+            return true;
+        }catch (Exception e){
+        return false;
+        }
 
     }
+
 
     //参数校验效验
     protected static boolean sqlValidate(String str) {

@@ -1,26 +1,24 @@
 package com.kylin.electricassistsys.pojo.tsbsj;
 
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ * 低壓綫路信息基本類
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSbsjDyxlxx extends Model<TSbsjDyxlxx> {
+public class TSbsjDyxlxxSel extends Model<TSbsjDyxlxxSel> {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 标示
      */
-    @TableId("t_dyxlxx_id")
     private String tDyxlxxId;
     /**
      * 年份
@@ -82,6 +80,22 @@ public class TSbsjDyxlxx extends Model<TSbsjDyxlxx> {
      * 敷设方式
      */
     private String tDyxlxxFsfs;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
+    /**
+     *所属区域中文
+     */
+    private String tGdfqName;
+    /**
+     *运维单位中文
+     */
+    private String tSysDwmz;
+    /**
+     *敷设方式
+     */
+    private String tFsfsName;
 
 
     public String gettDyxlxxId() {

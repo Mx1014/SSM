@@ -1,10 +1,12 @@
 package com.kylin.electricassistsys.tools.json;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kylin.electricassistsys.tools.sqlfilter.SqlRegular;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -44,6 +46,20 @@ public class JsonUtils {
             return map;
         }else{
             return null;
+        }
+    }
+    /**
+     * 驗證支付攢是否json格式
+     * @param json
+     * @return
+     */
+    public static boolean isGoodJson(String json) {
+        try {
+            final ObjectMapper mapper = new ObjectMapper();
+            mapper.readTree(json);
+            return true;
+        } catch (IOException e) {
+            return false;
         }
     }
     public static void main(String []arge){

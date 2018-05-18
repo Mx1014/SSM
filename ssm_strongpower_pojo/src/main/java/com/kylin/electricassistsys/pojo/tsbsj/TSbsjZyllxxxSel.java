@@ -1,7 +1,6 @@
 package com.kylin.electricassistsys.pojo.tsbsj;
 
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
@@ -13,14 +12,13 @@ import java.io.Serializable;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSbsjZyllxxx extends Model<TSbsjZyllxxx> {
+public class TSbsjZyllxxxSel extends Model<TSbsjZyllxxxSel> {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 标示
      */
-    @TableId("t_zyllxxx_id")
     private String tZyllxxxId;
     /**
      * 线路标号
@@ -298,7 +296,104 @@ public class TSbsjZyllxxx extends Model<TSbsjZyllxxx> {
      * 站间联络线四
      */
     private String tZyllxxxZjllx4;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
+    /**
+     *所属区域中文
+     */
+    private String tGdfqName;
+    /**
+     *运维单位中文
+     */
 
+    private String tSysDwmz;
+    /**
+     *变电站编号中文
+     */
+
+    private String tBdzxxName;
+    /**
+     *城农网中文
+     */
+    private String tCnwName;
+    /**
+     *使用方式中文
+     */
+    private String tSyfsName;
+    /**
+     *导线型号一中文
+     */
+    private String tDxcsXhmc;
+    /**
+     *敷设方式
+     */
+    private String tFsfsName;
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettGdfqName() {
+        return tGdfqName;
+    }
+
+    public void settGdfqName(String tGdfqName) {
+        this.tGdfqName = tGdfqName;
+    }
+
+    public String gettSysDwmz() {
+        return tSysDwmz;
+    }
+
+    public void settSysDwmz(String tSysDwmz) {
+        this.tSysDwmz = tSysDwmz;
+    }
+
+    public String gettBdzxxName() {
+        return tBdzxxName;
+    }
+
+    public void settBdzxxName(String tBdzxxName) {
+        this.tBdzxxName = tBdzxxName;
+    }
+
+    public String gettCnwName() {
+        return tCnwName;
+    }
+
+    public void settCnwName(String tCnwName) {
+        this.tCnwName = tCnwName;
+    }
+
+    public String gettSyfsName() {
+        return tSyfsName;
+    }
+
+    public void settSyfsName(String tSyfsName) {
+        this.tSyfsName = tSyfsName;
+    }
+
+    public String gettDxcsXhmc() {
+        return tDxcsXhmc;
+    }
+
+    public void settDxcsXhmc(String tDxcsXhmc) {
+        this.tDxcsXhmc = tDxcsXhmc;
+    }
+
+    public String gettFsfsName() {
+        return tFsfsName;
+    }
+
+    public void settFsfsName(String tFsfsName) {
+        this.tFsfsName = tFsfsName;
+    }
 
     public String gettZyllxxxId() {
         return tZyllxxxId;

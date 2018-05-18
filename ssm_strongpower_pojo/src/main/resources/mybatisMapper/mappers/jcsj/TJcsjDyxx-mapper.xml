@@ -30,4 +30,75 @@
         T_DYXX_ID, T_DYXX_DCMC, T_DYXX_DYBJ, T_DYXX_QYID, T_DYXX_DYDJ, T_DYXX_GQLX, T_DYXX_DCLX, T_DYXX_CYDL, T_DYXX_TCSJ, T_DYXX_TSSX, T_DYXX_ZJMX, T_DYXX_NFDL, T_DYXX_LYXSS, T_DYXX_FQCL, T_DYXX_KQCL, T_DYXX_BTYSJ, T_DYXX_ETYSJ, T_DYXX_YXZT, T_DYXX_REMARK
     </sql>
 
+    <!-- 自定义查询映射结果 -->
+    <resultMap id="SelResultMap" type="com.kylin.electricassistsys.pojo.jcsj.TJcsjDyxxSel">
+        <result column="T_DYXX_ID" property="tDyxxId" />
+        <result column="T_DYXX_DCMC" property="tDyxxDcmc" />
+        <result column="T_DYXX_DYBJ" property="tDyxxDybj" />
+        <result column="T_DYXX_QYID" property="tDyxxQyid" />
+        <result column="T_DYXX_DYDJ" property="tDyxxDydj" />
+        <result column="T_DYXX_GQLX" property="tDyxxGqlx" />
+        <result column="T_DYXX_DCLX" property="tDyxxDclx" />
+        <result column="T_DYXX_CYDL" property="tDyxxCydl" />
+        <result column="T_DYXX_TCSJ" property="tDyxxTcsj" />
+        <result column="T_DYXX_TSSX" property="tDyxxTssx" />
+        <result column="T_DYXX_ZJMX" property="tDyxxZjmx" />
+        <result column="T_DYXX_NFDL" property="tDyxxNfdl" />
+        <result column="T_DYXX_LYXSS" property="tDyxxLyxss" />
+        <result column="T_DYXX_FQCL" property="tDyxxFqcl" />
+        <result column="T_DYXX_KQCL" property="tDyxxKqcl" />
+        <result column="T_DYXX_BTYSJ" property="tDyxxBtysj" />
+        <result column="T_DYXX_ETYSJ" property="tDyxxEtysj" />
+        <result column="T_DYXX_YXZT" property="tDyxxYxzt" />
+        <result column="T_DYXX_REMARK" property="tDyxxRemark" />
+        <result column="T_GQLX_NAME" property="tGqlxName"/>
+        <result column="T_GDFQ_NAME" property="tGdfqName"/>
+        <result column="T_DYCS_NAME" property="tDycsName"/>
+        <result column="T_DYLX_NAME" property="tDylxName"/>
+    </resultMap>
+
+    <!-- 自定义查询语句-->
+    <select id="selectPage" parameterType="com.kylin.electricassistsys.pojo.jcsj.TJcsjDyxxSel" resultMap="SelResultMap">
+        SELECT
+            T_JCSJ_FQ_GDFQ.T_GDFQ_NAME,
+            T_JCSJ_FQ_GQLX.T_GQLX_NAME,
+            T_JCSJ_CS_DYCS.T_DYCS_NAME,
+            T_JCSJ_DYLX.T_DYLX_NAME,
+            T_JCSJ_DYXX.T_DYXX_ID,
+            T_JCSJ_DYXX.T_DYXX_DCMC,
+            T_JCSJ_DYXX.T_DYXX_DYBJ,
+            T_JCSJ_DYXX.T_DYXX_QYID,
+            T_JCSJ_DYXX.T_DYXX_GQLX,
+            T_JCSJ_DYXX.T_DYXX_DYDJ,
+            T_JCSJ_DYXX.T_DYXX_DCLX,
+            T_JCSJ_DYXX.T_DYXX_CYDL,
+            T_JCSJ_DYXX.T_DYXX_TCSJ,
+            T_JCSJ_DYXX.T_DYXX_TSSX,
+            T_JCSJ_DYXX.T_DYXX_ZJMX,
+            T_JCSJ_DYXX.T_DYXX_NFDL,
+            T_JCSJ_DYXX.T_DYXX_LYXSS,
+            T_JCSJ_DYXX.T_DYXX_FQCL,
+            T_JCSJ_DYXX.T_DYXX_KQCL,
+            T_JCSJ_DYXX.T_DYXX_BTYSJ,
+            T_JCSJ_DYXX.T_DYXX_ETYSJ,
+            T_JCSJ_DYXX.T_DYXX_YXZT,
+            T_JCSJ_DYXX.T_DYXX_REMARK
+        FROM
+            T_JCSJ_DYXX
+            LEFT JOIN T_JCSJ_FQ_GDFQ ON (
+                T_JCSJ_FQ_GDFQ.T_GDFQ_ID = T_JCSJ_DYXX.T_DYXX_QYID
+            )
+            LEFT JOIN T_JCSJ_FQ_GQLX ON (
+                T_JCSJ_FQ_GQLX.T_GQLX_ID = T_JCSJ_DYXX.T_DYXX_GQLX
+            )
+            LEFT JOIN T_JCSJ_CS_DYCS ON (
+                T_JCSJ_CS_DYCS.T_DYCS_ID = T_JCSJ_DYXX.T_DYXX_DYDJ
+            )
+            LEFT JOIN T_JCSJ_DYLX ON (
+                T_JCSJ_DYLX.T_DYLX_ID = T_JCSJ_DYXX.T_DYXX_DCLX
+            )
+        WHERE
+            1 = 1 ${ew.sqlSegment} ORDER BY T_JCSJ_DYXX.T_DYXX_ID
+    </select>
+
 </mapper>

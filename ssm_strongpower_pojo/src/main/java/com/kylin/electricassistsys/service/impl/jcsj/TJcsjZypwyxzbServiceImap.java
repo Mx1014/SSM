@@ -20,4 +20,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class TJcsjZypwyxzbServiceImap extends ServiceImpl<TJcsjZypwyxzbDao, TJcsjZypwyxzb> implements TJcsjZypwyxzbService {
 
+
 }

@@ -1,26 +1,22 @@
-package com.kylin.electricassistsys.pojo.tsbsj;
+package com.kylin.electricassistsys.dto.tsbsj;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableId;
-
-import java.io.Serializable;
+import com.kylin.electricassistsys.dto.base.BaseDto;
 
 /**
  * <p>
- * 中压线路信息
+ * 中压线路信息數據轉換類
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSbsjZyllxxx extends Model<TSbsjZyllxxx> {
+public class TSbsjZyllxxxSelDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 标示
      */
-    @TableId("t_zyllxxx_id")
     private String tZyllxxxId;
     /**
      * 线路标号
@@ -299,6 +295,85 @@ public class TSbsjZyllxxx extends Model<TSbsjZyllxxx> {
      */
     private String tZyllxxxZjllx4;
 
+    private String tGqlxName;
+
+    private String tGdfqName;
+
+    private String tSysDwmz;
+
+    private String tBdzxxName;
+
+    private String tCnwName;
+
+    private String tSyfsName;
+
+    private String tDxcsXhmc;
+
+    private String tFsfsName;
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettGdfqName() {
+        return tGdfqName;
+    }
+
+    public void settGdfqName(String tGdfqName) {
+        this.tGdfqName = tGdfqName;
+    }
+
+    public String gettSysDwmz() {
+        return tSysDwmz;
+    }
+
+    public void settSysDwmz(String tSysDwmz) {
+        this.tSysDwmz = tSysDwmz;
+    }
+
+    public String gettBdzxxName() {
+        return tBdzxxName;
+    }
+
+    public void settBdzxxName(String tBdzxxName) {
+        this.tBdzxxName = tBdzxxName;
+    }
+
+    public String gettCnwName() {
+        return tCnwName;
+    }
+
+    public void settCnwName(String tCnwName) {
+        this.tCnwName = tCnwName;
+    }
+
+    public String gettSyfsName() {
+        return tSyfsName;
+    }
+
+    public void settSyfsName(String tSyfsName) {
+        this.tSyfsName = tSyfsName;
+    }
+
+    public String gettDxcsXhmc() {
+        return tDxcsXhmc;
+    }
+
+    public void settDxcsXhmc(String tDxcsXhmc) {
+        this.tDxcsXhmc = tDxcsXhmc;
+    }
+
+    public String gettFsfsName() {
+        return tFsfsName;
+    }
+
+    public void settFsfsName(String tFsfsName) {
+        this.tFsfsName = tFsfsName;
+    }
 
     public String gettZyllxxxId() {
         return tZyllxxxId;
@@ -860,10 +935,6 @@ public class TSbsjZyllxxx extends Model<TSbsjZyllxxx> {
         this.tZyllxxxZjllx4 = tZyllxxxZjllx4;
     }
 
-    @Override
-    protected Serializable pkVal() {
-        return this.tZyllxxxId;
-    }
 
     @Override
     public String toString() {

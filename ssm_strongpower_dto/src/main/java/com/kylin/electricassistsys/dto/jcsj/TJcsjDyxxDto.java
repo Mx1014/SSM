@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.jcsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJcsjDyxxDto  {
+public class TJcsjDyxxDto extends BaseDto {
 
 
     private String tDyxxId;
@@ -188,25 +190,25 @@ public class TJcsjDyxxDto  {
     @Override
     public String toString() {
         return "TJcsjDyxx{" +
-        "tDyxxId=" + tDyxxId +
-        ", tDyxxDcmc=" + tDyxxDcmc +
-        ", tDyxxDybj=" + tDyxxDybj +
-        ", tDyxxQyid=" + tDyxxQyid +
-        ", tDyxxDydj=" + tDyxxDydj +
-        ", tDyxxGqlx=" + tDyxxGqlx +
-        ", tDyxxDclx=" + tDyxxDclx +
-        ", tDyxxCydl=" + tDyxxCydl +
-        ", tDyxxTcsj=" + tDyxxTcsj +
-        ", tDyxxTssx=" + tDyxxTssx +
-        ", tDyxxZjmx=" + tDyxxZjmx +
-        ", tDyxxNfdl=" + tDyxxNfdl +
-        ", tDyxxLyxss=" + tDyxxLyxss +
-        ", tDyxxFqcl=" + tDyxxFqcl +
-        ", tDyxxKqcl=" + tDyxxKqcl +
-        ", tDyxxBtysj=" + tDyxxBtysj +
-        ", tDyxxEtysj=" + tDyxxEtysj +
-        ", tDyxxYxzt=" + tDyxxYxzt +
-        ", tDyxxRemark=" + tDyxxRemark +
-        "}";
+                "tDyxxId=" + tDyxxId +
+                ", tDyxxDcmc=" + tDyxxDcmc +
+                ", tDyxxDybj=" + tDyxxDybj +
+                ", tDyxxQyid=" + tDyxxQyid +
+                ", tDyxxDydj=" + tDyxxDydj +
+                ", tDyxxGqlx=" + tDyxxGqlx +
+                ", tDyxxDclx=" + tDyxxDclx +
+                ", tDyxxCydl=" + tDyxxCydl +
+                ", tDyxxTcsj=" + tDyxxTcsj +
+                ", tDyxxTssx=" + tDyxxTssx +
+                ", tDyxxZjmx=" + tDyxxZjmx +
+                ", tDyxxNfdl=" + tDyxxNfdl +
+                ", tDyxxLyxss=" + tDyxxLyxss +
+                ", tDyxxFqcl=" + tDyxxFqcl +
+                ", tDyxxKqcl=" + tDyxxKqcl +
+                ", tDyxxBtysj=" + tDyxxBtysj +
+                ", tDyxxEtysj=" + tDyxxEtysj +
+                ", tDyxxYxzt=" + tDyxxYxzt +
+                ", tDyxxRemark=" + tDyxxRemark +
+                "}";
     }
 }

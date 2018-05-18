@@ -7,13 +7,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJcsjDyxx extends Model<TJcsjDyxx> {
+public class TJcsjDyxxSel extends Model<TJcsjDyxxSel> {
 
     private static final long serialVersionUID = 1L;
     @TableId("T_DYXX_ID")
@@ -36,6 +36,56 @@ public class TJcsjDyxx extends Model<TJcsjDyxx> {
     private String tDyxxEtysj;
     private String tDyxxYxzt;
     private String tDyxxRemark;
+
+    /*自定义属性开始*/
+    /**
+     * 供区类型名称
+     */
+    private String tGqlxName;
+    /**
+     * 供电分区名称
+     */
+    private String tGdfqName;
+    /**
+     * 电压参数名称
+     */
+    private String tDycsName;
+    /**
+     * 电源类型名称
+     */
+    private String tDylxName;
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettGdfqName() {
+        return tGdfqName;
+    }
+
+    public void settGdfqName(String tGdfqName) {
+        this.tGdfqName = tGdfqName;
+    }
+
+    public String gettDycsName() {
+        return tDycsName;
+    }
+
+    public void settDycsName(String tDycsName) {
+        this.tDycsName = tDycsName;
+    }
+
+    public String gettDylxName() {
+        return tDylxName;
+    }
+
+    public void settDylxName(String tDylxName) {
+        this.tDylxName = tDylxName;
+    }/*自定义属性结束*/
 
 
     public String gettDyxxId() {
@@ -198,25 +248,25 @@ public class TJcsjDyxx extends Model<TJcsjDyxx> {
     @Override
     public String toString() {
         return "TJcsjDyxx{" +
-        "tDyxxId=" + tDyxxId +
-        ", tDyxxDcmc=" + tDyxxDcmc +
-        ", tDyxxDybj=" + tDyxxDybj +
-        ", tDyxxQyid=" + tDyxxQyid +
-        ", tDyxxDydj=" + tDyxxDydj +
-        ", tDyxxGqlx=" + tDyxxGqlx +
-        ", tDyxxDclx=" + tDyxxDclx +
-        ", tDyxxCydl=" + tDyxxCydl +
-        ", tDyxxTcsj=" + tDyxxTcsj +
-        ", tDyxxTssx=" + tDyxxTssx +
-        ", tDyxxZjmx=" + tDyxxZjmx +
-        ", tDyxxNfdl=" + tDyxxNfdl +
-        ", tDyxxLyxss=" + tDyxxLyxss +
-        ", tDyxxFqcl=" + tDyxxFqcl +
-        ", tDyxxKqcl=" + tDyxxKqcl +
-        ", tDyxxBtysj=" + tDyxxBtysj +
-        ", tDyxxEtysj=" + tDyxxEtysj +
-        ", tDyxxYxzt=" + tDyxxYxzt +
-        ", tDyxxRemark=" + tDyxxRemark +
-        "}";
+                "tDyxxId=" + tDyxxId +
+                ", tDyxxDcmc=" + tDyxxDcmc +
+                ", tDyxxDybj=" + tDyxxDybj +
+                ", tDyxxQyid=" + tDyxxQyid +
+                ", tDyxxDydj=" + tDyxxDydj +
+                ", tDyxxGqlx=" + tDyxxGqlx +
+                ", tDyxxDclx=" + tDyxxDclx +
+                ", tDyxxCydl=" + tDyxxCydl +
+                ", tDyxxTcsj=" + tDyxxTcsj +
+                ", tDyxxTssx=" + tDyxxTssx +
+                ", tDyxxZjmx=" + tDyxxZjmx +
+                ", tDyxxNfdl=" + tDyxxNfdl +
+                ", tDyxxLyxss=" + tDyxxLyxss +
+                ", tDyxxFqcl=" + tDyxxFqcl +
+                ", tDyxxKqcl=" + tDyxxKqcl +
+                ", tDyxxBtysj=" + tDyxxBtysj +
+                ", tDyxxEtysj=" + tDyxxEtysj +
+                ", tDyxxYxzt=" + tDyxxYxzt +
+                ", tDyxxRemark=" + tDyxxRemark +
+                "}";
     }
 }

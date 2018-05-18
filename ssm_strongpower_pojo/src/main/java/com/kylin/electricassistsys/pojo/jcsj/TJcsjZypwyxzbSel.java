@@ -1,7 +1,6 @@
 package com.kylin.electricassistsys.pojo.jcsj;
 
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
@@ -13,11 +12,10 @@ import java.io.Serializable;
  * @author 陈文旭
  * @since 2018-04-24
  */
-
-public class TJcsjZypwyxzb extends Model<TJcsjZypwyxzb> {
+public class TJcsjZypwyxzbSel extends Model<TJcsjZypwyxzbSel> {
 
     private static final long serialVersionUID = 1L;
-     @TableId("T_ZYPWYXZB_ID")
+
     private String tZypwyxzbId;
     private String tZypwyxzbQyid;
     private String tZypwyxzbGqlx;
@@ -29,7 +27,33 @@ public class TJcsjZypwyxzb extends Model<TJcsjZypwyxzb> {
     private String tZypwyxzbZhdyhgl;
     private String tZypwyxzbJmddyhgl;
     private String tZypwyxzbCnw;
+    private String tGdfqName;
+    private String tCnwName;
+    private String tGqlxName;
 
+    public String gettGdfqName() {
+        return tGdfqName;
+    }
+
+    public void settGdfqName(String tGdfqName) {
+        this.tGdfqName = tGdfqName;
+    }
+
+    public String gettCnwName() {
+        return tCnwName;
+    }
+
+    public void settCnwName(String tCnwName) {
+        this.tCnwName = tCnwName;
+    }
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
 
     public String gettZypwyxzbId() {
         return tZypwyxzbId;

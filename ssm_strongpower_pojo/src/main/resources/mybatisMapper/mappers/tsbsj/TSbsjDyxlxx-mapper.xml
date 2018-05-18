@@ -21,10 +21,71 @@
         <result column="T_DYXLXX_FDCD" property="tDyxlxxFdcd" />
         <result column="T_DYXLXX_FSFS" property="tDyxlxxFsfs" />
     </resultMap>
+    <resultMap id="BaseResultMapS" type="com.kylin.electricassistsys.pojo.tsbsj.TSbsjDyxlxxSel">
+        <id column="T_DYXLXX_ID" property="tDyxlxxId" />
+        <result column="T_DYXLXX_NF" property="tDyxlxxNf" />
+        <result column="T_DYXLXX_SCQY" property="tDyxlxxScqy" />
+        <result column="T_DYXLXX_XLTS" property="tDyxlxxXlts" />
+        <result column="T_DYXLXX_JYXTS" property="tDyxlxxJyxts" />
+        <result column="T_DYXLXX_LDXTS" property="tDyxlxxLdxts" />
+        <result column="T_DYXLXX_JYXCD" property="tDyxlxxJyxcd" />
+        <result column="T_DYXLXX_LDXCD" property="tDyxlxxLdxcd" />
+        <result column="T_DYXLXX_BZ" property="tDyxlxxBz" />
+        <result column="T_DYXLXX_XLCD" property="tDyxlxxXlcd" />
+        <result column="T_DYXLXX_YWDW" property="tDyxlxxYwdw" />
+        <result column="T_DYXLXX_GQLX" property="tDyxlxxGqlx" />
+        <result column="T_DYXLXX_DLXH" property="tDyxlxxDlxh" />
+        <result column="T_DYXLXX_FDS" property="tDyxlxxFds" />
+        <result column="T_DYXLXX_FDCD" property="tDyxlxxFdcd" />
+        <result column="T_DYXLXX_FSFS" property="tDyxlxxFsfs" />
+        <result column="T_GQLX_NAME" property="tGqlxName"/>
+        <result column="T_GDFQ_NAME" property="tGdfqName"/>
+        <result column="T_SYS_DWMZ" property="tSysDwmz"/>
+        <result column="T_FSFS_NAME" property="tFsfsName"/>
+    </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         T_DYXLXX_ID, T_DYXLXX_NF, T_DYXLXX_SCQY, T_DYXLXX_XLTS, T_DYXLXX_JYXTS, T_DYXLXX_LDXTS, T_DYXLXX_JYXCD, T_DYXLXX_LDXCD, T_DYXLXX_BZ, T_DYXLXX_XLCD, T_DYXLXX_YWDW, T_DYXLXX_GQLX, T_DYXLXX_DLXH, T_DYXLXX_FDS, T_DYXLXX_FDCD, T_DYXLXX_FSFS
     </sql>
+    <!--低壓電路信息-->
+    <select id="selectPage" resultMap="BaseResultMapS" parameterType="com.kylin.electricassistsys.pojo.tsbsj.TSbsjDyxlxxSel">
+
+         SELECT
+            t_sbsj_dyxlxx.t_dyxlxx_id,
+            t_sbsj_dyxlxx.t_dyxlxx_nf,
+            t_sbsj_dyxlxx.t_dyxlxx_gqlx,
+            t_jcsj_fq_gqlx.t_gqlx_name,
+            t_sbsj_dyxlxx.t_dyxlxx_scqy,
+            t_jcsj_fq_gdfq.t_gdfq_name,
+            t_sbsj_dyxlxx.t_dyxlxx_ywdw,
+            t_sys_ywdw.t_sys_dwmz,
+            t_sbsj_dyxlxx.t_dyxlxx_xlts,
+            t_sbsj_dyxlxx.t_dyxlxx_jyxts,
+            t_sbsj_dyxlxx.t_dyxlxx_ldxts,
+            t_sbsj_dyxlxx.t_dyxlxx_jyxcd,
+            t_sbsj_dyxlxx.t_dyxlxx_ldxcd,
+            t_sbsj_dyxlxx.t_dyxlxx_xlcd,
+            t_sbsj_dyxlxx.t_dyxlxx_bz,
+            fun_getdxxhbydxid(t_sbsj_dyxlxx.t_dyxlxx_dlxh) t_dyxlxx_dlxhname,
+            t_sbsj_dyxlxx.t_dyxlxx_dlxh,
+            t_sbsj_dyxlxx.t_dyxlxx_fds,
+            t_sbsj_dyxlxx.t_dyxlxx_fdcd,
+            t_sbsj_dyxlxx.t_dyxlxx_fsfs,
+            t_jcsj_fsfs.t_fsfs_name,
+            ROW_NUMBER() OVER(
+                ORDER BY
+                    t_dyxlxx_nf ASC
+            ) rank__
+        FROM
+            t_sbsj_dyxlxx left
+            JOIN t_jcsj_fq_gqlx ON ( t_jcsj_fq_gqlx.t_gqlx_id = t_sbsj_dyxlxx.t_dyxlxx_gqlx )
+            LEFT JOIN t_jcsj_fq_gdfq ON ( t_jcsj_fq_gdfq.t_gdfq_id = t_sbsj_dyxlxx.t_dyxlxx_scqy )
+            LEFT JOIN t_sys_ywdw ON ( t_sys_ywdw.t_sys_id = t_sbsj_dyxlxx.t_dyxlxx_ywdw )
+            LEFT JOIN t_jcsj_fsfs ON ( t_jcsj_fsfs.t_fsfs_id = t_sbsj_dyxlxx.t_dyxlxx_fsfs )
+        WHERE
+            1 = 1 ${ew.sqlSegment}
+
+    </select>
 
 </mapper>

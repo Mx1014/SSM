@@ -112,7 +112,9 @@ public class SystemLogAspect {
          String parme="";
          ip="ip:"+ip+"-host:"+host+"-:port"+port;
         for(int i=0;i<objs.length;i++){
-            parme+=objs[i].toString();
+            if(Strings.isNotEmpty(objs[i].toString())){
+                parme+=objs[i].toString();
+            }
         }
           String className = point.getTarget().getClass().getSimpleName();
 
@@ -123,8 +125,8 @@ public class SystemLogAspect {
             result = point.proceed();
             //返回通知
             System.out.println("The method "+ methodName+" end. result<"+ result+">");
-            if(Strings.isNotEmpty(parme)||"".equals(parme)){
-                parme=result.toString();
+            if(Strings.isNotEmpty(result.toString())){
+                parme+=result.toString();
             }
             dto.setUserName("");
             dto.setUserIp(ip);

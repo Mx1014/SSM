@@ -1,6 +1,9 @@
-package com.kylin.electricassistsys.dto.jcsj;
+package com.kylin.electricassistsys.pojo.jcsj;
 
-import com.kylin.electricassistsys.dto.base.BaseDto;
+import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -10,9 +13,10 @@ import com.kylin.electricassistsys.dto.base.BaseDto;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJcsjYxDqshDto  extends BaseDto {
+public class TJcsjYxDqshSel extends Model<TJcsjYxDqshSel> {
 
-
+    private static final long serialVersionUID = 1L;
+    @TableId("T_DQSH_ID")
     private String tDqshId;
     private String tDqshYear;
     private Double tDqshGdp;
@@ -35,6 +39,20 @@ public class TJcsjYxDqshDto  extends BaseDto {
     private Double tDqshSecondZctz;
     private Double tDqshThirdZctz;
     private String tDqshPQyid;
+
+    /**
+     * 供电分区
+     */
+    private String tGdfqName;
+
+
+    public String gettGdfqName() {
+        return tGdfqName;
+    }
+
+    public void settGdfqName(String tGdfqName) {
+        this.tGdfqName = tGdfqName;
+    }
 
 
     public String gettDqshId() {
@@ -213,6 +231,10 @@ public class TJcsjYxDqshDto  extends BaseDto {
         this.tDqshPQyid = tDqshPQyid;
     }
 
+    @Override
+    protected Serializable pkVal() {
+        return this.tDqshId;
+    }
 
     @Override
     public String toString() {

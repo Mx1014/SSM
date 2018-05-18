@@ -49,6 +49,7 @@ public class FileUpload {
     @ResponseBody
     public String uploads(MultipartFile[] file, HttpServletRequest request) throws IOException {
       Map<String,Object>map=  FileUploads.queryFileDatas(file,request);
+
       System.out.print(map.toString());
         return "ok!";
     }

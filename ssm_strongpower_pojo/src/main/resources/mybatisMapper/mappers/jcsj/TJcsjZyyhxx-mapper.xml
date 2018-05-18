@@ -30,6 +30,83 @@
         <result column="T_ZYYHXX_ZGXL" property="tZyyhxxZgxl" />
         <result column="T_ZYYHXX_BYXL" property="tZyyhxxByxl" />
     </resultMap>
+    <resultMap id="BaseResultMapS" type="com.kylin.electricassistsys.pojo.jcsj.TJcsjZyyhxxSel">
+        <id column="T_ZYYHXX_ID" property="tZyyhxxId" />
+        <result column="T_ZYYHXX_YHMC" property="tZyyhxxYhmc" />
+        <result column="T_ZYYHXX_XMMC" property="tZyyhxxXmmc" />
+        <result column="T_ZYYHXX_XMDZ" property="tZyyhxxXmdz" />
+        <result column="T_ZYYHXX_GDFQ" property="tZyyhxxGdfq" />
+        <result column="T_ZYYHXX_XMXZ" property="tZyyhxxXmxz" />
+        <result column="T_ZYYHXX_ZDMJ" property="tZyyhxxZdmj" />
+        <result column="T_ZYYHXX_JZMJ" property="tZyyhxxJzmj" />
+        <result column="T_ZYYHXX_HS" property="tZyyhxxHs" />
+        <result column="T_ZYYHXX_ZDFH" property="tZyyhxxZdfh" />
+        <result column="T_ZYYHXX_SQYDSJ" property="tZyyhxxSqydsj" />
+        <result column="T_ZYYHXX_TDSJ" property="tZyyhxxTdsj" />
+        <result column="T_ZYYHXX_TYSJ" property="tZyyhxxTysj" />
+        <result column="T_ZYYHXX_BZ" property="tZyyhxxBz" />
+        <result column="T_ZYYHXX_ZGRL" property="tZyyhxxZgrl" />
+        <result column="T_ZYYHXX_BYRL" property="tZyyhxxByrl" />
+        <result column="T_ZYYHXX_BARL" property="tZyyhxxBarl" />
+        <result column="T_ZYYHXX_DYDJ" property="tZyyhxxDydj" />
+        <result column="T_ZYYHXX_BDZ" property="tZyyhxxBdz" />
+        <result column="T_ZYYHXX_PDS" property="tZyyhxxPds" />
+        <result column="T_ZYYHXX_HWG" property="tZyyhxxHwg" />
+        <result column="T_ZYYHXX_GDGS" property="tZyyhxxGdgs" />
+        <result column="T_ZYYHXX_NYDL" property="tZyyhxxNydl" />
+        <result column="T_ZYYHXX_ZGXL" property="tZyyhxxZgxl" />
+        <result column="T_ZYYHXX_BYXL" property="tZyyhxxByxl" />
+        <result column="T_GDGS_DWMC" property="tGdgsDwmc" />
+        <result column="T_XMYDXZ_NAME" property="tXmydxzName" />
+        <result column="T_BDZXX_NAME" property="tBdzxxName" />
+
+
+
+
+    </resultMap>
+    <!--用户重要信息查询-->
+    <select id="selectPage" parameterType="com.kylin.electricassistsys.pojo.jcsj.TJcsjZyyhxxSel" resultMap="BaseResultMapS">
+        SELECT
+    t_jcsj_zyyhxx.t_zyyhxx_id,
+    t_jcsj_zyyhxx.t_zyyhxx_yhmc,
+    t_jcsj_zyyhxx.t_zyyhxx_xmmc,
+    t_jcsj_zyyhxx.t_zyyhxx_gdgs,
+    t_sys_gdgs.t_gdgs_dwmc,
+    t_jcsj_zyyhxx.t_zyyhxx_gdfq,
+    t_jcsj_zyyhxx.t_zyyhxx_dydj,
+    t_jcsj_zyyhxx.t_zyyhxx_xmxz,
+    t_jcsj_xmydxz.t_xmydxz_name,
+    t_jcsj_zyyhxx.t_zyyhxx_bdz,
+    t_sbsj_bdzxx.t_bdzxx_name,
+    t_jcsj_zyyhxx.t_zyyhxx_zdmj,
+    t_jcsj_zyyhxx.t_zyyhxx_jzmj,
+    t_jcsj_zyyhxx.t_zyyhxx_hs,
+    t_jcsj_zyyhxx.t_zyyhxx_zdfh,
+    t_jcsj_zyyhxx.t_zyyhxx_nydl,
+    t_jcsj_zyyhxx.t_zyyhxx_sqydsj,
+    t_jcsj_zyyhxx.t_zyyhxx_tdsj,
+    t_jcsj_zyyhxx.t_zyyhxx_tysj,
+    t_jcsj_zyyhxx.t_zyyhxx_zgxl,
+    t_jcsj_zyyhxx.t_zyyhxx_zgrl,
+    t_jcsj_zyyhxx.t_zyyhxx_byxl,
+    t_jcsj_zyyhxx.t_zyyhxx_byrl,
+    t_jcsj_zyyhxx.t_zyyhxx_barl,
+    t_jcsj_zyyhxx.t_zyyhxx_pds,
+    t_jcsj_zyyhxx.t_zyyhxx_hwg,
+    t_jcsj_zyyhxx.t_zyyhxx_xmdz,
+    t_jcsj_zyyhxx.t_zyyhxx_bz,
+    ROW_NUMBER() OVER(
+        ORDER BY
+            t_zyyhxx_id ASC
+    ) rank__
+FROM
+    t_jcsj_zyyhxx left
+    JOIN t_sys_gdgs ON ( t_sys_gdgs.t_gdgs_id = t_jcsj_zyyhxx.t_zyyhxx_gdgs )
+    LEFT JOIN t_jcsj_xmydxz ON ( t_jcsj_xmydxz.t_xmydxz_id = t_jcsj_zyyhxx.t_zyyhxx_xmxz )
+    LEFT JOIN t_sbsj_bdzxx ON ( t_sbsj_bdzxx.t_bdzxx_id = t_jcsj_zyyhxx.t_zyyhxx_bdz )
+WHERE
+    1 = 1 ${ew.sqlSegment}
+    </select>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">

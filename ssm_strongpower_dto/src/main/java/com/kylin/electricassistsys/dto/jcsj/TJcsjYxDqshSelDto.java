@@ -10,7 +10,7 @@ import com.kylin.electricassistsys.dto.base.BaseDto;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJcsjYxDqshDto  extends BaseDto {
+public class TJcsjYxDqshSelDto extends BaseDto {
 
 
     private String tDqshId;
@@ -35,6 +35,20 @@ public class TJcsjYxDqshDto  extends BaseDto {
     private Double tDqshSecondZctz;
     private Double tDqshThirdZctz;
     private String tDqshPQyid;
+
+    /**
+     * 供电分区
+     */
+    private String tGdfqName;
+
+
+    public String gettGdfqName() {
+        return tGdfqName;
+    }
+
+    public void settGdfqName(String tGdfqName) {
+        this.tGdfqName = tGdfqName;
+    }
 
 
     public String gettDqshId() {

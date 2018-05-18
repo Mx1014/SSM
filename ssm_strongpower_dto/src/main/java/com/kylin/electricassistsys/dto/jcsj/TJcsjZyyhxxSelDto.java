@@ -1,22 +1,19 @@
-package com.kylin.electricassistsys.pojo.jcsj;
+package com.kylin.electricassistsys.dto.jcsj;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableId;
-
-import java.io.Serializable;
+import com.kylin.electricassistsys.dto.base.BaseDto;
 
 /**
  * <p>
- * 
+ * 用重要信息数据转换类
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJcsjZyyhxx extends Model<TJcsjZyyhxx> {
+public class TJcsjZyyhxxSelDto extends BaseDto {
 
-    private static final long serialVersionUID = 1L;
-     @TableId("T_ZYYHXX_ID")
+
+
     private String tZyyhxxId;
     /**
      * 用电项目名称
@@ -114,6 +111,34 @@ public class TJcsjZyyhxx extends Model<TJcsjZyyhxx> {
      * 备用线路
      */
     private String tZyyhxxByxl;
+
+    private String tGdgsDwmc;
+    private String tXmydxzName;
+    private String tBdzxxName;
+
+    public String gettGdgsDwmc() {
+        return tGdgsDwmc;
+    }
+
+    public void settGdgsDwmc(String tGdgsDwmc) {
+        this.tGdgsDwmc = tGdgsDwmc;
+    }
+
+    public String gettXmydxzName() {
+        return tXmydxzName;
+    }
+
+    public void settXmydxzName(String tXmydxzName) {
+        this.tXmydxzName = tXmydxzName;
+    }
+
+    public String gettBdzxxName() {
+        return tBdzxxName;
+    }
+
+    public void settBdzxxName(String tBdzxxName) {
+        this.tBdzxxName = tBdzxxName;
+    }
 
 
     public String gettZyyhxxId() {
@@ -316,10 +341,6 @@ public class TJcsjZyyhxx extends Model<TJcsjZyyhxx> {
         this.tZyyhxxByxl = tZyyhxxByxl;
     }
 
-    @Override
-    protected Serializable pkVal() {
-        return this.tZyyhxxId;
-    }
 
     @Override
     public String toString() {

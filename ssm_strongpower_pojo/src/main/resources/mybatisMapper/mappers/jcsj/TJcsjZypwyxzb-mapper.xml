@@ -16,10 +16,53 @@
         <result column="T_ZYPWYXZB_JMDDYHGL" property="tZypwyxzbJmddyhgl" />
         <result column="T_ZYPWYXZB_CNW" property="tZypwyxzbCnw" />
     </resultMap>
-
+    <resultMap id="BaseReslutMaps" type="com.kylin.electricassistsys.pojo.jcsj.TJcsjZypwyxzbSel">
+        <result column="T_ZYPWYXZB_ID" property="tZypwyxzbId" />
+        <result column="T_ZYPWYXZB_QYID" property="tZypwyxzbQyid" />
+        <result column="T_ZYPWYXZB_GQLX" property="tZypwyxzbGqlx" />
+        <result column="T_ZYPWYXZB_YEAR" property="tZypwyxzbYear" />
+        <result column="T_ZYPWYXZB_GDKKXRS1" property="tZypwyxzbGdkkxrs1" />
+        <result column="T_ZYPWYXZB_GDKKXRS3" property="tZypwyxzbGdkkxrs3" />
+        <result column="T_ZYPWYXZB_XSL110" property="tZypwyxzbXsl110" />
+        <result column="T_ZYPWYXZB_XSL10" property="tZypwyxzbXsl10" />
+        <result column="T_ZYPWYXZB_ZHDYHGL" property="tZypwyxzbZhdyhgl" />
+        <result column="T_ZYPWYXZB_JMDDYHGL" property="tZypwyxzbJmddyhgl" />
+        <result column="T_ZYPWYXZB_CNW" property="tZypwyxzbCnw" />
+        <result column="T_GDFQ_NAME" property="tGdfqName" />
+        <result column="T_CNW_NAME" property="tCnwName" />
+        <result column="T_GQLX_NAME" property="tGqlxName" />
+    </resultMap>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         T_ZYPWYXZB_ID, T_ZYPWYXZB_QYID, T_ZYPWYXZB_GQLX, T_ZYPWYXZB_YEAR, T_ZYPWYXZB_GDKKXRS1, T_ZYPWYXZB_GDKKXRS3, T_ZYPWYXZB_XSL110, T_ZYPWYXZB_XSL10, T_ZYPWYXZB_ZHDYHGL, T_ZYPWYXZB_JMDDYHGL, T_ZYPWYXZB_CNW
     </sql>
+<!--查询中压配网运行指标及分析-->
+    <select id="selectPage" parameterType="com.kylin.electricassistsys.pojo.jcsj.TJcsjZypwyxzbSel" resultMap="BaseReslutMaps">
+                SELECT
+            t_jcsj_zypwyxzb.t_zypwyxzb_id,
+            t_jcsj_zypwyxzb.t_zypwyxzb_qyid,
+            t_jcsj_fq_gdfq.t_gdfq_name,
+            t_jcsj_zypwyxzb.t_zypwyxzb_gqlx,
+            t_jcsj_fq_gqlx.t_gqlx_name,
+            t_jcsj_zypwyxzb.t_zypwyxzb_cnw,
+            t_jcsj_cnw.t_cnw_name,
+            t_jcsj_zypwyxzb.t_zypwyxzb_year,
+            t_jcsj_zypwyxzb.t_zypwyxzb_gdkkxrs1,
+            t_jcsj_zypwyxzb.t_zypwyxzb_gdkkxrs3,
+            t_jcsj_zypwyxzb.t_zypwyxzb_xsl110,
+            t_jcsj_zypwyxzb.t_zypwyxzb_xsl10,
+            t_jcsj_zypwyxzb.t_zypwyxzb_zhdyhgl,
+            t_jcsj_zypwyxzb.t_zypwyxzb_jmddyhgl
+        FROM
+            t_jcsj_zypwyxzb
+            LEFT JOIN t_jcsj_fq_gdfq ON
+                t_jcsj_fq_gdfq.t_gdfq_id = t_jcsj_zypwyxzb.t_zypwyxzb_qyid
+            LEFT JOIN t_jcsj_fq_gqlx ON
+                t_jcsj_fq_gqlx.t_gqlx_id = t_jcsj_zypwyxzb.t_zypwyxzb_gqlx
+            LEFT JOIN t_jcsj_cnw ON
+                t_jcsj_cnw.t_cnw_id = t_jcsj_zypwyxzb.t_zypwyxzb_cnw
+               where 1=1 ${ew.sqlSegment}
+    </select>
+
 
 </mapper>

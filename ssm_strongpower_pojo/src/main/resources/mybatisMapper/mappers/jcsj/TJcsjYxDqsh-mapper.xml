@@ -33,4 +33,66 @@
         T_DQSH_ID, T_DQSH_YEAR, T_DQSH_GDP, T_DQSH_ZZL, T_DQSH_CZRK, T_DQSH_RJGDP, T_DQSH_FIRST_GDP, T_DQSH_SECOND_GDP, T_DQSH_THIRD_GDP, T_DQSH_GDQYID, T_DQSH_QYSX, T_DQSH_QYMJ, T_DQSH_GYZJ_GDP, T_DQSH_FIRST_ZZL, T_DQSH_SECOND_ZZL, T_DQSH_GYZJ_ZZL, T_DQSH_THIRD_ZZL, T_DQSH_QSHGDZCTZ, T_DQSH_FIRST_ZCTZ, T_DQSH_SECOND_ZCTZ, T_DQSH_THIRD_ZCTZ, T_DQSH_P_QYID
     </sql>
 
+    <!-- 自定义查询映射结果 -->
+    <resultMap id="SelResultMap" type="com.kylin.electricassistsys.pojo.jcsj.TJcsjYxDqshSel">
+        <id column="T_DQSH_ID" property="tDqshId" />
+        <result column="T_DQSH_YEAR" property="tDqshYear" />
+        <result column="T_DQSH_GDP" property="tDqshGdp" />
+        <result column="T_DQSH_ZZL" property="tDqshZzl" />
+        <result column="T_DQSH_CZRK" property="tDqshCzrk" />
+        <result column="T_DQSH_RJGDP" property="tDqshRjgdp" />
+        <result column="T_DQSH_FIRST_GDP" property="tDqshFirstGdp" />
+        <result column="T_DQSH_SECOND_GDP" property="tDqshSecondGdp" />
+        <result column="T_DQSH_THIRD_GDP" property="tDqshThirdGdp" />
+        <result column="T_DQSH_GDQYID" property="tDqshGdqyid" />
+        <result column="T_DQSH_QYSX" property="tDqshQysx" />
+        <result column="T_DQSH_QYMJ" property="tDqshQymj" />
+        <result column="T_DQSH_GYZJ_GDP" property="tDqshGyzjGdp" />
+        <result column="T_DQSH_FIRST_ZZL" property="tDqshFirstZzl" />
+        <result column="T_DQSH_SECOND_ZZL" property="tDqshSecondZzl" />
+        <result column="T_DQSH_GYZJ_ZZL" property="tDqshGyzjZzl" />
+        <result column="T_DQSH_THIRD_ZZL" property="tDqshThirdZzl" />
+        <result column="T_DQSH_QSHGDZCTZ" property="tDqshQshgdzctz" />
+        <result column="T_DQSH_FIRST_ZCTZ" property="tDqshFirstZctz" />
+        <result column="T_DQSH_SECOND_ZCTZ" property="tDqshSecondZctz" />
+        <result column="T_DQSH_THIRD_ZCTZ" property="tDqshThirdZctz" />
+        <result column="T_DQSH_P_QYID" property="tDqshPQyid" />
+        <result column="T_GDFQ_NAME" property="tGdfqName"/>
+    </resultMap>
+
+    <!-- 自定义查询语句-->
+    <select id="selectPage" parameterType="com.kylin.electricassistsys.pojo.jcsj.TJcsjYxDqshSel" resultMap="SelResultMap">
+        SELECT
+            T_JCSJ_FQ_GDFQ.T_GDFQ_NAME,
+            T_JCSJ_YX_DQSH.T_DQSH_ID, 
+            T_JCSJ_YX_DQSH.T_DQSH_YEAR, 
+            T_JCSJ_YX_DQSH.T_DQSH_GDP, 
+            T_JCSJ_YX_DQSH.T_DQSH_ZZL, 
+            T_JCSJ_YX_DQSH.T_DQSH_CZRK, 
+            T_JCSJ_YX_DQSH.T_DQSH_RJGDP, 
+            T_JCSJ_YX_DQSH.T_DQSH_FIRST_GDP, 
+            T_JCSJ_YX_DQSH.T_DQSH_SECOND_GDP, 
+            T_JCSJ_YX_DQSH.T_DQSH_THIRD_GDP, 
+            T_JCSJ_YX_DQSH.T_DQSH_GDQYID, 
+            T_JCSJ_YX_DQSH.T_DQSH_QYSX, 
+            T_JCSJ_YX_DQSH.T_DQSH_QYMJ, 
+            T_JCSJ_YX_DQSH.T_DQSH_GYZJ_GDP, 
+            T_JCSJ_YX_DQSH.T_DQSH_FIRST_ZZL, 
+            T_JCSJ_YX_DQSH.T_DQSH_SECOND_ZZL, 
+            T_JCSJ_YX_DQSH.T_DQSH_GYZJ_ZZL, 
+            T_JCSJ_YX_DQSH.T_DQSH_THIRD_ZZL, 
+            T_JCSJ_YX_DQSH.T_DQSH_QSHGDZCTZ, 
+            T_JCSJ_YX_DQSH.T_DQSH_FIRST_ZCTZ, 
+            T_JCSJ_YX_DQSH.T_DQSH_SECOND_ZCTZ, 
+            T_JCSJ_YX_DQSH.T_DQSH_THIRD_ZCTZ, 
+            T_JCSJ_YX_DQSH.T_DQSH_P_QYID 
+        FROM
+            T_JCSJ_YX_DQSH
+            LEFT JOIN T_JCSJ_FQ_GDFQ ON (
+                T_JCSJ_FQ_GDFQ.T_GDFQ_ID = T_JCSJ_YX_DQSH.T_DQSH_GDQYID
+            )
+        WHERE
+            1 = 1 ${ew.sqlSegment} ORDER BY T_JCSJ_YX_DQSH.T_DQSH_ID
+    </select>
+
 </mapper>

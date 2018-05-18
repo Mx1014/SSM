@@ -7,16 +7,16 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ * 用戶重要信息基礎類
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJcsjZyyhxx extends Model<TJcsjZyyhxx> {
+public class TJcsjZyyhxxSel extends Model<TJcsjZyyhxxSel> {
 
     private static final long serialVersionUID = 1L;
-     @TableId("T_ZYYHXX_ID")
+    @TableId("T_ZYYHXX_ID")
     private String tZyyhxxId;
     /**
      * 用电项目名称
@@ -114,6 +114,37 @@ public class TJcsjZyyhxx extends Model<TJcsjZyyhxx> {
      * 备用线路
      */
     private String tZyyhxxByxl;
+
+    private String tGdgsDwmc;
+    private String tXmydxzName;
+    private String tBdzxxName;
+
+    public String gettGdgsDwmc() {
+        return tGdgsDwmc;
+    }
+
+    public void settGdgsDwmc(String tGdgsDwmc) {
+        this.tGdgsDwmc = tGdgsDwmc;
+    }
+
+    public String gettXmydxzName() {
+        return tXmydxzName;
+    }
+
+    public void settXmydxzName(String tXmydxzName) {
+        this.tXmydxzName = tXmydxzName;
+    }
+
+    public String gettBdzxxName() {
+        return tBdzxxName;
+    }
+
+    public void settBdzxxName(String tBdzxxName) {
+        this.tBdzxxName = tBdzxxName;
+    }
+
+
+
 
 
     public String gettZyyhxxId() {

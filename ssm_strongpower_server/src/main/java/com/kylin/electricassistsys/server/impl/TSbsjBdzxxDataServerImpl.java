@@ -40,13 +40,6 @@ public class TSbsjBdzxxDataServerImpl implements TSbsjBdzxxDataApi {
         MyBeanUtils.copyProperties(tSbsjBdzxxSelDto, tSbsjBdzxxSel);
         entityWrapper.setEntity(tSbsjBdzxxSel);
         entityWrapper = EntityWrapperUtil.getEntityWrapperWithCondition(entityWrapper, tSbsjBdzxxSel);
-        /*entityWrapper.where(tSbsjBdzxxSel.gettBdzxxName() != null, "T_SBSJ_BDZXX.T_BDZXX_NAME like {0}", "%" + tSbsjBdzxxSel.gettBdzxxName() + "%");
-        entityWrapper.where(tSbsjBdzxxSel.gettDycsName() != null, "T_JCSJ_CS_DYCS.T_DYCS_NAME = {0}", tSbsjBdzxxSel.gettDycsName());
-        entityWrapper.where(tSbsjBdzxxSel.gettBdzxxGqlxid() != null, "T_SBSJ_BDZXX.T_BDZXX_GQLXID = {0}", tSbsjBdzxxSel.gettBdzxxGqlxid());
-        entityWrapper.where(tSbsjBdzxxSel.gettSyfsName() != null, "T_JCSJ_SYFS.T_SYFS_NAME = {0}", tSbsjBdzxxSel.gettSyfsName());
-        entityWrapper.where(tSbsjBdzxxSel.gettGdfqName() != null, "T_JCSJ_FQ_GDFQ.T_GDFQ_NAME = {0}", tSbsjBdzxxSel.gettGdfqName());*/
-
-        System.out.println(entityWrapper.getSqlSegment());
         Page pagepojo = new Page();
         MyBeanUtils.toPageBean(page, pagepojo, new TSbsjBdzxxSel());
         MyBeanUtils.toPageBean(tSbsjBdzxxService.selectPage(pagepojo, entityWrapper), page, tSbsjBdzxxSelDto);
