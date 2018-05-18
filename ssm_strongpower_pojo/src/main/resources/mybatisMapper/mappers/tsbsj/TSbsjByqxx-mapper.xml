@@ -48,4 +48,103 @@
         T_BYQXX_ID, T_BYQXX_NUM, T_BYQXX_NAME, T_BYQXX_YEAR, T_BYQXX_DYDJ, T_BYQXX_QYID, T_BYQXX_YWDW, T_BYQXX_EDDY, T_BYQXX_TSFS, T_BYQXX_RZXS, T_BYQXX_MPXH, T_BYQXX_BDRL, T_BYQXX_XGCS, T_BYQXX_MPBB, T_BYQXX_BTYSJ, T_BYQXX_ETYSJ, T_BYQXX_ZT, T_BYQXX_REMARK, T_BYQXX_G_ZZK, T_BYQXX_Z_DZK, T_BYQXX_G_DZK, T_BYQXX_G_ZSH, T_BYQXX_Z_DSH, T_BYQXX_G_DSH, T_BYQXX_G_ZDZ, T_BYQXX_Z_DDZ, T_BYQXX_G_DDZ, T_BYQXX_G_ZDK, T_BYQXX_Z_DDK, T_BYQXX_G_DDK, T_BYQXX_WGBCRL, T_BYQXX_WGBCGC, T_BYQXX_WGBCD, T_BYQXX_BDZID, T_BYQXX_GQLXID, T_BYQXX_XGSJ, T_BYQXX_BH
     </sql>
 
+    <resultMap id="BaseResultMapSel" type="com.kylin.electricassistsys.pojo.tsbsj.TSbsjByqxxSel">
+        <id column="T_BYQXX_ID" property="tByqxxId" />
+        <result column="T_BYQXX_NUM" property="tByqxxNum" />
+        <result column="T_BYQXX_NAME" property="tByqxxName" />
+        <result column="T_BYQXX_YEAR" property="tByqxxYear" />
+        <result column="T_BYQXX_DYDJ" property="tByqxxDydj" />
+        <result column="T_BYQXX_QYID" property="tByqxxQyid" />
+        <result column="T_BYQXX_YWDW" property="tByqxxYwdw" />
+        <result column="T_BYQXX_EDDY" property="tByqxxEddy" />
+        <result column="T_BYQXX_TSFS" property="tByqxxTsfs" />
+        <result column="T_BYQXX_RZXS" property="tByqxxRzxs" />
+        <result column="T_BYQXX_MPXH" property="tByqxxMpxh" />
+        <result column="T_BYQXX_BDRL" property="tByqxxBdrl" />
+        <result column="T_BYQXX_XGCS" property="tByqxxXgcs" />
+        <result column="T_BYQXX_MPBB" property="tByqxxMpbb" />
+        <result column="T_BYQXX_BTYSJ" property="tByqxxBtysj" />
+        <result column="T_BYQXX_ETYSJ" property="tByqxxEtysj" />
+        <result column="T_BYQXX_ZT" property="tByqxxZt" />
+        <result column="T_BYQXX_REMARK" property="tByqxxRemark" />
+        <result column="T_BYQXX_G_ZZK" property="tByqxxGZzk" />
+        <result column="T_BYQXX_Z_DZK" property="tByqxxZDzk" />
+        <result column="T_BYQXX_G_DZK" property="tByqxxGDzk" />
+        <result column="T_BYQXX_G_ZSH" property="tByqxxGZsh" />
+        <result column="T_BYQXX_Z_DSH" property="tByqxxZDsh" />
+        <result column="T_BYQXX_G_DSH" property="tByqxxGDsh" />
+        <result column="T_BYQXX_G_ZDZ" property="tByqxxGZdz" />
+        <result column="T_BYQXX_Z_DDZ" property="tByqxxZDdz" />
+        <result column="T_BYQXX_G_DDZ" property="tByqxxGDdz" />
+        <result column="T_BYQXX_G_ZDK" property="tByqxxGZdk" />
+        <result column="T_BYQXX_Z_DDK" property="tByqxxZDdk" />
+        <result column="T_BYQXX_G_DDK" property="tByqxxGDdk" />
+        <result column="T_BYQXX_WGBCRL" property="tByqxxWgbcrl" />
+        <result column="T_BYQXX_WGBCGC" property="tByqxxWgbcgc" />
+        <result column="T_BYQXX_WGBCD" property="tByqxxWgbcd" />
+        <result column="T_BYQXX_BDZID" property="tByqxxBdzid" />
+        <result column="T_BYQXX_GQLXID" property="tByqxxGqlxid" />
+        <result column="T_BYQXX_XGSJ" property="tByqxxXgsj" />
+        <result column="T_BYQXX_BH" property="tByqxxBh" />
+        <result column="T_BDZXX_NAME" property="tBdzxxName"/>
+        <result column="T_TYFS_NAME" property="tTyfsName"/>
+        <result column="T_MPBB_NAME" property="tMpbbName"/>
+        <result column="t_byqxx_gqlxname" property="tByqxxGqlxname"/>
+        <result column="t_byqxx_qy" property="tByqxxQy"/>
+    </resultMap>
+
+    <select id="selectPage" parameterType="com.kylin.electricassistsys.pojo.tsbsj.TSbsjByqxxSel" resultMap="BaseResultMapSel" >
+            SELECT
+            t_sbsj_byqxx.t_byqxx_id,
+            fun_getdydjbybdzid(t_sbsj_byqxx.t_byqxx_bdzid) t_byqxx_dydj,
+            fun_getgqlxbybdzid(t_sbsj_byqxx.t_byqxx_bdzid) t_byqxx_gqlxname,
+            t_sbsj_byqxx.t_byqxx_num,
+            t_sbsj_byqxx.t_byqxx_name,
+            fun_getqynamebybdzid(t_sbsj_byqxx.t_byqxx_bdzid) t_byqxx_qy,
+            t_sbsj_byqxx.t_byqxx_bdzid,
+            t_sbsj_bdzxx.t_bdzxx_name,
+            fun_getywdwbybdzid(t_sbsj_byqxx.t_byqxx_bdzid) t_byqxx_ywdw,
+            t_sbsj_byqxx.t_byqxx_eddy,
+            t_sbsj_byqxx.t_byqxx_tsfs,
+            t_jcsj_tyfs.t_tyfs_name,
+            t_sbsj_byqxx.t_byqxx_rzxs,
+            t_sbsj_byqxx.t_byqxx_mpxh,
+            t_sbsj_byqxx.t_byqxx_bdrl,
+            t_sbsj_byqxx.t_byqxx_mpbb,
+            t_jcsj_mpbb.t_mpbb_name,
+            t_sbsj_byqxx.t_byqxx_btysj,
+            t_sbsj_byqxx.t_byqxx_etysj,
+            t_sbsj_byqxx.t_byqxx_zt,
+            fun_byqxgcishubybyqid(t_sbsj_byqxx.t_byqxx_id) t_byqxx_xgcs,
+            t_sbsj_byqxx.t_byqxx_remark,
+            t_sbsj_byqxx.t_byqxx_wgbcrl,
+            t_sbsj_byqxx.t_byqxx_wgbcgc,
+            t_sbsj_byqxx.t_byqxx_wgbcd,
+            t_sbsj_byqxx.t_byqxx_xgsj,
+            t_sbsj_byqxx.t_byqxx_g_zzk,
+            t_sbsj_byqxx.t_byqxx_z_dzk,
+            t_sbsj_byqxx.t_byqxx_g_dzk,
+            t_sbsj_byqxx.t_byqxx_g_zsh,
+            t_sbsj_byqxx.t_byqxx_z_dsh,
+            t_sbsj_byqxx.t_byqxx_g_dsh,
+            t_sbsj_byqxx.t_byqxx_g_zdz,
+            t_sbsj_byqxx.t_byqxx_z_ddz,
+            t_sbsj_byqxx.t_byqxx_g_ddz,
+            t_sbsj_byqxx.t_byqxx_g_zdk,
+            t_sbsj_byqxx.t_byqxx_z_ddk,
+            t_sbsj_byqxx.t_byqxx_g_ddk,
+            t_sbsj_byqxx.t_byqxx_bh,
+            ROW_NUMBER() OVER(
+                ORDER BY
+                    to_number(fun_getdydjbybdzid(t_sbsj_byqxx.t_byqxx_bdzid) ) DESC,t_sbsj_byqxx.t_byqxx_bdzid ASC,t_sbsj_byqxx.t_byqxx_name ASC
+            ) rank__
+        FROM
+            t_sbsj_byqxx left
+            JOIN t_sbsj_bdzxx ON ( t_sbsj_bdzxx.t_bdzxx_id = t_sbsj_byqxx.t_byqxx_bdzid )
+            LEFT JOIN t_jcsj_tyfs ON ( t_jcsj_tyfs.t_tyfs_id = t_sbsj_byqxx.t_byqxx_tsfs )
+            LEFT JOIN t_jcsj_mpbb ON ( t_jcsj_mpbb.t_mpbb_id = t_sbsj_byqxx.t_byqxx_mpbb )
+        WHERE
+            1 = 1 ${ew.sqlSegment}
+    </select>
+
 </mapper>

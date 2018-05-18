@@ -1,26 +1,19 @@
-package com.kylin.electricassistsys.pojo.wghgl;
+package com.kylin.electricassistsys.dto.wghgl;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableId;
-
-import java.io.Serializable;
+import com.kylin.electricassistsys.dto.base.BaseDto;
 
 /**
  * <p>
  * 项目清册表
  * </p>
- *
+ *10kV电网新建工程
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDwghglXmqc extends Model<TDwghglXmqc> {
-
-    private static final long serialVersionUID = 1L;
-
+public class TDwghglXmqcSelDto extends BaseDto {
     /**
      * 编号
      */
-    @TableId("t_xmqc_id")
     private String tXmqcId;
     /**
      * 项目名称
@@ -494,7 +487,42 @@ public class TDwghglXmqc extends Model<TDwghglXmqc> {
      * 入库状态
      */
     private String tXmqcZt;
+    /**
+     *运维单位中文
+     */
+    private String tSysDwmz;
+    /**
+     * 供区类型中文
+     */
+    private String tGqlxName;
+    /**
+     *电压等级中文
+     */
+    private String tDycsName;
 
+    public String gettSysDwmz() {
+        return tSysDwmz;
+    }
+
+    public void settSysDwmz(String tSysDwmz) {
+        this.tSysDwmz = tSysDwmz;
+    }
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettDycsName() {
+        return tDycsName;
+    }
+
+    public void settDycsName(String tDycsName) {
+        this.tDycsName = tDycsName;
+    }
 
     public String gettXmqcId() {
         return tXmqcId;
@@ -1446,11 +1474,6 @@ public class TDwghglXmqc extends Model<TDwghglXmqc> {
 
     public void settXmqcZt(String tXmqcZt) {
         this.tXmqcZt = tXmqcZt;
-    }
-
-    @Override
-    protected Serializable pkVal() {
-        return this.tXmqcId;
     }
 
     @Override

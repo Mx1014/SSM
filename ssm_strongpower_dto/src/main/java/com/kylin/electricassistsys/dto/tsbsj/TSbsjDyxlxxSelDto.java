@@ -94,6 +94,37 @@ public class TSbsjDyxlxxSelDto extends BaseDto {
      */
     private String tFsfsName;
 
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettGdfqName() {
+        return tGdfqName;
+    }
+
+    public void settGdfqName(String tGdfqName) {
+        this.tGdfqName = tGdfqName;
+    }
+
+    public String gettSysDwmz() {
+        return tSysDwmz;
+    }
+
+    public void settSysDwmz(String tSysDwmz) {
+        this.tSysDwmz = tSysDwmz;
+    }
+
+    public String gettFsfsName() {
+        return tFsfsName;
+    }
+
+    public void settFsfsName(String tFsfsName) {
+        this.tFsfsName = tFsfsName;
+    }
 
     public String gettDyxlxxId() {
         return tDyxlxxId;

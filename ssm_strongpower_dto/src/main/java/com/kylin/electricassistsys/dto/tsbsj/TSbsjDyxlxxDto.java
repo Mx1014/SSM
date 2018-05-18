@@ -75,7 +75,18 @@ public class TSbsjDyxlxxDto {
      * 敷设方式
      */
     private String tDyxlxxFsfs;
+    /**
+     * 电缆型号中文
+     */
+    private String tDyxlxxDlxhname;
 
+    public String gettDyxlxxDlxhname() {
+        return tDyxlxxDlxhname;
+    }
+
+    public void settDyxlxxDlxhname(String tDyxlxxDlxhname) {
+        this.tDyxlxxDlxhname = tDyxlxxDlxhname;
+    }
 
     public String gettDyxlxxId() {
         return tDyxlxxId;

@@ -1,9 +1,9 @@
 package com.kylin.electricassistsys.controller;
 
 import com.baomidou.mybatisplus.plugins.Page;
-import com.kylin.electricassistsys.data.api.TSbsjZyllxxxDataApi;
-import com.kylin.electricassistsys.dto.tsbsj.TSbsjZyllxxxDto;
-import com.kylin.electricassistsys.dto.tsbsj.TSbsjZyllxxxSelDto;
+import com.kylin.electricassistsys.data.api.TDwghglXmqcDataApi;
+import com.kylin.electricassistsys.dto.wghgl.TDwghglXmqcDto;
+import com.kylin.electricassistsys.dto.wghgl.TDwghglXmqcSelDto;
 import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,28 +15,26 @@ import javax.ws.rs.core.MediaType;
 
 /**
  * @Auther: cwx
- * @Date: 2018/5/17 14:10
- * @Description: 中压鏈路线路信息接口業務請求類
+ * @Date: 2018/5/17 17:23
+ * @Description:10kV电网新建工程接口請求類
  */
 @RestController
-@RequestMapping("zyllxxx")
-@Api(value = "zyllxxx", description = "中压鏈路线路信息接口業務請求類", produces = MediaType.APPLICATION_JSON)
-public class TSbsjZyllxxxDataController {
-    /**
-     * 中压鏈路线路信息接口
-     */
+@RequestMapping("/glxmqc")
+@Api(value = "glxmqc", description = "10kV电网新建工程接口請求類", produces = MediaType.APPLICATION_JSON)
+public class TDwghglXmqcDataController {
     @Resource
-    private TSbsjZyllxxxDataApi tSbsjZyllxxxDataApi;
+    private TDwghglXmqcDataApi tDwghglXmqcDataApi;
+
     /**
      * 动态查询中压鏈路线路信息进行分页
      * @param dto
      * @return
      */
     @RequestMapping("page")
-    public JSONResult getPages(@RequestBody TSbsjZyllxxxSelDto dto){
+    public JSONResult getPages(@RequestBody TDwghglXmqcSelDto dto){
         JSONResult result =null;
         try {
-            Page page =   tSbsjZyllxxxDataApi.selectPage(new Page(dto.getPage(), dto.getLimit()),dto);
+            Page page =   tDwghglXmqcDataApi.selectPage(new Page(dto.getPage(), dto.getLimit()),dto);
             result=JSONResult.success(page);
         }catch (Throwable  e){
             result=JSONResult.failure("服务器错误请联系管理员");
@@ -50,10 +48,10 @@ public class TSbsjZyllxxxDataController {
      * @return
      */
     @RequestMapping("insert")
-    public JSONResult saveData(@RequestBody TSbsjZyllxxxDto dto){
+    public JSONResult saveData(@RequestBody TDwghglXmqcDto dto){
         JSONResult result =null;
         try {
-            tSbsjZyllxxxDataApi.insert(dto);
+            tDwghglXmqcDataApi.insert(dto);
             result=JSONResult.success();
         }catch (Throwable e){
             result=JSONResult.failure("服务器错误请联系管理员");
@@ -70,7 +68,7 @@ public class TSbsjZyllxxxDataController {
     public JSONResult delData(@RequestBody String id){
         JSONResult result =null;
         try {
-            tSbsjZyllxxxDataApi.delete(id);
+            tDwghglXmqcDataApi.delete(id);
             result=JSONResult.success();
         }catch (Throwable e){
             result=JSONResult.failure("服务器错误请联系管理员");
@@ -86,7 +84,7 @@ public class TSbsjZyllxxxDataController {
     public JSONResult batchDelData(@RequestBody String ids){
         JSONResult result=null;
         try {
-            tSbsjZyllxxxDataApi.deleteBatchIds(ids);
+            tDwghglXmqcDataApi.deleteBatchIds(ids);
             result=JSONResult.success();
         }catch (Throwable e){
             result=JSONResult.failure("服务器错误请联系管理员");
@@ -100,10 +98,10 @@ public class TSbsjZyllxxxDataController {
      * @return
      */
     @RequestMapping("update")
-    public JSONResult updateData(@RequestBody TSbsjZyllxxxDto dto){
+    public JSONResult updateData(@RequestBody TDwghglXmqcDto dto){
         JSONResult result=null;
         try {
-            tSbsjZyllxxxDataApi.update(dto);
+            tDwghglXmqcDataApi.update(dto);
             result=JSONResult.success();
         }catch (Throwable e){
             result=JSONResult.failure("服务器错误请联系管理员");
@@ -120,11 +118,12 @@ public class TSbsjZyllxxxDataController {
     public JSONResult listData(){
         JSONResult result=null;
         try {
-            result=JSONResult.success(tSbsjZyllxxxDataApi.getList());
+            result=JSONResult.success(tDwghglXmqcDataApi.getList());
         }catch (Throwable e){
             result=JSONResult.failure("服务器错误请联系管理员");
         }
         return result;
     }
+
 
 }

@@ -96,7 +96,50 @@ public class TSbsjDyxlxxSel extends Model<TSbsjDyxlxxSel> {
      *敷设方式
      */
     private String tFsfsName;
+    /**
+     * 电缆型号中文
+     */
+    private String tDyxlxxDlxhname;
 
+    public String gettDyxlxxDlxhname() {
+        return tDyxlxxDlxhname;
+    }
+
+    public void settDyxlxxDlxhname(String tDyxlxxDlxhname) {
+        this.tDyxlxxDlxhname = tDyxlxxDlxhname;
+    }
+
+    public String gettGqlxName() {
+        return tGqlxName;
+    }
+
+    public void settGqlxName(String tGqlxName) {
+        this.tGqlxName = tGqlxName;
+    }
+
+    public String gettGdfqName() {
+        return tGdfqName;
+    }
+
+    public void settGdfqName(String tGdfqName) {
+        this.tGdfqName = tGdfqName;
+    }
+
+    public String gettSysDwmz() {
+        return tSysDwmz;
+    }
+
+    public void settSysDwmz(String tSysDwmz) {
+        this.tSysDwmz = tSysDwmz;
+    }
+
+    public String gettFsfsName() {
+        return tFsfsName;
+    }
+
+    public void settFsfsName(String tFsfsName) {
+        this.tFsfsName = tFsfsName;
+    }
 
     public String gettDyxlxxId() {
         return tDyxlxxId;

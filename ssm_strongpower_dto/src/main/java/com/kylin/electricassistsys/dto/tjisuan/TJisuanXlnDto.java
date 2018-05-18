@@ -2,7 +2,7 @@ package com.kylin.electricassistsys.dto.tjisuan;
 
 /**
  * <p>
- * 
+ * 中压线路N-1校验
  * </p>
  *
  * @author 陈文旭

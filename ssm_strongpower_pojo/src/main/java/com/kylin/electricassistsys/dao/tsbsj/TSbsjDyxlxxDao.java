@@ -17,4 +17,5 @@ import com.kylin.electricassistsys.pojo.tsbsj.TSbsjDyxlxx;
 @MyBatisRepository
 public interface TSbsjDyxlxxDao extends BaseMapper<TSbsjDyxlxx> {
 
+
 }

@@ -15,5 +15,40 @@
     <sql id="Base_Column_List">
         NID, XLID, JG, JSNF, REMARK
     </sql>
+    <resultMap id="BaseResultMapSel" type="com.kylin.electricassistsys.pojo.tjisuan.TJisuanXlnSel">
+        <result column="NID" property="nid" />
+        <result column="XLID" property="xlid" />
+        <result column="JG" property="jg" />
+        <result column="JSNF" property="jsnf" />
+        <result column="REMARK" property="remark" />
+        <result column="t_zyxl_gqlx" property="tZyxlGqlx"/>
+        <result column="t_zyxl_qy" property="tZyxlQy"/>
+        <result column="t_zyxl_bdz" property="tZyxlBdz"/>
+        <result column="t_zyxl_syfs" property="tZyxlSyfs"/>
+        <result column="t_zyllxxx_xlmc" property="tZyllxxxXlmc"/>
+      </resultMap>
+
+     <select id="selectPage" resultMap="BaseResultMapSel" parameterType="com.kylin.electricassistsys.pojo.tjisuan.TJisuanXlnSel">
+           SELECT
+            t_jisuan_xln.nid,
+            t_jisuan_xln.jsnf,
+            fun_getgqlx_byzyxlid(t_jisuan_xln.xlid) t_zyxl_gqlx,
+            fun_getqy_byzyxlid(t_jisuan_xln.xlid) t_zyxl_qy,
+            fun_getbdz_byzyxlid(t_jisuan_xln.xlid) t_zyxl_bdz,
+            fun_getsyfs_byzyxlid(t_jisuan_xln.xlid) t_zyxl_syfs,
+            t_jisuan_xln.xlid,
+            t_sbsj_zyllxxx.t_zyllxxx_xlmc,
+            t_jisuan_xln.jg,
+            t_jisuan_xln.remark,
+            ROW_NUMBER() OVER(
+                ORDER BY
+                    jsnf DESC
+            ) rank__
+        FROM
+            t_jisuan_xln left
+            JOIN t_sbsj_zyllxxx ON ( t_sbsj_zyllxxx.t_zyllxxx_id = t_jisuan_xln.xlid )
+        WHERE
+            1 = 1 ${ew.sqlSegment}
+     </select>
 
 </mapper>

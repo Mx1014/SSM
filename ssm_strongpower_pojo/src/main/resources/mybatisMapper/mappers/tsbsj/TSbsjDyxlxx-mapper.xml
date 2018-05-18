@@ -38,6 +38,7 @@
         <result column="T_DYXLXX_FDS" property="tDyxlxxFds" />
         <result column="T_DYXLXX_FDCD" property="tDyxlxxFdcd" />
         <result column="T_DYXLXX_FSFS" property="tDyxlxxFsfs" />
+        <result column="T_DYXLXX_DLXHNAME" property="tDyxlxxDlxhname"/>
         <result column="T_GQLX_NAME" property="tGqlxName"/>
         <result column="T_GDFQ_NAME" property="tGdfqName"/>
         <result column="T_SYS_DWMZ" property="tSysDwmz"/>

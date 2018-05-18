@@ -1,9 +1,9 @@
-package com.kylin.electricassistsys.controller;
+package com.kylin.electricassistsys.controller.tjisuan;
 
 import com.baomidou.mybatisplus.plugins.Page;
-import com.kylin.electricassistsys.data.api.TSbsjZyllxxxDataApi;
-import com.kylin.electricassistsys.dto.tsbsj.TSbsjZyllxxxDto;
-import com.kylin.electricassistsys.dto.tsbsj.TSbsjZyllxxxSelDto;
+import com.kylin.electricassistsys.data.api.tjisuan.TJisuanXlnDataApi;
+import com.kylin.electricassistsys.dto.tjisuan.TJisuanXlnDto;
+import com.kylin.electricassistsys.dto.tjisuan.TJisuanXlnSelDto;
 import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,28 +15,26 @@ import javax.ws.rs.core.MediaType;
 
 /**
  * @Auther: cwx
- * @Date: 2018/5/17 14:10
- * @Description: 中压鏈路线路信息接口業務請求類
+ * @Date: 2018/5/18 16:09
+ * @Description: 中压线路N-1校验接口業務請求類
  */
 @RestController
-@RequestMapping("zyllxxx")
-@Api(value = "zyllxxx", description = "中压鏈路线路信息接口業務請求類", produces = MediaType.APPLICATION_JSON)
-public class TSbsjZyllxxxDataController {
-    /**
-     * 中压鏈路线路信息接口
-     */
+@RequestMapping("/jisuanxln")
+@Api(value = "jisuanxln", description = "中压线路N-1校验接口業務請求類", produces = MediaType.APPLICATION_JSON)
+public class TJisuanXlnDataController {
     @Resource
-    private TSbsjZyllxxxDataApi tSbsjZyllxxxDataApi;
+    private TJisuanXlnDataApi tJisuanXlnDataApi;
+
     /**
-     * 动态查询中压鏈路线路信息进行分页
+     * 动态查询中压线路N-1校验进行分页
      * @param dto
      * @return
      */
     @RequestMapping("page")
-    public JSONResult getPages(@RequestBody TSbsjZyllxxxSelDto dto){
+    public JSONResult getPages(@RequestBody TJisuanXlnSelDto dto){
         JSONResult result =null;
         try {
-            Page page =   tSbsjZyllxxxDataApi.selectPage(new Page(dto.getPage(), dto.getLimit()),dto);
+            Page page =   tJisuanXlnDataApi.selectPage(new Page(dto.getPage(), dto.getLimit()),dto);
             result=JSONResult.success(page);
         }catch (Throwable  e){
             result=JSONResult.failure("服务器错误请联系管理员");
@@ -50,10 +48,10 @@ public class TSbsjZyllxxxDataController {
      * @return
      */
     @RequestMapping("insert")
-    public JSONResult saveData(@RequestBody TSbsjZyllxxxDto dto){
+    public JSONResult saveData(@RequestBody TJisuanXlnDto dto){
         JSONResult result =null;
         try {
-            tSbsjZyllxxxDataApi.insert(dto);
+            tJisuanXlnDataApi.insert(dto);
             result=JSONResult.success();
         }catch (Throwable e){
             result=JSONResult.failure("服务器错误请联系管理员");
@@ -63,14 +61,14 @@ public class TSbsjZyllxxxDataController {
     }
     /**
      *
-     * 删除根据id中压鏈路线路信息指标数据
+     * 删除根据id中压线路N-1校验指标数据
      * @return
      */
     @RequestMapping("del")
     public JSONResult delData(@RequestBody String id){
         JSONResult result =null;
         try {
-            tSbsjZyllxxxDataApi.delete(id);
+            tJisuanXlnDataApi.delete(id);
             result=JSONResult.success();
         }catch (Throwable e){
             result=JSONResult.failure("服务器错误请联系管理员");
@@ -79,14 +77,14 @@ public class TSbsjZyllxxxDataController {
     }
     /**
      *
-     * 根据id进行批量删除 中压鏈路线路信息指标数据
+     * 根据id进行批量删除 中压线路N-1校验指标数据
      * @return
      */
     @RequestMapping("batchDel")
     public JSONResult batchDelData(@RequestBody String ids){
         JSONResult result=null;
         try {
-            tSbsjZyllxxxDataApi.deleteBatchIds(ids);
+            tJisuanXlnDataApi.deleteBatchIds(ids);
             result=JSONResult.success();
         }catch (Throwable e){
             result=JSONResult.failure("服务器错误请联系管理员");
@@ -96,14 +94,14 @@ public class TSbsjZyllxxxDataController {
     }
     /**
      *
-     * 更新用中压鏈路线路信息数据
+     * 更新用中压线路N-1校验数据
      * @return
      */
     @RequestMapping("update")
-    public JSONResult updateData(@RequestBody TSbsjZyllxxxDto dto){
+    public JSONResult updateData(@RequestBody TJisuanXlnDto dto){
         JSONResult result=null;
         try {
-            tSbsjZyllxxxDataApi.update(dto);
+            tJisuanXlnDataApi.update(dto);
             result=JSONResult.success();
         }catch (Throwable e){
             result=JSONResult.failure("服务器错误请联系管理员");
@@ -113,18 +111,18 @@ public class TSbsjZyllxxxDataController {
 
     /**
      *
-     * 更新用中压鏈路线路信息数据
+     * 更新用中压线路N-1校验数据
      * @return
      */
     @RequestMapping("list")
     public JSONResult listData(){
         JSONResult result=null;
         try {
-            result=JSONResult.success(tSbsjZyllxxxDataApi.getList());
+            result=JSONResult.success(tJisuanXlnDataApi.getList());
         }catch (Throwable e){
             result=JSONResult.failure("服务器错误请联系管理员");
         }
         return result;
     }
-
+ 
 }

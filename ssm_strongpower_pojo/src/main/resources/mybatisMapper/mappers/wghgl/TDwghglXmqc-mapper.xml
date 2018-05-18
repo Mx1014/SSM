@@ -130,4 +130,208 @@
         T_XMQC_ID, T_XMQC_XMMC, T_XMQC_GHNF, T_XMQC_JSXZ, T_XMQC_GCXZ, T_XMQC_GCSX, T_XMQC_ISZNHXM, T_XMQC_SSQY, T_XMQC_BDZ, T_XMQC_GQLX, T_XMQC_XMLX, T_XMQC_DYDJ, T_XMQC_YWDW, T_XMQC_KGSJ, T_XMQC_JGSJ, T_XMQC_SYFS, T_XMQC_CNW, T_XMQC_XMTZ, T_XMQC_XLZTS, T_XMQC_XLZCD, T_XMQC_PBTS, T_XMQC_PBRL, T_XMQC_ZGXCD, T_XMQC_NWJSXZ1, T_XMQC_NWJSXZ2, T_XMQC_NWJSXZ3, T_XMQC_ZYXL_JKCD, T_XMQC_ZYXL_DLCD, T_XMQC_ZYXL_GDBJ, T_XMQC_ZYXL_WGBCRL, T_XMQC_ZYXL_TZ, T_XMQC_ZYKG_KBS, T_XMQC_ZYKG_DLFZX, T_XMQC_ZYKG_TZ, T_XMQC_ZYKG_HWGZS, T_XMQC_ZYKG_HWGFD, T_XMQC_ZYKG_HWGLL, T_XMQC_ZYKG_ZSKGZS, T_XMQC_ZYKG_ZSKGFD, T_XMQC_ZYKG_ZSKGLL, T_XMQC_ZYPB_WGBCRL, T_XMQC_ZYPB_TZ, T_XMQC_ZYPB_ZSBTS, T_XMQC_ZYPB_ZSBRL, T_XMQC_ZYPB_FJHJPBTS, T_XMQC_ZYPB_FJHJPBRL, T_XMQC_ZYPB_PDSZS, T_XMQC_ZYPB_PDSTS, T_XMQC_ZYPB_PDSRL, T_XMQC_ZYPB_XBZS, T_XMQC_ZYPB_XBTS, T_XMQC_ZYPB_XBRL, T_XMQC_DYWPT_JKXLTS, T_XMQC_DYWPT_JKXLCD, T_XMQC_DYWPT_JKXLTZ, T_XMQC_DYWPT_DLTS, T_XMQC_DYWPT_DLCD, T_XMQC_DYWPT_DLTZ, T_XMQC_HB_HB, T_XMQC_HB_JHX, T_XMQC_HB_HBTZ, T_XMQC_ZJLY_ZYJH, T_XMQC_ZJLY_GSZC, T_XMQC_ZJLY_XJGDQYZC, T_XMQC_ZJLY_YHTZ, T_XMQC_ZJLY_XQPTF, T_XMQC_ZJLY_ZFDZ, T_XMQC_ZJLY_QT, T_XMQC_ZCSX, T_XMQC_GZ_ZTS, T_XMQC_GZ_QZRL, T_XMQC_GZ_HZRL, T_XMQC_GZ_GSTS, T_XMQC_GZ_GSRL, T_XMQC_GZ_FJTS, T_XMQC_GZ_FJRL, T_XMQC_GZ_WGZS, T_XMQC_GZ_WGZRL, T_XMQC_GZ_WGTZ, T_XMQC_GZ_DLQ, T_XMQC_GZ_FHKG, T_XMQC_GZ_HWG, T_XMQC_GZ_DLFZX, T_XMQC_GZ_KGTZ, T_XMQC_GZ_JKXLCD, T_XMQC_GZ_JYDXCD, T_XMQC_GZ_JKXLTZ, T_XMQC_GZ_DLXLCD, T_XMQC_GZ_GDCD, T_XMQC_GZ_DLXLTZ, T_XMQC_GZ_PBTZ, T_XMQC_QTX, T_XMQC_QTXTZ, T_XMQC_DYSCLB, T_XMQC_TYPE, T_XMQC_BDZLX, T_XMQC_BDZPDZZXS, T_XMQC_BDZZDMJ, T_XMQC_BDZTS, T_XMQC_BDZXZRL, T_XMQC_BDZRXRL, T_XMQC_BDZGXRL, T_XMQC_BDZTZ, T_XMQC_BDZJG, T_XMQC_BDZXLTS, T_XMQC_BDZXLZCD, T_XMQC_BDZDLCD, T_XMQC_BDZDLXH, T_XMQC_BDZJKCD, T_XMQC_BDZJKXH, T_XMQC_BDZXLTZ, T_XMQC_ISCNW, T_XMQC_BYQGZTS, T_XMQC_GZBYQBH1, T_XMQC_GZBYQBH2, T_XMQC_GZQZBRL, T_XMQC_GZHZBRL, T_XMQC_BDZGZZS, T_XMQC_ZT
     </sql>
 
+    <resultMap id="BaseResultMapSel" type="com.kylin.electricassistsys.pojo.wghgl.TDwghglXmqcSel">
+        <result column="T_XMQC_ID" property="tXmqcId" />
+        <result column="T_XMQC_XMMC" property="tXmqcXmmc" />
+        <result column="T_XMQC_GHNF" property="tXmqcGhnf" />
+        <result column="T_XMQC_JSXZ" property="tXmqcJsxz" />
+        <result column="T_XMQC_GCXZ" property="tXmqcGcxz" />
+        <result column="T_XMQC_GCSX" property="tXmqcGcsx" />
+        <result column="T_XMQC_ISZNHXM" property="tXmqcIsznhxm" />
+        <result column="T_XMQC_SSQY" property="tXmqcSsqy" />
+        <result column="T_XMQC_BDZ" property="tXmqcBdz" />
+        <result column="T_XMQC_GQLX" property="tXmqcGqlx" />
+        <result column="T_XMQC_XMLX" property="tXmqcXmlx" />
+        <result column="T_XMQC_DYDJ" property="tXmqcDydj" />
+        <result column="T_XMQC_YWDW" property="tXmqcYwdw" />
+        <result column="T_XMQC_KGSJ" property="tXmqcKgsj" />
+        <result column="T_XMQC_JGSJ" property="tXmqcJgsj" />
+        <result column="T_XMQC_SYFS" property="tXmqcSyfs" />
+        <result column="T_XMQC_CNW" property="tXmqcCnw" />
+        <result column="T_XMQC_XMTZ" property="tXmqcXmtz" />
+        <result column="T_XMQC_XLZTS" property="tXmqcXlzts" />
+        <result column="T_XMQC_XLZCD" property="tXmqcXlzcd" />
+        <result column="T_XMQC_PBTS" property="tXmqcPbts" />
+        <result column="T_XMQC_PBRL" property="tXmqcPbrl" />
+        <result column="T_XMQC_ZGXCD" property="tXmqcZgxcd" />
+        <result column="T_XMQC_NWJSXZ1" property="tXmqcNwjsxz1" />
+        <result column="T_XMQC_NWJSXZ2" property="tXmqcNwjsxz2" />
+        <result column="T_XMQC_NWJSXZ3" property="tXmqcNwjsxz3" />
+        <result column="T_XMQC_ZYXL_JKCD" property="tXmqcZyxlJkcd" />
+        <result column="T_XMQC_ZYXL_DLCD" property="tXmqcZyxlDlcd" />
+        <result column="T_XMQC_ZYXL_GDBJ" property="tXmqcZyxlGdbj" />
+        <result column="T_XMQC_ZYXL_WGBCRL" property="tXmqcZyxlWgbcrl" />
+        <result column="T_XMQC_ZYXL_TZ" property="tXmqcZyxlTz" />
+        <result column="T_XMQC_ZYKG_KBS" property="tXmqcZykgKbs" />
+        <result column="T_XMQC_ZYKG_DLFZX" property="tXmqcZykgDlfzx" />
+        <result column="T_XMQC_ZYKG_TZ" property="tXmqcZykgTz" />
+        <result column="T_XMQC_ZYKG_HWGZS" property="tXmqcZykgHwgzs" />
+        <result column="T_XMQC_ZYKG_HWGFD" property="tXmqcZykgHwgfd" />
+        <result column="T_XMQC_ZYKG_HWGLL" property="tXmqcZykgHwgll" />
+        <result column="T_XMQC_ZYKG_ZSKGZS" property="tXmqcZykgZskgzs" />
+        <result column="T_XMQC_ZYKG_ZSKGFD" property="tXmqcZykgZskgfd" />
+        <result column="T_XMQC_ZYKG_ZSKGLL" property="tXmqcZykgZskgll" />
+        <result column="T_XMQC_ZYPB_WGBCRL" property="tXmqcZypbWgbcrl" />
+        <result column="T_XMQC_ZYPB_TZ" property="tXmqcZypbTz" />
+        <result column="T_XMQC_ZYPB_ZSBTS" property="tXmqcZypbZsbts" />
+        <result column="T_XMQC_ZYPB_ZSBRL" property="tXmqcZypbZsbrl" />
+        <result column="T_XMQC_ZYPB_FJHJPBTS" property="tXmqcZypbFjhjpbts" />
+        <result column="T_XMQC_ZYPB_FJHJPBRL" property="tXmqcZypbFjhjpbrl" />
+        <result column="T_XMQC_ZYPB_PDSZS" property="tXmqcZypbPdszs" />
+        <result column="T_XMQC_ZYPB_PDSTS" property="tXmqcZypbPdsts" />
+        <result column="T_XMQC_ZYPB_PDSRL" property="tXmqcZypbPdsrl" />
+        <result column="T_XMQC_ZYPB_XBZS" property="tXmqcZypbXbzs" />
+        <result column="T_XMQC_ZYPB_XBTS" property="tXmqcZypbXbts" />
+        <result column="T_XMQC_ZYPB_XBRL" property="tXmqcZypbXbrl" />
+        <result column="T_XMQC_DYWPT_JKXLTS" property="tXmqcDywptJkxlts" />
+        <result column="T_XMQC_DYWPT_JKXLCD" property="tXmqcDywptJkxlcd" />
+        <result column="T_XMQC_DYWPT_JKXLTZ" property="tXmqcDywptJkxltz" />
+        <result column="T_XMQC_DYWPT_DLTS" property="tXmqcDywptDlts" />
+        <result column="T_XMQC_DYWPT_DLCD" property="tXmqcDywptDlcd" />
+        <result column="T_XMQC_DYWPT_DLTZ" property="tXmqcDywptDltz" />
+        <result column="T_XMQC_HB_HB" property="tXmqcHbHb" />
+        <result column="T_XMQC_HB_JHX" property="tXmqcHbJhx" />
+        <result column="T_XMQC_HB_HBTZ" property="tXmqcHbHbtz" />
+        <result column="T_XMQC_ZJLY_ZYJH" property="tXmqcZjlyZyjh" />
+        <result column="T_XMQC_ZJLY_GSZC" property="tXmqcZjlyGszc" />
+        <result column="T_XMQC_ZJLY_XJGDQYZC" property="tXmqcZjlyXjgdqyzc" />
+        <result column="T_XMQC_ZJLY_YHTZ" property="tXmqcZjlyYhtz" />
+        <result column="T_XMQC_ZJLY_XQPTF" property="tXmqcZjlyXqptf" />
+        <result column="T_XMQC_ZJLY_ZFDZ" property="tXmqcZjlyZfdz" />
+        <result column="T_XMQC_ZJLY_QT" property="tXmqcZjlyQt" />
+        <result column="T_XMQC_ZCSX" property="tXmqcZcsx" />
+        <result column="T_XMQC_GZ_ZTS" property="tXmqcGzZts" />
+        <result column="T_XMQC_GZ_QZRL" property="tXmqcGzQzrl" />
+        <result column="T_XMQC_GZ_HZRL" property="tXmqcGzHzrl" />
+        <result column="T_XMQC_GZ_GSTS" property="tXmqcGzGsts" />
+        <result column="T_XMQC_GZ_GSRL" property="tXmqcGzGsrl" />
+        <result column="T_XMQC_GZ_FJTS" property="tXmqcGzFjts" />
+        <result column="T_XMQC_GZ_FJRL" property="tXmqcGzFjrl" />
+        <result column="T_XMQC_GZ_WGZS" property="tXmqcGzWgzs" />
+        <result column="T_XMQC_GZ_WGZRL" property="tXmqcGzWgzrl" />
+        <result column="T_XMQC_GZ_WGTZ" property="tXmqcGzWgtz" />
+        <result column="T_XMQC_GZ_DLQ" property="tXmqcGzDlq" />
+        <result column="T_XMQC_GZ_FHKG" property="tXmqcGzFhkg" />
+        <result column="T_XMQC_GZ_HWG" property="tXmqcGzHwg" />
+        <result column="T_XMQC_GZ_DLFZX" property="tXmqcGzDlfzx" />
+        <result column="T_XMQC_GZ_KGTZ" property="tXmqcGzKgtz" />
+        <result column="T_XMQC_GZ_JKXLCD" property="tXmqcGzJkxlcd" />
+        <result column="T_XMQC_GZ_JYDXCD" property="tXmqcGzJydxcd" />
+        <result column="T_XMQC_GZ_JKXLTZ" property="tXmqcGzJkxltz" />
+        <result column="T_XMQC_GZ_DLXLCD" property="tXmqcGzDlxlcd" />
+        <result column="T_XMQC_GZ_GDCD" property="tXmqcGzGdcd" />
+        <result column="T_XMQC_GZ_DLXLTZ" property="tXmqcGzDlxltz" />
+        <result column="T_XMQC_GZ_PBTZ" property="tXmqcGzPbtz" />
+        <result column="T_XMQC_QTX" property="tXmqcQtx" />
+        <result column="T_XMQC_QTXTZ" property="tXmqcQtxtz" />
+        <result column="T_XMQC_DYSCLB" property="tXmqcDysclb" />
+        <result column="T_XMQC_TYPE" property="tXmqcType" />
+        <result column="T_XMQC_BDZLX" property="tXmqcBdzlx" />
+        <result column="T_XMQC_BDZPDZZXS" property="tXmqcBdzpdzzxs" />
+        <result column="T_XMQC_BDZZDMJ" property="tXmqcBdzzdmj" />
+        <result column="T_XMQC_BDZTS" property="tXmqcBdzts" />
+        <result column="T_XMQC_BDZXZRL" property="tXmqcBdzxzrl" />
+        <result column="T_XMQC_BDZRXRL" property="tXmqcBdzrxrl" />
+        <result column="T_XMQC_BDZGXRL" property="tXmqcBdzgxrl" />
+        <result column="T_XMQC_BDZTZ" property="tXmqcBdztz" />
+        <result column="T_XMQC_BDZJG" property="tXmqcBdzjg" />
+        <result column="T_XMQC_BDZXLTS" property="tXmqcBdzxlts" />
+        <result column="T_XMQC_BDZXLZCD" property="tXmqcBdzxlzcd" />
+        <result column="T_XMQC_BDZDLCD" property="tXmqcBdzdlcd" />
+        <result column="T_XMQC_BDZDLXH" property="tXmqcBdzdlxh" />
+        <result column="T_XMQC_BDZJKCD" property="tXmqcBdzjkcd" />
+        <result column="T_XMQC_BDZJKXH" property="tXmqcBdzjkxh" />
+        <result column="T_XMQC_BDZXLTZ" property="tXmqcBdzxltz" />
+        <result column="T_XMQC_ISCNW" property="tXmqcIscnw" />
+        <result column="T_XMQC_BYQGZTS" property="tXmqcByqgzts" />
+        <result column="T_XMQC_GZBYQBH1" property="tXmqcGzbyqbh1" />
+        <result column="T_XMQC_GZBYQBH2" property="tXmqcGzbyqbh2" />
+        <result column="T_XMQC_GZQZBRL" property="tXmqcGzqzbrl" />
+        <result column="T_XMQC_GZHZBRL" property="tXmqcGzhzbrl" />
+        <result column="T_XMQC_BDZGZZS" property="tXmqcBdzgzzs" />
+        <result column="T_XMQC_ZT" property="tXmqcZt" />
+        <result column="T_SYS_DWMZ" property="tSysDwmz"/>
+        <result column="T_GQLX_NAME" property="tGqlxName"/>
+        <result column="T_DYCS_NAME" property="tDycsName"/>
+    </resultMap>
+
+<!--查詢10kV电网新建工程，10kV电网改造工程-->
+    <select id="selectPage" resultMap="BaseResultMapSel" parameterType="com.kylin.electricassistsys.pojo.wghgl.TDwghglXmqcSel">
+          SELECT
+            t_dwghgl_xmqc.t_xmqc_id,
+            t_dwghgl_xmqc.t_xmqc_ssqy,
+            t_dwghgl_xmqc.t_xmqc_gqlx,
+            t_jcsj_fq_gqlx.t_gqlx_name,
+            t_dwghgl_xmqc.t_xmqc_ywdw,
+            t_sys_ywdw.t_sys_dwmz,
+            t_dwghgl_xmqc.t_xmqc_xmmc,
+            t_dwghgl_xmqc.t_xmqc_dydj,
+            t_jcsj_cs_dycs.t_dycs_name,
+            t_dwghgl_xmqc.t_xmqc_zyxl_jkcd,
+            t_dwghgl_xmqc.t_xmqc_zyxl_dlcd,
+            t_dwghgl_xmqc.t_xmqc_zyxl_gdbj,
+            t_dwghgl_xmqc.t_xmqc_zyxl_wgbcrl,
+            t_dwghgl_xmqc.t_xmqc_zyxl_tz,
+            t_dwghgl_xmqc.t_xmqc_zykg_kbs,
+            t_dwghgl_xmqc.t_xmqc_zykg_hwgzs,
+            t_dwghgl_xmqc.t_xmqc_zykg_hwgfd,
+            t_dwghgl_xmqc.t_xmqc_zykg_hwgll,
+            t_dwghgl_xmqc.t_xmqc_zykg_zskgzs,
+            t_dwghgl_xmqc.t_xmqc_zykg_zskgfd,
+            t_dwghgl_xmqc.t_xmqc_zykg_zskgll,
+            t_dwghgl_xmqc.t_xmqc_zykg_dlfzx,
+            t_dwghgl_xmqc.t_xmqc_zykg_tz,
+            t_dwghgl_xmqc.t_xmqc_zypb_pdszs,
+            t_dwghgl_xmqc.t_xmqc_zypb_pdsts,
+            t_dwghgl_xmqc.t_xmqc_zypb_pdsrl,
+            t_dwghgl_xmqc.t_xmqc_zypb_xbzs,
+            t_dwghgl_xmqc.t_xmqc_zypb_xbts,
+            t_dwghgl_xmqc.t_xmqc_zypb_xbrl,
+            t_dwghgl_xmqc.t_xmqc_zypb_zsbts,
+            t_dwghgl_xmqc.t_xmqc_zypb_zsbrl,
+            t_dwghgl_xmqc.t_xmqc_zypb_fjhjpbts,
+            t_dwghgl_xmqc.t_xmqc_zypb_fjhjpbrl,
+            t_dwghgl_xmqc.t_xmqc_zypb_wgbcrl,
+            t_dwghgl_xmqc.t_xmqc_zypb_tz,
+            t_dwghgl_xmqc.t_xmqc_dywpt_jkxlts,
+            t_dwghgl_xmqc.t_xmqc_dywpt_jkxlcd,
+            t_dwghgl_xmqc.t_xmqc_dywpt_jkxltz,
+            t_dwghgl_xmqc.t_xmqc_dywpt_dlts,
+            t_dwghgl_xmqc.t_xmqc_dywpt_dlcd,
+            t_dwghgl_xmqc.t_xmqc_dywpt_dltz,
+            t_dwghgl_xmqc.t_xmqc_hb_hb,
+            t_dwghgl_xmqc.t_xmqc_hb_jhx,
+            t_dwghgl_xmqc.t_xmqc_hb_hbtz,
+            t_dwghgl_xmqc.t_xmqc_xmtz,
+            t_dwghgl_xmqc.t_xmqc_zjly_zyjh,
+            t_dwghgl_xmqc.t_xmqc_zjly_gszc,
+            t_dwghgl_xmqc.t_xmqc_zjly_xjgdqyzc,
+            t_dwghgl_xmqc.t_xmqc_zjly_yhtz,
+            t_dwghgl_xmqc.t_xmqc_zjly_xqptf,
+            t_dwghgl_xmqc.t_xmqc_zjly_zfdz,
+            t_dwghgl_xmqc.t_xmqc_zjly_qt,
+            t_dwghgl_xmqc.t_xmqc_zcsx,
+            t_dwghgl_xmqc.t_xmqc_ghnf,
+            t_dwghgl_xmqc.t_xmqc_gcxz,
+            t_dwghgl_xmqc.t_xmqc_dysclb,
+            t_dwghgl_xmqc.t_xmqc_iscnw,
+            t_dwghgl_xmqc.t_xmqc_nwjsxz1,
+            t_dwghgl_xmqc.t_xmqc_nwjsxz2,
+            t_dwghgl_xmqc.t_xmqc_nwjsxz3,
+            t_dwghgl_xmqc.t_xmqc_type,
+            t_dwghgl_xmqc.t_xmqc_zt,
+            ROW_NUMBER() OVER(
+                ORDER BY
+                    t_xmqc_ghnf DESC
+            ) rank__
+        FROM
+            t_dwghgl_xmqc left
+            JOIN t_jcsj_fq_gqlx ON ( t_jcsj_fq_gqlx.t_gqlx_id = t_dwghgl_xmqc.t_xmqc_gqlx )
+            LEFT JOIN t_sys_ywdw ON ( t_sys_ywdw.t_sys_id = t_dwghgl_xmqc.t_xmqc_ywdw )
+            LEFT JOIN t_jcsj_cs_dycs ON ( t_jcsj_cs_dycs.t_dycs_id = t_dwghgl_xmqc.t_xmqc_dydj )
+        WHERE
+            1 = 1 ${ew.sqlSegment}
+    </select>
+
+
 </mapper>

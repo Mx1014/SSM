@@ -1,9 +1,7 @@
-package com.kylin.electricassistsys.pojo.tsbsj;
+package com.kylin.electricassistsys.dto.tsbsj;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableId;
 
-import java.io.Serializable;
+import com.kylin.electricassistsys.dto.base.BaseDto;
 
 /**
  * <p>
@@ -13,10 +11,7 @@ import java.io.Serializable;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSbsjByqxx extends Model<TSbsjByqxx> {
-
-    private static final long serialVersionUID = 1L;
-    @TableId("t_byqxx_id")
+public class TSbsjByqxxSelDto extends BaseDto {
     private String tByqxxId;
     private String tByqxxNum;
     private String tByqxxName;
@@ -54,7 +49,66 @@ public class TSbsjByqxx extends Model<TSbsjByqxx> {
     private String tByqxxGqlxid;
     private String tByqxxXgsj;
     private String tByqxxBh;
+    /**
+     * 变电站中文
+     */
+    private String tBdzxxName;
+    /**
+     * 调压方式中文
+     */
+    private String tTyfsName;
+    /**
+     * 铭牌变比中文
+     */
+    private String tMpbbName;
+    /**
+     * 供区类型
+     */
+    private String tByqxxGqlxname;
+    /**
+     *区域
+     */
+    private String tByqxxQy;
 
+    public String gettByqxxGqlxname() {
+        return tByqxxGqlxname;
+    }
+
+    public void settByqxxGqlxname(String tByqxxGqlxname) {
+        this.tByqxxGqlxname = tByqxxGqlxname;
+    }
+
+    public String gettByqxxQy() {
+        return tByqxxQy;
+    }
+
+    public void settByqxxQy(String tByqxxQy) {
+        this.tByqxxQy = tByqxxQy;
+    }
+
+    public String gettBdzxxName() {
+        return tBdzxxName;
+    }
+
+    public void settBdzxxName(String tBdzxxName) {
+        this.tBdzxxName = tBdzxxName;
+    }
+
+    public String gettTyfsName() {
+        return tTyfsName;
+    }
+
+    public void settTyfsName(String tTyfsName) {
+        this.tTyfsName = tTyfsName;
+    }
+
+    public String gettMpbbName() {
+        return tMpbbName;
+    }
+
+    public void settMpbbName(String tMpbbName) {
+        this.tMpbbName = tMpbbName;
+    }
 
     public String gettByqxxId() {
         return tByqxxId;
@@ -352,10 +406,6 @@ public class TSbsjByqxx extends Model<TSbsjByqxx> {
         this.tByqxxBh = tByqxxBh;
     }
 
-    @Override
-    protected Serializable pkVal() {
-        return this.tByqxxId;
-    }
 
     @Override
     public String toString() {
