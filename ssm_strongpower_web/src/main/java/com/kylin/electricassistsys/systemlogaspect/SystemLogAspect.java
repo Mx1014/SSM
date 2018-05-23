@@ -1,6 +1,6 @@
 package com.kylin.electricassistsys.systemlogaspect;
 
-import com.kylin.electricassistsys.data.api.TSystemLogApi;
+import com.kylin.electricassistsys.data.api.tsys.TSystemLogApi;
 import com.kylin.electricassistsys.dto.system.TSystemLogDto;
 import com.kylin.electricassistsys.tools.sqlfilter.SqlRegular;
 import org.apache.logging.log4j.util.Strings;
@@ -38,9 +38,11 @@ public class SystemLogAspect {
      * 后面的通知直接使用方法名来引用当前的切点表达式；如果是其他类使用，加上包名即可
      */
 
-    @Pointcut("execution(public * com.kylin.electricassistsys.controller.*Controller.*(..))")
+  /*  @Pointcut("execution(public * com.kylin.electricassistsys.controller.*Controller.*(..))")
     public void declearJoinPointExpression(){}
-
+*/
+    @Pointcut("execution(public * com.kylin.electricassistsys.controller.*.*Controller.*(..))")
+  public void declearJoinPointExpression(){}
     /***
      * 前置通知
      * @param joinPoint

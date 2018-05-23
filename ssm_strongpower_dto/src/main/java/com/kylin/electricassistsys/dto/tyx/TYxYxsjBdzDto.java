@@ -8,7 +8,7 @@ package com.kylin.electricassistsys.dto.tyx;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TYxYxsjBdzDto {
+public class TYxYxsjBdzDto  {
 
     private static final long serialVersionUID = 1L;
 

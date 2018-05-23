@@ -295,6 +295,19 @@ public class TSbsjZyllxxxSelDto extends BaseDto {
      */
     private String tZyllxxxZjllx4;
 
+    /**
+     *修改次数
+     */
+    private String tZyxlxxXgcs;
+
+    public String gettZyxlxxXgcs() {
+        return tZyxlxxXgcs;
+    }
+
+    public void settZyxlxxXgcs(String tZyxlxxXgcs) {
+        this.tZyxlxxXgcs = tZyxlxxXgcs;
+    }
+
     private String tGqlxName;
 
     private String tGdfqName;

@@ -330,6 +330,18 @@ public class TSbsjZyllxxxSel extends Model<TSbsjZyllxxxSel> {
      *敷设方式
      */
     private String tFsfsName;
+    /**
+     *修改次数
+     */
+    private String tZyxlxxXgcs;
+
+    public String gettZyxlxxXgcs() {
+        return tZyxlxxXgcs;
+    }
+
+    public void settZyxlxxXgcs(String tZyxlxxXgcs) {
+        this.tZyxlxxXgcs = tZyxlxxXgcs;
+    }
 
     public String gettGqlxName() {
         return tGqlxName;

@@ -1,12 +1,13 @@
 package com.kylin.electricassistsys.pojo.tyx;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ * 变电站运行数据表
  * </p>
  *
  * @author 陈文旭
@@ -15,7 +16,7 @@ import java.io.Serializable;
 public class TYxBdzjfdl extends Model<TYxBdzjfdl> {
 
     private static final long serialVersionUID = 1L;
-
+   @TableId("t_jfdl_id")
     private String tJfdlId;
     private String tJfdlBdzid;
     private String tJfdlZongzhi;

@@ -160,6 +160,7 @@
         <result column="T_SYFS_NAME" property="tSyfsName"/>
         <result column="T_DXCS_XHMC" property="tDxcsXhmc"/>
         <result column="T_FSFS_NAME" property="tFsfsName"/>
+        <result column="T_ZYXLXX_XGCS" property="tZyxlxxXgcs"/>
     </resultMap>
 
     <select id="selectPage" resultMap="BaseResultMapS" parameterType="com.kylin.electricassistsys.pojo.tsbsj.TSbsjZyllxxxSel">

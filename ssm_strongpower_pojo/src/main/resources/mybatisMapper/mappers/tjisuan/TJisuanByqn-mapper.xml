@@ -11,10 +11,47 @@
         <result column="REMARK" property="remark" />
         <result column="SDBL" property="sdbl" />
     </resultMap>
-
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         NID, BYQID, JG, JSNF, REMARK, SDBL
     </sql>
+
+    <resultMap id="BaseResultMapSel" type="com.kylin.electricassistsys.pojo.tjisuan.TJisuanByqnSel">
+        <result column="NID" property="nid" />
+        <result column="BYQID" property="byqid" />
+        <result column="JG" property="jg" />
+        <result column="JSNF" property="jsnf" />
+        <result column="REMARK" property="remark" />
+        <result column="SDBL" property="sdbl" />
+        <result column="T_BYQXX_GQLX" property="tByqxxGqlx"/>
+        <result column="t_byqxx_qy" property="tByqxxQy"/>
+        <result column="t_byqxx_bdz" property="tByqxxBdz"/>
+        <result column="t_byqxx_syfs" property="tByqxxSyfs"/>
+        <result column="t_byqxx_name" property="tByqxxName"/>
+    </resultMap>
+   <!--變壓器N-1信息-->
+    <select id="selectPage" resultMap="BaseResultMapSel" parameterType="com.kylin.electricassistsys.pojo.tjisuan.TJisuanByqnSel">
+        SELECT
+            t_jisuan_byqn.nid,
+            t_jisuan_byqn.jsnf,
+            fun_getgqlx_bybyqid(t_jisuan_byqn.byqid) t_byqxx_gqlx,
+            fun_getqy_bybyqid(t_jisuan_byqn.byqid) t_byqxx_qy,
+            fun_getbdzbybyqid(t_jisuan_byqn.byqid) t_byqxx_bdz,
+            t_jisuan_byqn.byqid,
+            t_sbsj_byqxx.t_byqxx_name,
+            fun_getsyfs_bybyqid(t_jisuan_byqn.byqid) t_byqxx_syfs,
+            t_jisuan_byqn.sdbl,
+            t_jisuan_byqn.jg,
+            t_jisuan_byqn.remark,
+            ROW_NUMBER() OVER(
+                ORDER BY
+                    jsnf DESC
+            ) rank__
+        FROM
+            t_jisuan_byqn left
+            JOIN t_sbsj_byqxx ON ( t_sbsj_byqxx.t_byqxx_id = t_jisuan_byqn.byqid )
+        WHERE
+            1 = 1 ${ew.sqlSegment}
+    </select>
 
 </mapper>

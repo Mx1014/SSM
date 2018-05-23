@@ -1,12 +1,13 @@
 package com.kylin.electricassistsys.pojo.tjisuan;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ * 變壓器N-1信息
  * </p>
  *
  * @author 陈文旭
@@ -15,7 +16,7 @@ import java.io.Serializable;
 public class TJisuanByqn extends Model<TJisuanByqn> {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId("NID")
     private String nid;
     private String byqid;
     private String jg;

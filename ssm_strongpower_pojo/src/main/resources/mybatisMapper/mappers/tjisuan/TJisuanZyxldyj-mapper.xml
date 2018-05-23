@@ -9,11 +9,47 @@
         <result column="NF" property="nf" />
         <result column="VALUE" property="value" />
         <result column="REMARK" property="remark" />
+
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         ID, XLID, NF, VALUE, REMARK
     </sql>
+
+    <resultMap id="BaseResultMapSel" type="com.kylin.electricassistsys.pojo.tjisuan.TJisuanZyxldyjSel">
+        <result column="ID" property="id" />
+        <result column="XLID" property="xlid" />
+        <result column="NF" property="nf" />
+        <result column="VALUE" property="value" />
+        <result column="REMARK" property="remark" />
+        <result column="T_ZYXL_GQLX" property="tZyxlGqlx"/>
+        <result column="T_ZYXL_QY" property="tZyxlQy"/>
+        <result column="T_ZYXL_BDZ" property="tZyxlBdz"/>
+        <result column="T_ZYXL_SYFS" property="tZyxlSyfs"/>
+        <result column="T_ZYLLXXX_XLMC" property="tZyllxxxXlmc"/>
+    </resultMap>
+    <select id="selectPage" resultMap="BaseResultMapSel" parameterType="com.kylin.electricassistsys.pojo.tjisuan.TJisuanZyxldyjSel">
+          SELECT
+            t_jisuan_zyxldyj.id,
+            t_jisuan_zyxldyj.nf,
+            fun_getgqlx_byzyxlid(t_jisuan_zyxldyj.xlid) t_zyxl_gqlx,
+            fun_getqy_byzyxlid(t_jisuan_zyxldyj.xlid) t_zyxl_qy,
+            fun_getbdz_byzyxlid(t_jisuan_zyxldyj.xlid) t_zyxl_bdz,
+            fun_getsyfs_byzyxlid(t_jisuan_zyxldyj.xlid) t_zyxl_syfs,
+            t_jisuan_zyxldyj.xlid,
+            t_sbsj_zyllxxx.t_zyllxxx_xlmc,
+            t_jisuan_zyxldyj.value,
+            t_jisuan_zyxldyj.remark,
+            ROW_NUMBER() OVER(
+                ORDER BY
+                    nf DESC
+            ) rank__
+        FROM
+            t_jisuan_zyxldyj left
+            JOIN t_sbsj_zyllxxx ON ( t_sbsj_zyllxxx.t_zyllxxx_id = t_jisuan_zyxldyj.xlid )
+        WHERE
+            1 = 1 ${ew.sqlSegment}
+    </select>
 
 </mapper>

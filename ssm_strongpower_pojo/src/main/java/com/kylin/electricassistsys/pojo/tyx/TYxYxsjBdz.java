@@ -1,6 +1,7 @@
 package com.kylin.electricassistsys.pojo.tyx;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
@@ -15,7 +16,7 @@ import java.io.Serializable;
 public class TYxYxsjBdz extends Model<TYxYxsjBdz> {
 
     private static final long serialVersionUID = 1L;
-
+     @TableId("YXID")
     private String yxid;
     private String yxtype;
     private Double yxvalue;

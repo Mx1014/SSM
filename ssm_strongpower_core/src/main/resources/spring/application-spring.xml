@@ -19,7 +19,7 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
     <!--告诉SpringMVC控制器的位置-->
-    <context:component-scan base-package="com.kylin"/>
+    <context:component-scan base-package="com.kylin.*"/>
     <!--数据源加密操作-->
     <bean id="dbPasswordCallback" class="com.kylin.electricassistsys.tools.DBPasswordCallback" lazy-init="true"/>
 

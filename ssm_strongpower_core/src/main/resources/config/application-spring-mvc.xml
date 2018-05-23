@@ -13,7 +13,7 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
     <!--告诉SpringMVC控制器的位置-->
-    <context:component-scan base-package="com.kylin"/>
+    <context:component-scan base-package="com.kylin.*"/>
     <!--开启注解-->
     <mvc:annotation-driven />
     <!-- 使用 Swagger Restful API文档时，添加此注解 -->

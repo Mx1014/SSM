@@ -4,6 +4,22 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.tsbsj.TSbyxxxGyxlyxxx">
+    <id column="T_GYXLYXXX_ID" property="tGyxlyxxxId" />
+    <result column="T_GYXLYXXX_SJNY" property="tGyxlyxxxSjny" />
+    <result column="T_GYXLYXXX_YG" property="tGyxlyxxxYg" />
+    <result column="T_GYXLYXXX_WG" property="tGyxlyxxxWg" />
+    <result column="T_GYXLYXXX_ZG" property="tGyxlyxxxZg" />
+    <result column="T_GYXLYXXX_DL" property="tGyxlyxxxDl" />
+    <result column="T_GYXLYXXX_ZDFHSK" property="tGyxlyxxxZdfhsk" />
+    <result column="T_GYXLYXXX_FZL" property="tGyxlyxxxFzl" />
+    <result column="T_GYXLYXXX_ZXYG" property="tGyxlyxxxZxyg" />
+    <result column="T_GYXLYXXX_SZGL" property="tGyxlyxxxSzgl" />
+    <result column="T_GYXLYXXX_GLYS" property="tGyxlyxxxGlys" />
+    <result column="T_GYXLYXXX_GYXL_ID" property="tGyxlyxxxGyxlId" />
+    <result column="T_GYXLYXXX_REMARKS" property="tGyxlyxxxRemarks" />
+</resultMap>
+
+    <resultMap id="BaseResultMapSel" type="com.kylin.electricassistsys.pojo.tsbsj.TSbyxxxGyxlyxxxSel">
         <id column="T_GYXLYXXX_ID" property="tGyxlyxxxId" />
         <result column="T_GYXLYXXX_SJNY" property="tGyxlyxxxSjny" />
         <result column="T_GYXLYXXX_YG" property="tGyxlyxxxYg" />
@@ -17,11 +33,103 @@
         <result column="T_GYXLYXXX_GLYS" property="tGyxlyxxxGlys" />
         <result column="T_GYXLYXXX_GYXL_ID" property="tGyxlyxxxGyxlId" />
         <result column="T_GYXLYXXX_REMARKS" property="tGyxlyxxxRemarks" />
+        <result column="T_DYCS_NAME" property="tDycsName"/>
+        <result column="T_GQLX_NAME" property="tGqlxName"/>
+        <result column="T_GDFQ_NAME" property="tGdfqName"/>
+        <result column="T_SYFS_NAME" property="tSyfsName"/>
+        <result column="T_CNW_NAME" property="tCnwName"/>
+        <result column="T_CTBB_NAME" property="tCtbbName"/>
+        <result column="T_DXCS_XHMC" property="tDxcsXhmc"/>
+        <result column="T_JSFS_NAME" property="tJsfsName"/>
+        <result column="T_SYS_DWMZ" property="tSysDwmz"/>
+        <result column="T_GYXLXX_XGCS" property="tGyxlxxXgcs"/>
+        <result column="T_GYXLXX_DLXHNAME" property="tGyxlxxDlxhname"/>
+        <result column="T_FSFS_NAME" property="tFsfsName"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         T_GYXLYXXX_ID, T_GYXLYXXX_SJNY, T_GYXLYXXX_YG, T_GYXLYXXX_WG, T_GYXLYXXX_ZG, T_GYXLYXXX_DL, T_GYXLYXXX_ZDFHSK, T_GYXLYXXX_FZL, T_GYXLYXXX_ZXYG, T_GYXLYXXX_SZGL, T_GYXLYXXX_GLYS, T_GYXLYXXX_GYXL_ID, T_GYXLYXXX_REMARKS
     </sql>
+    <!--高压线路信息列表-->
+
+    <select id="selectPage" resultMap="BaseResultMapSel" parameterType="com.kylin.electricassistsys.pojo.tsbsj.TSbyxxxGyxlyxxxSel">
+          SELECT
+            t_sbsj_gyxlxx.t_gyxlxx_id,
+            t_sbsj_gyxlxx.t_gyxlxx_dydj,
+            t_jcsj_cs_dycs.t_dycs_name,
+            t_sbsj_gyxlxx.t_gyxlxx_gqlx,
+            t_jcsj_fq_gqlx.t_gqlx_name,
+            t_sbsj_gyxlxx.t_gyxlxx_ssqy,
+            t_jcsj_fq_gdfq.t_gdfq_name,
+            t_sbsj_gyxlxx.t_gyxlxx_gdqsx,
+            t_sbsj_gyxlxx.t_gyxlxx_gdxz,
+            t_sbsj_gyxlxx.t_gyxlxx_xlbh,
+            t_sbsj_gyxlxx.t_gyxlxx_xlmc,
+            t_sbsj_gyxlxx.t_gyxlxx_syfs,
+            t_jcsj_syfs.t_syfs_name,
+            t_sbsj_gyxlxx.t_gyxlxx_ynw,
+            t_jcsj_cnw.t_cnw_name,
+            t_sbsj_gyxlxx.t_gyxlxx_ctbb,
+            t_jcsj_ctbb.t_ctbb_name,
+            t_sbsj_gyxlxx.t_gyxlxx_sjqd,
+            t_sbsj_gyxlxx.t_gyxlxx_sjzd,
+            t_sbsj_gyxlxx.t_gyxlxx_kgbhs,
+            t_sbsj_gyxlxx.t_gyxlxx_kgbhm,
+            t_sbsj_gyxlxx.t_gyxlxx_qsgh,
+            t_sbsj_gyxlxx.t_gyxlxx_zc_qx,
+            t_sbsj_gyxlxx.t_gyxlxx_dxxh1,
+            t_jcsj_cs_dxcs.t_dxcs_xhmc,
+            fun_getdxxhbydxid(t_sbsj_gyxlxx.t_gyxlxx_dxxh2) t_gyxlxx_dxxhname2,
+            t_sbsj_gyxlxx.t_gyxlxx_dxxh2,
+            fun_getdxxhbydxid(t_sbsj_gyxlxx.t_gyxlxx_dxxh3) t_gyxlxx_dxxhname3,
+            t_sbsj_gyxlxx.t_gyxlxx_dxxh3,
+            t_sbsj_gyxlxx.t_gyxlxx_tysj,
+            t_sbsj_gyxlxx.t_gyxlxx_tuiyisj,
+            t_sbsj_gyxlxx.t_gyxlxx_dl_qx,
+            t_sbsj_gyxlxx.t_gyxlxx_jkdx_qx,
+            t_sbsj_gyxlxx.t_gyxlxx_zxjmdx,
+            t_sbsj_gyxlxx.t_gyxlxx_zdyxdl,
+            t_sbsj_gyxlxx.t_gyxlxx_sfyxct,
+            t_sbsj_gyxlxx.t_gyxlxx_qzttsh,
+            t_sbsj_gyxlxx.t_gyxlxx_zt,
+            t_sbsj_gyxlxx.t_gyxlxx_jsfs,
+            t_jcsj_jsfs.t_jsfs_name,
+            t_sbsj_gyxlxx.t_gyxlxx_dz,
+            t_sbsj_gyxlxx.t_gyxlxx_dk,
+            t_sbsj_gyxlxx.t_gyxlxx_zdgh,
+            t_sbsj_gyxlxx.t_gyxlxx_ywdw,
+            t_sys_ywdw.t_sys_dwmz,
+            t_sbsj_gyxlxx.t_gyxlxx_bz,
+            fun_getgyxlxgcishubyid(t_sbsj_gyxlxx.t_gyxlxx_id) t_gyxlxx_xgcs,
+            t_sbsj_gyxlxx.t_gyxlxx_qdlx,
+            t_sbsj_gyxlxx.t_gyxlxx_zdlx,
+            fun_getdxxhbydxid(t_sbsj_gyxlxx.t_gyxlxx_dlxh) t_gyxlxx_dlxhname,
+            t_sbsj_gyxlxx.t_gyxlxx_dlxh,
+            t_sbsj_gyxlxx.t_gyxlxx_fds,
+            t_sbsj_gyxlxx.t_gyxlxx_fdcd,
+            t_sbsj_gyxlxx.t_gyxlxx_fsfs,
+            t_jcsj_fsfs.t_fsfs_name,
+            t_sbsj_gyxlxx.t_gyxlxx_n_1,
+            t_sbsj_gyxlxx.t_gyxlxx_dwjg,
+            ROW_NUMBER() OVER(
+                ORDER BY
+                    t_jcsj_cs_dycs.t_dycs_name DESC
+            ) rank__
+        FROM
+            t_sbsj_gyxlxx left
+            JOIN t_jcsj_cs_dycs ON ( t_jcsj_cs_dycs.t_dycs_id = t_sbsj_gyxlxx.t_gyxlxx_dydj )
+            LEFT JOIN t_jcsj_fq_gqlx ON ( t_jcsj_fq_gqlx.t_gqlx_id = t_sbsj_gyxlxx.t_gyxlxx_gqlx )
+            LEFT JOIN t_jcsj_fq_gdfq ON ( t_jcsj_fq_gdfq.t_gdfq_id = t_sbsj_gyxlxx.t_gyxlxx_ssqy )
+            LEFT JOIN t_jcsj_syfs ON ( t_jcsj_syfs.t_syfs_id = t_sbsj_gyxlxx.t_gyxlxx_syfs )
+            LEFT JOIN t_jcsj_cnw ON ( t_jcsj_cnw.t_cnw_id = t_sbsj_gyxlxx.t_gyxlxx_ynw )
+            LEFT JOIN t_jcsj_ctbb ON ( t_jcsj_ctbb.t_ctbb_id = t_sbsj_gyxlxx.t_gyxlxx_ctbb )
+            LEFT JOIN t_jcsj_cs_dxcs ON ( t_jcsj_cs_dxcs.t_dxcs_dxid = t_sbsj_gyxlxx.t_gyxlxx_dxxh1 )
+            LEFT JOIN t_jcsj_jsfs ON ( t_jcsj_jsfs.t_jsfs_id = t_sbsj_gyxlxx.t_gyxlxx_jsfs )
+            LEFT JOIN t_sys_ywdw ON ( t_sys_ywdw.t_sys_id = t_sbsj_gyxlxx.t_gyxlxx_ywdw )
+            LEFT JOIN t_jcsj_fsfs ON ( t_jcsj_fsfs.t_fsfs_id = t_sbsj_gyxlxx.t_gyxlxx_fsfs )
+        WHERE
+            1 = 1 ${ew.sqlSegment}
+    </select>
 
 </mapper>

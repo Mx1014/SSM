@@ -21,4 +21,6 @@
         YXID, YXTYPE, YXVALUE, YXNF, TQTYPE, CMTYPE, TQSHIJIAN, SBID, BDZID, REMARK
     </sql>
 
+
+
 </mapper>

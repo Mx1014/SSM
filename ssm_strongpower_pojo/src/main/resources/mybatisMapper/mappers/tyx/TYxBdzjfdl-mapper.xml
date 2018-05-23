@@ -19,5 +19,40 @@
     <sql id="Base_Column_List">
         T_JFDL_ID, T_JFDL_BDZID, T_JFDL_ZONGZHI, T_JFDL_ZHENGZHI, T_JFDL_FUZHI, T_JFDL_DATA, T_JFDL_TQJG, T_JFDL_OPENSBID, T_JFDL_TYPE
     </sql>
+    <resultMap id="BaseResultMapSel" type="com.kylin.electricassistsys.pojo.tyx.TYxBdzjfdlSel">
+        <id column="T_JFDL_ID" property="tJfdlId" />
+        <result column="T_JFDL_BDZID" property="tJfdlBdzid" />
+        <result column="T_JFDL_ZONGZHI" property="tJfdlZongzhi" />
+        <result column="T_JFDL_ZHENGZHI" property="tJfdlZhengzhi" />
+        <result column="T_JFDL_FUZHI" property="tJfdlFuzhi" />
+        <result column="T_JFDL_DATA" property="tJfdlData" />
+        <result column="T_JFDL_TQJG" property="tJfdlTqjg" />
+        <result column="T_JFDL_OPENSBID" property="tJfdlOpensbid" />
+        <result column="T_JFDL_TYPE" property="tJfdlType" />
+        <result column="T_BDZXX_NAME" property="tBdzxxName"/>
+    </resultMap>
+
+    <select id="selectPage" resultMap="BaseResultMapSel" parameterType="com.kylin.electricassistsys.pojo.tyx.TYxBdzjfdlSel">
+            SELECT
+            t_yx_bdzjfdl.t_jfdl_id,
+            t_yx_bdzjfdl.t_jfdl_bdzid,
+            t_sbsj_bdzxx.t_bdzxx_name,
+            t_yx_bdzjfdl.t_jfdl_data,
+            t_yx_bdzjfdl.t_jfdl_zongzhi,
+            t_yx_bdzjfdl.t_jfdl_zhengzhi,
+            t_yx_bdzjfdl.t_jfdl_fuzhi,
+            t_yx_bdzjfdl.t_jfdl_tqjg,
+            t_yx_bdzjfdl.t_jfdl_opensbid,
+            t_yx_bdzjfdl.t_jfdl_type,
+            ROW_NUMBER() OVER(
+                ORDER BY
+                    t_jfdl_data ASC
+            ) rank__
+        FROM
+            t_yx_bdzjfdl left
+            JOIN t_sbsj_bdzxx ON ( t_sbsj_bdzxx.t_bdzxx_id = t_yx_bdzjfdl.t_jfdl_bdzid )
+        WHERE
+            1 = 1  ${ew.sqlSegment}
+     </select>
 
 </mapper>

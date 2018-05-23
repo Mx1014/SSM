@@ -1,11 +1,13 @@
 package com.kylin.electricassistsys.pojo.tjisuan;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
 
 import java.io.Serializable;
 
 /**
  * <p>
+ * 中压线路电压降
  * 计算电压降
  * </p>
  *
@@ -15,7 +17,7 @@ import java.io.Serializable;
 public class TJisuanZyxldyj extends Model<TJisuanZyxldyj> {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId("id")
     private String id;
     private String xlid;
     private String nf;
