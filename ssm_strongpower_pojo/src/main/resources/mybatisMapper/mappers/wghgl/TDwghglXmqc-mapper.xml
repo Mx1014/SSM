@@ -318,6 +318,10 @@
             t_dwghgl_xmqc.t_xmqc_nwjsxz1,
             t_dwghgl_xmqc.t_xmqc_nwjsxz2,
             t_dwghgl_xmqc.t_xmqc_nwjsxz3,
+            t_dwghgl_xmqc.T_XMQC_BdzDlcd,
+            t_dwghgl_xmqc.T_XMQC_BdzDlxh,
+            t_dwghgl_xmqc.T_XMQC_BdzJkcd,
+            t_dwghgl_xmqc.T_XMQC_BdzGzzs,
             t_dwghgl_xmqc.t_xmqc_type,
             t_dwghgl_xmqc.t_xmqc_zt,
             ROW_NUMBER() OVER(
