@@ -48,7 +48,7 @@ public class TSbsjDyxlxxDataServerImpl  implements TSbsjDyxlxxDataApi {
         entityWrapper= EntityWrapperUtil.getEntityWrapperWithCondition(entityWrapper,tj);
         Page pagepojo = new Page();
         MyBeanUtils.toPageBean(page, pagepojo, new TSbsjDyxlxxSel());
-        MyBeanUtils.toPageBean(tSbsjDyxlxxService.selectPage(pagepojo, entityWrapper), page, new TSbsjDyxlxxSel());
+        MyBeanUtils.toPageBean(tSbsjDyxlxxService.selectPage(pagepojo, entityWrapper), page, new TSbsjDyxlxxSelDto());
         return page;
 
     }

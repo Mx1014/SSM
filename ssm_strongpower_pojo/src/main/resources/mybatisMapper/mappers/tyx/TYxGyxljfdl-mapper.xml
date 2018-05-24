@@ -14,10 +14,39 @@
         <result column="T_JFDL_OPENSBID" property="tJfdlOpensbid" />
         <result column="T_JFDL_TYPE" property="tJfdlType" />
     </resultMap>
-
+    <resultMap id="BaseResultMapSel" type="com.kylin.electricassistsys.pojo.tyx.TYxGyxljfdlSel">
+        <id column="T_JFDL_ID" property="tJfdlId" />
+        <result column="T_JFDL_XLID" property="tJfdlXlid" />
+        <result column="T_JFDL_ZONGZHI" property="tJfdlZongzhi" />
+        <result column="T_JFDL_ZHENGZHI" property="tJfdlZhengzhi" />
+        <result column="T_JFDL_FUZHI" property="tJfdlFuzhi" />
+        <result column="T_JFDL_DATA" property="tJfdlData" />
+        <result column="T_JFDL_TQJG" property="tJfdlTqjg" />
+        <result column="T_JFDL_OPENSBID" property="tJfdlOpensbid" />
+        <result column="T_JFDL_TYPE" property="tJfdlType" />
+        <result column="T_GYXLXX_XLMC" property="tGyxlxxXlmc"/>
+    </resultMap>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         T_JFDL_ID, T_JFDL_XLID, T_JFDL_ZONGZHI, T_JFDL_ZHENGZHI, T_JFDL_FUZHI, T_JFDL_DATA, T_JFDL_TQJG, T_JFDL_OPENSBID, T_JFDL_TYPE
     </sql>
+    <select id="selectPage" resultMap="BaseResultMapSel" parameterType="com.kylin.electricassistsys.pojo.tyx.TYxGyxljfdlSel" >
+                SELECT
+            tyg.T_JFDL_ID,
+            tyg.T_JFDL_FUZHI,
+            tyg.T_JFDL_DATA,
+            tyg.T_JFDL_OPENSBID,
+            tyg.T_JFDL_TQJG,
+            tyg.T_JFDL_TYPE,
+            tyg.T_JFDL_XLID,
+            tyg.T_JFDL_ZHENGZHI,
+            tyg.T_JFDL_ZONGZHI,
+            tsg.t_gyxlxx_xlmc
+        FROM
+            t_yx_gyxljfdl tyg
+            LEFT JOIN t_sbsj_gyxlxx tsg ON tyg.T_Jfdl_xlId = tsg.t_gyxlxx_id
+             WHERE
+                    1 = 1  ${ew.sqlSegment}
+    </select>
 
 </mapper>

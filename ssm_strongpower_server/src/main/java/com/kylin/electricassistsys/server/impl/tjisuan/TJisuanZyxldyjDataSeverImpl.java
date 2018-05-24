@@ -50,7 +50,7 @@ public class TJisuanZyxldyjDataSeverImpl  implements TJisuanZyxldyjDataApi {
         entityWrapper= EntityWrapperUtil.getEntityWrapperWithCondition(entityWrapper,tj);
         Page pagepojo = new Page();
         MyBeanUtils.toPageBean(page, pagepojo, new TJisuanZyxldyjSel());
-        MyBeanUtils.toPageBean(tJisuanZyxldyjService.selectPage(pagepojo, entityWrapper), page, new TJisuanZyxldyjSel());
+        MyBeanUtils.toPageBean(tJisuanZyxldyjService.selectPage(pagepojo, entityWrapper), page, new TJisuanZyxldyjSelDto());
         return page;
     }
     /**

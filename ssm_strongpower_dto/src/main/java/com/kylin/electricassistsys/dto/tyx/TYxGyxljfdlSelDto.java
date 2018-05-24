@@ -1,8 +1,6 @@
-package com.kylin.electricassistsys.pojo.tyx;
+package com.kylin.electricassistsys.dto.tyx;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-
-import java.io.Serializable;
+import com.kylin.electricassistsys.dto.base.BaseDto;
 
 /**
  * <p>
@@ -12,8 +10,7 @@ import java.io.Serializable;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TYxGyxljfdl extends Model<TYxGyxljfdl> {
-    private static final long serialVersionUID = 1L;
+public class TYxGyxljfdlSelDto extends BaseDto {
     private String tJfdlId;
     private String tJfdlXlid;
     private String tJfdlZongzhi;
@@ -23,6 +20,19 @@ public class TYxGyxljfdl extends Model<TYxGyxljfdl> {
     private Double tJfdlTqjg;
     private String tJfdlOpensbid;
     private String tJfdlType;
+    /**
+     * 变电站号中文
+     */
+    private String tGyxlxxXlmc;
+
+    public String gettGyxlxxXlmc() {
+        return tGyxlxxXlmc;
+    }
+
+    public void settGyxlxxXlmc(String tGyxlxxXlmc) {
+        this.tGyxlxxXlmc = tGyxlxxXlmc;
+    }
+
     public String gettJfdlId() {
         return tJfdlId;
     }
@@ -93,11 +103,6 @@ public class TYxGyxljfdl extends Model<TYxGyxljfdl> {
 
     public void settJfdlType(String tJfdlType) {
         this.tJfdlType = tJfdlType;
-    }
-
-    @Override
-    protected Serializable pkVal() {
-        return this.tJfdlId;
     }
 
     @Override

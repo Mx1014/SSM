@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.newlyadded.ResourceManagementDao">
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.newlyadded.ResourceManagement">
+         <result column="t_bdzxx_id" property="tBdzxxId"/>
+         <result column="t_bdzxx_dydj" property="tBdzxxDydj"/>
+         <result column="t_dycs_name" property="tDycsName"/>
+         <result column="t_bdzxx_name" property="tBdzxxName"/>
+         <result column="t_bdzxx_cxjg" property="tBdzxxCxjg"/>
+         <result column="t_bdzxx_yy" property="tBdzxxYy"/>
+    </resultMap>
+    <select id="selectPage220Kv" resultMap="BaseResultMap" parameterType="com.kylin.electricassistsys.pojo.newlyadded.ResourceManagement">
+        SELECT
+            t_sbsj_bdzxx.t_bdzxx_id,
+            t_sbsj_bdzxx.t_bdzxx_dydj,
+            t_jcsj_cs_dycs.t_dycs_name,
+            t_sbsj_bdzxx.t_bdzxx_name,
+            fun_get220kvcxjgzsbyid(t_sbsj_bdzxx.t_bdzxx_id) t_bdzxx_cxjg,
+            fun_get220kvyycxjgzsbyid(t_sbsj_bdzxx.t_bdzxx_id) t_bdzxx_yy,
+            ROW_NUMBER() OVER(
+                ORDER BY
+                    t_jcsj_cs_dycs.t_dycs_name DESC
+            ) rank__
+        FROM
+            t_sbsj_bdzxx left
+            JOIN t_jcsj_cs_dycs ON ( t_jcsj_cs_dycs.t_dycs_id = t_sbsj_bdzxx.t_bdzxx_dydj )
+        WHERE
+            1 = 1
+            AND t_jcsj_cs_dycs.t_dycs_name >= 220
+        <if test="tBdzxxId !=null" >
+            and t_sbsj_bdzxx.t_bdzxx_id like #{tBdzxxId}
+        </if>
+        <if test="tBdzxxDydj !=null">
+            and t_sbsj_bdzxx.t_bdzxx_dydj like #{tBdzxxDydj}
+        </if>
+        <if test="tDycsName !=null">
+            and t_jcsj_cs_dycs.t_dycs_name like #{tDycsName}
+        </if>
+        <if test="tBdzxxName !=null">
+            and t_sbsj_bdzxx.t_bdzxx_name like #{tBdzxxName}
+
+        </if>
+    </select>
+    <select id="selectPage110Kv" resultMap="BaseResultMap" parameterType="com.kylin.electricassistsys.pojo.newlyadded.ResourceManagement">
+
+            SELECT
+        t_sbsj_bdzxx.t_bdzxx_id,
+        t_sbsj_bdzxx.t_bdzxx_dydj,
+        t_jcsj_cs_dycs.t_dycs_name,
+        t_sbsj_bdzxx.t_bdzxx_name,
+        fun_get110kvcxjgzsbyid(t_sbsj_bdzxx.t_bdzxx_id) t_bdzxx_cxjg,
+        fun_get110kvyycxjgzsbyid(t_sbsj_bdzxx.t_bdzxx_id) t_bdzxx_yy,
+        ROW_NUMBER() OVER(
+            ORDER BY
+                t_jcsj_cs_dycs.t_dycs_name DESC
+        ) rank__
+    FROM
+        t_sbsj_bdzxx left
+        JOIN t_jcsj_cs_dycs ON ( t_jcsj_cs_dycs.t_dycs_id = t_sbsj_bdzxx.t_bdzxx_dydj )
+    WHERE
+        1 = 1
+        AND t_jcsj_cs_dycs.t_dycs_name >= 110
+        <if test="tBdzxxId !=null" >
+            and t_sbsj_bdzxx.t_bdzxx_id like #{tBdzxxId}
+        </if>
+        <if test="tBdzxxDydj !=null">
+            and t_sbsj_bdzxx.t_bdzxx_dydj like #{tBdzxxDydj}
+        </if>
+        <if test="tDycsName !=null">
+            and t_jcsj_cs_dycs.t_dycs_name like #{tDycsName}
+        </if>
+        <if test="tBdzxxName !=null">
+            and t_sbsj_bdzxx.t_bdzxx_name like #{tBdzxxName}
+
+        </if>
+    </select>
+    <select id="selectPage35Kv" resultMap="BaseResultMap" parameterType="com.kylin.electricassistsys.pojo.newlyadded.ResourceManagement">
+            SELECT
+        t_sbsj_bdzxx.t_bdzxx_id,
+        t_sbsj_bdzxx.t_bdzxx_dydj,
+        t_jcsj_cs_dycs.t_dycs_name,
+        t_sbsj_bdzxx.t_bdzxx_name,
+        fun_get35kvcxjgzsbyid(t_sbsj_bdzxx.t_bdzxx_id) t_bdzxx_cxjg,
+        fun_get35kvyycxjgzsbyid(t_sbsj_bdzxx.t_bdzxx_id) t_bdzxx_yy,
+        ROW_NUMBER() OVER(
+            ORDER BY
+                t_jcsj_cs_dycs.t_dycs_name DESC
+        ) rank__
+    FROM
+        t_sbsj_bdzxx left
+        JOIN t_jcsj_cs_dycs ON ( t_jcsj_cs_dycs.t_dycs_id = t_sbsj_bdzxx.t_bdzxx_dydj )
+    WHERE
+        1 = 1
+        AND t_jcsj_cs_dycs.t_dycs_name >= 35
+        <if test="tBdzxxId !=null" >
+            and t_sbsj_bdzxx.t_bdzxx_id like #{tBdzxxId}
+        </if>
+        <if test="tBdzxxDydj !=null">
+            and t_sbsj_bdzxx.t_bdzxx_dydj like #{tBdzxxDydj}
+        </if>
+        <if test="tDycsName !=null">
+            and t_jcsj_cs_dycs.t_dycs_name like #{tDycsName}
+        </if>
+        <if test="tBdzxxName !=null">
+            and t_sbsj_bdzxx.t_bdzxx_name like #{tBdzxxName}
+
+        </if>
+    </select>
+    <select id="selectPage10Kv" resultMap="BaseResultMap" parameterType="com.kylin.electricassistsys.pojo.newlyadded.ResourceManagement">
+        SELECT
+    t_sbsj_bdzxx.t_bdzxx_id,
+    t_sbsj_bdzxx.t_bdzxx_dydj,
+    t_jcsj_cs_dycs.t_dycs_name,
+    t_sbsj_bdzxx.t_bdzxx_name,
+    fun_get10kvcxjgzsbyid(t_sbsj_bdzxx.t_bdzxx_id) t_bdzxx_cxjg,
+    fun_get10kvyycxjgzsbyid(t_sbsj_bdzxx.t_bdzxx_id) t_bdzxx_yy,
+    ROW_NUMBER() OVER(
+        ORDER BY
+            t_jcsj_cs_dycs.t_dycs_name DESC
+    ) rank__
+FROM
+    t_sbsj_bdzxx left
+    JOIN t_jcsj_cs_dycs ON ( t_jcsj_cs_dycs.t_dycs_id = t_sbsj_bdzxx.t_bdzxx_dydj )
+WHERE
+    1 = 1
+    AND t_jcsj_cs_dycs.t_dycs_name >= 10
+        <if test="tBdzxxId !=null" >
+            and t_sbsj_bdzxx.t_bdzxx_id like #{tBdzxxId}
+        </if>
+        <if test="tBdzxxDydj !=null">
+            and t_sbsj_bdzxx.t_bdzxx_dydj like #{tBdzxxDydj}
+        </if>
+        <if test="tDycsName !=null">
+            and t_jcsj_cs_dycs.t_dycs_name like #{tDycsName}
+        </if>
+        <if test="tBdzxxName !=null">
+            and t_sbsj_bdzxx.t_bdzxx_name like #{tBdzxxName}
+
+        </if>
+    </select>
+    <delete id="deleteById" parameterType="java.lang.String">
+        delete  from  t_sbsj_bdzxx
+         where
+         t_sbsj_bdzxx.t_bdzxx_id=#{tBdzxxId}
+    </delete>
+
+
+</mapper>

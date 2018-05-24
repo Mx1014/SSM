@@ -51,7 +51,7 @@ public class TJisuanByqnDataServerImpl  implements TJisuanByqnDataApi {
         entityWrapper= EntityWrapperUtil.getEntityWrapperWithCondition(entityWrapper,tj);
         Page pagepojo = new Page();
         MyBeanUtils.toPageBean(page, pagepojo, new TJisuanByqnSel());
-        MyBeanUtils.toPageBean(tJisuanByqnService.selectPage(pagepojo, entityWrapper), page, new TJisuanByqnSel());
+        MyBeanUtils.toPageBean(tJisuanByqnService.selectPage(pagepojo, entityWrapper), page, new TJisuanByqnSelDto());
         return page;
     }
     /**

@@ -12,8 +12,10 @@ import java.io.Serializable;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TYxGyxljfdl extends Model<TYxGyxljfdl> {
+public class TYxGyxljfdlSel extends Model<TYxGyxljfdlSel> {
+
     private static final long serialVersionUID = 1L;
+
     private String tJfdlId;
     private String tJfdlXlid;
     private String tJfdlZongzhi;
@@ -23,6 +25,19 @@ public class TYxGyxljfdl extends Model<TYxGyxljfdl> {
     private Double tJfdlTqjg;
     private String tJfdlOpensbid;
     private String tJfdlType;
+    /**
+     * 变电站号中文
+     */
+    private String tGyxlxxXlmc;
+
+    public String gettGyxlxxXlmc() {
+        return tGyxlxxXlmc;
+    }
+
+    public void settGyxlxxXlmc(String tGyxlxxXlmc) {
+        this.tGyxlxxXlmc = tGyxlxxXlmc;
+    }
+
     public String gettJfdlId() {
         return tJfdlId;
     }

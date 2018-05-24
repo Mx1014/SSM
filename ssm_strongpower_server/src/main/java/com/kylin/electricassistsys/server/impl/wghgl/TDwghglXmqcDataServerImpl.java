@@ -51,7 +51,7 @@ public class TDwghglXmqcDataServerImpl  implements TDwghglXmqcDataApi {
         entityWrapper= EntityWrapperUtil.getEntityWrapperWithCondition(entityWrapper,tj);
         Page pagepojo = new Page();
         MyBeanUtils.toPageBean(page, pagepojo, new TDwghglXmqcSel());
-        MyBeanUtils.toPageBean(tDwghglXmqcService.selectPage(pagepojo, entityWrapper), page, new TDwghglXmqcSel());
+        MyBeanUtils.toPageBean(tDwghglXmqcService.selectPage(pagepojo, entityWrapper), page, new TDwghglXmqcSelDto());
         return page;
     }
     /**

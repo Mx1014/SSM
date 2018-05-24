@@ -51,7 +51,7 @@ public class TSbyxxxGyxlyxxxDataServerImpl implements TSbyxxxGyxlyxxxDataApi {
         entityWrapper= EntityWrapperUtil.getEntityWrapperWithCondition(entityWrapper,tj);
         Page pagepojo = new Page();
         MyBeanUtils.toPageBean(page, pagepojo, new TSbyxxxGyxlyxxxSel());
-        MyBeanUtils.toPageBean(tSbyxxxGyxlyxxxService.selectPage(pagepojo, entityWrapper), page, new TSbyxxxGyxlyxxxSel());
+        MyBeanUtils.toPageBean(tSbyxxxGyxlyxxxService.selectPage(pagepojo, entityWrapper), page, new TSbyxxxGyxlyxxxSelDto());
         return page;
     }
     /**

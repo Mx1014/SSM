@@ -39,7 +39,7 @@ public class TJcsjZyyhxxDataServerImpl implements TJcsjZyyhxxDataApi {
         entityWrapper= EntityWrapperUtil.getEntityWrapperWithCondition(entityWrapper,tj);
         Page pagepojo = new Page();
         MyBeanUtils.toPageBean(page, pagepojo, new TJcsjZyyhxxSel());
-        MyBeanUtils.toPageBean(tJcsjZyyhxxService.selectPage(pagepojo, entityWrapper), page, new TJcsjZyyhxxSel());
+        MyBeanUtils.toPageBean(tJcsjZyyhxxService.selectPage(pagepojo, entityWrapper), page, new TJcsjZyyhxxSelDto());
         System.out.print(page.toString());
         return page;
     }

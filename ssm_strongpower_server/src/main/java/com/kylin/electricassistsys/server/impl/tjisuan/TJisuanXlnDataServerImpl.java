@@ -50,7 +50,7 @@ public class TJisuanXlnDataServerImpl implements TJisuanXlnDataApi {
         entityWrapper= EntityWrapperUtil.getEntityWrapperWithCondition(entityWrapper,tj);
         Page pagepojo = new Page();
         MyBeanUtils.toPageBean(page, pagepojo, new TJisuanXlnSel());
-        MyBeanUtils.toPageBean(tJisuanXlnService.selectPage(pagepojo, entityWrapper), page, new TJisuanXlnSel());
+        MyBeanUtils.toPageBean(tJisuanXlnService.selectPage(pagepojo, entityWrapper), page, new TJisuanXlnSelDto());
         return page;
     }
     /**

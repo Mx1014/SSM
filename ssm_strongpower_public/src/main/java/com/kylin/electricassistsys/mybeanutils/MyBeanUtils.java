@@ -15,7 +15,7 @@ import java.util.*;
 
 /**
  * bean转换工具类
- * @author zcx
+ * @author cwx
  *2017年10月23日
  */
 @SuppressWarnings("all")

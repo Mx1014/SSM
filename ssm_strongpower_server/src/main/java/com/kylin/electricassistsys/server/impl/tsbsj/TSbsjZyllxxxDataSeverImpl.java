@@ -50,7 +50,7 @@ public class TSbsjZyllxxxDataSeverImpl implements TSbsjZyllxxxDataApi {
         entityWrapper= EntityWrapperUtil.getEntityWrapperWithCondition(entityWrapper,tj);
         Page pagepojo = new Page();
         MyBeanUtils.toPageBean(page, pagepojo, new TJcsjZyyhxxSel());
-        MyBeanUtils.toPageBean(tSbsjZyllxxxService.selectPage(pagepojo, entityWrapper), page, new TSbsjZyllxxxSel());
+        MyBeanUtils.toPageBean(tSbsjZyllxxxService.selectPage(pagepojo, entityWrapper), page, new TSbsjZyllxxxSelDto());
         return page;
     }
     /**

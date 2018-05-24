@@ -52,7 +52,7 @@ public class TYxBdzjfdlDataSeverImpl implements TYxBdzjfdlDataApi {
         entityWrapper= EntityWrapperUtil.getEntityWrapperWithCondition(entityWrapper,tj);
         Page pagepojo = new Page();
         MyBeanUtils.toPageBean(page, pagepojo, new TYxBdzjfdlSel());
-        MyBeanUtils.toPageBean(tYxBdzjfdlService.selectPage(pagepojo, entityWrapper), page, new TYxBdzjfdlSel());
+        MyBeanUtils.toPageBean(tYxBdzjfdlService.selectPage(pagepojo, entityWrapper), page, new TYxBdzjfdlSelDto());
         return page;
     }
     /**
