@@ -86,8 +86,14 @@ public class RedisCacheService {
      * @param key 键
      * @return 值
      */
-    public Object get(String key){
-        return key==null?null:redisTemplate.opsForValue().get(key);
+    public String  get(String key){
+        String reult="";
+        if(key==null){
+            return null;
+        }else {
+            reult=  redisTemplate.opsForValue().get(key).toString();
+        }
+        return reult;
     }
 
     /**

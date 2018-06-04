@@ -1,18 +1,19 @@
 package com.kylin.electricassistsys.tools.httpclient;
 
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.httpclient.HttpStatus;
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.CookieStore;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.StatusLine;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.cookie.Cookie;
-import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
-import java.util.*;
-import java.util.Map.Entry;
+import java.io.IOException;
+
+
 
 /**
  * @Auther: cwx
@@ -20,65 +21,70 @@ import java.util.Map.Entry;
  * @Description: 远程请求访问类
  */
 public class HttpClientUtils {
+
+
+
     /**
-     * 远程请求url地址进行查询数据
-     * @param url 第3方的url
-     * @param map 参数数封装
+     * post请求（用于请求json格式的参数）
+     * @param url
+     * @param params
      * @return
      */
-    public static  Map<String ,Object> doPost(String url, Map<String,Object> map){
-            Map<String ,Object>params= new HashMap<String,Object>();
-            HttpClient httpClient =null;
-            HttpPost httpPost = null;
-            String result = null;
-            try{
-               httpClient = new SSLClient();
-                httpPost = new HttpPost(url);
-                //设置参数
-                List<NameValuePair> list = new ArrayList<NameValuePair>();
-                Iterator iterator = map.entrySet().iterator();
-                while(iterator.hasNext()){
-                    Entry<String,Object> elem = (Entry<String, Object>) iterator.next();
-                    list.add(new BasicNameValuePair(elem.getKey(),elem.getValue().toString()));
-                }
-                if(list.size() > 0){
-                    UrlEncodedFormEntity entity = new UrlEncodedFormEntity(list,"utf-8");
-                    httpPost.setEntity(entity);
-                }
-                HttpResponse response = httpClient.execute(httpPost);
-                int code = response.getStatusLine().getStatusCode();
-                if(code==200){
-                    CookieStore cookiestore=  ((SSLClient) httpClient).getCookieStore();
-                    /**
-                     * 獲取cookie中的值
-                     */
-                    List<Cookie>listCookie=  cookiestore.getCookies();
-                    for(Cookie cookie:listCookie ){
-                        params.put(cookie.getName(),cookie.getValue());
-                    }
-                    HttpEntity resEntity = response.getEntity();
-                    if(resEntity != null){
-                        result = EntityUtils.toString(resEntity,"utf-8");
-                        params.put("result",result);
-                    }
-                }
-            }catch(Exception ex){
-                ex.printStackTrace();
+    public static String doPost(String url, String params)  {
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        HttpPost httpPost = new HttpPost(url);// 创建httpPost
+        httpPost.setHeader("Accept", "application/json");
+        httpPost.setHeader("Content-Type", "application/json");
+        String charSet = "UTF-8";
+        StringEntity entity = new StringEntity(params, charSet);
+        httpPost.setEntity(entity);
+        CloseableHttpResponse response = null;
+        try {
+            response = httpclient.execute(httpPost);
+            StatusLine status = response.getStatusLine();
+            int state = status.getStatusCode();
+            if (state == HttpStatus.SC_OK) {
+                HttpEntity responseEntity = response.getEntity();
+
+                String jsonString = EntityUtils.toString(responseEntity);
+                return jsonString;
             }
-            return params;
+            else{
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            if (response != null) {
+                try {
+                    response.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            try {
+                httpclient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 
     public static void main(String []arge){
-        String url="http://127.0.0.1:8089/system/login";
-        Map<String,Object>map=new HashMap<String,Object>();
-        map.put("loginName","admin");
-        map.put("password","111111");
-        map.put("platform",1);
-        HttpClientUtils http= new HttpClientUtils();
-        Map str=  http.doPost(url,map);
-        System.out.println(str.toString());
-
+        JSONObject json=new JSONObject();
+        json.put("loginName","admin2");
+        json.put("password","111111");
+        json.put("platforms","1");
+        JSONObject map1=new JSONObject();
+        map1.put("id",2);
+        HttpClientUtilsJsonObject http= new HttpClientUtilsJsonObject();
+    //  String str=  http.doPost(URLConstants.LOGIN,json.toJSONString());
+     //  String str2=  http.doPost(URLConstants.USERMENU,map1.toJSONString());
+     //  System.out.println(str.toString());
+     //   System.out.println("DDDD----"+str2.toString());
     }
 
-
+   // shiro-session-0a2baafb-2467-4e6e-a01f-013676751a6d
 }

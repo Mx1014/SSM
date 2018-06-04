@@ -1,15 +1,14 @@
 package com.kylin.electricassistsys.dto.system;
+
 /**
  * <p>
  * 用户操作日志记录表
  * </p>
  *
  * @author 陈文旭
- * @since 2018-05-10
+ * @since 2018-06-01
  */
-public class TSystemLogDto{
-
-
+public class TSystemLogDto {
     /**
      * 日志主键id
      */
@@ -23,10 +22,6 @@ public class TSystemLogDto{
      */
     private String userMethod;
     /**
-     * 用户操作的参数
-     */
-    private String userParameters;
-    /**
      * 用户操作的时间
      */
     private String userOperationTime;
@@ -38,6 +33,34 @@ public class TSystemLogDto{
      * 用户操作是否合法
      */
     private String userOperationLegitimate;
+    /**
+     * 用户操作的参数
+     */
+    private String userParameters;
+    /**
+     * 用戶操作返回結果
+     */
+    private String userResult;
+    /**
+     * 用戶操作持續時間
+     */
+    private Long userDuration;
+    /**
+     * 用戶的id
+     */
+    private String userId;
+    /**
+     * 请求ua标识
+     */
+    private String userAgent;
+    /**
+     * 数据状态,1:正常,2:删除
+     */
+    private Long dataStatus;
+    /**
+     * 用户操作的url请求地址
+     */
+    private String userURL;
 
 
     public String getId() {
@@ -52,6 +75,14 @@ public class TSystemLogDto{
         return userIp;
     }
 
+    public String getUserURL() {
+        return userURL;
+    }
+
+    public void setUserURL(String userURL) {
+        this.userURL = userURL;
+    }
+
     public void setUserIp(String userIp) {
         this.userIp = userIp;
     }
@@ -62,14 +93,6 @@ public class TSystemLogDto{
 
     public void setUserMethod(String userMethod) {
         this.userMethod = userMethod;
-    }
-
-    public String getUserParameters() {
-        return userParameters;
-    }
-
-    public void setUserParameters(String userParameters) {
-        this.userParameters = userParameters;
     }
 
     public String getUserOperationTime() {
@@ -96,16 +119,69 @@ public class TSystemLogDto{
         this.userOperationLegitimate = userOperationLegitimate;
     }
 
+    public String getUserParameters() {
+        return userParameters;
+    }
+
+    public void setUserParameters(String userParameters) {
+        this.userParameters = userParameters;
+    }
+
+    public String getUserResult() {
+        return userResult;
+    }
+
+    public void setUserResult(String userResult) {
+        this.userResult = userResult;
+    }
+
+    public Long getUserDuration() {
+        return userDuration;
+    }
+
+    public void setUserDuration(Long userDuration) {
+        this.userDuration = userDuration;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getUserAgent() {
+        return userAgent;
+    }
+
+    public void setUserAgent(String userAgent) {
+        this.userAgent = userAgent;
+    }
+
+    public Long getDataStatus() {
+        return dataStatus;
+    }
+
+    public void setDataStatus(Long dataStatus) {
+        this.dataStatus = dataStatus;
+    }
+
     @Override
     public String toString() {
         return "TSystemLogDto{" +
         "id=" + id +
         ", userIp=" + userIp +
         ", userMethod=" + userMethod +
-        ", userParameters=" + userParameters +
         ", userOperationTime=" + userOperationTime +
         ", userName=" + userName +
         ", userOperationLegitimate=" + userOperationLegitimate +
+        ", userParameters=" + userParameters +
+        ", userResult=" + userResult +
+        ", userDuration=" + userDuration +
+        ", userId=" + userId +
+        ", userAgent=" + userAgent +
+        ", dataStatus=" + dataStatus +
         "}";
     }
 }

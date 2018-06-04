@@ -1,5 +1,6 @@
 package com.kylin.electricassistsys.service.system;
 
+import com.baomidou.mybatisplus.service.IService;
 import com.kylin.electricassistsys.pojo.system.TSystemLog;
 
 /**
@@ -11,11 +12,6 @@ import com.kylin.electricassistsys.pojo.system.TSystemLog;
  * @since 2018-05-10
  */
 
-public interface TSystemLogService {
-    /**
-     * 添加系统日志信息
-     * @param log
-     */
-    public void insertSystem(TSystemLog log);
+public interface TSystemLogService extends IService<TSystemLog> {
 
 }

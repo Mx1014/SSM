@@ -81,6 +81,8 @@ public class ResourceManagementDataController {
     public JSONResult selectPage10Kv(@RequestBody ResourceManagementDto dto){
         JSONResult result = null;
         try {
+           // JSESSIONID=shiro-session-121f7ed5-a620-43d1-b98f-0ac9fa67f4c4;
+
             Page page = new Page(dto.getPage(), dto.getLimit());
             result=JSONResult.success(resourceManagementDataApi.selectPage10Kv(page,dto));
         }catch (Throwable e){

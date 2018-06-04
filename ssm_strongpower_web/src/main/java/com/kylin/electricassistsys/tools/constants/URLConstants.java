@@ -13,14 +13,27 @@ public class URLConstants {
      * 全局日志
      */
     public static final Logger LOG = LoggerFactory.getLogger(URLConstants.class);
+
+    /**
+     * 请求项目IP地址
+     */
+    public static final String DOMAINIP ="127.0.0.1";
+    /**
+     * 请求项目名称
+     */
+    public static final String HTTPPROJECT= "hunt-web";
+
+     public static final String HTTPPROST="8089";
     /**
      * 请求url地址路径
      */
-    public static final String URL="http://127.0.0.1:8089/hunt-web/";
+    public static final String URL="http://"+DOMAINIP+":"+HTTPPROST+"/"+HTTPPROJECT+"/";
     /**
      * 登录请求接口
      */
     public static final String LOGIN=URL+"system/login";
+
+    public static final String USERMENU=URL+"selectuserrolemenu/selectUserRoleMenuList";
 
 
 

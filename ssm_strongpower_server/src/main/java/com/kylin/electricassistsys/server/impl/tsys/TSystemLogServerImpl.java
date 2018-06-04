@@ -6,8 +6,9 @@ import com.kylin.electricassistsys.mybeanutils.MyBeanUtils;
 import com.kylin.electricassistsys.pojo.system.TSystemLog;
 import com.kylin.electricassistsys.server.impl.tools.UUIDKey;
 import com.kylin.electricassistsys.service.system.TSystemLogService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * 系统日志业务处理方法类
@@ -17,7 +18,7 @@ public class TSystemLogServerImpl implements TSystemLogApi {
     /**
      * 这个是日志的service访问接口
      */
-     @Autowired
+     @Resource
     private TSystemLogService tSystemLogService;
 
     public void insertSystem(TSystemLogDto systemLogDto){
@@ -25,7 +26,6 @@ public class TSystemLogServerImpl implements TSystemLogApi {
         MyBeanUtils.copyProperties(systemLogDto,syslog);
         syslog.setId(UUIDKey.getKey());
         syslog.setUserOperationTime(UUIDKey.getDate());
-        tSystemLogService.insertSystem(syslog);
-
+        tSystemLogService.insert(syslog);
     }
 }

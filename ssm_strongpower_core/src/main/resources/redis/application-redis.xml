@@ -48,17 +48,20 @@
         <property name="keySerializer" >
             <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
         </property>
-        <property name="valueSerializer" >
-            <bean class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer" />
-        </property>
+
         <property name="hashKeySerializer">
             <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
         </property>
         <property name="hashValueSerializer">
             <bean class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer"/>
         </property>
+        <!--定义value默认策略-->
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+
         <!--开启事务  -->
-        <property name="enableTransactionSupport" value="true"></property>
+        <property name="enableTransactionSupport" value="true"/>
     </bean >
     <!--自定义redis工具类,在需要缓存的地方注入此类  -->
     <bean id="redisCacheService" class="com.kylin.electricassistsys.redisutils.RedisCacheService">

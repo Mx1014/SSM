@@ -48,6 +48,34 @@ public class JsonUtils {
             return null;
         }
     }
+
+    /**
+     * 將json字符串轉化為map取出對應的數據在返回
+     * @param str
+     * @returnStr
+     */
+    public static String strJsonAndMap(String str){
+        JSONObject  jasonObject = JSONObject.fromObject(str);
+        Map map= (Map)jasonObject;
+        String code= valueOfStr((Object)map.get("code"));
+        if(code.equals("10000")){
+            String data= valueOfStr((Object)map.get("data"));
+            return data;
+        }else{
+            String msg= (String)map.get("msg");
+            return msg;
+        }
+    }
+
+    /**
+     * 類型轉換成string
+     * @param obj
+     * @return
+     */
+    public static String valueOfStr(Object obj) {
+        return (obj == null) ? "null" : obj.toString();
+    }
+
     /**
      * 驗證支付攢是否json格式
      * @param json
