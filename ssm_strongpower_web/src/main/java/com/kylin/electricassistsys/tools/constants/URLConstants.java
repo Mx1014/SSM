@@ -21,7 +21,7 @@ public class URLConstants {
     /**
      * 请求项目名称
      */
-    public static final String HTTPPROJECT= "hunt-web";
+    public static final String HTTPPROJECT= "hunt-admin";
 
      public static final String HTTPPROST="8089";
     /**
@@ -32,10 +32,23 @@ public class URLConstants {
      * 登录请求接口
      */
     public static final String LOGIN=URL+"system/login";
-
+    /**
+     * 获取菜单集数据
+     */
     public static final String USERMENU=URL+"selectuserrolemenu/selectUserRoleMenuList";
+    /**
+     * 獲取權限集數據
+     */
+   public static final  String USERROLE=URL+"selectuserrolemenu/queryUserRoleList";
+    /**
+     * 獲取所以的權限信息
+     */
+   public static final String QUERYROLEALL=URL+"selectuserrolemenu/selectRoleAll";
 
-
+    /**
+     *添加用户信息
+     */
+    public static final String USERINSERT=URL+"selectuserrolemenu/userInsert";
 
 
 }

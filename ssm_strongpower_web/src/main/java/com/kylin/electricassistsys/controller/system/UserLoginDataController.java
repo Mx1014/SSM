@@ -20,7 +20,7 @@ import java.util.Map;
 /**
  * @Auther: cwx
  * @Date: 2018/5/25 16:56
- * @Description: 用户登录数据信息,用户的权限信息请求接口
+ * @Description: 用户登录数据信息, 用户的权限信息请求接口
  */
 @RestController
 @RequestMapping("/user")
@@ -35,85 +35,158 @@ public class UserLoginDataController {
 
     /**
      * 用户登录
-    * //@param loginName 用户名
-    * //@param password 用户密码
+     * //@param loginName 用户名
+     * //@param password 用户密码
      *
      * @return
      */
-     @RequestMapping(value="/getUserLogin",method =RequestMethod.POST,produces = "application/json;charset=UTF-8")
-    public JSONResult getUserLogin( @RequestBody Map<String,Object>params){
-         JSONResult result = null;
-    try {
-        Map json=new HashMap();
-        json.put("loginName",params.get("loginName").toString());
-        json.put("password",params.get("password").toString());
-        json.put("platforms","1");
-        HttpClientUtilsJsonObject http= new HttpClientUtilsJsonObject();
-        Map<Object,Object> str=  http.doPost(URLConstants.LOGIN,json,null);
-        System.err.println("登录数据--"+str.toString());
-        LOG.info("登录数据--"+str.toString());
-        result=JSONResult.success(str);
-         }catch (Exception e){
-             e.printStackTrace();
-             result=JSONResult.failure("服务器错误,请您联系系统管理员");
-      }
-       return  result;
-    }
-    /**
-     *
-     * //@param id
-     * params
-     * @return
-     */
-    @RequestMapping(value="/getUserMenuLogin",method =RequestMethod.POST,produces = "application/json;charset=UTF-8")
-    public JSONResult getUserMenuLogin(@RequestBody Map<String,Object>params){
+    @RequestMapping(value = "/getUserLogin", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult getUserLogin(@RequestBody Map<String, Object> params) {
         JSONResult result = null;
         try {
-            Map json=new HashMap();
-            json.put("id",params.get("id").toString());
-            String jsessionid =params.get("jsessionid").toString();
-           boolean faleg= redisCacheService.hasKey(jsessionid);
-           if(faleg){
-               HttpClientUtilsJsonObject http= new HttpClientUtilsJsonObject();
-               Map<Object,Object> str=  http.doPost(URLConstants.USERMENU,json,jsessionid);
-               result=JSONResult.success(str);
-               return  result;
-           }
-            result=JSONResult.lostCode("登录验证码过期");
-        }catch (Exception e){
+            Map json = new HashMap();
+            json.put("loginName", params.get("loginName").toString());
+            json.put("password", params.get("password").toString());
+            json.put("platforms", "1");
+            HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+            Map<Object, Object> str = http.doPost(URLConstants.LOGIN, json, null);
+            System.err.println("登录数据--" + str.toString());
+            LOG.info("登录数据--" + str.toString());
+            result = JSONResult.success(str);
+        } catch (Exception e) {
             e.printStackTrace();
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
         }
-        return  result;
+        return result;
     }
 
     /**
-     *
      * //@param id
      * params
+     *
      * @return
      */
-    @RequestMapping(value="/getRoleList",method =RequestMethod.POST,produces = "application/json;charset=UTF-8")
-    public JSONResult getRoleList(@RequestBody Map<String,Object>params){
+    @RequestMapping(value = "/getUserMenuLogin", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult getUserMenuLogin(@RequestBody Map<String, Object> params) {
         JSONResult result = null;
         try {
-            Map json=new HashMap();
-            json.put("page",params.get("page").toString());
-            json.put("rows",params.get("rows").toString());
-            String jsessionid =params.get("jsessionid").toString();
-            boolean faleg= redisCacheService.hasKey(jsessionid);
-            if(faleg){
-                HttpClientUtilsJsonObject http= new HttpClientUtilsJsonObject();
-                Map<Object,Object> str=  http.doPost("http://127.0.0.1:8089/hunt-web/role/list",json,jsessionid);
-                result=JSONResult.success(str);
-                return  result;
+            Map json = new HashMap();
+            json.put("id", params.get("id").toString());
+            String jsessionid = params.get("jsessionid").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                Map<Object, Object> str = http.doPost(URLConstants.USERMENU, json, jsessionid);
+                result = JSONResult.success(str);
+                return result;
             }
-            result=JSONResult.lostCode("登录验证码过期");
-        }catch (Exception e){
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return  result;
+        return result;
     }
 
+    /**
+     * 根據用戶的id獲取用戶的權限列表
+     * //@param id
+     * params
+     *
+     * @return
+     */
+    @RequestMapping(value = "/getUserRoleList", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult getUserRoleList(@RequestBody Map<String, Object> params) {
+        JSONResult result = null;
+        try {
+            Map json = new HashMap();
+            json.put("id", params.get("id").toString());
+            String jsessionid = params.get("jsessionid").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                Map<Object, Object> str = http.doPost(URLConstants.USERROLE, json, jsessionid);
+                result = JSONResult.success(str);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /**
+     * 權限列表
+     *
+     * @return
+     */
+    @RequestMapping(value = "/getQueryRoleAll", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult getQueryRoleAll(@RequestBody Map<String, Object> params) {
+        JSONResult result = null;
+        try {
+            Map json = new HashMap();
+            String jsessionid = params.get("jsessionid").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                Map<Object, Object> str = http.doPost(URLConstants.QUERYROLEALL, json, jsessionid);
+                result = JSONResult.success(str);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /**
+     * //@param id
+     * params
+     *
+     * @return
+     */
+    @RequestMapping(value = "/getRoleList", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult getRoleList(@RequestBody Map<String, Object> params) {
+        JSONResult result = null;
+        try {
+            Map json = new HashMap();
+            json.put("page", params.get("page").toString());
+            json.put("rows", params.get("rows").toString());
+            String jsessionid = params.get("jsessionid").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                Map<Object, Object> str = http.doPost("http://127.0.0.1:8089/hunt-web/role/list", json, jsessionid);
+                result = JSONResult.success(str);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    @RequestMapping(value = "getPermissionList", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult getPermissionList(@RequestBody Map<String, Object> params) {
+        JSONResult result = null;
+        try {
+            Map json = new HashMap();
+            String jsessionid = params.get("jsessionid").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                Map<Object, Object> str = http.doPost("http://localhost:8089/hunt-web/permission/list", json, jsessionid);
+                result = JSONResult.success(str);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 
 
 }

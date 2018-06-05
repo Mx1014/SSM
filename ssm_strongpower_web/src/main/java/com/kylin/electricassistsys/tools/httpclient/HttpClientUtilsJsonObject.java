@@ -200,9 +200,9 @@ public class HttpClientUtilsJsonObject {
             httpPost.setHeader("Accept", "application/json");
             httpPost.setHeader("Content-Type", "application/json");
             response = httpClient.execute(httpPost,context);
-           Map<Object,Object>map =  printCookies();
-              String data=  JsonUtils.strJsonAndMap(copyResponse2Str(response));
-              map.put("user_result",data);
+            Map<Object,Object>map =  printCookies();
+            Map data=  JsonUtils.strJsonAndMap(copyResponse2Str(response));
+            map.put("user_result",data);
             return map;
         }catch (Exception e){
             System.err.println(e);

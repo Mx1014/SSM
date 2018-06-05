@@ -328,6 +328,12 @@
 		  <artifactId>httpmime</artifactId>
 		  <version>4.5.5</version>
 	  </dependency>
+	  <!--RSA加密commons-lang3-->
+	  <dependency>
+		  <groupId>org.bouncycastle</groupId>
+		  <artifactId>bcprov-jdk15on</artifactId>
+		  <version>1.59</version>
+	  </dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

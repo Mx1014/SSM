@@ -5,8 +5,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kylin.electricassistsys.tools.sqlfilter.SqlRegular;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
+import java.beans.BeanInfo;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.*;
 
 /**
@@ -16,6 +22,36 @@ import java.util.*;
  */
 public class JsonUtils {
 
+    private static final Logger LOGGER = LogManager.getLogger(JsonUtils.class);
+    /**
+     * 将实体类转换成实体类
+     * @param obj
+     * @return
+     */
+    public static Map<String, Object> transBean2Map(Object obj) {
+        if (obj == null) {
+            return null;
+        }
+        Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            BeanInfo beanInfo = Introspector.getBeanInfo(obj.getClass());
+            PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
+            for (PropertyDescriptor property : propertyDescriptors) {
+                String key = property.getName();
+                // 过滤class属性
+                if (!key.equals("class")) {
+                    // 得到property对应的getter方法
+                    Method getter = property.getReadMethod();
+                    Object value = getter.invoke(obj);
+                    map.put(key, value);
+                }
+            }
+        } catch (Exception e) {
+            LOGGER.error("transBean2Map Error {}" ,e);
+        }
+        return map;
+
+    }
 
     /**
      * 将json字符串转为Map结构
@@ -54,16 +90,21 @@ public class JsonUtils {
      * @param str
      * @returnStr
      */
-    public static String strJsonAndMap(String str){
+    public static Map strJsonAndMap(String str){
         JSONObject  jasonObject = JSONObject.fromObject(str);
         Map map= (Map)jasonObject;
+        Map maps= new HashMap();
         String code= valueOfStr((Object)map.get("code"));
         if(code.equals("10000")){
             String data= valueOfStr((Object)map.get("data"));
-            return data;
+            maps.put("dcode","10000");
+            maps.put("datas",data);
+            return maps;
         }else{
             String msg= (String)map.get("msg");
-            return msg;
+            maps.put("dcode",code);
+            maps.put("datas",msg);
+            return maps;
         }
     }
 
