@@ -86,6 +86,34 @@ public class UserLoginDataController {
         return  result;
     }
 
+    /**
+     *
+     * //@param id
+     * params
+     * @return
+     */
+    @RequestMapping(value="/getRoleList",method =RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    public JSONResult getRoleList(@RequestBody Map<String,Object>params){
+        JSONResult result = null;
+        try {
+            Map json=new HashMap();
+            json.put("page",params.get("page").toString());
+            json.put("rows",params.get("rows").toString());
+            String jsessionid =params.get("jsessionid").toString();
+            boolean faleg= redisCacheService.hasKey(jsessionid);
+            if(faleg){
+                HttpClientUtilsJsonObject http= new HttpClientUtilsJsonObject();
+                Map<Object,Object> str=  http.doPost("http://127.0.0.1:8089/hunt-web/role/list",json,jsessionid);
+                result=JSONResult.success(str);
+                return  result;
+            }
+            result=JSONResult.lostCode("登录验证码过期");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return  result;
+    }
+
 
 
 }
