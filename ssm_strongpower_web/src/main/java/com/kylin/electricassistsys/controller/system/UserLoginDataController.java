@@ -139,6 +139,33 @@ public class UserLoginDataController {
         }
         return result;
     }
+    /**
+     * //@param id
+     * params
+     *
+     * @return
+     */
+    @RequestMapping(value = "/getUserList", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult getUserList(@RequestBody Map<String, Object> params) {
+        JSONResult result = null;
+        try {
+            Map json = new HashMap();
+            json.put("page", params.get("page").toString());
+            json.put("rows", params.get("rows").toString());
+            String jsessionid = params.get("jsessionid").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                Map<Object, Object> str = http.doPost(URLConstants.GETUSERLIST, json, jsessionid);
+                result = JSONResult.success(str);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 
     /**
      * //@param id
@@ -157,7 +184,7 @@ public class UserLoginDataController {
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                Map<Object, Object> str = http.doPost("http://127.0.0.1:8089/hunt-web/role/list", json, jsessionid);
+                Map<Object, Object> str = http.doPost(URLConstants.GETROLELIST, json, jsessionid);
                 result = JSONResult.success(str);
                 return result;
             }
@@ -177,7 +204,50 @@ public class UserLoginDataController {
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                Map<Object, Object> str = http.doPost("http://localhost:8089/hunt-web/permission/list", json, jsessionid);
+
+                Map<Object, Object> str = http.doPost(URLConstants.GETPERMISSIONLIST, json, jsessionid);
+                result = JSONResult.success(str);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+    @RequestMapping(value = "forbiddenUser", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult forbiddenUser(@RequestBody Map<String, Object> params) {
+        JSONResult result = null;
+        try {
+            Map json = new HashMap();
+            String jsessionid = params.get("jsessionid").toString();
+            json.put("id",params.get("id").toString());
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+
+                Map<Object, Object> str = http.doPost(URLConstants.FORBIDDENUSER, json, jsessionid);
+                result = JSONResult.success(str);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+    @RequestMapping(value = "enableUser", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult enableUser(@RequestBody Map<String, Object> params) {
+        JSONResult result = null;
+        try {
+            Map json = new HashMap();
+            String jsessionid = params.get("jsessionid").toString();
+            json.put("id",params.get("id").toString());
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+
+                Map<Object, Object> str = http.doPost(URLConstants.ENABLEUSER, json, jsessionid);
                 result = JSONResult.success(str);
                 return result;
             }

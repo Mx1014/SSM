@@ -49,6 +49,26 @@ public class URLConstants {
      *添加用户信息
      */
     public static final String USERINSERT=URL+"selectuserrolemenu/userInsert";
+    /**
+     * 获取用户的权限列表
+     */
+    public static final String GETROLELIST =URL+"selectuserrolemenu/listRole";
+    /**
+     * 获取
+     */
+    public static final  String  GETPERMISSIONLIST=URL+"selectuserrolemenu/listAllPermission";
 
+    /**
+     * 获取
+     */
+    public static final  String  GETUSERLIST=URL+"selectuserrolemenu/listUser";
+    /**
+     * 禁用账号
+     */
+    public static final  String  FORBIDDENUSER=URL+"user/forbiddenUser";
 
+    /**
+     * 禁用账号
+     */
+    public static final  String  ENABLEUSER=URL+"user/enableUser";
 }

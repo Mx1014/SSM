@@ -198,11 +198,21 @@ public class RSACommonUtils {
 
 
     public static void main(String[] args) throws Exception {
+             String data = "陈文旭";
+            data = RSAUtil.encryptedDataOnJava(data, RSACommonUtils.publicKey);
+            System.out.println("加密数据：" + data);
+            data = "LPNmbGWgz/iJE2wDh2senv74yB6tyzFC5z5WBe+ullHWP3bfhmBRRG72t2B62CMSoHz420hbloaPF4FBt0PuOzGuq97p7J9Gh825zYIwCDOQCFgYkbk1KTsMYlqM0ojWrTyabB218N/Oeai3UIOdyBN4ZGZu2XlikiJ/mDHrEQw=";
+            System.out.println("解密数据：" + RSAUtil.decryptDataOnJava(data, RSACommonUtils.privateKey));
     // RSAUtilsLieTouToPuHui.createRSAKey();
      //   RSACommonUtils.createRSAKey();
-      //  String kk="31940bd4d00bc8fbfaae30519e1a6f6386c60381e6341d719ad365c97ee2b42e89df39bf07ea55c2141497ca8f337cc663796435b208df291a522a80b631c90a4405de410f7e9381ea4d8295b1cac4f695bc2ee44e8c7b9cb313719fd7ed312bb36018318697b5cc702d2356bf5303a24baa38543650aececdf7d4020b605701";
+       String kk="32cad896726f8a98b79dba66876c7cf835d8b4de46858747a4a949daf4f637689b8dbdcdb8197b6d3383e1f25849c4692cd8da69c074bce02a47e8220bec30cb03be01db04ff9045d7cb9b824437e35d38fae50c717755c72170021766b77efad7b8159aee9cf98842ddf018a669b19416b8494a5e0eda6be1b1cd4dd3e074c5";
         /*测试信息*/
-        String   kk= RSACommonUtils.encryptByPrivateKey("陈文旭") ;
+     //   String mis="XJ9yB3lskbvMWhSDmYrvDJJ+BfS3JmOCHGzejkkIW6LkbQ4tmzTp+RKR4w2HSLbdEkh0V4dqbTsUDbwNX5CdKU0WFHp+Z8o8tGU9JOK5HtNz+ydbRBSZqWcjNy9KLoywuNvq+SPSpo8pWN+jXKocg6PWRTV3y4PxheyocvwNnA4=";
+     // String   kk= RSACommonUtils.encryptByPrivateKey("陈文旭") ;
+       // String nameRsa = new String(RSAUtil.("陈文旭",RSAUtil.getPublicRSAKey(RSACommonUtils.publicKey)),"UTF-8");
+        System.out.println("#############################" );
+       // System.out.println(nameRsa );
+        System.out.println("#############################" );
         System.out.println(kk );
         System.out.println(RSACommonUtils.decryptByPublicKey(kk));
 
