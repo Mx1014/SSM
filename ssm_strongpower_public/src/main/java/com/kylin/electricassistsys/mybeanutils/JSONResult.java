@@ -38,6 +38,11 @@ public final class JSONResult implements Serializable {
      * 返回数据
      */
     private Object data;
+    /**
+     * 返回jsessionid數據 ；
+
+     */
+    private String JSESSIONID;
 
     /**
      * 返回成功
@@ -132,8 +137,17 @@ public final class JSONResult implements Serializable {
         return new JSONResult(ResultCode.failure, msg);
     }
 
+
     public ResultCode getCode() {
         return code;
+    }
+
+    public String getJSESSIONID() {
+        return JSESSIONID;
+    }
+
+    public void setJSESSIONID(String JSESSIONID) {
+        this.JSESSIONID = JSESSIONID;
     }
 
     public void setCode(ResultCode code) {

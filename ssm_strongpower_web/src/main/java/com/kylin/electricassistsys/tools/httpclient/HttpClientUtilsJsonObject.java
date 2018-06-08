@@ -1,6 +1,7 @@
 package com.kylin.electricassistsys.tools.httpclient;
 
 import com.alibaba.fastjson.JSONObject;
+import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import com.kylin.electricassistsys.tools.json.JsonUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.*;
@@ -178,7 +179,7 @@ public class HttpClientUtilsJsonObject {
      * @param params
      * @return
      */
-    public static Map<Object,Object> doPost(String url, Map<String,Object> params,String jSessionId)  {
+    public static JSONResult doPost(String url, Map<String,Object> params, String jSessionId)  {
         HttpPost httpPost = new HttpPost(url);// 创建httpPost
         String charSet = "UTF-8";
         JSONObject jsonObject = new JSONObject();
@@ -201,9 +202,9 @@ public class HttpClientUtilsJsonObject {
             httpPost.setHeader("Content-Type", "application/json");
             response = httpClient.execute(httpPost,context);
             Map<Object,Object>map =  printCookies();
-            Map data=  JsonUtils.strJsonAndMap(copyResponse2Str(response));
+            String data= copyResponse2Str(response);
             map.put("user_result",data);
-            return map;
+            return JsonUtils.strJsonAndMap(map);
         }catch (Exception e){
             System.err.println(e);
             e.printStackTrace();

@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.rsas;
 
+import org.apache.shiro.crypto.hash.Md5Hash;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -12,11 +14,24 @@ import java.security.NoSuchAlgorithmException;
 public class MD5Utils {
 
     /**
+     * 生成密码
+     *
+     * @param password 密码
+     * @param salt     密码盐
+     * @return
+     */
+    public static String createPassword(String password, String salt, int hashIterations) {
+        Md5Hash md5Hash = new Md5Hash(password.trim(), salt, hashIterations);
+        return md5Hash.toString();
+    }
+
+
+    /**
      * 生成32位md5码 加盐后的md5
      * @param password
      * @return
      */
-    public static String md5Password(String password) {
+    public static String md5LoginName(String password) {
 
         try {
             // 得到一个信息摘要器

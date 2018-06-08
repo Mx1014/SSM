@@ -50,16 +50,20 @@ public class URLConstants {
      */
     public static final String USERINSERT=URL+"selectuserrolemenu/userInsert";
     /**
+     * test權限
+     */
+    public static final String role=URL+"role/list";
+    /**
      * 获取用户的权限列表
      */
     public static final String GETROLELIST =URL+"selectuserrolemenu/listRole";
     /**
-     * 获取
+     * 获取权限列表
      */
     public static final  String  GETPERMISSIONLIST=URL+"selectuserrolemenu/listAllPermission";
 
     /**
-     * 获取
+     * 获取用户列表
      */
     public static final  String  GETUSERLIST=URL+"selectuserrolemenu/listUser";
     /**
@@ -68,7 +72,7 @@ public class URLConstants {
     public static final  String  FORBIDDENUSER=URL+"user/forbiddenUser";
 
     /**
-     * 禁用账号
+     * 启用账号
      */
     public static final  String  ENABLEUSER=URL+"user/enableUser";
 }

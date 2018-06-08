@@ -4,6 +4,7 @@ import com.kylin.electricassistsys.model.SysUser;
 import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import com.kylin.electricassistsys.mybeanutils.MyBeanUtils;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
+import com.kylin.electricassistsys.rsas.MD5Utils;
 import com.kylin.electricassistsys.tools.constants.URLConstants;
 import com.kylin.electricassistsys.tools.httpclient.HttpClientUtilsJsonObject;
 import io.swagger.annotations.Api;
@@ -16,7 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.ws.rs.core.MediaType;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * @Auther: cwx
@@ -42,12 +45,13 @@ public class UserDataController {
              boolean faleg = redisCacheService.hasKey(jsessionid);
              if (faleg) {
                  System.err.print("start---:"+System.currentTimeMillis());
-              /*   sysuser.setLoginName(LoginName);
-                 sysuser.setPassword(password);*/
+                 sysuser.setLoginName(MD5Utils.md5LoginName(sysuser.getLoginName()));
+                 String salt = UUID.randomUUID().toString().replaceAll("-", "");
+                 sysuser.setPasswordSalt(salt);
+                 sysuser.setPassword(MD5Utils.createPassword(sysuser.getPassword(), salt, 2));
                  Map<String, Object> map = MyBeanUtils.bean2map(sysuser);
                  HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                 Map<Object, Object> str = http.doPost(URLConstants.USERINSERT, map, jsessionid);
-                 result = JSONResult.success(str);
+                 result = http.doPost(URLConstants.USERINSERT, map, jsessionid);
                  System.err.print("end----:"+System.currentTimeMillis());
                  return result;
              }
@@ -58,4 +62,29 @@ public class UserDataController {
          }
           return  result;
      }
+
+    /**
+     * 获取用户的权限集
+     * @return
+     */
+    @RequestMapping(value="/getlistRole",method =RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    public JSONResult getlistRole(){
+         JSONResult result = null;
+         try {
+             String jsessionid ="shiro-session-410a7460-eba1-4d14-8a4c-bee53f8844c6";
+             Map map = new HashMap();
+             map.put("page","1");
+             map.put("rows","10");
+             HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+             result = http.doPost(URLConstants.role, map, jsessionid);
+           //  System.err.print("數據返回接口打印--"+str.toString());
+             result=JSONResult.success();
+         }catch (Exception e){
+         }
+         return result;
+     }
+
+
+
+
 }

@@ -47,7 +47,32 @@ public class SystemLogAspect {
         Object o = null;
         long t1 = System.currentTimeMillis();
         try {
-            o = point.proceed();
+                o = point.proceed();
+                TSystemLogDto dto = new TSystemLogDto();
+                long t2 = System.currentTimeMillis();
+                if (o.toString().length() < 5000|| o.toString().length()!=0) {
+                    dto.setUserResult(o.toString());
+                } else {
+                    dto.setUserResult("data is too long");
+                }
+                dto.setUserDuration((t2 - t1));
+                dto.setUserMethod(point.getTarget().getClass().getName() + "." + point.getSignature().getName());
+                StringBuilder stringBuilder = new StringBuilder();
+                for (String s : request.getParameterMap().keySet()) {
+                    stringBuilder.append(s);
+                    stringBuilder.append(" = ");
+                    stringBuilder.append(request.getParameterMap().get(s)[0]);
+                    stringBuilder.append(" | ");
+                }
+                dto.setUserParameters(stringBuilder.toString());
+                dto.setUserIp(request.getRemoteAddr());
+                dto.setUserURL(request.getRequestURL().toString());
+                dto.setUserAgent(request.getHeader("user-agent"));
+                tSystemLogApi.insertSystem(dto);
+                logger.info("request contentType:{}", request.getHeader("Accept"));
+                logger.info("request param : {}", dto.getUserParameters());
+                logger.info("reuest method : {}", request.getMethod());
+                logger.info("request url : {}", dto.getUserURL());
         } catch (Exception e) {//这里建议将异常向上层抛让异常处理器来进行捕捉
             if (e instanceof UnknownAccountException) {
                 throw new UnknownAccountException(e);
@@ -59,31 +84,6 @@ public class SystemLogAspect {
                 throw new Exception(e);
             }
         }
-        TSystemLogDto dto = new TSystemLogDto();
-        long t2 = System.currentTimeMillis();
-        if (o.toString().length() < 5000) {
-            dto.setUserResult(o.toString());
-        } else {
-            dto.setUserResult("data is too long");
-        }
-        dto.setUserDuration((t2 - t1));
-        dto.setUserMethod(point.getTarget().getClass().getName() + "." + point.getSignature().getName());
-        StringBuilder stringBuilder = new StringBuilder();
-        for (String s : request.getParameterMap().keySet()) {
-            stringBuilder.append(s);
-            stringBuilder.append(" = ");
-            stringBuilder.append(request.getParameterMap().get(s)[0]);
-            stringBuilder.append(" | ");
-        }
-        dto.setUserParameters(stringBuilder.toString());
-        dto.setUserIp(request.getRemoteAddr());
-        dto.setUserURL(request.getRequestURL().toString());
-        dto.setUserAgent(request.getHeader("user-agent"));
-        tSystemLogApi.insertSystem(dto);
-        logger.info("request contentType:{}", request.getHeader("Accept"));
-        logger.info("request param : {}", dto.getUserParameters());
-        logger.info("reuest method : {}", request.getMethod());
-        logger.info("request url : {}", dto.getUserURL());
         return o;
     }
 

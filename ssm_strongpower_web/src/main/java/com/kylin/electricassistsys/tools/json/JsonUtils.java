@@ -2,6 +2,8 @@ package com.kylin.electricassistsys.tools.json;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kylin.electricassistsys.mybeanutils.JSONResult;
+import com.kylin.electricassistsys.rsas.RSATools;
 import com.kylin.electricassistsys.tools.sqlfilter.SqlRegular;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -87,24 +89,30 @@ public class JsonUtils {
 
     /**
      * 將json字符串轉化為map取出對應的數據在返回
-     * @param str
+     * @param maps
      * @returnStr
      */
-    public static Map strJsonAndMap(String str){
+    public static JSONResult strJsonAndMap(Map<Object,Object>maps ){
+        JSONResult result =null;
+         String str= maps.get("user_result").toString();
         JSONObject  jasonObject = JSONObject.fromObject(str);
         Map map= (Map)jasonObject;
-        Map maps= new HashMap();
         String code= valueOfStr((Object)map.get("code"));
         if(code.equals("10000")){
+            String JSESSIONID="";
+            boolean flag=maps.containsKey("JSESSIONID");
+           if(flag){
+               JSESSIONID  =   maps.get("JSESSIONID").toString();
+             }
             String data= valueOfStr((Object)map.get("data"));
-            maps.put("dcode","10000");
-            maps.put("datas",data);
-            return maps;
+            result=JSONResult.success(data);
+            if(JSESSIONID.length()>0){
+            result.setJSESSIONID(JSESSIONID);
+            }
+            return result;
         }else{
             String msg= (String)map.get("msg");
-            maps.put("dcode",code);
-            maps.put("datas",msg);
-            return maps;
+            return  result=JSONResult.failure(msg);
         }
     }
 

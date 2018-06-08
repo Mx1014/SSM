@@ -13,7 +13,10 @@ import java.util.Map;
 /**
  * @Auther: cwx
  * @Date: 2018/6/5 11:11
- * @Description:
+ * @Description: RSA公钥/私钥/签名工具包
+ * 字符串格式的密钥在未在特殊说明情况下都为BASE64编码格式<br />
+ *  由于非对称加密速度极其缓慢，一般文件不使用它来加密而是使用对称加密，<br/>
+ *  非对称加密算法可以用来对对称加密的密钥加密，这样保证密钥的安全也就保证了数据的安全
  */
 public class RSAUtils {
     public static final String KEY_ALGORITHM = "RSA";
@@ -118,8 +121,6 @@ public class RSAUtils {
         int inputLen = data.length;
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         int offSet = 0;
-
-
         for (int i = 0; inputLen - offSet > 0; offSet = i * 117) {
             byte[] cache;
             if (inputLen - offSet > 117) {
@@ -127,13 +128,9 @@ public class RSAUtils {
             } else {
                 cache = cipher.doFinal(data, offSet, inputLen - offSet);
             }
-
-
             out.write(cache, 0, cache.length);
             ++i;
         }
-
-
         byte[] encryptedData = out.toByteArray();
         out.close();
         return encryptedData;
@@ -150,8 +147,6 @@ public class RSAUtils {
         int inputLen = data.length;
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         int offSet = 0;
-
-
         for (int i = 0; inputLen - offSet > 0; offSet = i * 117) {
             byte[] cache;
             if (inputLen - offSet > 117) {
