@@ -9,7 +9,6 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-
 import java.beans.BeanInfo;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
@@ -102,12 +101,12 @@ public class JsonUtils {
             String JSESSIONID="";
             boolean flag=maps.containsKey("JSESSIONID");
            if(flag){
-               JSESSIONID  =   maps.get("JSESSIONID").toString();
+               JSESSIONID  =   RSATools.encryptedDataOnJava(maps.get("JSESSIONID").toString());
              }
             String data= valueOfStr((Object)map.get("data"));
             result=JSONResult.success(data);
             if(JSESSIONID.length()>0){
-            result.setJSESSIONID(JSESSIONID);
+            result.setUserRedisreQequestId(JSESSIONID);
             }
             return result;
         }else{

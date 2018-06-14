@@ -16,7 +16,8 @@ public class RSAComentenUtils {
 
     static void testJavaRsa() {
       //  String data="";
-       String data = "你好啊，冯老师！s 223 1@324234234sfsfsf";
+       String data = "shiro-session-410a7460-eba1-4d14-8a4c-bee53f8844c6";
+       String datas ="dYZxwee0PXXs5UWPu6rJTuLYBNjTD4WiQDxekEEvhTuD+A7yuS8fi5XdbR5clIWJf0HWfSKmOCUX4rE5T8ZQYD/5Nv81TMP+75UkU61Ok4mC1Yfm+GMq3GqTJDihSpws2fxEGFNE1Ze5DJ9HoWciN78/q4Y40lBhUH+xdBM9PiU=";
        data = RSATools.encryptedDataOnJava(data);
        System.out.println("加密数据：" + data);
 

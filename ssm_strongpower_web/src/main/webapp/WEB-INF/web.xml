@@ -48,26 +48,17 @@
         <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
     </listener>
     <!--防止sql注入-->
-    <!--过滤XSS注入 -->
-    <filter>
-        <filter-name>XssEscape</filter-name>
-        <filter-class>com.kylin.electricassistsys.tools.sqlfilter.XssFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>XssEscape</filter-name>
-        <url-pattern>/*</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
-    </filter-mapping>
     <!--过滤SQL注入 -->
-    <filter>
+   <filter>
         <filter-name>SqlFilter</filter-name>
         <filter-class>com.kylin.electricassistsys.tools.sqlfilter.SqlFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>SqlFilter</filter-name>
         <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
-
 
     <!--配置日志xml-->
  <context-param>

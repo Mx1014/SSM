@@ -18,7 +18,7 @@ public enum ResultCode {
   //分页查询app端最后一条
   pageLastCode("-5"),
   // 服务器错误
-  error("-6");
+   error("-6");
 
   private final String code;
 

@@ -1,5 +1,8 @@
 package com.kylin.electricassistsys.tools.sqlfilter;
 
+
+import com.kylin.electricassistsys.rsas.RSATools;
+import com.kylin.electricassistsys.tools.json.FastjsonUtils;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 
@@ -66,6 +69,19 @@ public class SqlRegular {
             }
         }
         body = stringBuilder.toString();
+        boolean d= SqlRegular.jsonRegex(body);
+        //请求头类型
+        if(d) {
+            String type = request.getContentType();
+            body = FastjsonUtils.fastjsonString(body, type);
+            return body;
+        }
+       int i =  body.length();
+        if(i>=117 || i ==128 ){
+            System.out.print(body.length());
+            body= RSATools.decryptDataOnJava(body);
+            return body;
+         }
         return body;
     }
 
@@ -122,11 +138,11 @@ public class SqlRegular {
 
     /**
      * 验证get请求中的参数合法合法
-     * @param params
      * @param req
      * @return
      */
-    protected  static String  EnumerationString(Enumeration params,HttpServletRequest req ){
+    protected  static String  EnumerationString(HttpServletRequest req ){
+        Enumeration params = req.getParameterNames();
         //获得所有请求参数名
         String sql = "";
         while (params.hasMoreElements()) {

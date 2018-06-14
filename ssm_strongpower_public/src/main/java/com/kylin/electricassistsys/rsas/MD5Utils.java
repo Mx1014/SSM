@@ -28,15 +28,15 @@ public class MD5Utils {
 
     /**
      * 生成32位md5码 加盐后的md5
-     * @param password
+     * @param LoginName
      * @return
      */
-    public static String md5LoginName(String password) {
+    public static String md5LoginName(String LoginName) {
 
         try {
             // 得到一个信息摘要器
             MessageDigest digest = MessageDigest.getInstance("md5");
-            byte[] result = digest.digest(password.getBytes());
+            byte[] result = digest.digest(LoginName.getBytes());
             StringBuffer buffer = new StringBuffer();
             // 把每一个byte 做一个与运算 0xff;
             for (byte b : result) {
@@ -55,6 +55,8 @@ public class MD5Utils {
             e.printStackTrace();
             return "";
         }
-
+    }
+    public static void main(String[] arg){
+       System.err.println(md5LoginName("admin123456"));
     }
 }

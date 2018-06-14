@@ -61,6 +61,10 @@ public class URLConstants {
      * 获取权限列表
      */
     public static final  String  GETPERMISSIONLIST=URL+"selectuserrolemenu/listAllPermission";
+    /**
+     * 获取分页权限列表
+     */
+    public static final  String  GETPERMISSIONPAGE=URL+"permission/page";
 
     /**
      * 获取用户列表
@@ -75,4 +79,62 @@ public class URLConstants {
      * 启用账号
      */
     public static final  String  ENABLEUSER=URL+"user/enableUser";
+    /**
+     * 删除账号
+     */
+    public static final  String  DELETEUSERBYID=URL+"user/delete";
+    /**
+     * 修改用戶信息
+     */
+    public static final  String UPDATAUSERID=URL+"selectuserrolemenu/updataUserId";
+
+    /**
+     * 新增角色
+     */
+    public static final  String  INSERTROLE=URL+"role/insert";
+    /**
+     * 更新角色
+     */
+    public static final  String  UPDATEROLE=URL+"role/update";
+    /**
+     * 删除角色
+     */
+    public static final  String  DELETEROLE=URL+"role/delete";
+    /**
+     * 给新用户设置角色
+     */
+    public static final String SETUSERROLE=URL+"userRoleData/setUserRole";
+    /**
+     * 添加角色组
+     */
+    public static final String ADDSYSPERMISSIONGROUP=URL+"userRoleData/addSysPermissionGroup";
+    /**
+     * 查询所有角色组信息
+     */
+    public static final String SELECTALL=URL+"userRoleData/selectAll";
+    /**
+     * 查询所有角色组信息
+     */
+    public static final String SELECTPAGE=URL+"userRoleData/selectPage";
+    /**
+     * 更新角色组信息
+     */
+    public static final  String  UPDATESYSPERMISSIONGROUP=URL+"userRoleData/updateSysPermissionGroup";
+    /**
+     * 删除角色组信息
+     */
+    public static final  String DELETESYSPERMISSIONGROUP= URL+"userRoleData/deleteSysPermissionGroup";
+    /**
+     * 新增权限
+     */
+    public static final  String INSERTPERMISSION= URL+"userjurisdictiondata/insertPermission";
+    /**
+     * 修改权限
+     */
+    public static final  String UPDATEPERMISSION= URL+"userjurisdictiondata/updatePermission";
+    /**
+     * 删除权限
+     */
+    public static final  String DELETEPERMISSION= URL+"userjurisdictiondata/deletePermission";
+
 }

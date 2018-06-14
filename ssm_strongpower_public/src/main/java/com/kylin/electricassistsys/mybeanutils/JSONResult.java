@@ -40,9 +40,9 @@ public final class JSONResult implements Serializable {
     private Object data;
     /**
      * 返回jsessionid數據 ；
-
      */
-    private String JSESSIONID;
+    private String userRedisreQequestId;
+
 
     /**
      * 返回成功
@@ -142,12 +142,12 @@ public final class JSONResult implements Serializable {
         return code;
     }
 
-    public String getJSESSIONID() {
-        return JSESSIONID;
+    public String getUserRedisreQequestId() {
+        return userRedisreQequestId;
     }
 
-    public void setJSESSIONID(String JSESSIONID) {
-        this.JSESSIONID = JSESSIONID;
+    public void setUserRedisreQequestId(String userRedisreQequestId) {
+        this.userRedisreQequestId = userRedisreQequestId;
     }
 
     public void setCode(ResultCode code) {

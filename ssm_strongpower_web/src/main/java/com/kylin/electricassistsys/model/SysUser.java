@@ -6,7 +6,7 @@ package com.kylin.electricassistsys.model;
 public class SysUser {
 
     // id :
-    private Long id;
+    private Integer id;
 
     // login_name :登陆名
     private String loginName;
@@ -61,32 +61,21 @@ public class SysUser {
     /**
      * jsessionid 存储
      */
-    private String jSessionid;
+    private String UserRedisreQequestId;
 
-
-    public String getjSessionid() {
-        return jSessionid;
+    public String getUserRedisreQequestId() {
+        return UserRedisreQequestId;
     }
 
-    public void setjSessionid(String jSessionid) {
-        this.jSessionid = jSessionid;
+    public void setUserRedisreQequestId(String userRedisreQequestId) {
+        UserRedisreQequestId = userRedisreQequestId;
     }
 
-    /**
-     * get
-     *
-     * @return Long
-     */
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    /**
-     * set
-     *
-     * @param id
-     */
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -9,7 +9,6 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,11 +19,24 @@ import java.util.Map;
  */
 
 public class SqlFilter implements Filter{
+    protected FilterConfig filterConfig = null;
+
+    protected boolean ignore = true;
+
+    @Override
+    public void destroy() {
+        this.filterConfig = null;
+    }
+    public void init(FilterConfig filterConfig) throws ServletException {
+        System.out.println("Filter initialized");
+        this.filterConfig = filterConfig;
+    }
+
+
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException{
         String param = "";
         //验证参数的合法信息
         boolean falg =false;
-        Enumeration params=null;
         String method = "GET";
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
@@ -63,8 +75,8 @@ public class SqlFilter implements Filter{
                 req = (HttpServletRequest) SqlRegular.getRequest(req, body);
             }
             if ("GET".equalsIgnoreCase(method)) {
-                params = req.getParameterNames();
-                param = SqlRegular.EnumerationString(params, req);
+                param = SqlRegular.EnumerationString( req);
+                req = new XssHttpServletRequestWrapper(req);
                 falg = SqlRegular.sqlValidateRegex(param);
             }
             if (falg) {
@@ -74,11 +86,6 @@ public class SqlFilter implements Filter{
                 chain.doFilter(req, res);
             }
         }
-    }
-    public void init(FilterConfig filterConfig) throws ServletException {
-    }
-    public void destroy() {
-
     }
 
     }
