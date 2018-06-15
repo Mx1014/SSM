@@ -80,6 +80,10 @@ public class URLConstants {
      */
     public static final  String  ENABLEUSER=URL+"user/enableUser";
     /**
+     * 重置密码
+     */
+    public static final  String  UPDATEPASSWORD=URL+"user/updatePassword";
+    /**
      * 删除账号
      */
     public static final  String  DELETEUSERBYID=URL+"user/delete";

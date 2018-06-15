@@ -434,5 +434,32 @@ public class UserLoginDataController {
         }
         return  result;
     }
+    /**
+     * 重置密码
+     * @param params 参数
+     * @return
+     */
+    @RequestMapping(value = "updatePassword", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult updatePasswordById(@RequestBody Map<String, Object> params){
+        JSONResult result = null;
+        try {
+            String jsessionid = params.get("userRedisreQequestId").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                Map json = new HashMap();
+                json.put("id", params.get("id"));
+                json.put("newPassword", params.get("code"));
+                json.put("repeatNewPassword", params.get("code"));
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                result = http.doPost(URLConstants.UPDATEPASSWORD, json, jsessionid);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            result= JSONResult.failure("服务器错误,请您联系系统管理员");
+            e.printStackTrace();
+        }
+        return  result;
+    }
 
 }
