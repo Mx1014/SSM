@@ -179,12 +179,14 @@ public class UserLoginDataController {
     public JSONResult getRoleList(@RequestBody Map<String, Object> params) {
         JSONResult result = null;
         try {
-            Map json = new HashMap();
-            json.put("page", params.get("page").toString());
-            json.put("rows", params.get("rows").toString());
+
             String jsessionid = params.get("userRedisreQequestId").toString();
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
+                Map json = new HashMap();
+                json.put("page", params.get("page").toString());
+                json.put("rows", params.get("rows").toString());
+                json.put("roleName", params.get("roleName"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
                 result = http.doPost(URLConstants.GETROLELIST, json, jsessionid);
                 return result;
