@@ -325,6 +325,37 @@ public class UserLoginDataController {
         }
         return result;
     }
+    /**
+     * 获取权限列表
+     *
+     * @param params 无
+     * @return 获取系统日志页面
+     */
+    @RequestMapping(value = "getSystemLogPage", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult getSystemLogPage(@RequestBody Map<String, Object> params) {
+        JSONResult result = null;
+        try {
+            String jsessionid = params.get("userRedisreQequestId").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                Map json = new HashMap();
+                json.put("page", params.get("page").toString());
+                json.put("rows", params.get("limit").toString());
+                json.put("method", params.get("method"));
+                json.put("url", params.get("url"));
+                json.put("param", params.get("param"));
+                json.put("result", params.get("result"));
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+
+                result = http.doPost(URLConstants.GETLOGLIST, json, jsessionid);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 
     /**
      * 禁用用户

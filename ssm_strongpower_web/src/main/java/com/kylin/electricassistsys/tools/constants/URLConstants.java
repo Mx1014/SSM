@@ -17,128 +17,132 @@ public class URLConstants {
     /**
      * 请求项目IP地址
      */
-    public static final String DOMAINIP ="127.0.0.1";
+    public static final String DOMAINIP = "127.0.0.1";
     /**
      * 请求项目名称
      */
-    public static final String HTTPPROJECT= "hunt-admin";
+    public static final String HTTPPROJECT = "hunt-admin";
 
-     public static final String HTTPPROST="8089";
+    public static final String HTTPPROST = "8089";
     /**
      * 请求url地址路径
      */
-    public static final String URL="http://"+DOMAINIP+":"+HTTPPROST+"/"+HTTPPROJECT+"/";
+    public static final String URL = "http://" + DOMAINIP + ":" + HTTPPROST + "/" + HTTPPROJECT + "/";
     /**
      * 登录请求接口
      */
-    public static final String LOGIN=URL+"system/login";
+    public static final String LOGIN = URL + "system/login";
     /**
      * 获取菜单集数据
      */
-    public static final String USERMENU=URL+"selectuserrolemenu/selectUserRoleMenuList";
+    public static final String USERMENU = URL + "selectuserrolemenu/selectUserRoleMenuList";
     /**
      * 獲取權限集數據
      */
-   public static final  String USERROLE=URL+"selectuserrolemenu/queryUserRoleList";
+    public static final String USERROLE = URL + "selectuserrolemenu/queryUserRoleList";
     /**
      * 獲取所以的權限信息
      */
-   public static final String QUERYROLEALL=URL+"selectuserrolemenu/selectRoleAll";
+    public static final String QUERYROLEALL = URL + "selectuserrolemenu/selectRoleAll";
 
     /**
-     *添加用户信息
+     * 添加用户信息
      */
-    public static final String USERINSERT=URL+"selectuserrolemenu/userInsert";
+    public static final String USERINSERT = URL + "selectuserrolemenu/userInsert";
     /**
      * test權限
      */
-    public static final String role=URL+"role/list";
+    public static final String role = URL + "role/list";
     /**
      * 获取用户的权限列表
      */
-    public static final String GETROLELIST =URL+"selectuserrolemenu/listRole";
+    public static final String GETROLELIST = URL + "selectuserrolemenu/listRole";
     /**
      * 获取权限列表
      */
-    public static final  String  GETPERMISSIONLIST=URL+"selectuserrolemenu/listAllPermission";
+    public static final String GETPERMISSIONLIST = URL + "selectuserrolemenu/listAllPermission";
     /**
      * 获取分页权限列表
      */
-    public static final  String  GETPERMISSIONPAGE=URL+"permission/page";
+    public static final String GETPERMISSIONPAGE = URL + "permission/page";
 
     /**
      * 获取用户列表
      */
-    public static final  String  GETUSERLIST=URL+"selectuserrolemenu/listUser";
+    public static final String GETUSERLIST = URL + "selectuserrolemenu/listUser";
     /**
      * 禁用账号
      */
-    public static final  String  FORBIDDENUSER=URL+"user/forbiddenUser";
+    public static final String FORBIDDENUSER = URL + "user/forbiddenUser";
 
     /**
      * 启用账号
      */
-    public static final  String  ENABLEUSER=URL+"user/enableUser";
+    public static final String ENABLEUSER = URL + "user/enableUser";
     /**
      * 重置密码
      */
-    public static final  String  UPDATEPASSWORD=URL+"user/updatePassword";
+    public static final String UPDATEPASSWORD = URL + "user/updatePassword";
     /**
      * 删除账号
      */
-    public static final  String  DELETEUSERBYID=URL+"user/delete";
+    public static final String DELETEUSERBYID = URL + "user/delete";
     /**
      * 修改用戶信息
      */
-    public static final  String UPDATAUSERID=URL+"selectuserrolemenu/updataUserId";
+    public static final String UPDATAUSERID = URL + "selectuserrolemenu/updataUserId";
 
     /**
      * 新增角色
      */
-    public static final  String  INSERTROLE=URL+"role/insert";
+    public static final String INSERTROLE = URL + "role/insert";
     /**
      * 更新角色
      */
-    public static final  String  UPDATEROLE=URL+"role/update";
+    public static final String UPDATEROLE = URL + "role/update";
     /**
      * 删除角色
      */
-    public static final  String  DELETEROLE=URL+"role/delete";
+    public static final String DELETEROLE = URL + "role/delete";
     /**
      * 给新用户设置角色
      */
-    public static final String SETUSERROLE=URL+"userRoleData/setUserRole";
+    public static final String SETUSERROLE = URL + "userRoleData/setUserRole";
     /**
      * 添加角色组
      */
-    public static final String ADDSYSPERMISSIONGROUP=URL+"userRoleData/addSysPermissionGroup";
+    public static final String ADDSYSPERMISSIONGROUP = URL + "userRoleData/addSysPermissionGroup";
     /**
      * 查询所有角色组信息
      */
-    public static final String SELECTALL=URL+"userRoleData/selectAll";
+    public static final String SELECTALL = URL + "userRoleData/selectAll";
     /**
      * 查询所有角色组信息
      */
-    public static final String SELECTPAGE=URL+"userRoleData/selectPage";
+    public static final String SELECTPAGE = URL + "userRoleData/selectPage";
     /**
      * 更新角色组信息
      */
-    public static final  String  UPDATESYSPERMISSIONGROUP=URL+"userRoleData/updateSysPermissionGroup";
+    public static final String UPDATESYSPERMISSIONGROUP = URL + "userRoleData/updateSysPermissionGroup";
     /**
      * 删除角色组信息
      */
-    public static final  String DELETESYSPERMISSIONGROUP= URL+"userRoleData/deleteSysPermissionGroup";
+    public static final String DELETESYSPERMISSIONGROUP = URL + "userRoleData/deleteSysPermissionGroup";
     /**
      * 新增权限
      */
-    public static final  String INSERTPERMISSION= URL+"userjurisdictiondata/insertPermission";
+    public static final String INSERTPERMISSION = URL + "userjurisdictiondata/insertPermission";
     /**
      * 修改权限
      */
-    public static final  String UPDATEPERMISSION= URL+"userjurisdictiondata/updatePermission";
+    public static final String UPDATEPERMISSION = URL + "userjurisdictiondata/updatePermission";
     /**
      * 删除权限
      */
-    public static final  String DELETEPERMISSION= URL+"userjurisdictiondata/deletePermission";
+    public static final String DELETEPERMISSION = URL + "userjurisdictiondata/deletePermission";
+    /**
+     * 获取日志列表
+     */
+    public static final String GETLOGLIST = URL + "system/log/list";
 
 }
