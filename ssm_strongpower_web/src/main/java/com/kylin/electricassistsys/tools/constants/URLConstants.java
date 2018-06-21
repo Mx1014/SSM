@@ -144,5 +144,21 @@ public class URLConstants {
      * 获取日志列表
      */
     public static final String GETLOGLIST = URL + "system/log/list";
+    /**
+     * 获取ip控制列表
+     */
+    public static final String IPSELECT = URL + "system/ip/list";
+    /**
+     * 新增ip控制
+     */
+    public static final String IPINSERT = URL + "system/ip/insert";
+    /**
+     * 更新ip控制
+     */
+    public static final String IPUPDATE = URL + "system/ip/update";
+    /**
+     * 删除ip控制
+     */
+    public static final String IPDELETE = URL + "system/ip/delete";
 
 }

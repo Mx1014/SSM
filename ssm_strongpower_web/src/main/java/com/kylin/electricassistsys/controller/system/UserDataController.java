@@ -325,5 +325,111 @@ public class UserDataController extends RestExceptionHandler {
         }
         return result;
     }
+    /**
+     * 查询ip列表
+     * @param map
+     * @return
+     */
+    @RequestMapping(value = "ipSelect", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult ipSelect(@RequestBody Map<String, Object> map) {
+        JSONResult result = null;
+        try {
+            String jsessionid = map.get("userRedisreQequestId").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                Map<String, Object> parm = new HashMap<>();
+                parm.put("page", map.get("page"));
+                parm.put("rows", map.get("limit"));
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                result = http.doPost(URLConstants.IPSELECT, parm, jsessionid);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = JSONResult.failure("服务器错误,请您从新登陆");
+        }
+        return result;
+    }
+    /**
+     * 新增ip
+     * @param map
+     * @return
+     */
+    @RequestMapping(value = "ipInsert", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult ipInsert(@RequestBody Map<String, Object> map) {
+        JSONResult result = null;
+        try {
+            String jsessionid = map.get("userRedisreQequestId").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                Map<String, Object> parm = new HashMap<>();
+                parm.put("ip", map.get("ip"));
+                parm.put("expireTime", map.get("expireTime"));
+                parm.put("description", map.get("description"));
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                result = http.doPost(URLConstants.IPINSERT, parm, jsessionid);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = JSONResult.failure("服务器错误,请您从新登陆");
+        }
+        return result;
+    }
+    /**
+     * 更新ip
+     * @param map
+     * @return
+     */
+    @RequestMapping(value = "ipUpdate", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult ipUpdate(@RequestBody Map<String, Object> map) {
+        JSONResult result = null;
+        try {
+            String jsessionid = map.get("userRedisreQequestId").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                Map<String, Object> parm = new HashMap<>();
+                parm.put("id", map.get("id"));
+                parm.put("ip", map.get("ip"));
+                parm.put("expireTime", map.get("expireTime"));
+                parm.put("description", map.get("description"));
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                result = http.doPost(URLConstants.IPUPDATE, parm, jsessionid);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = JSONResult.failure("服务器错误,请您从新登陆");
+        }
+        return result;
+    }
+    /**
+     * 删除ip
+     * @param map
+     * @return
+     */
+    @RequestMapping(value = "ipDelete", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult ipDelete(@RequestBody Map<String, Object> map) {
+        JSONResult result = null;
+        try {
+            String jsessionid = map.get("userRedisreQequestId").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                Map<String, Object> parm = new HashMap<>();
+                parm.put("id", map.get("id"));
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                result = http.doPost(URLConstants.IPDELETE, parm, jsessionid);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = JSONResult.failure("服务器错误,请您从新登陆");
+        }
+        return result;
+    }
 
 }
