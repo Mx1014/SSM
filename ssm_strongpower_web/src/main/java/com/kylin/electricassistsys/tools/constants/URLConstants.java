@@ -160,5 +160,13 @@ public class URLConstants {
      * 删除ip控制
      */
     public static final String IPDELETE = URL + "system/ip/delete";
+    /**
+     * ip控制开关
+     */
+    public static final String IPINTERCEPT = URL + "system/ip/intercept";
+    /**
+     * ip控制开关状态
+     */
+    public static final String IPINTERCEPTSTATUS = URL + "system/ip/intercept/status";
 
 }

@@ -431,5 +431,54 @@ public class UserDataController extends RestExceptionHandler {
         }
         return result;
     }
+    /**
+     * ip拦截开关
+     * @param map
+     * @return
+     */
+    @RequestMapping(value = "ipIntercept", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult ipIntercept(@RequestBody Map<String, Object> map) {
+        JSONResult result = null;
+        try {
+            String jsessionid = map.get("userRedisreQequestId").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                Map<String, Object> parm = new HashMap<>();
+                parm.put("open", map.get("switch"));
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                result = http.doPost(URLConstants.IPINTERCEPT, parm, jsessionid);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = JSONResult.failure("服务器错误,请您从新登陆");
+        }
+        return result;
+    }
+    /**
+     * ip拦截开关
+     * @param map
+     * @return
+     */
+    @RequestMapping(value = "ipInterceptStatus", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult ipInterceptStatus(@RequestBody Map<String, Object> map) {
+        JSONResult result = null;
+        try {
+            String jsessionid = map.get("userRedisreQequestId").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                Map<String, Object> parm = new HashMap<>();
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                result = http.doPost(URLConstants.IPINTERCEPTSTATUS, parm, jsessionid);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = JSONResult.failure("服务器错误,请您从新登陆");
+        }
+        return result;
+    }
 
 }
