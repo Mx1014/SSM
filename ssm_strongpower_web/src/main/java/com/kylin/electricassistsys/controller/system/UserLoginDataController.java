@@ -61,6 +61,34 @@ public class UserLoginDataController {
         }
         return result;
     }
+    /**
+     * 用户登录
+     * //@param loginName 用户名
+     * //@param password 用户密码
+     *
+     * @return
+     */
+    @RequestMapping(value = "/getUserLogout", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult getUserLogout(@RequestBody Map<String, Object> params) {
+        JSONResult result = null;
+        try {
+            Map json = new HashMap();
+            String jsessionid = params.get("userRedisreQequestId").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                redisCacheService.del(jsessionid);
+              /*  HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                result = http.doPost(URLConstants.LOGOUT, json, jsessionid);
+                return result;*/
+              return JSONResult.success();
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
+        }
+        return result;
+    }
 
     /**
      * //@param id

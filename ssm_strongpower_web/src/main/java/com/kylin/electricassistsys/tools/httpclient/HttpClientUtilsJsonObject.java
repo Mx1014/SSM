@@ -191,6 +191,7 @@ public class HttpClientUtilsJsonObject {
         if (!StringUtils.equals(theJSessionId, jSessionId)) {
             theJSessionId = jSessionId;
             header.put("Cookie", "JSESSIONID="+theJSessionId);
+            header.put("Cookie", "Admin-Token:"+theJSessionId);
         }
        //设置 header
         Header headerss[] = buildHeader(header);

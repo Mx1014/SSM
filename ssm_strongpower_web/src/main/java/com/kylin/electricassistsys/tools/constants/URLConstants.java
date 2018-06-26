@@ -33,6 +33,10 @@ public class URLConstants {
      */
     public static final String LOGIN = URL + "system/login";
     /**
+     * 退出请求接口
+     */
+    public static final String LOGOUT = URL + "system/logout";
+    /**
      * 获取菜单集数据
      */
     public static final String USERMENU = URL + "selectuserrolemenu/selectUserRoleMenuList";
