@@ -188,11 +188,13 @@ public class HttpClientUtilsJsonObject {
         httpPost.setEntity(entity);
         CloseableHttpResponse response = null;
         Map<String,String> header = new HashMap<String,String>();
-        if (!StringUtils.equals(theJSessionId, jSessionId)) {
+      /*  if (!StringUtils.equals(theJSessionId, jSessionId)) {
             theJSessionId = jSessionId;
             header.put("Cookie", "JSESSIONID="+theJSessionId);
-            header.put("Cookie", "Admin-Token:"+theJSessionId);
-        }
+           *//* header.put("Cookie", "Admin-Token:"+theJSessionId);*//*
+        }*/
+        theJSessionId = jSessionId;
+        header.put("Cookie", "JSESSIONID="+theJSessionId);
        //设置 header
         Header headerss[] = buildHeader(header);
         if(headerss != null && headerss.length > 0){

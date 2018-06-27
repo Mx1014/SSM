@@ -23,7 +23,6 @@ import java.util.UUID;
 
 /**
  * @Auther: cwx
- *
  * @Date: 2018/5/25 16:56
  * @Description: 用户登录数据信息, 用户的权限信息请求接口
  */
@@ -37,6 +36,7 @@ public class UserLoginDataController {
      */
     @Resource
     private RedisCacheService redisCacheService;
+
     /**
      * 用户登录
      * //@param loginName 用户名
@@ -61,6 +61,7 @@ public class UserLoginDataController {
         }
         return result;
     }
+
     /**
      * 用户登录
      * //@param loginName 用户名
@@ -76,11 +77,11 @@ public class UserLoginDataController {
             String jsessionid = params.get("userRedisreQequestId").toString();
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
-                redisCacheService.del(jsessionid);
-              /*  HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                /*   redisCacheService.del(jsessionid);*/
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
                 result = http.doPost(URLConstants.LOGOUT, json, jsessionid);
-                return result;*/
-              return JSONResult.success();
+                return result;
+                /*  return JSONResult.success();*//**/
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
@@ -225,8 +226,10 @@ public class UserLoginDataController {
         }
         return result;
     }
+
     /**
      * 更新角色
+     *
      * @param params 参数
      */
     @RequestMapping(value = "/updateRole", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
@@ -250,8 +253,10 @@ public class UserLoginDataController {
         }
         return result;
     }
+
     /**
      * 删除角色
+     *
      * @param params 参数
      */
     @RequestMapping(value = "/deleteRole", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
@@ -273,8 +278,10 @@ public class UserLoginDataController {
         }
         return result;
     }
+
     /**
      * 新增角色
+     *
      * @param params 参数
      */
     @RequestMapping(value = "/insertRole", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
@@ -325,6 +332,7 @@ public class UserLoginDataController {
         }
         return result;
     }
+
     /**
      * 获取权限列表
      *
@@ -353,6 +361,7 @@ public class UserLoginDataController {
         }
         return result;
     }
+
     /**
      * 获取权限列表
      *
@@ -438,6 +447,7 @@ public class UserLoginDataController {
         }
         return result;
     }
+
     /**
      * 启用用户
      *
@@ -467,17 +477,18 @@ public class UserLoginDataController {
 
     /**
      * 用戶信息修改
+     *
      * @param sysuser
      * @return
      */
     @RequestMapping(value = "updataUserId", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public JSONResult updataUserId(@RequestBody SysUser sysuser){
+    public JSONResult updataUserId(@RequestBody SysUser sysuser) {
         JSONResult result = null;
         try {
             String jsessionid = sysuser.getUserRedisreQequestId();
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
-                System.err.print("start---:"+System.currentTimeMillis());
+                System.err.print("start---:" + System.currentTimeMillis());
                 sysuser.setLoginName(MD5Utils.md5LoginName(sysuser.getLoginName()));
                 String salt = UUID.randomUUID().toString().replaceAll("-", "");
                 sysuser.setPasswordSalt(salt);
@@ -485,23 +496,25 @@ public class UserLoginDataController {
                 Map<String, Object> map = MyBeanUtils.bean2map(sysuser);
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
                 result = http.doPost(URLConstants.UPDATAUSERID, map, jsessionid);
-                System.err.print("end----:"+System.currentTimeMillis());
+                System.err.print("end----:" + System.currentTimeMillis());
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
-            result= JSONResult.failure("服务器错误,请您联系系统管理员");
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
-        return  result;
+        return result;
     }
+
     /**
      * 重置密码
+     *
      * @param params 参数
      * @return
      */
     @RequestMapping(value = "updatePassword", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public JSONResult updatePasswordById(@RequestBody Map<String, Object> params){
+    public JSONResult updatePasswordById(@RequestBody Map<String, Object> params) {
         JSONResult result = null;
         try {
             String jsessionid = params.get("userRedisreQequestId").toString();
@@ -517,10 +530,10 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
-            result= JSONResult.failure("服务器错误,请您联系系统管理员");
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
-        return  result;
+        return result;
     }
 
 }
