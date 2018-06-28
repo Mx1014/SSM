@@ -2,6 +2,7 @@ package com.kylin.electricassistsys.tools.httpclient;
 
 import com.alibaba.fastjson.JSONObject;
 import com.kylin.electricassistsys.mybeanutils.JSONResult;
+import com.kylin.electricassistsys.tools.IPHelper;
 import com.kylin.electricassistsys.tools.json.JsonUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.*;
@@ -22,7 +23,10 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -203,6 +207,9 @@ public class HttpClientUtilsJsonObject {
         try {
             httpPost.setHeader("Accept", "application/json");
             httpPost.setHeader("Content-Type", "application/json");
+            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+            String ipAddress = IPHelper.getIpAddress(request);
+            httpPost.setHeader("X-Forwarded-For", ipAddress);
             response = httpClient.execute(httpPost,context);
             Map<Object,Object>map =  printCookies();
             String data= copyResponse2Str(response);

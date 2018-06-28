@@ -254,12 +254,12 @@ public class UserDataController extends RestExceptionHandler {
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
                 Map<String, Object> parm = new HashMap<>();
-                parm.put("groupId",map.get("sysPermissionGroupId").toString());
-                parm.put("permissionName",map.get("name").toString());
-                parm.put("permissionCode",map.get("code").toString());
-                parm.put("permissionDescription",map.get("description").toString());
-                parm.put("isFinal",map.get("isFinal").toString());
-                parm.put("status",map.get("status").toString());
+                parm.put("groupId",map.get("sysPermissionGroupId"));
+                parm.put("permissionName",map.get("name"));
+                parm.put("permissionCode",map.get("code"));
+                parm.put("permissionDescription",map.get("description"));
+                parm.put("isFinal",map.get("isFinal"));
+                parm.put("status",map.get("status"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
                 result = http.doPost(URLConstants.INSERTPERMISSION, parm, jsessionid);
                 return result;

@@ -2,6 +2,7 @@ package com.kylin.electricassistsys.systemlogaspect;
 
 import com.kylin.electricassistsys.data.api.tsys.TSystemLogApi;
 import com.kylin.electricassistsys.dto.system.TSystemLogDto;
+import com.kylin.electricassistsys.tools.IPHelper;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authz.UnauthorizedException;
@@ -44,6 +45,7 @@ public class SystemLogAspect {
     @Around("@within(org.springframework.web.bind.annotation.RequestMapping)")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable{
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+        String ipAddress = IPHelper.getIpAddress(request);
         Object o = null;
         long t1 = System.currentTimeMillis();
         try {
@@ -65,7 +67,7 @@ public class SystemLogAspect {
                     stringBuilder.append(" | ");
                 }
                 dto.setUserParameters(stringBuilder.toString());
-                dto.setUserIp(request.getRemoteAddr());
+                dto.setUserIp(ipAddress);
                 dto.setUserURL(request.getRequestURL().toString());
                 dto.setUserAgent(request.getHeader("user-agent"));
                 tSystemLogApi.insertSystem(dto);
