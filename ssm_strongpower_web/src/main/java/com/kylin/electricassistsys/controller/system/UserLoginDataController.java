@@ -5,9 +5,12 @@ import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import com.kylin.electricassistsys.mybeanutils.MyBeanUtils;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
 import com.kylin.electricassistsys.rsas.MD5Utils;
+import com.kylin.electricassistsys.rsas.RSATools;
+import com.kylin.electricassistsys.tools.constants.Constant;
 import com.kylin.electricassistsys.tools.constants.URLConstants;
 import com.kylin.electricassistsys.tools.httpclient.HttpClientUtilsJsonObject;
 import io.swagger.annotations.Api;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.MediaType;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,11 +35,20 @@ import java.util.UUID;
 @Api(value = "/user", description = "用户登录数据信息,用户的权限信息请求接口", produces = MediaType.APPLICATION_JSON)
 public class UserLoginDataController {
     private static final Logger LOG = LogManager.getLogger(UserLoginDataController.class);
+    public static final String SPRING_SECURITY_FORM_CAPTCHA_KEY = "captcha";
+    public static final String SESSION_GENERATED_CAPTCHA_KEY = Constant.SESSION_GENERATED_CAPTCHA_KEY;
+
+    private String captchaParameter = SPRING_SECURITY_FORM_CAPTCHA_KEY;
     /**
      * 从redis查询用户的基本信息和权限信息
      */
     @Resource
     private RedisCacheService redisCacheService;
+
+    protected String obtainGeneratedCaptcha(HttpServletRequest request) {
+        return (String) request.getSession().getAttribute(SESSION_GENERATED_CAPTCHA_KEY);
+    }
+
 
     /**
      * 用户登录
@@ -45,12 +58,18 @@ public class UserLoginDataController {
      * @return
      */
     @RequestMapping(value = "/getUserLogin", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public JSONResult getUserLogin(@RequestBody Map<String, Object> params) {
+    public JSONResult getUserLogin(@RequestBody Map<String, Object> params,HttpServletRequest request) {
         JSONResult result = null;
         try {
             Map json = new HashMap();
-            json.put("loginName", params.get("loginName").toString());
-            json.put("password", params.get("password").toString());
+            String inputCode =  RSATools.decryptDataOnJava(params.get("captcha").toString()).toUpperCase();
+            String genCode = this.obtainGeneratedCaptcha(request).toUpperCase();
+            if(!inputCode.equals(genCode)){
+                return JSONResult.failure("输入的验证码有误!");
+            }
+
+            json.put("loginName", RSATools.decryptDataOnJava(params.get("loginName").toString()));
+            json.put("password", RSATools.decryptDataOnJava(params.get("password").toString()));
             json.put("platforms", "1");
             HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
             result = http.doPost(URLConstants.LOGIN, json, null);
@@ -61,6 +80,7 @@ public class UserLoginDataController {
         }
         return result;
     }
+
 
     /**
      * 用户登录
