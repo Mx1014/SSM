@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.model;
 
+import java.util.Date;
+
 /**
  * 系统user
  */
@@ -62,6 +64,25 @@ public class SysUser {
      * jsessionid 存储
      */
     private String UserRedisreQequestId;
+    private java.util.Date expiryTime;
+    // PASSWORD_UPDATE_TIME :密码最新设置时间
+    private java.util.Date passwordUpdateTime;
+
+    public Date getExpiryTime() {
+        return expiryTime;
+    }
+
+    public void setExpiryTime(Date expiryTime) {
+        this.expiryTime = expiryTime;
+    }
+
+    public Date getPasswordUpdateTime() {
+        return passwordUpdateTime;
+    }
+
+    public void setPasswordUpdateTime(Date passwordUpdateTime) {
+        this.passwordUpdateTime = passwordUpdateTime;
+    }
 
     public String getUserRedisreQequestId() {
         return UserRedisreQequestId;
