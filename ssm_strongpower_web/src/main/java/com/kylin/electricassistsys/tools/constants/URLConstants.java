@@ -92,6 +92,10 @@ public class URLConstants {
      */
     public static final String UPDATEPASSWORD = URL + "user/updatePassword";
     /**
+     * 更新密码
+     */
+    public static final String UPDATEPASSWORDBYUSER = URL + "user/updatePasswordByUser";
+    /**
      * 删除账号
      */
     public static final String DELETEUSERBYID = URL + "user/delete";

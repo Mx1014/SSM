@@ -509,10 +509,10 @@ public class UserLoginDataController {
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
                 System.err.print("start---:" + System.currentTimeMillis());
-                sysuser.setLoginName(MD5Utils.md5LoginName(sysuser.getLoginName()));
+               /* sysuser.setLoginName(MD5Utils.md5LoginName(sysuser.getLoginName()));
                 String salt = UUID.randomUUID().toString().replaceAll("-", "");
                 sysuser.setPasswordSalt(salt);
-                sysuser.setPassword(MD5Utils.createPassword(sysuser.getPassword(), salt, 2));
+                sysuser.setPassword(MD5Utils.createPassword(sysuser.getPassword(), salt, 2));*/
                 Map<String, Object> map = MyBeanUtils.bean2map(sysuser);
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
                 result = http.doPost(URLConstants.UPDATAUSERID, map, jsessionid);
@@ -546,6 +546,35 @@ public class UserLoginDataController {
                 json.put("repeatNewPassword", params.get("code"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
                 result = http.doPost(URLConstants.UPDATEPASSWORD, json, jsessionid);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
+            e.printStackTrace();
+        }
+        return result;
+    }
+    /**
+     * 更新密码
+     *
+     * @param params 参数
+     * @return
+     */
+    @RequestMapping(value = "updatePasswordByUserId", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult updatePasswordByUserId(@RequestBody Map<String, Object> params) {
+        JSONResult result = null;
+        try {
+            String jsessionid = params.get("userRedisreQequestId").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                Map json = new HashMap();
+                json.put("id", RSATools.decryptDataOnJava(params.get("id").toString()));
+                json.put("oldPassword", RSATools.decryptDataOnJava(params.get("oldCode").toString()));
+                json.put("newPassword", RSATools.decryptDataOnJava(params.get("newCode").toString()));
+                json.put("repeatNewPassword", RSATools.decryptDataOnJava(params.get("repeatNewCode").toString()));
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                result = http.doPost(URLConstants.UPDATEPASSWORDBYUSER, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
