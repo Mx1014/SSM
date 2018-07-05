@@ -173,7 +173,7 @@ public class UserDataController extends RestExceptionHandler {
             if (faleg) {
                 parm.put("page", map.get("page").toString());
                 parm.put("rows", map.get("limit").toString());
-                parm.put("name",map.get("name"));
+                parm.put("name", map.get("name"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
                 result = http.doPost(URLConstants.SELECTPAGE, parm, jsessionid);
                 return result;
@@ -243,6 +243,7 @@ public class UserDataController extends RestExceptionHandler {
 
     /**
      * 新增权限
+     *
      * @param map
      * @return
      */
@@ -254,12 +255,13 @@ public class UserDataController extends RestExceptionHandler {
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
                 Map<String, Object> parm = new HashMap<>();
-                parm.put("groupId",map.get("sysPermissionGroupId"));
-                parm.put("permissionName",map.get("name"));
-                parm.put("permissionCode",map.get("code"));
-                parm.put("permissionDescription",map.get("description"));
-                parm.put("isFinal",map.get("isFinal"));
-                parm.put("status",map.get("status"));
+                parm.put("groupId", map.get("sysPermissionGroupId"));
+                parm.put("permissionName", map.get("name"));
+                parm.put("permissionCode", map.get("code"));
+                parm.put("permissionDescription", map.get("description"));
+                parm.put("isFinal", map.get("isFinal"));
+                parm.put("status", map.get("status"));
+                parm.put("requestUrl", map.get("requestUrl"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
                 result = http.doPost(URLConstants.INSERTPERMISSION, parm, jsessionid);
                 return result;
@@ -271,8 +273,10 @@ public class UserDataController extends RestExceptionHandler {
         }
         return result;
     }
+
     /**
      * 更新权限
+     *
      * @param map
      * @return
      */
@@ -284,11 +288,12 @@ public class UserDataController extends RestExceptionHandler {
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
                 Map<String, Object> parm = new HashMap<>();
-                parm.put("id",map.get("id").toString());
-                parm.put("groupId",map.get("sysPermissionGroupId").toString());
-                parm.put("permissionName",map.get("name").toString());
-                parm.put("permissionCode",map.get("code").toString());
-                parm.put("permissionDescription",map.get("description").toString());
+                parm.put("id", map.get("id").toString());
+                parm.put("groupId", map.get("sysPermissionGroupId").toString());
+                parm.put("permissionName", map.get("name").toString());
+                parm.put("permissionCode", map.get("code").toString());
+                parm.put("permissionDescription", map.get("description").toString());
+                parm.put("requestUrl", map.get("requestUrl"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
                 result = http.doPost(URLConstants.UPDATEPERMISSION, parm, jsessionid);
                 return result;
@@ -300,8 +305,10 @@ public class UserDataController extends RestExceptionHandler {
         }
         return result;
     }
+
     /**
      * 删除权限
+     *
      * @param map
      * @return
      */
@@ -313,7 +320,7 @@ public class UserDataController extends RestExceptionHandler {
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
                 Map<String, Object> parm = new HashMap<>();
-                parm.put("id",map.get("id").toString());
+                parm.put("id", map.get("id").toString());
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
                 result = http.doPost(URLConstants.DELETEPERMISSION, parm, jsessionid);
                 return result;
@@ -325,8 +332,10 @@ public class UserDataController extends RestExceptionHandler {
         }
         return result;
     }
+
     /**
      * 查询ip列表
+     *
      * @param map
      * @return
      */
@@ -351,8 +360,10 @@ public class UserDataController extends RestExceptionHandler {
         }
         return result;
     }
+
     /**
      * 新增ip
+     *
      * @param map
      * @return
      */
@@ -378,8 +389,10 @@ public class UserDataController extends RestExceptionHandler {
         }
         return result;
     }
+
     /**
      * 更新ip
+     *
      * @param map
      * @return
      */
@@ -406,8 +419,10 @@ public class UserDataController extends RestExceptionHandler {
         }
         return result;
     }
+
     /**
      * 删除ip
+     *
      * @param map
      * @return
      */
@@ -431,8 +446,10 @@ public class UserDataController extends RestExceptionHandler {
         }
         return result;
     }
+
     /**
      * ip拦截开关
+     *
      * @param map
      * @return
      */
@@ -456,8 +473,10 @@ public class UserDataController extends RestExceptionHandler {
         }
         return result;
     }
+
     /**
      * ip拦截开关
+     *
      * @param map
      * @return
      */
