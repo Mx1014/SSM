@@ -157,6 +157,10 @@ public class URLConstants {
      */
     public static final String GETLOGLIST = URL + "system/log/list";
     /**
+     * 获取登录日志列表
+     */
+    public static final String GETLOGINLOGLIST = URL + "system/loginLog/list";
+    /**
      * 获取ip控制列表
      */
     public static final String IPSELECT = URL + "system/ip/list";
