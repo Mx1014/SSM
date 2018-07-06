@@ -1,6 +1,7 @@
 package com.kylin.electricassistsys.controller.exception;
 
 import com.kylin.electricassistsys.result.ReturnFormat;
+import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.springframework.beans.ConversionNotSupportedException;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -17,14 +18,13 @@ import java.io.IOException;
 /**
  * @Auther: cwx
  * @Date: 2018/6/8 14:04
- * @Description:
- * /**
- *  * 异常增强，以JSON的形式返回给客服端
- *  * 异常增强类型：NullPointerException,RunTimeException,ClassCastException,
+ * @Description: /**
+ * * 异常增强，以JSON的形式返回给客服端
+ * * 异常增强类型：NullPointerException,RunTimeException,ClassCastException,
  * 　　　　　　　　 NoSuchMethodException,IOException,IndexOutOfBoundsException
  * 　　　　　　　　 以及springmvc自定义异常等，如下：
  * SpringMVC自定义异常对应的status code
- *            Exception                       HTTP Status Code
+ * Exception                       HTTP Status Code
  * ConversionNotSupportedException         500 (Internal Server Error)
  * HttpMessageNotWritableException         500 (Internal Server Error)
  * HttpMediaTypeNotSupportedException      415 (Unsupported Media Type)
@@ -34,10 +34,10 @@ import java.io.IOException;
  * TypeMismatchException                   400 (Bad Request)
  * HttpMessageNotReadableException         400 (Bad Request)
  * MissingServletRequestParameterException 400 (Bad Request)
- *  *
- *  */
+ * *
+ */
 @ControllerAdvice
-public class RestExceptionHandler{
+public class RestExceptionHandler {
     //运行时异常
     @ExceptionHandler(RuntimeException.class)
     @ResponseBody
@@ -53,6 +53,7 @@ public class RestExceptionHandler{
         ex.printStackTrace();
         return ReturnFormat.retParam(1001, null);
     }
+
     //类型转换异常
     @ExceptionHandler(ClassCastException.class)
     @ResponseBody
@@ -68,6 +69,7 @@ public class RestExceptionHandler{
         ex.printStackTrace();
         return ReturnFormat.retParam(1003, null);
     }
+
     //未知方法异常
     @ExceptionHandler(NoSuchMethodException.class)
     @ResponseBody
@@ -83,49 +85,64 @@ public class RestExceptionHandler{
         ex.printStackTrace();
         return ReturnFormat.retParam(1005, null);
     }
+
     //400错误
     @ExceptionHandler({HttpMessageNotReadableException.class})
     @ResponseBody
-    public String requestNotReadable(HttpMessageNotReadableException ex){
+    public String requestNotReadable(HttpMessageNotReadableException ex) {
         System.out.println("400..requestNotReadable");
         ex.printStackTrace();
         return ReturnFormat.retParam(400, null);
     }
+
     //400错误
     @ExceptionHandler({TypeMismatchException.class})
     @ResponseBody
-    public String requestTypeMismatch(TypeMismatchException ex){
+    public String requestTypeMismatch(TypeMismatchException ex) {
         System.out.println("400..TypeMismatchException");
         ex.printStackTrace();
         return ReturnFormat.retParam(400, null);
     }
+
     //400错误
     @ExceptionHandler({MissingServletRequestParameterException.class})
     @ResponseBody
-    public String requestMissingServletRequest(MissingServletRequestParameterException ex){
+    public String requestMissingServletRequest(MissingServletRequestParameterException ex) {
         System.out.println("400..MissingServletRequest");
         ex.printStackTrace();
         return ReturnFormat.retParam(400, null);
     }
+
     //405错误
     @ExceptionHandler({HttpRequestMethodNotSupportedException.class})
     @ResponseBody
-    public String request405(){
+    public String request405() {
         System.out.println("405...");
         return ReturnFormat.retParam(405, null);
     }
+
     //406错误
     @ExceptionHandler({HttpMediaTypeNotAcceptableException.class})
     @ResponseBody
-    public String request406(){
+    public String request406() {
         System.out.println("404...");
         return ReturnFormat.retParam(406, null);
     }
-    //500错误
-    @ExceptionHandler({ConversionNotSupportedException.class,HttpMessageNotWritableException.class})
+
+    //2021错误
+    @ExceptionHandler({ExcessiveAttemptsException.class})
     @ResponseBody
-    public String server500(RuntimeException runtimeException){
+    public String request2021() {
+        System.out.println("2021...");
+        return ReturnFormat.retParam(2021, null);
+    }
+
+    //500错误
+    @ExceptionHandler({ConversionNotSupportedException.class, HttpMessageNotWritableException.class})
+    @ResponseBody
+    public String server500(RuntimeException runtimeException) {
         System.out.println("500...");
         return ReturnFormat.retParam(406, null);
     }
+
 }

@@ -31,7 +31,7 @@ import java.util.UUID;
  * @Description: 用户登录数据信息, 用户的权限信息请求接口
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/permissionSystem/user")
 @Api(value = "/user", description = "用户登录数据信息,用户的权限信息请求接口", produces = MediaType.APPLICATION_JSON)
 public class UserLoginDataController {
     private static final Logger LOG = LogManager.getLogger(UserLoginDataController.class);

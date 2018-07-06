@@ -29,7 +29,7 @@ import java.util.UUID;
  * @Description: 用戶數據
  */
 @RestController
-@RequestMapping("/userData")
+@RequestMapping("/permissionSystem/userData")
 @Api(value = "/userData", description = "用户数据信息接口", produces = MediaType.APPLICATION_JSON)
 public class UserDataController extends RestExceptionHandler {
     private static final Logger LOG = LogManager.getLogger(UserDataController.class);

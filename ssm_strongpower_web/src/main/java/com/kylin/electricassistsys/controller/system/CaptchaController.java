@@ -22,7 +22,7 @@ import java.util.Map;
  * @Description:
  */
 @Controller
-@RequestMapping(value = "system")
+@RequestMapping(value = "/permissionSystem/system")
 public class CaptchaController {
     @RequestMapping(value = "/captchImg", method = RequestMethod.GET)
     public void getCaptchImg(HttpServletRequest request, HttpServletResponse response) {
