@@ -131,7 +131,7 @@ public class SystemLogAspect {
         } else {
             String methodName = joinPoint.getSignature().getName();
             List<Object> args = Arrays.asList(joinPoint.getArgs());
-            if (args.get(0) instanceof Map) {
+            if (args.size() > 0 && args.get(0) instanceof Map) {
                 Map map = (Map) args.get(0);
                 String userRedisreQequestId = (String) map.get("userRedisreQequestId");
                 if (userRedisreQequestId != null) {
