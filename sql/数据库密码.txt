@@ -1,0 +1,21 @@
+Qc123456
+whq7402979
+
+exp system/Qc123456@ORCL11G file=d:\daochu.dmp full=y
+exp system/whq7402979@ORCL file=d:\daochu.dmp full=y
+
+imp adminsystem/adminsystem file=/home/daochu.dmp ignore=y full=y
+imp adminsystem/adminsystem file=/home/daochu.dmp touser=adminsystem ignore=y full=y
+
+imp SYSTEM/adminsystem file==/home/daochu.dmp log=imp_kfmhDev.log fromuser=SYSTEM touser=adminsystem commit=y ignore=y full=y
+
+alter user SYSTEM identified by adminsystem;
+
+create   table   adminsystem.tb  as   select   *   from   system.tb;
+
+exp SYSTEM/adminsystem file=/home/db.dmp full=y owner=SYSTEM imp TOUSER=adminsystem
+
+select 'create table adminsystem.'|| a.table_name || ' as select * from '|| 'SYSTEM.'||a.table_name||';' from dba_tables a where owner='SYSTEM';
+
+
+/ora01/app/oracle/product/11.2.0/db_1/network/admin/listener.ora
