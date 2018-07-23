@@ -22,7 +22,7 @@
     <mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>
     <mvc:resources mapping="*.html" location="classpath:/META-INF/resources/"/>
     <mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>
-    <context:property-placeholder location="classpath:druidjdbc/OrcalJdbcOwn.properties" ignore-unresolvable="true" />
+    <context:property-placeholder location="classpath:druidjdbc/OrcalJdbc.properties" ignore-unresolvable="true" />
     <import resource="classpath:redis/application-redis.xml"></import>
     <import resource="classpath:spring/application-spring.xml"></import>
 

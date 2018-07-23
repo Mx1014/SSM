@@ -14,6 +14,7 @@ public class DESUtils {
     public static  void demo() throws Exception {
         //密码明文，也就是数据库的密码
         String plainText = "hiway";
+        plainText = "adminsystem";
         System.out.printf(ConfigTools.encrypt(PRIVATE_KEY_STRING, plainText));
     }
     public static void main(String []arges)throws Exception{

@@ -107,8 +107,8 @@
        <appender-ref ref="STDOUT" />
         <appender-ref ref="ERROR-OUT" />
         <appender-ref ref="WARN-OUT" />
-        <appender-ref ref="INFO-OUT" />
-        <appender-ref ref="DEBUG-OUT" />
-        <appender-ref ref="TRACE-OUT" />
+        <!--<appender-ref ref="INFO-OUT" />-->
+        <!--<appender-ref ref="DEBUG-OUT" />-->
+        <!--<appender-ref ref="TRACE-OUT" />-->
     </root>
 </configuration>
