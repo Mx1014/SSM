@@ -17,7 +17,7 @@ public class URLConstants {
     /**
      * 请求项目IP地址
      */
-    public static final String DOMAINIP = "10.168.1.135";
+    public static final String DOMAINIP = "10.168.1.245";
     /**
      * 请求项目名称
      */
