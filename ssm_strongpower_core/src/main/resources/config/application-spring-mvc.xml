@@ -3,11 +3,13 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:apollo="http://www.ctrip.com/schema/apollo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.ctrip.com/schema/apollo http://www.ctrip.com/schema/apollo.xsd">
     <!--基于注解的Bean管理和DI-->
     <context:component-scan base-package="com.kylin.*" use-default-filters="false">
         <!--控制器增强，使一个Contoller成为全局的异常处理类，类中用@ExceptionHandler方法注解的方法可以处理所有Controller发生的异常-->
@@ -19,10 +21,12 @@
     <mvc:annotation-driven />
     <!-- 使用 Swagger Restful API文档时，添加此注解 -->
     <mvc:default-servlet-handler />
+    <apollo:config order="10"/>
+    <apollo:config namespaces="TEST1.apollo" order="11"/>
     <mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>
     <mvc:resources mapping="*.html" location="classpath:/META-INF/resources/"/>
     <mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>
-    <context:property-placeholder location="classpath:druidjdbc/OrcalJdbc.properties" ignore-unresolvable="true" />
+   <!-- <context:property-placeholder location="classpath:druidjdbc/OrcalJdbc.properties" ignore-unresolvable="true" />-->
     <import resource="classpath:redis/application-redis.xml"></import>
     <import resource="classpath:spring/application-spring.xml"></import>
 

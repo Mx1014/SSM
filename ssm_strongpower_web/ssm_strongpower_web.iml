@@ -24,6 +24,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="apollo-client-0.9.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="apollo-core-0.9.1-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="ssm_strongpower_public" />
     <orderEntry type="module" module-name="ssm_strongpower_api" />
     <orderEntry type="module" module-name="ssm_strongpower_dto" />
@@ -129,10 +131,9 @@
     <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-swagger-ui:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: javax.ws.rs:javax.ws.rs-api:2.1" level="project" />
-    <orderEntry type="library" name="Maven: com.google.guava:guava:24.1-jre" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:23.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:1.3.9" level="project" />
-    <orderEntry type="library" name="Maven: org.checkerframework:checker-compat-qual:2.0.0" level="project" />
-    <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.1.3" level="project" />
+    <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.0.18" level="project" />
     <orderEntry type="library" name="Maven: com.google.j2objc:j2objc-annotations:1.1" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.mojo:animal-sniffer-annotations:1.14" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.5" level="project" />
@@ -153,6 +154,8 @@
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-web:1.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.5" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.59" level="project" />
+    <orderEntry type="library" name="Maven: com.google.inject:guice:1.0" level="project" />
+    <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="module" module-name="ssm_strongpower_server" />
     <orderEntry type="module" module-name="ssm_strongpower_pojo" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
