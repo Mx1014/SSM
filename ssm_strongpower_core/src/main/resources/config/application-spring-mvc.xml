@@ -22,7 +22,7 @@
     <!-- 使用 Swagger Restful API文档时，添加此注解 -->
     <mvc:default-servlet-handler />
     <apollo:config order="10"/>
-    <apollo:config namespaces="TEST1.apollo" order="11"/>
+    <apollo:config namespaces="ssm-dlxt" order="11"/>
     <mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>
     <mvc:resources mapping="*.html" location="classpath:/META-INF/resources/"/>
     <mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>
