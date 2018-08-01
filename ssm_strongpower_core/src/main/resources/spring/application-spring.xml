@@ -29,41 +29,47 @@
     </bean>
     <!-- 配置数据源 -->
     <!-- 数据源配置,使用应用内的DBCP数据库连接池  -->
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"  init-method="init" destroy-method="close" lazy-init="true">
-        <property name="driverClassName" value="${jdbc.driver}" />
-        <property name="url" value="${jdbc.url}" />
-        <property name="username" value="${jdbc.username}" />
-        <property name="connectionProperties" value="password=${jdbc.password}" />
-        <property name="passwordCallback" ref="dbPasswordCallback" />
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"
+          lazy-init="true">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="connectionProperties" value="password=${jdbc.password}"/>
+        <property name="passwordCallback" ref="dbPasswordCallback"/>
         <!--<property name="password" value="${jdbc.password}" />-->
-        <property name="initialSize" value="${dbcp.initialSize}" />
-        <property name="maxActive" value="${dbcp.maxActive}" />
-        <property name="maxWait" value="${dbcp.maxWait}" />
-        <property name="defaultAutoCommit" value="${dbcp.defaultAutoCommit}" />
-        <property name="removeAbandoned" value="${dbcp.removeAbandoned}" />
-        <property name="removeAbandonedTimeout" value="${dbcp.removeAbandonedTimeout}" />
+        <property name="initialSize" value="${dbcp.initialSize}"/>
+        <property name="maxActive" value="${dbcp.maxActive}"/>
+        <property name="maxWait" value="${dbcp.maxWait}"/>
+        <property name="defaultAutoCommit" value="${dbcp.defaultAutoCommit}"/>
+        <property name="removeAbandoned" value="${dbcp.removeAbandoned}"/>
+        <property name="removeAbandonedTimeout" value="${dbcp.removeAbandonedTimeout}"/>
         <property name="logAbandoned" value="true"/>
         <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
-        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
         <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
-        <property name="minEvictableIdleTimeMillis" value="300000" />
-        <property name="validationQuery" value="${dbcp.validationQuery}" />
-        <property name="testWhileIdle" value="true" />
-        <property name="testOnBorrow" value="false" />
-        <property name="testOnReturn" value="false" />
+        <property name="minEvictableIdleTimeMillis" value="300000"/>
+        <property name="validationQuery" value="${dbcp.validationQuery}"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="false"/>
         <!-- 打开PSCache，并且指定每个连接上PSCache的大小 如果用Oracle，则把poolPreparedStatements配置为true，mysql可以配置为false。分库分表较多的数据库，建议配置为false。-->
-        <property name="poolPreparedStatements" value="true" />
-        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
         <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat,wall" />
+        <property name="filters" value="stat,wall"/>
+    </bean>
+    <bean id="httpUtilParam" class="com.kylin.electricassistsys.http.HttpUtilParam">
+        <property name="domainip" value="${domainip}"></property>
+        <property name="httpproject" value="${httpproject}"></property>
+        <property name="httpprost" value="${httpprost}"></property>
     </bean>
 
     <!-- 配置mybatis的sqlSessionFactory -->
     <bean id="sqlSessionFactory" class="com.kylin.electricassistsys.tools.SqlSessionFactory">
-        <property name="dataSource" ref="dataSource" />
-        <property name="configLocation" value="classpath:springMybatis/spring-mybatis.xml" />
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:springMybatis/spring-mybatis.xml"/>
         <!-- 显式指定Mapper文件位置 -->
-        <property name="mapperLocations" value="classpath*:mybatisMapper/**/*-mapper.xml" />
+        <property name="mapperLocations" value="classpath*:mybatisMapper/**/*-mapper.xml"/>
         <property name="plugins">
             <array>
                 <!-- 分页插件配置 -->
@@ -73,7 +79,7 @@
             </array>
         </property>
         <!-- 全局配置注入 -->
-        <property name="globalConfig" ref="globalConfig" />
+        <property name="globalConfig" ref="globalConfig"/>
     </bean>
     <!-- 定义 MP 全局策略 -->
     <bean id="globalConfig" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
@@ -101,38 +107,38 @@
         <!-- 全局表为下划线命名设置 true -->
         <property name="dbColumnUnderline" value="true"/>
     </bean>
-   <!-- 扫描basePackage下所有以@MyBatisRepository注解的接口 -->
+    <!-- 扫描basePackage下所有以@MyBatisRepository注解的接口 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.kylin" />
-        <property name="annotationClass"  value="com.kylin.electricassistsys.annotation.MyBatisRepository"/>
+        <property name="basePackage" value="com.kylin"/>
+        <property name="annotationClass" value="com.kylin.electricassistsys.annotation.MyBatisRepository"/>
     </bean>
     <!-- - - - - - - spring 声明式事务 - - - - - - - -->
     <bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource"/>
     </bean>
     <!-- 注解方式配置事物 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <tx:advice id="transactionAdvice" transaction-manager="transactionManager">
         <tx:attributes>
-            <tx:method name="save*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
-            <tx:method name="add*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
-            <tx:method name="create*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
-            <tx:method name="insert*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
-            <tx:method name="update*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
-            <tx:method name="edit*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
-            <tx:method name="del*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
-            <tx:method name="drop*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
-            <tx:method name="modify*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+            <tx:method name="save*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="add*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="create*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="insert*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="update*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="edit*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="del*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="drop*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="modify*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
             <tx:method name="*" propagation="REQUIRED" read-only="true"/>
         </tx:attributes>
     </tx:advice>
     <aop:config>
-        <aop:pointcut id="targetMethod" expression="execution(* com.kylin.electricassistsys.service.*.*(..))" />
-        <aop:advisor pointcut-ref="targetMethod"  advice-ref="transactionAdvice"/>
+        <aop:pointcut id="targetMethod" expression="execution(* com.kylin.electricassistsys.service.*.*(..))"/>
+        <aop:advisor pointcut-ref="targetMethod" advice-ref="transactionAdvice"/>
     </aop:config>
     <!--*************** 支持aop **************** -->
-    <aop:aspectj-autoproxy proxy-target-class="true" />
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
     <!-- 支持返回json，用来处理json格式转换，避免IE执行ajax时，返回json出现下载文件 -->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="messageConverters">
@@ -152,6 +158,7 @@
     <!--文件上传视图解析器-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
     </bean>
-   <!-- <bean class="com.kylin.electricassistsys.annotation.SwaggerConfig" />-->
-    <bean class="springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration" id="swagger2Config"/>
+    <!-- <bean class="com.kylin.electricassistsys.annotation.SwaggerConfig" />-->
+    <bean class="springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration"
+          id="swagger2Config"/>
 </beans>

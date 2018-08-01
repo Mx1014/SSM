@@ -1,7 +1,10 @@
 package com.kylin.electricassistsys.tools.constants;
 
+import com.kylin.electricassistsys.http.HttpUtilParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * @Auther: cwx
@@ -27,7 +30,8 @@ public class URLConstants {
     /**
      * 请求url地址路径
      */
-    public static final String URL = "http://" + DOMAINIP + ":" + HTTPPROST + "/" + HTTPPROJECT + "/";
+    //public static final String URL = "http://" + DOMAINIP + ":" + HTTPPROST + "/" + HTTPPROJECT + "/";
+    public static final String URL = "";
     /**
      * 登录请求接口
      */

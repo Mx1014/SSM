@@ -1,6 +1,7 @@
 package com.kylin.electricassistsys.controller.system;
 
 import com.kylin.electricassistsys.controller.exception.RestExceptionHandler;
+import com.kylin.electricassistsys.http.HttpUtilParam;
 import com.kylin.electricassistsys.model.SysPermissionGroup;
 import com.kylin.electricassistsys.model.SysUser;
 import com.kylin.electricassistsys.mybeanutils.JSONResult;
@@ -38,6 +39,8 @@ public class UserDataController extends RestExceptionHandler {
      */
     @Resource
     private RedisCacheService redisCacheService;
+    @Resource
+    private HttpUtilParam httpUtilParam;
 
     /**
      * 添加新用戶
@@ -56,7 +59,7 @@ public class UserDataController extends RestExceptionHandler {
                 sysuser.setPassword(MD5Utils.createPassword(sysuser.getPassword(), salt, 2));
                 Map<String, Object> map = MyBeanUtils.bean2map(sysuser);
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.USERINSERT, map, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.USERINSERT, map, jsessionid);
                 System.err.print("end----:" + System.currentTimeMillis());
                 return result;
             }
@@ -87,7 +90,7 @@ public class UserDataController extends RestExceptionHandler {
                 parm.put("uId", uId);
                 parm.put("roleId", roleId);
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.SETUSERROLE, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.SETUSERROLE, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -119,7 +122,7 @@ public class UserDataController extends RestExceptionHandler {
                 parm.put("parentId", map.get("parentId"));
                 parm.put("status", map.get("status"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.ADDSYSPERMISSIONGROUP, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.ADDSYSPERMISSIONGROUP, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -146,7 +149,7 @@ public class UserDataController extends RestExceptionHandler {
             if (faleg) {
                 Map<String, Object> parm = new HashMap<>();
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.SELECTALL, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.SELECTALL, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -175,7 +178,7 @@ public class UserDataController extends RestExceptionHandler {
                 parm.put("rows", map.get("limit").toString());
                 parm.put("name", map.get("name"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.SELECTPAGE, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.SELECTPAGE, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -202,7 +205,7 @@ public class UserDataController extends RestExceptionHandler {
             if (faleg) {
                 parm = MyBeanUtils.bean2map(sysPermissionGroup);
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.UPDATESYSPERMISSIONGROUP, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.UPDATESYSPERMISSIONGROUP, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -230,7 +233,7 @@ public class UserDataController extends RestExceptionHandler {
             if (faleg) {
                 parm.put("id", id);
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.DELETESYSPERMISSIONGROUP, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.DELETESYSPERMISSIONGROUP, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -263,7 +266,7 @@ public class UserDataController extends RestExceptionHandler {
                 parm.put("status", map.get("status"));
                 parm.put("requestUrl", map.get("requestUrl"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.INSERTPERMISSION, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.INSERTPERMISSION, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -295,7 +298,7 @@ public class UserDataController extends RestExceptionHandler {
                 parm.put("permissionDescription", map.get("description").toString());
                 parm.put("requestUrl", map.get("requestUrl"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.UPDATEPERMISSION, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.UPDATEPERMISSION, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -322,7 +325,7 @@ public class UserDataController extends RestExceptionHandler {
                 Map<String, Object> parm = new HashMap<>();
                 parm.put("id", map.get("id").toString());
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.DELETEPERMISSION, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.DELETEPERMISSION, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -350,7 +353,7 @@ public class UserDataController extends RestExceptionHandler {
                 parm.put("page", map.get("page"));
                 parm.put("rows", map.get("limit"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.IPSELECT, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.IPSELECT, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -379,7 +382,7 @@ public class UserDataController extends RestExceptionHandler {
                 parm.put("expireTime", map.get("expireTime"));
                 parm.put("description", map.get("description"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.IPINSERT, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.IPINSERT, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -409,7 +412,7 @@ public class UserDataController extends RestExceptionHandler {
                 parm.put("expireTime", map.get("expireTime"));
                 parm.put("description", map.get("description"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.IPUPDATE, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.IPUPDATE, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -436,7 +439,7 @@ public class UserDataController extends RestExceptionHandler {
                 Map<String, Object> parm = new HashMap<>();
                 parm.put("id", map.get("id"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.IPDELETE, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.IPDELETE, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -463,7 +466,7 @@ public class UserDataController extends RestExceptionHandler {
                 Map<String, Object> parm = new HashMap<>();
                 parm.put("open", map.get("switch"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.IPINTERCEPT, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.IPINTERCEPT, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -489,7 +492,7 @@ public class UserDataController extends RestExceptionHandler {
             if (faleg) {
                 Map<String, Object> parm = new HashMap<>();
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(URLConstants.IPINTERCEPTSTATUS, parm, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.IPINTERCEPTSTATUS, parm, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
