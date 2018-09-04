@@ -35,9 +35,16 @@ public class HeadersCORSFilter implements Filter {
             System.out.println(request.getCookies());
             System.out.println(request.changeSessionId());
             System.out.println("*************************************");*/
-
-
-            //跨域
+            /*HTTP动词篡改导致的认证旁路解决方案*/
+            String method = request.getMethod();
+            if (!"GET".equals(method) && !"POST".equals(method) && !"HEAD".equals(method)) {
+                response.setContentType("text/html;charset=UTF-8");
+                response.setCharacterEncoding("UTF-8");
+                response.setStatus(403);
+                response.getWriter().print("对不起，您的请求非法，系统拒绝响应!");
+                return;
+            }
+            //解决跨域
             response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
             response.setHeader("Access-Control-Allow-Credentials", "true");
 
