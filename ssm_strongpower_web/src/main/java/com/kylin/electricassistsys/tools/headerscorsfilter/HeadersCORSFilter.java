@@ -45,7 +45,7 @@ public class HeadersCORSFilter implements Filter {
                 return;
             }
             String method = request.getMethod();
-            if (!"GET".equals(method) && !"POST".equals(method) && !"HEAD".equals(method)&&!"DELET".equals(method)) {
+            if (!"GET".equals(method) && !"POST".equals(method) && !"HEAD".equals(method)&&!"DELETE".equals(method)) {
                 response.setContentType("text/html;charset=UTF-8");
                 response.setCharacterEncoding("UTF-8");
                 response.setStatus(403);
