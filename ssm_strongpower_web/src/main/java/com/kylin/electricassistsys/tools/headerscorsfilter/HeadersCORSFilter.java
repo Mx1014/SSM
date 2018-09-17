@@ -40,15 +40,15 @@ public class HeadersCORSFilter implements Filter {
             if(requestUrl.indexOf(".")>0){
                 response.setContentType("text/html;charset=UTF-8");
                 response.setCharacterEncoding("UTF-8");
-                response.setStatus(403);
+                response.setStatus(HttpStatus.SC_FORBIDDEN);
                 response.getWriter().print("对不起，您的请求非法，系统拒绝响应!");
                 return;
             }
             String method = request.getMethod();
-            if (!"GET".equals(method) && !"POST".equals(method) && !"HEAD".equals(method)&&!"DELETE".equals(method)) {
+            if (!"GET".equals(method) && !"POST".equals(method) && !"HEAD".equals(method)&&!"DELETE".equals(method)&&!"OPTIONS".equals(method)) {
                 response.setContentType("text/html;charset=UTF-8");
                 response.setCharacterEncoding("UTF-8");
-                response.setStatus(403);
+                response.setStatus(HttpStatus.SC_FORBIDDEN);
                 response.getWriter().print("对不起，您的请求非法，系统拒绝响应!");
                 return;
             }
