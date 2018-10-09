@@ -10,6 +10,7 @@ package com.kylin.electricassistsys.dto.base;
 public class BaseDto {
     private Integer page;
     private Integer limit;
+    private String userRedisreQequestId;
 
     public Integer getPage() {
         return page;
@@ -25,5 +26,13 @@ public class BaseDto {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    public String getUserRedisreQequestId() {
+        return userRedisreQequestId;
+    }
+
+    public void setUserRedisreQequestId(String userRedisreQequestId) {
+        this.userRedisreQequestId = userRedisreQequestId;
     }
 }

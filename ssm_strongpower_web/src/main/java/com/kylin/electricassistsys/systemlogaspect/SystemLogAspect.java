@@ -1,6 +1,7 @@
 package com.kylin.electricassistsys.systemlogaspect;
 
 import com.kylin.electricassistsys.data.api.tsys.TSystemLogApi;
+import com.kylin.electricassistsys.dto.base.BaseDto;
 import com.kylin.electricassistsys.dto.system.TSystemLogDto;
 import com.kylin.electricassistsys.tools.IPHelper;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
@@ -21,6 +22,9 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 /***
@@ -125,15 +129,25 @@ public class SystemLogAspect {
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
         ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) requestAttributes;
         HttpServletRequest request = servletRequestAttributes.getRequest();
+        HttpServletResponse response = servletRequestAttributes.getResponse();
         String url = request.getRequestURI().substring(1);
-        if (url.indexOf("/permissionSystem") != -1) {
 
+        if (url.indexOf("/permissionSystem") != -1) {
+            String methodName = joinPoint.getSignature().getName();
+            List<Object> args = Arrays.asList(joinPoint.getArgs());
         } else {
             String methodName = joinPoint.getSignature().getName();
             List<Object> args = Arrays.asList(joinPoint.getArgs());
-            if (args.size() > 0 && args.get(0) instanceof Map) {
-                Map map = (Map) args.get(0);
-                String userRedisreQequestId = (String) map.get("userRedisreQequestId");
+
+            if (args.size() > 0) {
+                String userRedisreQequestId = "";
+                if (args.get(0) instanceof Map) {
+                    Map map = (Map) args.get(0);
+                    userRedisreQequestId = (String) map.get("userRedisreQequestId");
+                } else {
+                    BaseDto baseDto = (BaseDto) args.get(0);
+                    userRedisreQequestId = baseDto.getUserRedisreQequestId();
+                }
                 if (userRedisreQequestId != null) {
                     String key = userRedisreQequestId + "_Permission";
                     Boolean aBoolean = redisTemplate.opsForSet().isMember(key, url);
@@ -149,6 +163,7 @@ public class SystemLogAspect {
                         }
                     }
                     if (requestUrlSet.size() > 0 && !requestUrlSet.contains(url)) {
+                        response.setStatus(403);
                         throw new ExcessiveAttemptsException("没有权限访问！");
                     }
                 }
