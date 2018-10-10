@@ -19,6 +19,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import scala.reflect.internal.Trees;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -44,6 +45,8 @@ public class SystemLogAspect {
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
+
+    private Map<String, List<String>> userUrlMap = new HashMap<String, List<String>>();
 
 
     /**
@@ -132,10 +135,7 @@ public class SystemLogAspect {
         HttpServletResponse response = servletRequestAttributes.getResponse();
         String url = request.getRequestURI().substring(1);
 
-        if (url.indexOf("/permissionSystem") != -1) {
-            String methodName = joinPoint.getSignature().getName();
-            List<Object> args = Arrays.asList(joinPoint.getArgs());
-        } else {
+        if (url.indexOf("/permissionSystem") == -1) {
             String methodName = joinPoint.getSignature().getName();
             List<Object> args = Arrays.asList(joinPoint.getArgs());
 
@@ -148,24 +148,34 @@ public class SystemLogAspect {
                     BaseDto baseDto = (BaseDto) args.get(0);
                     userRedisreQequestId = baseDto.getUserRedisreQequestId();
                 }
-                if (userRedisreQequestId != null) {
+
+                if (userRedisreQequestId != null && userUrlMap.get(userRedisreQequestId) == null) {
+                    List<String> requestUrlSet = new ArrayList<String>();
                     String key = userRedisreQequestId + "_Permission";
                     Boolean aBoolean = redisTemplate.opsForSet().isMember(key, url);
                     Set<Object> members = redisTemplate.opsForSet().members(key);
                     Iterator<Object> iterator = members.iterator();
-                    List<String> requestUrlSet = new ArrayList<String>();
+//                    requestUrlSet = new ArrayList<String>();
                     while (iterator.hasNext()) {
                         String s = iterator.next().toString();
                         int api = s.indexOf("api");
                         if (api != -1) {
                             String requestUrl = s.substring(api + 3);
+                            int i = requestUrl.indexOf("_");
+                            if (i != -1) {
+                                requestUrl.replaceAll("_", "*");
+                                String[] split = requestUrl.split("_");
+                                requestUrl = new StringBuilder(split[0]).append(split[1]).toString();
+                            }
                             requestUrlSet.add(requestUrl);
                         }
+                        userUrlMap.put(userRedisreQequestId, requestUrlSet);
                     }
-                    if (requestUrlSet.size() > 0 && !requestUrlSet.contains(url)) {
-                        response.setStatus(403);
-                        throw new ExcessiveAttemptsException("没有权限访问！");
-                    }
+
+                }
+                if (userUrlMap.get(userRedisreQequestId).size() > 0 && !userUrlMap.get(userRedisreQequestId).contains(url)) {
+                    response.setStatus(403);
+                    throw new ExcessiveAttemptsException("没有权限访问！");
                 }
             }
         }
