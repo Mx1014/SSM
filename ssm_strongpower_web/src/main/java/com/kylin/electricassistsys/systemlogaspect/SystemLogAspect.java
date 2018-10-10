@@ -22,6 +22,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import scala.reflect.internal.Trees;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -145,8 +146,18 @@ public class SystemLogAspect {
                     Map map = (Map) args.get(0);
                     userRedisreQequestId = (String) map.get("userRedisreQequestId");
                 } else {
-                    BaseDto baseDto = (BaseDto) args.get(0);
-                    userRedisreQequestId = baseDto.getUserRedisreQequestId();
+                    if (args.get(0) instanceof BaseDto) {
+                        BaseDto baseDto = (BaseDto) args.get(0);
+                        userRedisreQequestId = baseDto.getUserRedisreQequestId();
+                    } else {
+                        Cookie[] cookie = request.getCookies();
+                        for (int i = 0; i < cookie.length; i++) {
+                            Cookie cook = cookie[i];
+                            if (cook.getName().equalsIgnoreCase("Admin-Token")) { //获取键
+                                userRedisreQequestId = cook.getValue().toString();    //获取值
+                            }
+                        }
+                    }
                 }
 
                 if (userRedisreQequestId != null && userUrlMap.get(userRedisreQequestId) == null) {
