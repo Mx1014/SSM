@@ -11,17 +11,22 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.security.SecureRandom;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by Threecolors on 2018/1/24.
  */
-public class CaptchaImgCreater
-{
+public class CaptchaImgCreater {
     /**
      *
      */
     private static final String CODE_LIST =
             "abcde23456789fghijkmnpqrstuvw23456789xyzABCDEFJHJK23456789LMNOPQRS23456789TUVWXYZ23456789";
+    private static final String CODE_LIST_STR =
+            "abcdefghijkmnpqrstuvwxyzABCDEFJHJKLMNOPQRSTUVWXYZ";
+    private static final String CODE_LIST_NUM =
+            "234567892345678923456789234567892345678923456789";
 
     private HttpServletResponse response;
 
@@ -51,6 +56,9 @@ public class CaptchaImgCreater
      *
      */
     private String codeList = "";
+    private String codeListStr = "";
+    private String codeListNum = "";
+
     /**
      *
      */
@@ -69,8 +77,8 @@ public class CaptchaImgCreater
     private int bBg = 0;
 
     SecureRandom random = new SecureRandom();
+
     /**
-     *
      * @param response response对象
      */
     public CaptchaImgCreater(HttpServletResponse response, HttpServletRequest request) {
@@ -79,13 +87,16 @@ public class CaptchaImgCreater
         this.width = 13 * FONT_NUM + 15;
         this.iNum = FONT_NUM;
         this.codeList = CODE_LIST;
+        this.codeListStr = CODE_LIST_STR;
+        this.codeListNum = CODE_LIST_NUM;
+
     }
 
     public String createRandImage() throws IOException {
         BufferedImage image = new BufferedImage(width, HEIGHT,
                 BufferedImage.TYPE_INT_RGB);
 
-        Graphics2D g = (Graphics2D)image.getGraphics();
+        Graphics2D g = (Graphics2D) image.getGraphics();
 
         if (this.drawBgFlag) {
             g.setColor(new Color(rBg, gBg, bBg));
@@ -108,29 +119,52 @@ public class CaptchaImgCreater
 
         String sRand = "";
         for (int i = 0; i < iNum; i++) {
-            int rand = random.nextInt(codeList.length());
-            String strRand = codeList.substring(rand, rand + 1);
+            String strRand = "";
+            if (i > 1) {
+                if (isDigit(sRand)) {
+                    int rand = random.nextInt(codeListStr.length());
+                    strRand = codeListStr.substring(rand, rand + 1);
+                } else if (!hasDigit(sRand)) {
+                    int rand = random.nextInt(codeListNum.length());
+                    strRand = codeListNum.substring(rand, rand + 1);
+                } else {
+                    int rand = random.nextInt(codeList.length());
+                    strRand = codeList.substring(rand, rand + 1);
+                }
+            } else {
+                int rand = random.nextInt(codeList.length());
+                strRand = codeList.substring(rand, rand + 1);
+            }
+
+           /* if (i % 2 == 0) {
+                int rand = random.nextInt(codeListNum.length());
+                strRand = codeListNum.substring(rand, rand + 1);
+            }else {
+                int rand = random.nextInt(codeListStr.length());
+                strRand = codeListStr.substring(rand, rand + 1);
+            }*/
+
             sRand += strRand;
             g.setColor(new Color(20 + random.nextInt(110), 20 + random
                     .nextInt(110), 20 + random.nextInt(110)));
 
             // 生成随机弧度
-            int angle=random.nextInt(60)-30;// 角度正负30度
-            double radian=angle*Math.PI/180;// 弧度
+            int angle = random.nextInt(60) - 30;// 角度正负30度
+            double radian = angle * Math.PI / 180;// 弧度
             //
-            g.rotate(radian,13 * i + 6,25);
+            g.rotate(radian, 13 * i + 6, 25);
 
             g.drawString(strRand, 13 * i + 6, 25);
-            g.rotate(-radian,13 * i + 6,25);
+            g.rotate(-radian, 13 * i + 6, 25);
         }
         g.dispose();
 
         try {
             response.setContentType("image/jpg");
-            ServletOutputStream out =this.response.getOutputStream();
+            ServletOutputStream out = this.response.getOutputStream();
             HttpSession session = request.getSession();
             session.setAttribute(Constant.SESSION_GENERATED_CAPTCHA_KEY, sRand);
-            ImageIO.write(image, "JPEG",out);
+            ImageIO.write(image, "JPEG", out);
         } catch (IOException e) {
 
         } finally {
@@ -167,4 +201,22 @@ public class CaptchaImgCreater
         font[4] = new Font("Gill Sans Ultra Bold", Font.PLAIN, 45);
         return font[random.nextInt(5)];
     }
+
+    // 判断一个字符串是否含有数字
+    public boolean hasDigit(String content) {
+        boolean flag = false;
+        Pattern p = Pattern.compile(".*\\d+.*");
+        Matcher m = p.matcher(content);
+        if (m.matches()) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    // 判断一个字符串是否都为数字
+    public boolean isDigit(String strNum) {
+        return strNum.matches("[0-9]{1,}");
+    }
+
+
 }
