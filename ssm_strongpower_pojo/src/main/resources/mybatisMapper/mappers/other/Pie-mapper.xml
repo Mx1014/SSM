@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.other.PieDataDao">
+    <resultMap id="BdzTypeResultMap" type="com.kylin.electricassistsys.pojo.other.PieData">
+        <result column="BDZ_NUM" property="value"/>
+        <result column="BDZ_DJ" property="name"/>
+    </resultMap>
+    <select id="selectBdzTypeResult" resultMap="BdzTypeResultMap">
+        SELECT COUNT(DYCS.T_DYCS_ID) BDZ_NUM,DYCS.T_DYCS_NAME BDZ_DJ
+        FROM T_SBSJ_BDZXX BDZ JOIN T_JCSJ_CS_DYCS DYCS
+        ON BDZ.T_BDZXX_DYDJ = DYCS.T_DYCS_ID
+        GROUP BY DYCS.T_DYCS_NAME
+    </select>
+    <resultMap id="XlxxGyZyResultMap" type="com.kylin.electricassistsys.pojo.other.PieData">
+        <result column="GYXLXX_NUM" property="value"/>
+        <result column="GYXLXX_DJ" property="name"/>
+    </resultMap>
+    <select id="selectXlxxGyZyResult" resultMap="XlxxGyZyResultMap">
+        SELECT COUNT(DYCS.T_DYCS_ID) GYXLXX_NUM,DYCS.T_DYCS_NAME GYXLXX_DJ
+        FROM T_SBSJ_GYXLXX GYXLXX JOIN T_JCSJ_CS_DYCS DYCS
+        ON GYXLXX.T_GYXLXX_DYDJ = DYCS.T_DYCS_ID
+        GROUP BY DYCS.T_DYCS_NAME
+        UNION ALL
+        SELECT COUNT(*) GYXLXX_NUM,10 GYXLXX_DJ FROM T_SBSJ_ZYLLXXX
+    </select>
+</mapper>
