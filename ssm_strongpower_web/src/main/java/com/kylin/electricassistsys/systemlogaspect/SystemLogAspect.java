@@ -1,7 +1,9 @@
 package com.kylin.electricassistsys.systemlogaspect;
 
+import com.kylin.electricassistsys.data.api.other.SysSystemsettingApi;
 import com.kylin.electricassistsys.data.api.tsys.TSystemLogApi;
 import com.kylin.electricassistsys.dto.base.BaseDto;
+import com.kylin.electricassistsys.dto.other.SysSystemsettingDto;
 import com.kylin.electricassistsys.dto.system.TSystemLogDto;
 import com.kylin.electricassistsys.tools.IPHelper;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
@@ -27,6 +29,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /***
@@ -43,6 +48,9 @@ public class SystemLogAspect {
     private static final Logger logger = LoggerFactory.getLogger(SystemLogAspect.class);
     @Resource
     private TSystemLogApi tSystemLogApi;
+    @Resource
+    private SysSystemsettingApi systemsettingApi;
+
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
@@ -135,6 +143,34 @@ public class SystemLogAspect {
         HttpServletRequest request = servletRequestAttributes.getRequest();
         HttpServletResponse response = servletRequestAttributes.getResponse();
         String url = request.getRequestURI().substring(1);
+        List<SysSystemsettingDto> sysSystemsettingDtos = systemsettingApi.selectSystemsettingResult();
+        if (sysSystemsettingDtos.size() > 0 && !"/permissionSystem/user/getUserLogin".equals(url) && !"/permissionSystem/system/captchImg".equals(url)) {
+            SysSystemsettingDto sysSystemsettingDto = sysSystemsettingDtos.get(0);
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+            Date visitstarttime = sysSystemsettingDto.getVisitstarttime();
+            Date visitendtime = sysSystemsettingDto.getVisitendtime();
+            if (visitstarttime != null || visitendtime != null) {
+                String visitstarttimeStr = sdf.format(visitstarttime);
+                String visitendtimeStr = sdf.format(visitendtime);
+                LocalTime now = LocalTime.now();
+                String s = now.toString();
+                String nowStr = s.substring(0, s.indexOf("."));
+                long visitstarttimeLon = Long.valueOf(visitstarttimeStr.replaceAll("[-\\s:]", ""));
+                long visitendtimeLon = Long.valueOf(visitendtimeStr.replaceAll("[-\\s:]", ""));
+                long nowLon = Long.valueOf(nowStr.replaceAll("[-\\s:]", ""));
+                Boolean result = visitstarttimeLon > nowLon || nowLon > visitendtimeLon;
+                if (result) {
+                    response.setStatus(400);
+                    try {
+                        response.getWriter().write(":" + visitstarttimeStr + "-" + visitendtimeStr+"*时间段才能被访问！" );
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    throw new ExcessiveAttemptsException("系统管理设置系统在:" + visitstarttimeStr + "-" + visitendtimeStr + "时间段才能被访问！");
+                }
+            }
+        }
+
 
         if (url.indexOf("/permissionSystem") == -1) {
             String methodName = joinPoint.getSignature().getName();

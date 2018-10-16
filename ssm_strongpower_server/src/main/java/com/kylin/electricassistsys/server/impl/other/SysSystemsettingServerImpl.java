@@ -26,7 +26,7 @@ public class SysSystemsettingServerImpl implements SysSystemsettingApi {
     public List<SysSystemsettingDto> selectSystemsettingResult() {
         EntityWrapper entityWrapper = new EntityWrapper();
         entityWrapper.setEntity(new SysSystemsetting());
-        return MyBeanUtils.copyPropertiesList(sysSystemsettingService.selectList(entityWrapper), SysSystemsetting.class);
+        return MyBeanUtils.copyPropertiesList(sysSystemsettingService.selectList(entityWrapper), SysSystemsettingDto.class);
     }
 
     public void saveOrUpdate(SysSystemsettingDto dto) throws Throwable {
