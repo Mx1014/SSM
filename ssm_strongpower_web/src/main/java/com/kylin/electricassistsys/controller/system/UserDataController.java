@@ -53,7 +53,7 @@ public class UserDataController extends RestExceptionHandler {
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
                 System.err.print("start---:" + System.currentTimeMillis());
-                sysuser.setLoginName(MD5Utils.md5LoginName(sysuser.getLoginName()));
+//                sysuser.setLoginName(MD5Utils.md5LoginName(sysuser.getLoginName()));
                 String salt = UUID.randomUUID().toString().replaceAll("-", "");
                 sysuser.setPasswordSalt(salt);
                 sysuser.setPassword(MD5Utils.createPassword(sysuser.getPassword(), salt, 2));
