@@ -5,6 +5,8 @@ import com.kylin.electricassistsys.data.api.tsys.TSystemLogApi;
 import com.kylin.electricassistsys.dto.base.BaseDto;
 import com.kylin.electricassistsys.dto.other.SysSystemsettingDto;
 import com.kylin.electricassistsys.dto.system.TSystemLogDto;
+import com.kylin.electricassistsys.mybeanutils.JSONResult;
+import com.kylin.electricassistsys.redisutils.RedisCacheService;
 import com.kylin.electricassistsys.tools.IPHelper;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -50,7 +52,8 @@ public class SystemLogAspect {
     private TSystemLogApi tSystemLogApi;
     @Resource
     private SysSystemsettingApi systemsettingApi;
-
+    @Resource
+    private RedisCacheService redisCacheService;
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
@@ -162,7 +165,7 @@ public class SystemLogAspect {
                 if (result) {
                     response.setStatus(400);
                     try {
-                        response.getWriter().write(":" + visitstarttimeStr + "-" + visitendtimeStr+"*时间段才能被访问！" );
+                        response.getWriter().write(":" + visitstarttimeStr + "-" + visitendtimeStr + "*时间段才能被访问！");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -193,6 +196,18 @@ public class SystemLogAspect {
                                 userRedisreQequestId = cook.getValue().toString();    //获取值
                             }
                         }
+                    }
+                }
+                if (userRedisreQequestId != null) {
+                    boolean faleg = redisCacheService.hasKey(userRedisreQequestId);
+                    if(!faleg){
+                        response.setStatus(410);
+                        try {
+                            response.getWriter().write(":-*登录验证码过期！");
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        throw new ExcessiveAttemptsException("登录验证码过期！");
                     }
                 }
 
