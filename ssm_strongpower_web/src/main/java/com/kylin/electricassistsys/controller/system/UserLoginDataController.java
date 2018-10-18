@@ -616,5 +616,57 @@ public class UserLoginDataController {
         }
         return result;
     }
+    /**
+     * 获取在线用户列表
+     *
+     * @param params 分页参数
+     * @return 在线用户列表
+     */
+    @RequestMapping(value = "/getOnlineUserList", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult getOnlineUserList(@RequestBody Map<String, Object> params) {
+        JSONResult result = null;
+        try {
+            String jsessionid = params.get("userRedisreQequestId").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                Map json = new HashMap();
+                json.put("page", params.get("page").toString());
+                json.put("rows", params.get("rows").toString());
+                json.put("zhName", params.get("zhName"));
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                result = http.doPost(httpUtilParam.toString() +URLConstants.GETONLINEUSERLIST, json, jsessionid);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+    /**
+     * 强制用户下线
+     *
+     * @param params 用户id
+     * @return 强制用户下线
+     */
+    @RequestMapping(value = "/forceLogout", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public JSONResult forceLogout(@RequestBody Map<String, Object> params) {
+        JSONResult result = null;
+        try {
+            String jsessionid = params.get("userRedisreQequestId").toString();
+            boolean faleg = redisCacheService.hasKey(jsessionid);
+            if (faleg) {
+                Map json = new HashMap();
+                json.put("userIds", params.get("userIds").toString());
+                HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
+                result = http.doPost(httpUtilParam.toString() +URLConstants.FORCELOGOUT, json, jsessionid);
+                return result;
+            }
+            result = JSONResult.lostCode("登录验证码过期");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 
 }

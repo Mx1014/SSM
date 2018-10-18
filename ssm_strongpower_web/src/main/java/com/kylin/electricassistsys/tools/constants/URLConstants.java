@@ -188,5 +188,12 @@ public class URLConstants {
      * ip控制开关状态
      */
     public static final String IPINTERCEPTSTATUS = URL + "system/ip/intercept/status";
-
+    /**
+     * 获取在线用户列表
+     */
+    public static final String GETONLINEUSERLIST = URL + "system/online/list";
+    /**
+     * 强制用户下线
+     */
+    public static final String FORCELOGOUT = URL + "system/forceLogout";
 }
