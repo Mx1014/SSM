@@ -2,6 +2,7 @@ package com.kylin.electricassistsys.controller.tsys;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.kylin.electricassistsys.dto.tsys.TSysDanweiDto;
+import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
 import com.kylin.electricassistsys.server.impl.tsys.TSysDanweiDataServerImpl;
 import io.swagger.annotations.Api;
@@ -37,16 +38,28 @@ public class TSysDanweiDataController {
 
     @RequestMapping("list")
     @ResponseBody
-    public List<TSysDanweiDto> list() {
-
-        return tSysDanweiDataServerImpl.getList();
+    public JSONResult list() {
+        JSONResult result = null;
+        try {
+            result = JSONResult.success(tSysDanweiDataServerImpl.getList());
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
+        }
+        return result;
     }
 
     @RequestMapping("page")
     @ResponseBody
-    public Page getPages() {
-        Page page = new Page(1, 5);
-        return tSysDanweiDataServerImpl.getPages(page);
+    public JSONResult getPages() {
+        JSONResult result = null;
+        try {
+            Page page = new Page(1, 5);
+            result = JSONResult.success(tSysDanweiDataServerImpl.getPages(page));
+        } catch (Throwable e) {
+            e.printStackTrace();
+            result = JSONResult.failure("服务器错误请联系管理员");
+        }
+        return result;
     }
 
 }

@@ -102,7 +102,7 @@ public class UserLoginDataController {
             if (faleg) {
                 /*   redisCacheService.del(jsessionid);*/
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(httpUtilParam.toString() +URLConstants.LOGOUT, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.LOGOUT, json, jsessionid);
                 return result;
                 /*  return JSONResult.success();*//**/
             }
@@ -182,7 +182,7 @@ public class UserLoginDataController {
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(httpUtilParam.toString() +URLConstants.QUERYROLEALL, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.QUERYROLEALL, json, jsessionid);
 
                 return result;
             }
@@ -210,8 +210,9 @@ public class UserLoginDataController {
                 json.put("page", params.get("page").toString());
                 json.put("rows", params.get("rows").toString());
                 json.put("zhName", params.get("zhName"));
+                json.put("modeType", params.get("modeType"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(httpUtilParam.toString() +URLConstants.GETUSERLIST, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.GETUSERLIST, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -240,7 +241,7 @@ public class UserLoginDataController {
                 json.put("rows", params.get("rows").toString());
                 json.put("roleName", params.get("roleName"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(httpUtilParam.toString() +URLConstants.GETROLELIST, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.GETROLELIST, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -267,7 +268,7 @@ public class UserLoginDataController {
             boolean faleg = redisCacheService.hasKey(jsessionid);
             if (faleg) {
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(httpUtilParam.toString() +URLConstants.UPDATEROLE, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.UPDATEROLE, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -292,7 +293,7 @@ public class UserLoginDataController {
                 Map json = new HashMap();
                 json.put("roleId", params.get("roleId").toString());
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(httpUtilParam.toString() +URLConstants.DELETEROLE, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.DELETEROLE, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -320,7 +321,7 @@ public class UserLoginDataController {
                 json.put("isFinal", params.get("isFinal").toString());
                 json.put("roleDescription", params.get("description").toString());
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(httpUtilParam.toString() +URLConstants.INSERTROLE, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.INSERTROLE, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -346,7 +347,7 @@ public class UserLoginDataController {
             if (faleg) {
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
 
-                result = http.doPost(httpUtilParam.toString() +URLConstants.GETPERMISSIONLIST, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.GETPERMISSIONLIST, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -375,7 +376,7 @@ public class UserLoginDataController {
                 json.put("name", params.get("name"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
 
-                result = http.doPost(httpUtilParam.toString() +URLConstants.GETPERMISSIONPAGE, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.GETPERMISSIONPAGE, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -405,7 +406,7 @@ public class UserLoginDataController {
                 json.put("result", params.get("result"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
 
-                result = http.doPost(httpUtilParam.toString() +URLConstants.GETLOGLIST, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.GETLOGLIST, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -435,7 +436,7 @@ public class UserLoginDataController {
                 /*    json.put("result", params.get("result"));*/
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
 
-                result = http.doPost(httpUtilParam.toString() +URLConstants.GETLOGINLOGLIST, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.GETLOGINLOGLIST, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -462,7 +463,7 @@ public class UserLoginDataController {
             if (faleg) {
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
 
-                result = http.doPost(httpUtilParam.toString() +URLConstants.FORBIDDENUSER, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.FORBIDDENUSER, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -489,7 +490,7 @@ public class UserLoginDataController {
             if (faleg) {
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
 
-                result = http.doPost(httpUtilParam.toString() +URLConstants.ENABLEUSER, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.ENABLEUSER, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -516,7 +517,7 @@ public class UserLoginDataController {
             if (faleg) {
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
 
-                result = http.doPost(httpUtilParam.toString() +URLConstants.DELETEUSERBYID, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.DELETEUSERBYID, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -546,7 +547,7 @@ public class UserLoginDataController {
                 sysuser.setPassword(MD5Utils.createPassword(sysuser.getPassword(), salt, 2));*/
                 Map<String, Object> map = MyBeanUtils.bean2map(sysuser);
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(httpUtilParam.toString() +URLConstants.UPDATAUSERID, map, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.UPDATAUSERID, map, jsessionid);
                 System.err.print("end----:" + System.currentTimeMillis());
                 return result;
             }
@@ -576,7 +577,7 @@ public class UserLoginDataController {
                 json.put("newPassword", params.get("code"));
                 json.put("repeatNewPassword", params.get("code"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(httpUtilParam.toString() +URLConstants.UPDATEPASSWORD, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.UPDATEPASSWORD, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -616,6 +617,7 @@ public class UserLoginDataController {
         }
         return result;
     }
+
     /**
      * 获取在线用户列表
      *
@@ -634,7 +636,7 @@ public class UserLoginDataController {
                 json.put("rows", params.get("rows").toString());
                 json.put("zhName", params.get("zhName"));
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(httpUtilParam.toString() +URLConstants.GETONLINEUSERLIST, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.GETONLINEUSERLIST, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");
@@ -643,6 +645,7 @@ public class UserLoginDataController {
         }
         return result;
     }
+
     /**
      * 强制用户下线
      *
@@ -659,7 +662,7 @@ public class UserLoginDataController {
                 Map json = new HashMap();
                 json.put("userIds", params.get("userIds").toString());
                 HttpClientUtilsJsonObject http = new HttpClientUtilsJsonObject();
-                result = http.doPost(httpUtilParam.toString() +URLConstants.FORCELOGOUT, json, jsessionid);
+                result = http.doPost(httpUtilParam.toString() + URLConstants.FORCELOGOUT, json, jsessionid);
                 return result;
             }
             result = JSONResult.lostCode("登录验证码过期");

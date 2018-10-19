@@ -2,6 +2,7 @@ package com.kylin.electricassistsys.controller.tsys;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.kylin.electricassistsys.dto.tsys.TSysYwdwDto;
+import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
 import com.kylin.electricassistsys.server.impl.tsys.TSysYwdwDataServerImpl;
 import io.swagger.annotations.Api;
@@ -33,57 +34,72 @@ public class TSysYwdwDataController {
     }
 
     @RequestMapping("list")
-    public List<TSysYwdwDto> list() {
-
-        return tSysYwdwDataServerImpl.getList();
+    public JSONResult list() {
+        JSONResult result = null;
+        try {
+            result = JSONResult.success(tSysYwdwDataServerImpl.getList());
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
+        }
+        return result;
     }
 
     @RequestMapping("page")
-    public Page getPages(@RequestBody TSysYwdwDto tSysYwdwDto) {
-        Page page1 = new Page(tSysYwdwDto.getPage(), tSysYwdwDto.getLimit());
-        return tSysYwdwDataServerImpl.getPages(page1,tSysYwdwDto);
-    }
-    @RequestMapping(value = "update" , produces = "application/json;charset=UTF-8" ,method = RequestMethod.POST,headers = "Accept=application/json")
-    public String update(@RequestBody TSysYwdwDto tSysYwdwDto) {
-        try{
-            tSysYwdwDataServerImpl.update(tSysYwdwDto);
-            return "保存成功";
-        }catch (Exception e){
-            System.out.println("获得一个错误：" + e.getMessage());
+    public JSONResult getPages(@RequestBody TSysYwdwDto tSysYwdwDto) {
+        JSONResult result = null;
+        try {
+            Page page = new Page(tSysYwdwDto.getPage(), tSysYwdwDto.getLimit());
+            result = JSONResult.success(tSysYwdwDataServerImpl.getPages(page, tSysYwdwDto));
+        } catch (Throwable e) {
             e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
+        return result;
+    }
 
+    @RequestMapping(value = "update", produces = "application/json;charset=UTF-8", method = RequestMethod.POST, headers = "Accept=application/json")
+    public JSONResult update(@RequestBody TSysYwdwDto tSysYwdwDto) {
+        JSONResult result = null;
+        try {
+            tSysYwdwDataServerImpl.update(tSysYwdwDto);
+            result = JSONResult.success();
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = JSONResult.failure("服务器错误请联系管理员");
+        }
+        return result;
 
     }
+
     @RequestMapping("insert")
-    public String insert(@RequestBody TSysYwdwDto tSysYwdwDto) {
-        try{
-            String uuidStr = UUID.randomUUID().toString().replace("-","").toLowerCase();
+    public JSONResult insert(@RequestBody TSysYwdwDto tSysYwdwDto) {
+        JSONResult result = null;
+        try {
+            String uuidStr = UUID.randomUUID().toString().replace("-", "").toLowerCase();
             tSysYwdwDto.settSysId(uuidStr);
             tSysYwdwDataServerImpl.insert(tSysYwdwDto);
-            return "保存成功";
-        }catch (Exception e){
-            System.out.println("获得一个错误：" + e.getMessage());
+            result = JSONResult.success();
+        } catch (Exception e) {
             e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
+        return result;
 
 
     }
+
     @RequestMapping("del")
-    public String delete(@RequestBody String id) {
-        try{
+    public JSONResult delete(@RequestBody String id) {
+        JSONResult result = null;
+        try {
             tSysYwdwDataServerImpl.delete(id);
-            return "保存成功";
-        }catch (Exception e){
-            System.out.println("获得一个错误：" + e.getMessage());
+            result = JSONResult.success();
+        } catch (Throwable e) {
             e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.failure("服务器错误请联系管理员");
+
         }
+        return result;
 
 
     }
