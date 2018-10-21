@@ -2,6 +2,7 @@ package com.kylin.electricassistsys.controller.ghdg;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.kylin.electricassistsys.dto.ghdg.TGhdgDczjbDto;
+import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
 import com.kylin.electricassistsys.server.impl.ghdg.TGhdgDczjbDataServerImpl;
 import io.swagger.annotations.Api;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.ws.rs.core.MediaType;
-import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -25,69 +25,71 @@ public class TGhdgDczjbDataController {
     private RedisCacheService redisCacheService;
 
     @RequestMapping("page")
-    public Page getPages(@RequestBody TGhdgDczjbDto tGhdgDczjbDto) {
-        Page page1 = new Page(tGhdgDczjbDto.getPage(), tGhdgDczjbDto.getLimit());
-        return tGhdgDczjbDataServerImpl.getPages(page1, tGhdgDczjbDto);
+    public JSONResult getPages(@RequestBody TGhdgDczjbDto tGhdgDczjbDto) {
+        JSONResult result = null;
+        try {
+            Page page = new Page(tGhdgDczjbDto.getPage(), tGhdgDczjbDto.getLimit());
+            result = JSONResult.success(tGhdgDczjbDataServerImpl.getPages(page, tGhdgDczjbDto));
+        } catch (Throwable e) {
+            e.printStackTrace();
+            result = JSONResult.failure("服务器错误请联系管理员");
+        }
+        return result;
     }
 
     @RequestMapping(value = "update", produces = "application/json;charset=UTF-8", method = RequestMethod.POST, headers = "Accept=application/json")
-    public String update(@RequestBody TGhdgDczjbDto tGhdgDczjbDto) {
+    public JSONResult update(@RequestBody TGhdgDczjbDto tGhdgDczjbDto) {
+        JSONResult result = null;
         try {
             tGhdgDczjbDataServerImpl.update(tGhdgDczjbDto);
-            return "保存成功";
-        } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
+        return result;
 
     }
 
     @RequestMapping("insert")
-    public String insert(@RequestBody TGhdgDczjbDto tGhdgDczjbDto) {
+    public JSONResult insert(@RequestBody TGhdgDczjbDto tGhdgDczjbDto) {
+        JSONResult result = null;
         try {
             String uuidStr = UUID.randomUUID().toString().replace("-", "").toLowerCase();
             tGhdgDczjbDto.settDczjbId(uuidStr);
             tGhdgDczjbDataServerImpl.insert(tGhdgDczjbDto);
-            return "保存成功";
-        } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
+        return result;
 
 
     }
 
     @RequestMapping("list")
-    public List setList() {
+    public JSONResult setList() {
+        JSONResult result = null;
         try {
-            return tGhdgDczjbDataServerImpl.getList();
-        } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.success(tGhdgDczjbDataServerImpl.getList());
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
+        return result;
 
 
     }
 
 
     @RequestMapping("del")
-    public String delete(@RequestBody String id) {
+    public JSONResult delete(@RequestBody String id) {
+        JSONResult result = null;
         try {
             tGhdgDczjbDataServerImpl.delete(id);
-            return "保存成功";
-        } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
+        return result;
 
 
     }
