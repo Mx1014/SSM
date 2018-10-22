@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.system;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 用户操作日志记录表
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.system;
  * @author 陈文旭
  * @since 2018-06-01
  */
-public class TSystemLogDto {
+public class TSystemLogDto extends BaseDto {
     /**
      * 日志主键id
      */
@@ -61,7 +63,22 @@ public class TSystemLogDto {
      * 用户操作的url请求地址
      */
     private String userURL;
-
+    /**
+     * 模块名
+     */
+    private String moduleName;
+    /**
+     * 事件类型
+     */
+    private String eventType;
+    /**
+     * 日志类型
+     */
+    private String logType;
+    /**
+     * 描述
+     */
+    private String remark;
 
     public String getId() {
         return id;
@@ -167,21 +184,58 @@ public class TSystemLogDto {
         this.dataStatus = dataStatus;
     }
 
+    public String getModuleName() {
+        return moduleName;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
+    }
+
+    public String getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
+    }
+
+    public String getLogType() {
+        return logType;
+    }
+
+    public void setLogType(String logType) {
+        this.logType = logType;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
     @Override
     public String toString() {
         return "TSystemLogDto{" +
-        "id=" + id +
-        ", userIp=" + userIp +
-        ", userMethod=" + userMethod +
-        ", userOperationTime=" + userOperationTime +
-        ", userName=" + userName +
-        ", userOperationLegitimate=" + userOperationLegitimate +
-        ", userParameters=" + userParameters +
-        ", userResult=" + userResult +
-        ", userDuration=" + userDuration +
-        ", userId=" + userId +
-        ", userAgent=" + userAgent +
-        ", dataStatus=" + dataStatus +
-        "}";
+                "id='" + id + '\'' +
+                ", userIp='" + userIp + '\'' +
+                ", userMethod='" + userMethod + '\'' +
+                ", userOperationTime='" + userOperationTime + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userOperationLegitimate='" + userOperationLegitimate + '\'' +
+                ", userParameters='" + userParameters + '\'' +
+                ", userResult='" + userResult + '\'' +
+                ", userDuration=" + userDuration +
+                ", userId='" + userId + '\'' +
+                ", userAgent='" + userAgent + '\'' +
+                ", dataStatus=" + dataStatus +
+                ", userURL='" + userURL + '\'' +
+                ", moduleName='" + moduleName + '\'' +
+                ", eventType='" + eventType + '\'' +
+                ", logType='" + logType + '\'' +
+                ", remark='" + remark + '\'' +
+                '}';
     }
 }

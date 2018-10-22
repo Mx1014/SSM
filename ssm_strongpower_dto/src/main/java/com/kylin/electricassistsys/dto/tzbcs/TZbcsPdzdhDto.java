@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tzbcs;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TZbcsPdzdhDto{
+public class TZbcsPdzdhDto extends BaseDto {
 
 
     private String tPdzdhId;
@@ -106,16 +108,16 @@ public class TZbcsPdzdhDto{
     @Override
     public String toString() {
         return "TZbcsPdzdh{" +
-        "tPdzdhId=" + tPdzdhId +
-        ", tPdzdhGqlx=" + tPdzdhGqlx +
-        ", tPdzdhZnfbs=" + tPdzdhZnfbs +
-        ", tPdzdhJzs=" + tPdzdhJzs +
-        ", tPdzdhJdchqs=" + tPdzdhJdchqs +
-        ", tPdzdhGzzsqs=" + tPdzdhGzzsqs +
-        ", tPdzdhKxzdhfgl=" + tPdzdhKxzdhfgl +
-        ", tPdzdhPdzdyybl=" + tPdzdhPdzdyybl +
-        ", tPdzdhPdzdeybl=" + tPdzdhPdzdeybl +
-        ", tPdzdhPdzdsybl=" + tPdzdhPdzdsybl +
-        "}";
+                "tPdzdhId=" + tPdzdhId +
+                ", tPdzdhGqlx=" + tPdzdhGqlx +
+                ", tPdzdhZnfbs=" + tPdzdhZnfbs +
+                ", tPdzdhJzs=" + tPdzdhJzs +
+                ", tPdzdhJdchqs=" + tPdzdhJdchqs +
+                ", tPdzdhGzzsqs=" + tPdzdhGzzsqs +
+                ", tPdzdhKxzdhfgl=" + tPdzdhKxzdhfgl +
+                ", tPdzdhPdzdyybl=" + tPdzdhPdzdyybl +
+                ", tPdzdhPdzdeybl=" + tPdzdhPdzdeybl +
+                ", tPdzdhPdzdsybl=" + tPdzdhPdzdsybl +
+                "}";
     }
 }

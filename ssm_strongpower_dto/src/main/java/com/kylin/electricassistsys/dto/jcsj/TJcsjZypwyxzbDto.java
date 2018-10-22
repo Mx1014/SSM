@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.jcsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJcsjZypwyxzbDto {
+public class TJcsjZypwyxzbDto extends BaseDto {
     private String tZypwyxzbId;
     private String tZypwyxzbQyid;
     private String tZypwyxzbGqlx;
@@ -114,17 +116,17 @@ public class TJcsjZypwyxzbDto {
     @Override
     public String toString() {
         return "TJcsjZypwyxzb{" +
-        "tZypwyxzbId=" + tZypwyxzbId +
-        ", tZypwyxzbQyid=" + tZypwyxzbQyid +
-        ", tZypwyxzbGqlx=" + tZypwyxzbGqlx +
-        ", tZypwyxzbYear=" + tZypwyxzbYear +
-        ", tZypwyxzbGdkkxrs1=" + tZypwyxzbGdkkxrs1 +
-        ", tZypwyxzbGdkkxrs3=" + tZypwyxzbGdkkxrs3 +
-        ", tZypwyxzbXsl110=" + tZypwyxzbXsl110 +
-        ", tZypwyxzbXsl10=" + tZypwyxzbXsl10 +
-        ", tZypwyxzbZhdyhgl=" + tZypwyxzbZhdyhgl +
-        ", tZypwyxzbJmddyhgl=" + tZypwyxzbJmddyhgl +
-        ", tZypwyxzbCnw=" + tZypwyxzbCnw +
-        "}";
+                "tZypwyxzbId=" + tZypwyxzbId +
+                ", tZypwyxzbQyid=" + tZypwyxzbQyid +
+                ", tZypwyxzbGqlx=" + tZypwyxzbGqlx +
+                ", tZypwyxzbYear=" + tZypwyxzbYear +
+                ", tZypwyxzbGdkkxrs1=" + tZypwyxzbGdkkxrs1 +
+                ", tZypwyxzbGdkkxrs3=" + tZypwyxzbGdkkxrs3 +
+                ", tZypwyxzbXsl110=" + tZypwyxzbXsl110 +
+                ", tZypwyxzbXsl10=" + tZypwyxzbXsl10 +
+                ", tZypwyxzbZhdyhgl=" + tZypwyxzbZhdyhgl +
+                ", tZypwyxzbJmddyhgl=" + tZypwyxzbJmddyhgl +
+                ", tZypwyxzbCnw=" + tZypwyxzbCnw +
+                "}";
     }
 }

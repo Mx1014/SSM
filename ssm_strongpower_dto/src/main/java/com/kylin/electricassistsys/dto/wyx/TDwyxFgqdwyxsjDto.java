@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.wyx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDwyxFgqdwyxsjDto  {
+public class TDwyxFgqdwyxsjDto extends BaseDto {
 
 
     private String tFgqdwyxsjId;
@@ -350,43 +352,43 @@ public class TDwyxFgqdwyxsjDto  {
     @Override
     public String toString() {
         return "TDwyxFgqdwyxsj{" +
-        "tFgqdwyxsjId=" + tFgqdwyxsjId +
-        ", tFgqdwyxsjGdgs=" + tFgqdwyxsjGdgs +
-        ", tFgqdwyxsjYear=" + tFgqdwyxsjYear +
-        ", tFgqdwyxsjXzmj=" + tFgqdwyxsjXzmj +
-        ", tFgqdwyxsjGqmj=" + tFgqdwyxsjGqmj +
-        ", tFgqdwyxsjCjDydj=" + tFgqdwyxsjCjDydj +
-        ", tFgqdwyxsjCjZdfh=" + tFgqdwyxsjCjZdfh +
-        ", tFgqdwyxsjCjFssk=" + tFgqdwyxsjCjFssk +
-        ", tFgqdwyxsjCjZcfsxzdfh=" + tFgqdwyxsjCjZcfsxzdfh +
-        ", tFgqdwyxsjCjQshydl=" + tFgqdwyxsjCjQshydl +
-        ", tFgqdwyxsjCjWgdl=" + tFgqdwyxsjCjWgdl +
-        ", tFgqdwyxsjCjXss=" + tFgqdwyxsjCjXss +
-        ", tFgqdwyxsjXjDydj=" + tFgqdwyxsjXjDydj +
-        ", tFgqdwyxsjXjZdfh=" + tFgqdwyxsjXjZdfh +
-        ", tFgqdwyxsjXjFssk=" + tFgqdwyxsjXjFssk +
-        ", tFgqdwyxsjXjZcfsxzdfh=" + tFgqdwyxsjXjZcfsxzdfh +
-        ", tFgqdwyxsjXjQshydl=" + tFgqdwyxsjXjQshydl +
-        ", tFgqdwyxsjXjWgdl=" + tFgqdwyxsjXjWgdl +
-        ", tFgqdwyxsjXjXss=" + tFgqdwyxsjXjXss +
-        ", tFgqdwyxsjQjDydj=" + tFgqdwyxsjQjDydj +
-        ", tFgqdwyxsjQjZdfh=" + tFgqdwyxsjQjZdfh +
-        ", tFgqdwyxsjQjFssk=" + tFgqdwyxsjQjFssk +
-        ", tFgqdwyxsjQjGqqjzdfh=" + tFgqdwyxsjQjGqqjzdfh +
-        ", tFgqdwyxsjQjQshydl=" + tFgqdwyxsjQjQshydl +
-        ", tFgqdwyxsjQjWgdl=" + tFgqdwyxsjQjWgdl +
-        ", tFgqdwyxsjQjXss=" + tFgqdwyxsjQjXss +
-        ", tFgqdwyxsjDjDydj=" + tFgqdwyxsjDjDydj +
-        ", tFgqdwyxsjDjZdfh=" + tFgqdwyxsjDjZdfh +
-        ", tFgqdwyxsjDjFssk=" + tFgqdwyxsjDjFssk +
-        ", tFgqdwyxsjDjCjzdfh=" + tFgqdwyxsjDjCjzdfh +
-        ", tFgqdwyxsjDjQshydl=" + tFgqdwyxsjDjQshydl +
-        ", tFgqdwyxsjDjWgdl=" + tFgqdwyxsjDjWgdl +
-        ", tFgqdwyxsjDjXss=" + tFgqdwyxsjDjXss +
-        ", tFgqdwyxsjZgwd=" + tFgqdwyxsjZgwd +
-        ", tFgqdwyxsjZdwd=" + tFgqdwyxsjZdwd +
-        ", tFgqdwyxsjRemark=" + tFgqdwyxsjRemark +
-        ", tFgqdwyxsjPId=" + tFgqdwyxsjPId +
-        "}";
+                "tFgqdwyxsjId=" + tFgqdwyxsjId +
+                ", tFgqdwyxsjGdgs=" + tFgqdwyxsjGdgs +
+                ", tFgqdwyxsjYear=" + tFgqdwyxsjYear +
+                ", tFgqdwyxsjXzmj=" + tFgqdwyxsjXzmj +
+                ", tFgqdwyxsjGqmj=" + tFgqdwyxsjGqmj +
+                ", tFgqdwyxsjCjDydj=" + tFgqdwyxsjCjDydj +
+                ", tFgqdwyxsjCjZdfh=" + tFgqdwyxsjCjZdfh +
+                ", tFgqdwyxsjCjFssk=" + tFgqdwyxsjCjFssk +
+                ", tFgqdwyxsjCjZcfsxzdfh=" + tFgqdwyxsjCjZcfsxzdfh +
+                ", tFgqdwyxsjCjQshydl=" + tFgqdwyxsjCjQshydl +
+                ", tFgqdwyxsjCjWgdl=" + tFgqdwyxsjCjWgdl +
+                ", tFgqdwyxsjCjXss=" + tFgqdwyxsjCjXss +
+                ", tFgqdwyxsjXjDydj=" + tFgqdwyxsjXjDydj +
+                ", tFgqdwyxsjXjZdfh=" + tFgqdwyxsjXjZdfh +
+                ", tFgqdwyxsjXjFssk=" + tFgqdwyxsjXjFssk +
+                ", tFgqdwyxsjXjZcfsxzdfh=" + tFgqdwyxsjXjZcfsxzdfh +
+                ", tFgqdwyxsjXjQshydl=" + tFgqdwyxsjXjQshydl +
+                ", tFgqdwyxsjXjWgdl=" + tFgqdwyxsjXjWgdl +
+                ", tFgqdwyxsjXjXss=" + tFgqdwyxsjXjXss +
+                ", tFgqdwyxsjQjDydj=" + tFgqdwyxsjQjDydj +
+                ", tFgqdwyxsjQjZdfh=" + tFgqdwyxsjQjZdfh +
+                ", tFgqdwyxsjQjFssk=" + tFgqdwyxsjQjFssk +
+                ", tFgqdwyxsjQjGqqjzdfh=" + tFgqdwyxsjQjGqqjzdfh +
+                ", tFgqdwyxsjQjQshydl=" + tFgqdwyxsjQjQshydl +
+                ", tFgqdwyxsjQjWgdl=" + tFgqdwyxsjQjWgdl +
+                ", tFgqdwyxsjQjXss=" + tFgqdwyxsjQjXss +
+                ", tFgqdwyxsjDjDydj=" + tFgqdwyxsjDjDydj +
+                ", tFgqdwyxsjDjZdfh=" + tFgqdwyxsjDjZdfh +
+                ", tFgqdwyxsjDjFssk=" + tFgqdwyxsjDjFssk +
+                ", tFgqdwyxsjDjCjzdfh=" + tFgqdwyxsjDjCjzdfh +
+                ", tFgqdwyxsjDjQshydl=" + tFgqdwyxsjDjQshydl +
+                ", tFgqdwyxsjDjWgdl=" + tFgqdwyxsjDjWgdl +
+                ", tFgqdwyxsjDjXss=" + tFgqdwyxsjDjXss +
+                ", tFgqdwyxsjZgwd=" + tFgqdwyxsjZgwd +
+                ", tFgqdwyxsjZdwd=" + tFgqdwyxsjZdwd +
+                ", tFgqdwyxsjRemark=" + tFgqdwyxsjRemark +
+                ", tFgqdwyxsjPId=" + tFgqdwyxsjPId +
+                "}";
     }
 }

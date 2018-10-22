@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.ddsb;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDdsbGyxlDto{
+public class TDdsbGyxlDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -81,13 +83,13 @@ public class TDdsbGyxlDto{
     @Override
     public String toString() {
         return "TDdsbGyxl{" +
-        "tGyxlId=" + tGyxlId +
-        ", tGyxlSblx=" + tGyxlSblx +
-        ", tGyxlSbbh=" + tGyxlSbbh +
-        ", tGyxlSbname=" + tGyxlSbname +
-        ", tGyxlGlsb=" + tGyxlGlsb +
-        ", tGyxlGllx=" + tGyxlGllx +
-        ", tGyxlBz=" + tGyxlBz +
-        "}";
+                "tGyxlId=" + tGyxlId +
+                ", tGyxlSblx=" + tGyxlSblx +
+                ", tGyxlSbbh=" + tGyxlSbbh +
+                ", tGyxlSbname=" + tGyxlSbname +
+                ", tGyxlGlsb=" + tGyxlGlsb +
+                ", tGyxlGllx=" + tGyxlGllx +
+                ", tGyxlBz=" + tGyxlBz +
+                "}";
     }
 }

@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.wyx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 拉闸/限电情况
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.wyx;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDwyxXdqkDto  {
+public class TDwyxXdqkDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -281,28 +283,28 @@ public class TDwyxXdqkDto  {
     @Override
     public String toString() {
         return "TDwyxXdqk{" +
-        "tXdqkId=" + tXdqkId +
-        ", tXdqkXlmc=" + tXdqkXlmc +
-        ", tXdqkDydj=" + tXdqkDydj +
-        ", tXdqkLxxz=" + tXdqkLxxz +
-        ", tXdqkQssj=" + tXdqkQssj +
-        ", tXdqkLxfh=" + tXdqkLxfh +
-        ", tXdqkHfsj=" + tXdqkHfsj +
-        ", tXdqkZdlxfh=" + tXdqkZdlxfh +
-        ", tXdqkPjlxfh=" + tXdqkPjlxfh +
-        ", tXdqkLjlxdl=" + tXdqkLjlxdl +
-        ", tXdqkZdyffh=" + tXdqkZdyffh +
-        ", tXdqkYfssdl=" + tXdqkYfssdl +
-        ", tXdqkYfzydl=" + tXdqkYfzydl +
-        ", tXdqkZdcf=" + tXdqkZdcf +
-        ", tXdqkZdbf=" + tXdqkZdbf +
-        ", tXdqkZdfkxd=" + tXdqkZdfkxd +
-        ", tXdqkLxts=" + tXdqkLxts +
-        ", tXdqkYfts=" + tXdqkYfts +
-        ", tXdqkPid=" + tXdqkPid +
-        ", tXdqkGdgs=" + tXdqkGdgs +
-        ", tXdqkBz=" + tXdqkBz +
-        ", tXdqkNy=" + tXdqkNy +
-        "}";
+                "tXdqkId=" + tXdqkId +
+                ", tXdqkXlmc=" + tXdqkXlmc +
+                ", tXdqkDydj=" + tXdqkDydj +
+                ", tXdqkLxxz=" + tXdqkLxxz +
+                ", tXdqkQssj=" + tXdqkQssj +
+                ", tXdqkLxfh=" + tXdqkLxfh +
+                ", tXdqkHfsj=" + tXdqkHfsj +
+                ", tXdqkZdlxfh=" + tXdqkZdlxfh +
+                ", tXdqkPjlxfh=" + tXdqkPjlxfh +
+                ", tXdqkLjlxdl=" + tXdqkLjlxdl +
+                ", tXdqkZdyffh=" + tXdqkZdyffh +
+                ", tXdqkYfssdl=" + tXdqkYfssdl +
+                ", tXdqkYfzydl=" + tXdqkYfzydl +
+                ", tXdqkZdcf=" + tXdqkZdcf +
+                ", tXdqkZdbf=" + tXdqkZdbf +
+                ", tXdqkZdfkxd=" + tXdqkZdfkxd +
+                ", tXdqkLxts=" + tXdqkLxts +
+                ", tXdqkYfts=" + tXdqkYfts +
+                ", tXdqkPid=" + tXdqkPid +
+                ", tXdqkGdgs=" + tXdqkGdgs +
+                ", tXdqkBz=" + tXdqkBz +
+                ", tXdqkNy=" + tXdqkNy +
+                "}";
     }
 }

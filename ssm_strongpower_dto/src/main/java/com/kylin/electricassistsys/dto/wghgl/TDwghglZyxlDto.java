@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.wghgl;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDwghglZyxlDto {
+public class TDwghglZyxlDto extends BaseDto {
 
 
     private String tDwghglId;
@@ -394,48 +396,48 @@ public class TDwghglZyxlDto {
     @Override
     public String toString() {
         return "TDwghglZyxl{" +
-        "tDwghglId=" + tDwghglId +
-        ", tZyghkId=" + tZyghkId +
-        ", tDwghglXmmc=" + tDwghglXmmc +
-        ", tDwghglXmtz=" + tDwghglXmtz +
-        ", tDwghglXmxz=" + tDwghglXmxz +
-        ", tDwghglSsbdz=" + tDwghglSsbdz +
-        ", tDwghglXljsfs=" + tDwghglXljsfs +
-        ", tDwghglTysj=" + tDwghglTysj +
-        ", tDwghglXmms=" + tDwghglXmms +
-        ", tDwghglJkjyxQx=" + tDwghglJkjyxQx +
-        ", tDwghglJkldxQx=" + tDwghglJkldxQx +
-        ", tDwghglDlQx=" + tDwghglDlQx +
-        ", tDwghglZcQx=" + tDwghglZcQx +
-        ", tDwghglJkjyxZgx=" + tDwghglJkjyxZgx +
-        ", tDwghglJkldxZgx=" + tDwghglJkldxZgx +
-        ", tDwghglDlZgx=" + tDwghglDlZgx +
-        ", tDwghglZcZgx=" + tDwghglZcZgx +
-        ", tDwghglDxxh1=" + tDwghglDxxh1 +
-        ", tDwghglDxxh2=" + tDwghglDxxh2 +
-        ", tDwghglDxxh3=" + tDwghglDxxh3 +
-        ", tDwghglGbts=" + tDwghglGbts +
-        ", tDwghglGbrl=" + tDwghglGbrl +
-        ", tDwghglZbts=" + tDwghglZbts +
-        ", tDwghglZbrl=" + tDwghglZbrl +
-        ", tDwghglZts=" + tDwghglZts +
-        ", tDwghglZrl=" + tDwghglZrl +
-        ", tDwghglHwg=" + tDwghglHwg +
-        ", tDwghglDlfzx=" + tDwghglDlfzx +
-        ", tDwghglZskg=" + tDwghglZskg +
-        ", tDwghglDlq=" + tDwghglDlq +
-        ", tDwghglWgbct=" + tDwghglWgbct +
-        ", tDwghglWgbcrl=" + tDwghglWgbcrl +
-        ", tDwghglKbs=" + tDwghglKbs +
-        ", tDwghglZyjg=" + tDwghglZyjg +
-        ", tDwghglLlxsl=" + tDwghglLlxsl +
-        ", tDwghglFds=" + tDwghglFds +
-        ", tDwghglGlts=" + tDwghglGlts +
-        ", tDwghglGlcd=" + tDwghglGlcd +
-        ", tDwghglXlts=" + tDwghglXlts +
-        ", tDwghglXlcd=" + tDwghglXlcd +
-        ", tDwghglGspbts=" + tDwghglGspbts +
-        ", tDwghglGspbrl=" + tDwghglGspbrl +
-        "}";
+                "tDwghglId=" + tDwghglId +
+                ", tZyghkId=" + tZyghkId +
+                ", tDwghglXmmc=" + tDwghglXmmc +
+                ", tDwghglXmtz=" + tDwghglXmtz +
+                ", tDwghglXmxz=" + tDwghglXmxz +
+                ", tDwghglSsbdz=" + tDwghglSsbdz +
+                ", tDwghglXljsfs=" + tDwghglXljsfs +
+                ", tDwghglTysj=" + tDwghglTysj +
+                ", tDwghglXmms=" + tDwghglXmms +
+                ", tDwghglJkjyxQx=" + tDwghglJkjyxQx +
+                ", tDwghglJkldxQx=" + tDwghglJkldxQx +
+                ", tDwghglDlQx=" + tDwghglDlQx +
+                ", tDwghglZcQx=" + tDwghglZcQx +
+                ", tDwghglJkjyxZgx=" + tDwghglJkjyxZgx +
+                ", tDwghglJkldxZgx=" + tDwghglJkldxZgx +
+                ", tDwghglDlZgx=" + tDwghglDlZgx +
+                ", tDwghglZcZgx=" + tDwghglZcZgx +
+                ", tDwghglDxxh1=" + tDwghglDxxh1 +
+                ", tDwghglDxxh2=" + tDwghglDxxh2 +
+                ", tDwghglDxxh3=" + tDwghglDxxh3 +
+                ", tDwghglGbts=" + tDwghglGbts +
+                ", tDwghglGbrl=" + tDwghglGbrl +
+                ", tDwghglZbts=" + tDwghglZbts +
+                ", tDwghglZbrl=" + tDwghglZbrl +
+                ", tDwghglZts=" + tDwghglZts +
+                ", tDwghglZrl=" + tDwghglZrl +
+                ", tDwghglHwg=" + tDwghglHwg +
+                ", tDwghglDlfzx=" + tDwghglDlfzx +
+                ", tDwghglZskg=" + tDwghglZskg +
+                ", tDwghglDlq=" + tDwghglDlq +
+                ", tDwghglWgbct=" + tDwghglWgbct +
+                ", tDwghglWgbcrl=" + tDwghglWgbcrl +
+                ", tDwghglKbs=" + tDwghglKbs +
+                ", tDwghglZyjg=" + tDwghglZyjg +
+                ", tDwghglLlxsl=" + tDwghglLlxsl +
+                ", tDwghglFds=" + tDwghglFds +
+                ", tDwghglGlts=" + tDwghglGlts +
+                ", tDwghglGlcd=" + tDwghglGlcd +
+                ", tDwghglXlts=" + tDwghglXlts +
+                ", tDwghglXlcd=" + tDwghglXlcd +
+                ", tDwghglGspbts=" + tDwghglGspbts +
+                ", tDwghglGspbrl=" + tDwghglGspbrl +
+                "}";
     }
 }

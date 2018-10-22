@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tzbcs;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TZbcsJgzbDto {
+public class TZbcsJgzbDto extends BaseDto {
 
 
     private String tJgzbId;
@@ -98,15 +100,15 @@ public class TZbcsJgzbDto {
     @Override
     public String toString() {
         return "TZbcsJgzb{" +
-        "tJgzbId=" + tJgzbId +
-        ", tJgzbGqlx=" + tJgzbGqlx +
-        ", tJgzbTl=" + tJgzbTl +
-        ", tJgzbSl=" + tJgzbSl +
-        ", tJgzbOl=" + tJgzbOl +
-        ", tJgzbShw=" + tJgzbShw +
-        ", tJgzbDhw=" + tJgzbDhw +
-        ", tJgzbSfs=" + tJgzbSfs +
-        ", tJgzbDfs=" + tJgzbDfs +
-        "}";
+                "tJgzbId=" + tJgzbId +
+                ", tJgzbGqlx=" + tJgzbGqlx +
+                ", tJgzbTl=" + tJgzbTl +
+                ", tJgzbSl=" + tJgzbSl +
+                ", tJgzbOl=" + tJgzbOl +
+                ", tJgzbShw=" + tJgzbShw +
+                ", tJgzbDhw=" + tJgzbDhw +
+                ", tJgzbSfs=" + tJgzbSfs +
+                ", tJgzbDfs=" + tJgzbDfs +
+                "}";
     }
 }

@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tsys;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSysUserDto  {
+public class TSysUserDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -135,19 +137,19 @@ public class TSysUserDto  {
     @Override
     public String toString() {
         return "TSysUser{" +
-        "uId=" + uId +
-        ", dId=" + dId +
-        ", uName=" + uName +
-        ", uSex=" + uSex +
-        ", uEmail=" + uEmail +
-        ", uAddress=" + uAddress +
-        ", uPhone=" + uPhone +
-        ", uQq=" + uQq +
-        ", uTelnumber=" + uTelnumber +
-        ", uCreatedate=" + uCreatedate +
-        ", uState=" + uState +
-        ", uRemark=" + uRemark +
-        ", uYwdw=" + uYwdw +
-        "}";
+                "uId=" + uId +
+                ", dId=" + dId +
+                ", uName=" + uName +
+                ", uSex=" + uSex +
+                ", uEmail=" + uEmail +
+                ", uAddress=" + uAddress +
+                ", uPhone=" + uPhone +
+                ", uQq=" + uQq +
+                ", uTelnumber=" + uTelnumber +
+                ", uCreatedate=" + uCreatedate +
+                ", uState=" + uState +
+                ", uRemark=" + uRemark +
+                ", uYwdw=" + uYwdw +
+                "}";
     }
 }

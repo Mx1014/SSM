@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tjisuan;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJisuanByqnDto  {
+public class TJisuanByqnDto extends BaseDto {
 
 
     private String nid;
@@ -71,12 +73,12 @@ public class TJisuanByqnDto  {
     @Override
     public String toString() {
         return "TJisuanByqn{" +
-        "nid=" + nid +
-        ", byqid=" + byqid +
-        ", jg=" + jg +
-        ", jsnf=" + jsnf +
-        ", remark=" + remark +
-        ", sdbl=" + sdbl +
-        "}";
+                "nid=" + nid +
+                ", byqid=" + byqid +
+                ", jg=" + jg +
+                ", jsnf=" + jsnf +
+                ", remark=" + remark +
+                ", sdbl=" + sdbl +
+                "}";
     }
 }

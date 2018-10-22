@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.tyx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 交流线路运行数据表
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.tyx;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TYxYxsjJiaoliuxianDto  {
+public class TYxYxsjJiaoliuxianDto extends BaseDto {
 
 
     private String yxid;
@@ -98,15 +100,15 @@ public class TYxYxsjJiaoliuxianDto  {
     @Override
     public String toString() {
         return "TYxYxsjJiaoliuxian{" +
-        "yxid=" + yxid +
-        ", yxtype=" + yxtype +
-        ", yxvalue=" + yxvalue +
-        ", yxnf=" + yxnf +
-        ", tqtype=" + tqtype +
-        ", tqshijian=" + tqshijian +
-        ", sbid=" + sbid +
-        ", bdzid=" + bdzid +
-        ", remark=" + remark +
-        "}";
+                "yxid=" + yxid +
+                ", yxtype=" + yxtype +
+                ", yxvalue=" + yxvalue +
+                ", yxnf=" + yxnf +
+                ", tqtype=" + tqtype +
+                ", tqshijian=" + tqshijian +
+                ", sbid=" + sbid +
+                ", bdzid=" + bdzid +
+                ", remark=" + remark +
+                "}";
     }
 }

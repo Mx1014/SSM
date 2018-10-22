@@ -1,15 +1,17 @@
 package com.kylin.electricassistsys.dto.excel;
 
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TExcelMobanDto{
+public class TExcelMobanDto extends BaseDto {
     private String emId;
     private String emCreateuserid;
     private String emCreatetime;
@@ -97,15 +99,15 @@ public class TExcelMobanDto{
     @Override
     public String toString() {
         return "TExcelMoban{" +
-        "emId=" + emId +
-        ", emCreateuserid=" + emCreateuserid +
-        ", emCreatetime=" + emCreatetime +
-        ", emName=" + emName +
-        ", emExcelinfo=" + emExcelinfo +
-        ", emTableids=" + emTableids +
-        ", emIndex=" + emIndex +
-        ", emRemark=" + emRemark +
-        ", emPId=" + emPId +
-        "}";
+                "emId=" + emId +
+                ", emCreateuserid=" + emCreateuserid +
+                ", emCreatetime=" + emCreatetime +
+                ", emName=" + emName +
+                ", emExcelinfo=" + emExcelinfo +
+                ", emTableids=" + emTableids +
+                ", emIndex=" + emIndex +
+                ", emRemark=" + emRemark +
+                ", emPId=" + emPId +
+                "}";
     }
 }

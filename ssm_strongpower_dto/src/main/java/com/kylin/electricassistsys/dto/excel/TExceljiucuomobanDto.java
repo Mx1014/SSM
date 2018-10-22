@@ -1,6 +1,8 @@
 package com.kylin.electricassistsys.dto.excel;
 
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 纠错模板
@@ -9,7 +11,7 @@ package com.kylin.electricassistsys.dto.excel;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TExceljiucuomobanDto{
+public class TExceljiucuomobanDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -109,16 +111,16 @@ public class TExceljiucuomobanDto{
     @Override
     public String toString() {
         return "TExceljiucuomoban{" +
-        "eId=" + eId +
-        ", eCreateuserid=" + eCreateuserid +
-        ", eCreatetime=" + eCreatetime +
-        ", eName=" + eName +
-        ", eMobanentity=" + eMobanentity +
-        ", eMobanseach=" + eMobanseach +
-        ", eMobanziduan=" + eMobanziduan +
-        ", eIndex=" + eIndex +
-        ", eIsmoren=" + eIsmoren +
-        ", eRemark=" + eRemark +
-        "}";
+                "eId=" + eId +
+                ", eCreateuserid=" + eCreateuserid +
+                ", eCreatetime=" + eCreatetime +
+                ", eName=" + eName +
+                ", eMobanentity=" + eMobanentity +
+                ", eMobanseach=" + eMobanseach +
+                ", eMobanziduan=" + eMobanziduan +
+                ", eIndex=" + eIndex +
+                ", eIsmoren=" + eIsmoren +
+                ", eRemark=" + eRemark +
+                "}";
     }
 }

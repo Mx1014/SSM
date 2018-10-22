@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.wyx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 调度8760运行
@@ -8,8 +10,7 @@ package com.kylin.electricassistsys.dto.wyx;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDwyxDdfhsjDto {
-
+public class TDwyxDdfhsjDto extends BaseDto {
 
 
     /**
@@ -372,41 +373,41 @@ public class TDwyxDdfhsjDto {
     @Override
     public String toString() {
         return "TDwyxDdfhsj{" +
-        "tDdfhsjId=" + tDdfhsjId +
-        ", tDdfhsjRzdfh=" + tDdfhsjRzdfh +
-        ", tDdfhsjRzxfh=" + tDdfhsjRzxfh +
-        ", tDdfhsjRpjfh=" + tDdfhsjRpjfh +
-        ", tDdfhsjRfhl=" + tDdfhsjRfhl +
-        ", tDdfhsjRzxfhl=" + tDdfhsjRzxfhl +
-        ", tDdfhsjRfgc=" + tDdfhsjRfgc +
-        ", tDdfhsjRfgcl=" + tDdfhsjRfgcl +
-        ", tDdfhsjZdfh1=" + tDdfhsjZdfh1 +
-        ", tDdfhsjZdfh2=" + tDdfhsjZdfh2 +
-        ", tDdfhsjZdfh3=" + tDdfhsjZdfh3 +
-        ", tDdfhsjZdfh4=" + tDdfhsjZdfh4 +
-        ", tDdfhsjZdfh5=" + tDdfhsjZdfh5 +
-        ", tDdfhsjZdfh6=" + tDdfhsjZdfh6 +
-        ", tDdfhsjZdfh7=" + tDdfhsjZdfh7 +
-        ", tDdfhsjZdfh8=" + tDdfhsjZdfh8 +
-        ", tDdfhsjZdfh9=" + tDdfhsjZdfh9 +
-        ", tDdfhsjZdfh10=" + tDdfhsjZdfh10 +
-        ", tDdfhsjZdfh11=" + tDdfhsjZdfh11 +
-        ", tDdfhsjZdfh12=" + tDdfhsjZdfh12 +
-        ", tDdfhsjZdfh13=" + tDdfhsjZdfh13 +
-        ", tDdfhsjZdfh14=" + tDdfhsjZdfh14 +
-        ", tDdfhsjZdfh15=" + tDdfhsjZdfh15 +
-        ", tDdfhsjZdfh16=" + tDdfhsjZdfh16 +
-        ", tDdfhsjZdfh17=" + tDdfhsjZdfh17 +
-        ", tDdfhsjZdfh18=" + tDdfhsjZdfh18 +
-        ", tDdfhsjZdfh19=" + tDdfhsjZdfh19 +
-        ", tDdfhsjZdfh20=" + tDdfhsjZdfh20 +
-        ", tDdfhsjZdfh21=" + tDdfhsjZdfh21 +
-        ", tDdfhsjZdfh22=" + tDdfhsjZdfh22 +
-        ", tDdfhsjZdfh23=" + tDdfhsjZdfh23 +
-        ", tDdfhsjZdfh24=" + tDdfhsjZdfh24 +
-        ", tDdfhsjGdgs=" + tDdfhsjGdgs +
-        ", tDdfhsjData=" + tDdfhsjData +
-        ", tDdfhsjPid=" + tDdfhsjPid +
-        "}";
+                "tDdfhsjId=" + tDdfhsjId +
+                ", tDdfhsjRzdfh=" + tDdfhsjRzdfh +
+                ", tDdfhsjRzxfh=" + tDdfhsjRzxfh +
+                ", tDdfhsjRpjfh=" + tDdfhsjRpjfh +
+                ", tDdfhsjRfhl=" + tDdfhsjRfhl +
+                ", tDdfhsjRzxfhl=" + tDdfhsjRzxfhl +
+                ", tDdfhsjRfgc=" + tDdfhsjRfgc +
+                ", tDdfhsjRfgcl=" + tDdfhsjRfgcl +
+                ", tDdfhsjZdfh1=" + tDdfhsjZdfh1 +
+                ", tDdfhsjZdfh2=" + tDdfhsjZdfh2 +
+                ", tDdfhsjZdfh3=" + tDdfhsjZdfh3 +
+                ", tDdfhsjZdfh4=" + tDdfhsjZdfh4 +
+                ", tDdfhsjZdfh5=" + tDdfhsjZdfh5 +
+                ", tDdfhsjZdfh6=" + tDdfhsjZdfh6 +
+                ", tDdfhsjZdfh7=" + tDdfhsjZdfh7 +
+                ", tDdfhsjZdfh8=" + tDdfhsjZdfh8 +
+                ", tDdfhsjZdfh9=" + tDdfhsjZdfh9 +
+                ", tDdfhsjZdfh10=" + tDdfhsjZdfh10 +
+                ", tDdfhsjZdfh11=" + tDdfhsjZdfh11 +
+                ", tDdfhsjZdfh12=" + tDdfhsjZdfh12 +
+                ", tDdfhsjZdfh13=" + tDdfhsjZdfh13 +
+                ", tDdfhsjZdfh14=" + tDdfhsjZdfh14 +
+                ", tDdfhsjZdfh15=" + tDdfhsjZdfh15 +
+                ", tDdfhsjZdfh16=" + tDdfhsjZdfh16 +
+                ", tDdfhsjZdfh17=" + tDdfhsjZdfh17 +
+                ", tDdfhsjZdfh18=" + tDdfhsjZdfh18 +
+                ", tDdfhsjZdfh19=" + tDdfhsjZdfh19 +
+                ", tDdfhsjZdfh20=" + tDdfhsjZdfh20 +
+                ", tDdfhsjZdfh21=" + tDdfhsjZdfh21 +
+                ", tDdfhsjZdfh22=" + tDdfhsjZdfh22 +
+                ", tDdfhsjZdfh23=" + tDdfhsjZdfh23 +
+                ", tDdfhsjZdfh24=" + tDdfhsjZdfh24 +
+                ", tDdfhsjGdgs=" + tDdfhsjGdgs +
+                ", tDdfhsjData=" + tDdfhsjData +
+                ", tDdfhsjPid=" + tDdfhsjPid +
+                "}";
     }
 }

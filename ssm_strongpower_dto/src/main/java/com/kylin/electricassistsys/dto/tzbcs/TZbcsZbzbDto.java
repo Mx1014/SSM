@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tzbcs;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TZbcsZbzbDto  {
+public class TZbcsZbzbDto extends BaseDto {
 
 
     private String tZbzbId;
@@ -206,27 +208,27 @@ public class TZbcsZbzbDto  {
     @Override
     public String toString() {
         return "TZbcsZbzb{" +
-        "tZbzbId=" + tZbzbId +
-        ", tZbzbGqlx=" + tZbzbGqlx +
-        ", tZbzbQhlz=" + tZbzbQhlz +
-        ", tZbzbBhwz=" + tZbzbBhwz +
-        ", tZbzbQhwz=" + tZbzbQhwz +
-        ", tZbzbZb63=" + tZbzbZb63 +
-        ", tZbzbZb50=" + tZbzbZb50 +
-        ", tZbzbZb40=" + tZbzbZb40 +
-        ", tZbzbZb31=" + tZbzbZb31 +
-        ", tZbzbZb20=" + tZbzbZb20 +
-        ", tZbzbZbxy20=" + tZbzbZbxy20 +
-        ", tZbzbXlcdd600=" + tZbzbXlcdd600 +
-        ", tZbzbXlcd600=" + tZbzbXlcd600 +
-        ", tZbzbXlcd480=" + tZbzbXlcd480 +
-        ", tZbzbXlcd400=" + tZbzbXlcd400 +
-        ", tZbzbXlcd300=" + tZbzbXlcd300 +
-        ", tZbzbXlcd240=" + tZbzbXlcd240 +
-        ", tZbzbXlcd185=" + tZbzbXlcd185 +
-        ", tZbzbXlcd150=" + tZbzbXlcd150 +
-        ", tZbzbXlcd120=" + tZbzbXlcd120 +
-        ", tZbzbXlcdx120=" + tZbzbXlcdx120 +
-        "}";
+                "tZbzbId=" + tZbzbId +
+                ", tZbzbGqlx=" + tZbzbGqlx +
+                ", tZbzbQhlz=" + tZbzbQhlz +
+                ", tZbzbBhwz=" + tZbzbBhwz +
+                ", tZbzbQhwz=" + tZbzbQhwz +
+                ", tZbzbZb63=" + tZbzbZb63 +
+                ", tZbzbZb50=" + tZbzbZb50 +
+                ", tZbzbZb40=" + tZbzbZb40 +
+                ", tZbzbZb31=" + tZbzbZb31 +
+                ", tZbzbZb20=" + tZbzbZb20 +
+                ", tZbzbZbxy20=" + tZbzbZbxy20 +
+                ", tZbzbXlcdd600=" + tZbzbXlcdd600 +
+                ", tZbzbXlcd600=" + tZbzbXlcd600 +
+                ", tZbzbXlcd480=" + tZbzbXlcd480 +
+                ", tZbzbXlcd400=" + tZbzbXlcd400 +
+                ", tZbzbXlcd300=" + tZbzbXlcd300 +
+                ", tZbzbXlcd240=" + tZbzbXlcd240 +
+                ", tZbzbXlcd185=" + tZbzbXlcd185 +
+                ", tZbzbXlcd150=" + tZbzbXlcd150 +
+                ", tZbzbXlcd120=" + tZbzbXlcd120 +
+                ", tZbzbXlcdx120=" + tZbzbXlcdx120 +
+                "}";
     }
 }

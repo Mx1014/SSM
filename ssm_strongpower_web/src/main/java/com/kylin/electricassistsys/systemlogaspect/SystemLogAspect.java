@@ -1,9 +1,11 @@
 package com.kylin.electricassistsys.systemlogaspect;
 
 import com.kylin.electricassistsys.data.api.other.SysSystemsettingApi;
+import com.kylin.electricassistsys.data.api.system.SysLoginStatusDataApi;
 import com.kylin.electricassistsys.data.api.tsys.TSystemLogApi;
 import com.kylin.electricassistsys.dto.base.BaseDto;
 import com.kylin.electricassistsys.dto.other.SysSystemsettingDto;
+import com.kylin.electricassistsys.dto.system.SysLoginStatusDto;
 import com.kylin.electricassistsys.dto.system.TSystemLogDto;
 import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
@@ -23,17 +25,14 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import scala.reflect.internal.Trees;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /***
@@ -50,6 +49,8 @@ public class SystemLogAspect {
     private static final Logger logger = LoggerFactory.getLogger(SystemLogAspect.class);
     @Resource
     private TSystemLogApi tSystemLogApi;
+    @Resource
+    private SysLoginStatusDataApi sysLoginStatusDataApi;
     @Resource
     private SysSystemsettingApi systemsettingApi;
     @Resource
@@ -73,15 +74,39 @@ public class SystemLogAspect {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
         String ipAddress = IPHelper.getIpAddress(request);
         Object o = null;
+        SysLoginStatusDto sysLoginStatusDto = null;
         long t1 = System.currentTimeMillis();
         try {
+            Object[] args = point.getArgs();
             o = point.proceed();
+            Cookie[] cookie = request.getCookies();
+            for (int i = 0; i < cookie.length; i++) {
+                Cookie cook = cookie[i];
+                if (cook.getName().equalsIgnoreCase("Admin-Token")) { //获取键
+                    String sessionId = cook.getValue().toString();//获取值
+                    sysLoginStatusDto = sysLoginStatusDataApi.selectSysLoginStatusBySessionId(sessionId);
+                }
+            }
             TSystemLogDto dto = new TSystemLogDto();
+            if (sysLoginStatusDto != null) {
+                String userId = sysLoginStatusDto.getSysUserId().toString();
+                dto.setUserId(userId.substring(0, userId.indexOf('.')));
+                dto.setUserName(sysLoginStatusDto.getSysUserLoginName());
+            }
             long t2 = System.currentTimeMillis();
             if (o.toString().length() < 5000 || o.toString().length() != 0) {
                 dto.setUserResult(o.toString());
             } else {
                 dto.setUserResult("data is too long");
+            }
+            if (o instanceof JSONResult) {
+                JSONResult result = (JSONResult) o;
+                if (result.getCode().getCode() == "0") {
+                    dto.setDataStatus(1L);
+                } else {
+                    dto.setDataStatus(0L);
+                }
+                dto.setRemark(result.getMsg());
             }
             dto.setUserDuration((t2 - t1));
             dto.setUserMethod(point.getTarget().getClass().getName() + "." + point.getSignature().getName());
@@ -95,6 +120,27 @@ public class SystemLogAspect {
             dto.setUserParameters(stringBuilder.toString());
             dto.setUserIp(ipAddress);
             dto.setUserURL(request.getRequestURL().toString());
+            if (request.getRequestURL().toString().contains("permissionSystem")) {
+                dto.setEventType("系统事件");
+            } else {
+                dto.setEventType("业务事件");
+            }
+            String requestUrl_lower = request.getRequestURL().toString().toLowerCase();
+            if (requestUrl_lower.contains("select") || requestUrl_lower.contains("query") || requestUrl_lower.contains("list") || requestUrl_lower.contains("page") || requestUrl_lower.contains("get")) {
+                dto.setLogType("查询");
+            } else if (requestUrl_lower.contains("insert") || requestUrl_lower.contains("add")) {
+                dto.setLogType("新增");
+            } else if (requestUrl_lower.contains("update") || requestUrl_lower.contains("updata") || requestUrl_lower.contains("set")) {
+                dto.setLogType("更新");
+            } else if (requestUrl_lower.contains("delete") || requestUrl_lower.contains("del")) {
+                dto.setLogType("删除");
+            } else if (requestUrl_lower.contains("login")) {
+                dto.setLogType("登录");
+            } else if (requestUrl_lower.contains("logout")) {
+                dto.setLogType("注销/退出");
+            } else {
+
+            }
             dto.setUserAgent(request.getHeader("user-agent"));
             tSystemLogApi.insertSystem(dto);
             logger.info("request contentType:{}", request.getHeader("Accept"));
@@ -200,7 +246,7 @@ public class SystemLogAspect {
                 }
                 if (userRedisreQequestId != null) {
                     boolean faleg = redisCacheService.hasKey(userRedisreQequestId);
-                    if(!faleg){
+                    if (!faleg) {
                         response.setStatus(410);
                         try {
                             response.getWriter().write(":-*登录验证码过期！");

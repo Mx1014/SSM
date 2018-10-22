@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.tsbsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 设备关联表
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.tsbsj;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSbguanlianDto{
+public class TSbguanlianDto extends BaseDto {
 
 
     /**
@@ -125,15 +127,15 @@ public class TSbguanlianDto{
     @Override
     public String toString() {
         return "TSbguanlian{" +
-        "glid=" + glid +
-        ", opensbid=" + opensbid +
-        ", opensbname=" + opensbname +
-        ", openfacId=" + openfacId +
-        ", sbtype=" + sbtype +
-        ", mysbid=" + mysbid +
-        ", sbgltime=" + sbgltime +
-        ", gltype=" + gltype +
-        ", remark=" + remark +
-        "}";
+                "glid=" + glid +
+                ", opensbid=" + opensbid +
+                ", opensbname=" + opensbname +
+                ", openfacId=" + openfacId +
+                ", sbtype=" + sbtype +
+                ", mysbid=" + mysbid +
+                ", sbgltime=" + sbgltime +
+                ", gltype=" + gltype +
+                ", remark=" + remark +
+                "}";
     }
 }

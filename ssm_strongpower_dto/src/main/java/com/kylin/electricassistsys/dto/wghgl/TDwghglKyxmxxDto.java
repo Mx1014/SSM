@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.wghgl;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDwghglKyxmxxDto {
+public class TDwghglKyxmxxDto extends BaseDto {
 
 
     /**
@@ -113,14 +115,14 @@ public class TDwghglKyxmxxDto {
     @Override
     public String toString() {
         return "TDwghglKyxmxx{" +
-        "tKyxmId=" + tKyxmId +
-        ", tKyxmGhkid=" + tKyxmGhkid +
-        ", tKyxmJg=" + tKyxmJg +
-        ", tKyxmFj=" + tKyxmFj +
-        ", tKyxmRemark=" + tKyxmRemark +
-        ", tKyxmBdzid=" + tKyxmBdzid +
-        ", tKyxmZt=" + tKyxmZt +
-        ", tKyxmXmid=" + tKyxmXmid +
-        "}";
+                "tKyxmId=" + tKyxmId +
+                ", tKyxmGhkid=" + tKyxmGhkid +
+                ", tKyxmJg=" + tKyxmJg +
+                ", tKyxmFj=" + tKyxmFj +
+                ", tKyxmRemark=" + tKyxmRemark +
+                ", tKyxmBdzid=" + tKyxmBdzid +
+                ", tKyxmZt=" + tKyxmZt +
+                ", tKyxmXmid=" + tKyxmXmid +
+                "}";
     }
 }

@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tsbsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSbsjDdsbDto {
+public class TSbsjDdsbDto extends BaseDto {
 
 
     private String tTdsbId;
@@ -107,16 +109,16 @@ public class TSbsjDdsbDto {
     @Override
     public String toString() {
         return "TSbsjDdsb{" +
-        "tTdsbId=" + tTdsbId +
-        ", tTdsbDydj=" + tTdsbDydj +
-        ", tTdsbSbbm=" + tTdsbSbbm +
-        ", tTdsbSbname=" + tTdsbSbname +
-        ", tTdsbLx=" + tTdsbLx +
-        ", tTdsbRq=" + tTdsbRq +
-        ", tTdsbBz=" + tTdsbBz +
-        ", tTdsbSbbdz=" + tTdsbSbbdz +
-        ", tTdsbGlsbname=" + tTdsbGlsbname +
-        ", tTdsbGlbdz=" + tTdsbGlbdz +
-        "}";
+                "tTdsbId=" + tTdsbId +
+                ", tTdsbDydj=" + tTdsbDydj +
+                ", tTdsbSbbm=" + tTdsbSbbm +
+                ", tTdsbSbname=" + tTdsbSbname +
+                ", tTdsbLx=" + tTdsbLx +
+                ", tTdsbRq=" + tTdsbRq +
+                ", tTdsbBz=" + tTdsbBz +
+                ", tTdsbSbbdz=" + tTdsbSbbdz +
+                ", tTdsbGlsbname=" + tTdsbGlsbname +
+                ", tTdsbGlbdz=" + tTdsbGlbdz +
+                "}";
     }
 }

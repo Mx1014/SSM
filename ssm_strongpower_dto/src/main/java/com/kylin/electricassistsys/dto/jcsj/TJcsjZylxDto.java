@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.jcsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 资料类型
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.jcsj;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJcsjZylxDto {
+public class TJcsjZylxDto extends BaseDto {
 
 
     private String tZllxId;
@@ -44,9 +46,9 @@ public class TJcsjZylxDto {
     @Override
     public String toString() {
         return "TJcsjZylx{" +
-        "tZllxId=" + tZllxId +
-        ", tZllxName=" + tZllxName +
-        ", tZllxRemark=" + tZllxRemark +
-        "}";
+                "tZllxId=" + tZllxId +
+                ", tZllxName=" + tZllxName +
+                ", tZllxRemark=" + tZllxRemark +
+                "}";
     }
 }

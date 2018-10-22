@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tyx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TYxBdzjfdlDto  {
+public class TYxBdzjfdlDto extends BaseDto {
 
 
     private String tJfdlId;
@@ -98,15 +100,15 @@ public class TYxBdzjfdlDto  {
     @Override
     public String toString() {
         return "TYxBdzjfdl{" +
-        "tJfdlId=" + tJfdlId +
-        ", tJfdlBdzid=" + tJfdlBdzid +
-        ", tJfdlZongzhi=" + tJfdlZongzhi +
-        ", tJfdlZhengzhi=" + tJfdlZhengzhi +
-        ", tJfdlFuzhi=" + tJfdlFuzhi +
-        ", tJfdlData=" + tJfdlData +
-        ", tJfdlTqjg=" + tJfdlTqjg +
-        ", tJfdlOpensbid=" + tJfdlOpensbid +
-        ", tJfdlType=" + tJfdlType +
-        "}";
+                "tJfdlId=" + tJfdlId +
+                ", tJfdlBdzid=" + tJfdlBdzid +
+                ", tJfdlZongzhi=" + tJfdlZongzhi +
+                ", tJfdlZhengzhi=" + tJfdlZhengzhi +
+                ", tJfdlFuzhi=" + tJfdlFuzhi +
+                ", tJfdlData=" + tJfdlData +
+                ", tJfdlTqjg=" + tJfdlTqjg +
+                ", tJfdlOpensbid=" + tJfdlOpensbid +
+                ", tJfdlType=" + tJfdlType +
+                "}";
     }
 }

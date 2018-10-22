@@ -1,11 +1,13 @@
 package com.kylin.electricassistsys.dto.other;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * @Auther: whq
  * @Date: 2018/10/12 10:48
  * @Description:
  */
-public class PieDataDto {
+public class PieDataDto extends BaseDto {
     private Integer value;
     private String name;
 

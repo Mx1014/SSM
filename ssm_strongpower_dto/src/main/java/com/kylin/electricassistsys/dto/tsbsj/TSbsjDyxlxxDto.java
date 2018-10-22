@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tsbsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSbsjDyxlxxDto {
+public class TSbsjDyxlxxDto extends BaseDto {
 
 
     /**
@@ -220,22 +222,22 @@ public class TSbsjDyxlxxDto {
     @Override
     public String toString() {
         return "TSbsjDyxlxx{" +
-        "tDyxlxxId=" + tDyxlxxId +
-        ", tDyxlxxNf=" + tDyxlxxNf +
-        ", tDyxlxxScqy=" + tDyxlxxScqy +
-        ", tDyxlxxXlts=" + tDyxlxxXlts +
-        ", tDyxlxxJyxts=" + tDyxlxxJyxts +
-        ", tDyxlxxLdxts=" + tDyxlxxLdxts +
-        ", tDyxlxxJyxcd=" + tDyxlxxJyxcd +
-        ", tDyxlxxLdxcd=" + tDyxlxxLdxcd +
-        ", tDyxlxxBz=" + tDyxlxxBz +
-        ", tDyxlxxXlcd=" + tDyxlxxXlcd +
-        ", tDyxlxxYwdw=" + tDyxlxxYwdw +
-        ", tDyxlxxGqlx=" + tDyxlxxGqlx +
-        ", tDyxlxxDlxh=" + tDyxlxxDlxh +
-        ", tDyxlxxFds=" + tDyxlxxFds +
-        ", tDyxlxxFdcd=" + tDyxlxxFdcd +
-        ", tDyxlxxFsfs=" + tDyxlxxFsfs +
-        "}";
+                "tDyxlxxId=" + tDyxlxxId +
+                ", tDyxlxxNf=" + tDyxlxxNf +
+                ", tDyxlxxScqy=" + tDyxlxxScqy +
+                ", tDyxlxxXlts=" + tDyxlxxXlts +
+                ", tDyxlxxJyxts=" + tDyxlxxJyxts +
+                ", tDyxlxxLdxts=" + tDyxlxxLdxts +
+                ", tDyxlxxJyxcd=" + tDyxlxxJyxcd +
+                ", tDyxlxxLdxcd=" + tDyxlxxLdxcd +
+                ", tDyxlxxBz=" + tDyxlxxBz +
+                ", tDyxlxxXlcd=" + tDyxlxxXlcd +
+                ", tDyxlxxYwdw=" + tDyxlxxYwdw +
+                ", tDyxlxxGqlx=" + tDyxlxxGqlx +
+                ", tDyxlxxDlxh=" + tDyxlxxDlxh +
+                ", tDyxlxxFds=" + tDyxlxxFds +
+                ", tDyxlxxFdcd=" + tDyxlxxFdcd +
+                ", tDyxlxxFsfs=" + tDyxlxxFsfs +
+                "}";
     }
 }

@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.jcsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJcsjZlglDto  {
+public class TJcsjZlglDto extends BaseDto {
 
 
     private String tZlglId;
@@ -88,14 +90,14 @@ public class TJcsjZlglDto  {
     @Override
     public String toString() {
         return "TJcsjZlgl{" +
-        "tZlglId=" + tZlglId +
-        ", tZlglMc=" + tZlglMc +
-        ", tZlglUrl=" + tZlglUrl +
-        ", tZlglUser=" + tZlglUser +
-        ", tZlglSj=" + tZlglSj +
-        ", tZlglLx=" + tZlglLx +
-        ", tZlglBz=" + tZlglBz +
-        ", tZlglWjm=" + tZlglWjm +
-        "}";
+                "tZlglId=" + tZlglId +
+                ", tZlglMc=" + tZlglMc +
+                ", tZlglUrl=" + tZlglUrl +
+                ", tZlglUser=" + tZlglUser +
+                ", tZlglSj=" + tZlglSj +
+                ", tZlglLx=" + tZlglLx +
+                ", tZlglBz=" + tZlglBz +
+                ", tZlglWjm=" + tZlglWjm +
+                "}";
     }
 }

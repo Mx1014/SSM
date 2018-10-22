@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.ghdg;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TGhdgGdqyjbqkDto {
+public class TGhdgGdqyjbqkDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -117,17 +119,17 @@ public class TGhdgGdqyjbqkDto {
     @Override
     public String toString() {
         return "TGhdgGdqyjbqk{" +
-        "tGdqyjbqkId=" + tGdqyjbqkId +
-        ", tGdqyjbqkLx=" + tGdqyjbqkLx +
-        ", tGdqyjbqkGdmj=" + tGdqyjbqkGdmj +
-        ", tGdqyjbqkGdrk=" + tGdqyjbqkGdrk +
-        ", tGdqyjbqkShydl=" + tGdqyjbqkShydl +
-        ", tGdqyjbqkSdl=" + tGdqyjbqkSdl +
-        ", tGdqyjbqkKkl=" + tGdqyjbqkKkl +
-        ", tGdqyjbqkXsl=" + tGdqyjbqkXsl +
-        ", tGdqyjbqkZhxsl=" + tGdqyjbqkZhxsl +
-        ", tGdqyjbqkHgl=" + tGdqyjbqkHgl +
-        ", tGdqyjbqkYbyhl=" + tGdqyjbqkYbyhl +
-        "}";
+                "tGdqyjbqkId=" + tGdqyjbqkId +
+                ", tGdqyjbqkLx=" + tGdqyjbqkLx +
+                ", tGdqyjbqkGdmj=" + tGdqyjbqkGdmj +
+                ", tGdqyjbqkGdrk=" + tGdqyjbqkGdrk +
+                ", tGdqyjbqkShydl=" + tGdqyjbqkShydl +
+                ", tGdqyjbqkSdl=" + tGdqyjbqkSdl +
+                ", tGdqyjbqkKkl=" + tGdqyjbqkKkl +
+                ", tGdqyjbqkXsl=" + tGdqyjbqkXsl +
+                ", tGdqyjbqkZhxsl=" + tGdqyjbqkZhxsl +
+                ", tGdqyjbqkHgl=" + tGdqyjbqkHgl +
+                ", tGdqyjbqkYbyhl=" + tGdqyjbqkYbyhl +
+                "}";
     }
 }

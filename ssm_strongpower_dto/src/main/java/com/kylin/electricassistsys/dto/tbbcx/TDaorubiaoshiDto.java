@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tbbcx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDaorubiaoshiDto {
+public class TDaorubiaoshiDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -63,11 +65,11 @@ public class TDaorubiaoshiDto {
     @Override
     public String toString() {
         return "TDaorubiaoshi{" +
-        "drId=" + drId +
-        ", drCreateuserid=" + drCreateuserid +
-        ", drMobanentity=" + drMobanentity +
-        ", drBiaoshiids=" + drBiaoshiids +
-        ", drRemark=" + drRemark +
-        "}";
+                "drId=" + drId +
+                ", drCreateuserid=" + drCreateuserid +
+                ", drMobanentity=" + drMobanentity +
+                ", drBiaoshiids=" + drBiaoshiids +
+                ", drRemark=" + drRemark +
+                "}";
     }
 }

@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.other;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,7 +13,7 @@ import java.util.Date;
  * @author ${author}
  * @since 2018-10-15
  */
-public class SysSystemsettingDto {
+public class SysSystemsettingDto extends BaseDto {
     private Date visitstarttime;
     private Date visitendtime;
     private String iplist;

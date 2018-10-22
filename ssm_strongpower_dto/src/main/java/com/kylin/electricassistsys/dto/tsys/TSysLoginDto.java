@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tsys;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSysLoginDto  {
+public class TSysLoginDto extends BaseDto {
 
 
     private String id;
@@ -53,10 +55,10 @@ public class TSysLoginDto  {
     @Override
     public String toString() {
         return "TSysLogin{" +
-        "id=" + id +
-        ", uId=" + uId +
-        ", uLogin=" + uLogin +
-        ", uPassword=" + uPassword +
-        "}";
+                "id=" + id +
+                ", uId=" + uId +
+                ", uLogin=" + uLogin +
+                ", uPassword=" + uPassword +
+                "}";
     }
 }

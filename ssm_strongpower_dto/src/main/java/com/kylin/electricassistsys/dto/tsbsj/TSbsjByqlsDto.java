@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tsbsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSbsjByqlsDto {
+public class TSbsjByqlsDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -351,43 +353,43 @@ public class TSbsjByqlsDto {
     @Override
     public String toString() {
         return "TSbsjByqls{" +
-        "tByqlsId=" + tByqlsId +
-        ", tByqxxId=" + tByqxxId +
-        ", tByqlsNum=" + tByqlsNum +
-        ", tByqlsXgsj=" + tByqlsXgsj +
-        ", tByqlsXgr=" + tByqlsXgr +
-        ", tByqlsName=" + tByqlsName +
-        ", tByqlsYear=" + tByqlsYear +
-        ", tByqlsDydj=" + tByqlsDydj +
-        ", tByqlsQyid=" + tByqlsQyid +
-        ", tByqlsYwdw=" + tByqlsYwdw +
-        ", tByqlsEddy=" + tByqlsEddy +
-        ", tByqlsTsfs=" + tByqlsTsfs +
-        ", tByqlsRzxs=" + tByqlsRzxs +
-        ", tByqlsMpxh=" + tByqlsMpxh +
-        ", tByqlsBdrl=" + tByqlsBdrl +
-        ", tByqlsMpbb=" + tByqlsMpbb +
-        ", tByqlsBtysj=" + tByqlsBtysj +
-        ", tByqlsEtysj=" + tByqlsEtysj +
-        ", tByqlsZt=" + tByqlsZt +
-        ", tByqlsRemark=" + tByqlsRemark +
-        ", tByqlsGZzk=" + tByqlsGZzk +
-        ", tByqlsZDzk=" + tByqlsZDzk +
-        ", tByqlsGDzk=" + tByqlsGDzk +
-        ", tByqlsGZsh=" + tByqlsGZsh +
-        ", tByqlsZDsh=" + tByqlsZDsh +
-        ", tByqlsGDsh=" + tByqlsGDsh +
-        ", tByqlsGZdz=" + tByqlsGZdz +
-        ", tByqlsZDdz=" + tByqlsZDdz +
-        ", tByqlsGDdz=" + tByqlsGDdz +
-        ", tByqlsGZdk=" + tByqlsGZdk +
-        ", tByqlsZDdk=" + tByqlsZDdk +
-        ", tByqlsGDdk=" + tByqlsGDdk +
-        ", tByqlsWgbcrl=" + tByqlsWgbcrl +
-        ", tByqlsWgbcgc=" + tByqlsWgbcgc +
-        ", tByqlsWgbcd=" + tByqlsWgbcd +
-        ", tByqlsBdzid=" + tByqlsBdzid +
-        ", tByqlsGqlxid=" + tByqlsGqlxid +
-        "}";
+                "tByqlsId=" + tByqlsId +
+                ", tByqxxId=" + tByqxxId +
+                ", tByqlsNum=" + tByqlsNum +
+                ", tByqlsXgsj=" + tByqlsXgsj +
+                ", tByqlsXgr=" + tByqlsXgr +
+                ", tByqlsName=" + tByqlsName +
+                ", tByqlsYear=" + tByqlsYear +
+                ", tByqlsDydj=" + tByqlsDydj +
+                ", tByqlsQyid=" + tByqlsQyid +
+                ", tByqlsYwdw=" + tByqlsYwdw +
+                ", tByqlsEddy=" + tByqlsEddy +
+                ", tByqlsTsfs=" + tByqlsTsfs +
+                ", tByqlsRzxs=" + tByqlsRzxs +
+                ", tByqlsMpxh=" + tByqlsMpxh +
+                ", tByqlsBdrl=" + tByqlsBdrl +
+                ", tByqlsMpbb=" + tByqlsMpbb +
+                ", tByqlsBtysj=" + tByqlsBtysj +
+                ", tByqlsEtysj=" + tByqlsEtysj +
+                ", tByqlsZt=" + tByqlsZt +
+                ", tByqlsRemark=" + tByqlsRemark +
+                ", tByqlsGZzk=" + tByqlsGZzk +
+                ", tByqlsZDzk=" + tByqlsZDzk +
+                ", tByqlsGDzk=" + tByqlsGDzk +
+                ", tByqlsGZsh=" + tByqlsGZsh +
+                ", tByqlsZDsh=" + tByqlsZDsh +
+                ", tByqlsGDsh=" + tByqlsGDsh +
+                ", tByqlsGZdz=" + tByqlsGZdz +
+                ", tByqlsZDdz=" + tByqlsZDdz +
+                ", tByqlsGDdz=" + tByqlsGDdz +
+                ", tByqlsGZdk=" + tByqlsGZdk +
+                ", tByqlsZDdk=" + tByqlsZDdk +
+                ", tByqlsGDdk=" + tByqlsGDdk +
+                ", tByqlsWgbcrl=" + tByqlsWgbcrl +
+                ", tByqlsWgbcgc=" + tByqlsWgbcgc +
+                ", tByqlsWgbcd=" + tByqlsWgbcd +
+                ", tByqlsBdzid=" + tByqlsBdzid +
+                ", tByqlsGqlxid=" + tByqlsGqlxid +
+                "}";
     }
 }

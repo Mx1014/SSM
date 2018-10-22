@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tyx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TYxJiagongZyxlnDto {
+public class TYxJiagongZyxlnDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -90,14 +92,14 @@ public class TYxJiagongZyxlnDto {
     @Override
     public String toString() {
         return "TYxJiagongZyxln{" +
-        "jgid=" + jgid +
-        ", jgnf=" + jgnf +
-        ", xlid=" + xlid +
-        ", yougong=" + yougong +
-        ", wugong=" + wugong +
-        ", dianliu=" + dianliu +
-        ", zdfhfssk=" + zdfhfssk +
-        ", remark=" + remark +
-        "}";
+                "jgid=" + jgid +
+                ", jgnf=" + jgnf +
+                ", xlid=" + xlid +
+                ", yougong=" + yougong +
+                ", wugong=" + wugong +
+                ", dianliu=" + dianliu +
+                ", zdfhfssk=" + zdfhfssk +
+                ", remark=" + remark +
+                "}";
     }
 }

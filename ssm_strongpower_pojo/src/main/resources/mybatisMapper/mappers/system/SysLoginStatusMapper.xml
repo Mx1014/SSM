@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kylin.electricassistsys.dao.system.SysLoginStatusDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.system.SysLoginStatus">
+        <result column="ID" property="id" />
+        <result column="SYS_USER_ID" property="sysUserId" />
+        <result column="SESSION_ID" property="sessionId" />
+        <result column="SESSION_EXPIRES" property="sessionExpires" />
+        <result column="SYS_USER_LOGIN_NAME" property="sysUserLoginName" />
+        <result column="SYS_USER_ZH_NAME" property="sysUserZhName" />
+        <result column="LAST_LOGIN_TIME" property="lastLoginTime" />
+        <result column="PLATFORM" property="platform" />
+        <result column="RANK" property="rank" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="CREATE_BY" property="createBy" />
+        <result column="UPDATE_BY" property="updateBy" />
+        <result column="STATUS" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, SYS_USER_ID, SESSION_ID, SESSION_EXPIRES, SYS_USER_LOGIN_NAME, SYS_USER_ZH_NAME, LAST_LOGIN_TIME, PLATFORM, RANK, CREATE_TIME, UPDATE_TIME, CREATE_BY, UPDATE_BY, STATUS
+    </sql>
+
+</mapper>

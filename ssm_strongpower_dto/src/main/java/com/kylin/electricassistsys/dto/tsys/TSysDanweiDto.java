@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tsys;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSysDanweiDto{
+public class TSysDanweiDto extends BaseDto {
 
 
     private String dId;
@@ -71,12 +73,12 @@ public class TSysDanweiDto{
     @Override
     public String toString() {
         return "TSysDanwei{" +
-        "dId=" + dId +
-        ", dPId=" + dPId +
-        ", dName=" + dName +
-        ", dIndex=" + dIndex +
-        ", dState=" + dState +
-        ", dRemark=" + dRemark +
-        "}";
+                "dId=" + dId +
+                ", dPId=" + dPId +
+                ", dName=" + dName +
+                ", dIndex=" + dIndex +
+                ", dState=" + dState +
+                ", dRemark=" + dRemark +
+                "}";
     }
 }

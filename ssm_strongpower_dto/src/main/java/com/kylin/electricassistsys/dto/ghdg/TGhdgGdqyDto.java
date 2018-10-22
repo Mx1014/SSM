@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.ghdg;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TGhdgGdqyDto{
+public class TGhdgGdqyDto extends BaseDto {
 
     private String tGdqyId;
     private String tGdqyNf;
@@ -87,14 +89,14 @@ public class TGhdgGdqyDto{
     @Override
     public String toString() {
         return "TGhdgGdqy{" +
-        "tGdqyId=" + tGdqyId +
-        ", tGdqyNf=" + tGdqyNf +
-        ", tGdqyQygs=" + tGdqyQygs +
-        ", tGdqyXj=" + tGdqyXj +
-        ", tGdqyZy=" + tGdqyZy +
-        ", tGhdgKg=" + tGhdgKg +
-        ", tGhdgDg=" + tGhdgDg +
-        ", tGhdgQt=" + tGhdgQt +
-        "}";
+                "tGdqyId=" + tGdqyId +
+                ", tGdqyNf=" + tGdqyNf +
+                ", tGdqyQygs=" + tGdqyQygs +
+                ", tGdqyXj=" + tGdqyXj +
+                ", tGdqyZy=" + tGdqyZy +
+                ", tGhdgKg=" + tGhdgKg +
+                ", tGhdgDg=" + tGhdgDg +
+                ", tGhdgQt=" + tGhdgQt +
+                "}";
     }
 }

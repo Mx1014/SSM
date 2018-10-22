@@ -1,6 +1,8 @@
 package com.kylin.electricassistsys.dto.wyx;
 
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 import java.io.Serializable;
 
 /**
@@ -11,7 +13,7 @@ import java.io.Serializable;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDwyxFhydwyxsjDto  {
+public class TDwyxFhydwyxsjDto extends BaseDto {
 
 
     private String tFhydwyxId;
@@ -308,38 +310,38 @@ public class TDwyxFhydwyxsjDto  {
     @Override
     public String toString() {
         return "TDwyxFhydwyxsj{" +
-        "tFhydwyxId=" + tFhydwyxId +
-        ", tFhydwyxPid=" + tFhydwyxPid +
-        ", tFhydwyxGdgs=" + tFhydwyxGdgs +
-        ", tFhydwyxYear=" + tFhydwyxYear +
-        ", tFhydwyxDycyHs=" + tFhydwyxDycyHs +
-        ", tFhydwyxDycyYdrl=" + tFhydwyxDycyYdrl +
-        ", tFhydwyxDycyGdhs=" + tFhydwyxDycyGdhs +
-        ", tFhydwyxDycyNzdfh=" + tFhydwyxDycyNzdfh +
-        ", tFhydwyxDycyZdfhsk=" + tFhydwyxDycyZdfhsk +
-        ", tFhydwyxDycyNpjfh=" + tFhydwyxDycyNpjfh +
-        ", tFhydwyxDycyZcnzdfh=" + tFhydwyxDycyZcnzdfh +
-        ", tFhydwyxDecyHs=" + tFhydwyxDecyHs +
-        ", tFhydwyxDecyYdrl=" + tFhydwyxDecyYdrl +
-        ", tFhydwyxDecyGdhs=" + tFhydwyxDecyGdhs +
-        ", tFhydwyxDecyNzdfh=" + tFhydwyxDecyNzdfh +
-        ", tFhydwyxDecyZdfhsk=" + tFhydwyxDecyZdfhsk +
-        ", tFhydwyxDecyNpjfh=" + tFhydwyxDecyNpjfh +
-        ", tFhydwyxDecyZcnzdfh=" + tFhydwyxDecyZcnzdfh +
-        ", tFhydwyxDscyHs=" + tFhydwyxDscyHs +
-        ", tFhydwyxDscyYdrl=" + tFhydwyxDscyYdrl +
-        ", tFhydwyxDscyGdhs=" + tFhydwyxDscyGdhs +
-        ", tFhydwyxDscyNzdfh=" + tFhydwyxDscyNzdfh +
-        ", tFhydwyxDscyZdfhsk=" + tFhydwyxDscyZdfhsk +
-        ", tFhydwyxDscyNpjfh=" + tFhydwyxDscyNpjfh +
-        ", tFhydwyxDscyZcnzdfh=" + tFhydwyxDscyZcnzdfh +
-        ", tFhydwyxCxjmshHs=" + tFhydwyxCxjmshHs +
-        ", tFhydwyxCxjmshYdrl=" + tFhydwyxCxjmshYdrl +
-        ", tFhydwyxCxjmshGdhs=" + tFhydwyxCxjmshGdhs +
-        ", tFhydwyxCxjmshNzdfh=" + tFhydwyxCxjmshNzdfh +
-        ", tFhydwyxCxjmshZdfhsk=" + tFhydwyxCxjmshZdfhsk +
-        ", tFhydwyxCxjmshNpjfh=" + tFhydwyxCxjmshNpjfh +
-        ", tFhydwyxCxjmshZcnzdfh=" + tFhydwyxCxjmshZcnzdfh +
-        "}";
+                "tFhydwyxId=" + tFhydwyxId +
+                ", tFhydwyxPid=" + tFhydwyxPid +
+                ", tFhydwyxGdgs=" + tFhydwyxGdgs +
+                ", tFhydwyxYear=" + tFhydwyxYear +
+                ", tFhydwyxDycyHs=" + tFhydwyxDycyHs +
+                ", tFhydwyxDycyYdrl=" + tFhydwyxDycyYdrl +
+                ", tFhydwyxDycyGdhs=" + tFhydwyxDycyGdhs +
+                ", tFhydwyxDycyNzdfh=" + tFhydwyxDycyNzdfh +
+                ", tFhydwyxDycyZdfhsk=" + tFhydwyxDycyZdfhsk +
+                ", tFhydwyxDycyNpjfh=" + tFhydwyxDycyNpjfh +
+                ", tFhydwyxDycyZcnzdfh=" + tFhydwyxDycyZcnzdfh +
+                ", tFhydwyxDecyHs=" + tFhydwyxDecyHs +
+                ", tFhydwyxDecyYdrl=" + tFhydwyxDecyYdrl +
+                ", tFhydwyxDecyGdhs=" + tFhydwyxDecyGdhs +
+                ", tFhydwyxDecyNzdfh=" + tFhydwyxDecyNzdfh +
+                ", tFhydwyxDecyZdfhsk=" + tFhydwyxDecyZdfhsk +
+                ", tFhydwyxDecyNpjfh=" + tFhydwyxDecyNpjfh +
+                ", tFhydwyxDecyZcnzdfh=" + tFhydwyxDecyZcnzdfh +
+                ", tFhydwyxDscyHs=" + tFhydwyxDscyHs +
+                ", tFhydwyxDscyYdrl=" + tFhydwyxDscyYdrl +
+                ", tFhydwyxDscyGdhs=" + tFhydwyxDscyGdhs +
+                ", tFhydwyxDscyNzdfh=" + tFhydwyxDscyNzdfh +
+                ", tFhydwyxDscyZdfhsk=" + tFhydwyxDscyZdfhsk +
+                ", tFhydwyxDscyNpjfh=" + tFhydwyxDscyNpjfh +
+                ", tFhydwyxDscyZcnzdfh=" + tFhydwyxDscyZcnzdfh +
+                ", tFhydwyxCxjmshHs=" + tFhydwyxCxjmshHs +
+                ", tFhydwyxCxjmshYdrl=" + tFhydwyxCxjmshYdrl +
+                ", tFhydwyxCxjmshGdhs=" + tFhydwyxCxjmshGdhs +
+                ", tFhydwyxCxjmshNzdfh=" + tFhydwyxCxjmshNzdfh +
+                ", tFhydwyxCxjmshZdfhsk=" + tFhydwyxCxjmshZdfhsk +
+                ", tFhydwyxCxjmshNpjfh=" + tFhydwyxCxjmshNpjfh +
+                ", tFhydwyxCxjmshZcnzdfh=" + tFhydwyxCxjmshZcnzdfh +
+                "}";
     }
 }

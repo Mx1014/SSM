@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.wghgl;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 规划库信息
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.wghgl;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDwghglGhkxxDto  {
+public class TDwghglGhkxxDto extends BaseDto {
 
 
     /**
@@ -113,14 +115,14 @@ public class TDwghglGhkxxDto  {
     @Override
     public String toString() {
         return "TDwghglGhkxx{" +
-        "tGhkxxId=" + tGhkxxId +
-        ", tGhkxxName=" + tGhkxxName +
-        ", tGhkxxPid=" + tGhkxxPid +
-        ", tGhkxxXmqcid=" + tGhkxxXmqcid +
-        ", tGhkxxPx=" + tGhkxxPx +
-        ", tGhkxxRemark=" + tGhkxxRemark +
-        ", tGhkxxLx=" + tGhkxxLx +
-        ", tGhkxxZt=" + tGhkxxZt +
-        "}";
+                "tGhkxxId=" + tGhkxxId +
+                ", tGhkxxName=" + tGhkxxName +
+                ", tGhkxxPid=" + tGhkxxPid +
+                ", tGhkxxXmqcid=" + tGhkxxXmqcid +
+                ", tGhkxxPx=" + tGhkxxPx +
+                ", tGhkxxRemark=" + tGhkxxRemark +
+                ", tGhkxxLx=" + tGhkxxLx +
+                ", tGhkxxZt=" + tGhkxxZt +
+                "}";
     }
 }

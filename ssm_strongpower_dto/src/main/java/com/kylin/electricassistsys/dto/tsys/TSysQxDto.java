@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tsys;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSysQxDto  {
+public class TSysQxDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -135,19 +137,19 @@ public class TSysQxDto  {
     @Override
     public String toString() {
         return "TSysQx{" +
-        "tQxid=" + tQxid +
-        ", tPQxid=" + tPQxid +
-        ", tQxname=" + tQxname +
-        ", tUrl=" + tUrl +
-        ", tTxurl=" + tTxurl +
-        ", tQxlx=" + tQxlx +
-        ", tQxindex=" + tQxindex +
-        ", tModelname=" + tModelname +
-        ", tState=" + tState +
-        ", tModetype=" + tModetype +
-        ", tableid=" + tableid +
-        ", tKey=" + tKey +
-        ", tValue=" + tValue +
-        "}";
+                "tQxid=" + tQxid +
+                ", tPQxid=" + tPQxid +
+                ", tQxname=" + tQxname +
+                ", tUrl=" + tUrl +
+                ", tTxurl=" + tTxurl +
+                ", tQxlx=" + tQxlx +
+                ", tQxindex=" + tQxindex +
+                ", tModelname=" + tModelname +
+                ", tState=" + tState +
+                ", tModetype=" + tModetype +
+                ", tableid=" + tableid +
+                ", tKey=" + tKey +
+                ", tValue=" + tValue +
+                "}";
     }
 }

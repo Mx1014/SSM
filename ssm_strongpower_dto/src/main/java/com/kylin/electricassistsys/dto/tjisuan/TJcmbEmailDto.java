@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tjisuan;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJcmbEmailDto {
+public class TJcmbEmailDto extends BaseDto {
 
 
     private String tEmailId;
@@ -157,18 +159,18 @@ public class TJcmbEmailDto {
     @Override
     public String toString() {
         return "TJcmbEmail{" +
-        "tEmailId=" + tEmailId +
-        ", tEmailSjr=" + tEmailSjr +
-        ", tEmailFjr=" + tEmailFjr +
-        ", tEmailYjzt=" + tEmailYjzt +
-        ", tEmailYjnr=" + tEmailYjnr +
-        ", tEmailFjname=" + tEmailFjname +
-        ", tEmailFjurl=" + tEmailFjurl +
-        ", tEmailFssj=" + tEmailFssj +
-        ", tEmailYjfl=" + tEmailYjfl +
-        ", tEmailSfbj=" + tEmailSfbj +
-        ", tEmailSfyd=" + tEmailSfyd +
-        ", tEmailSfyfs=" + tEmailSfyfs +
-        "}";
+                "tEmailId=" + tEmailId +
+                ", tEmailSjr=" + tEmailSjr +
+                ", tEmailFjr=" + tEmailFjr +
+                ", tEmailYjzt=" + tEmailYjzt +
+                ", tEmailYjnr=" + tEmailYjnr +
+                ", tEmailFjname=" + tEmailFjname +
+                ", tEmailFjurl=" + tEmailFjurl +
+                ", tEmailFssj=" + tEmailFssj +
+                ", tEmailYjfl=" + tEmailYjfl +
+                ", tEmailSfbj=" + tEmailSfbj +
+                ", tEmailSfyd=" + tEmailSfyd +
+                ", tEmailSfyfs=" + tEmailSfyfs +
+                "}";
     }
 }

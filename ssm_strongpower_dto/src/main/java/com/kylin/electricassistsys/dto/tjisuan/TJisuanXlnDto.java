@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.tjisuan;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 中压线路N-1校验
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.tjisuan;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJisuanXlnDto {
+public class TJisuanXlnDto extends BaseDto {
 
 
     private String nid;
@@ -61,11 +63,11 @@ public class TJisuanXlnDto {
     @Override
     public String toString() {
         return "TJisuanXln{" +
-        "nid=" + nid +
-        ", xlid=" + xlid +
-        ", jg=" + jg +
-        ", jsnf=" + jsnf +
-        ", remark=" + remark +
-        "}";
+                "nid=" + nid +
+                ", xlid=" + xlid +
+                ", jg=" + jg +
+                ", jsnf=" + jsnf +
+                ", remark=" + remark +
+                "}";
     }
 }

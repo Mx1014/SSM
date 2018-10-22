@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tzbcs;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TZbcsTxzbDto {
+public class TZbcsTxzbDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -63,11 +65,11 @@ public class TZbcsTxzbDto {
     @Override
     public String toString() {
         return "TZbcsTxzb{" +
-        "tTxzbId=" + tTxzbId +
-        ", tTxzbGqlx=" + tTxzbGqlx +
-        ", tTxzbGx=" + tTxzbGx +
-        ", tTxzbZb=" + tTxzbZb +
-        ", tTxzbWx=" + tTxzbWx +
-        "}";
+                "tTxzbId=" + tTxzbId +
+                ", tTxzbGqlx=" + tTxzbGqlx +
+                ", tTxzbGx=" + tTxzbGx +
+                ", tTxzbZb=" + tTxzbZb +
+                ", tTxzbWx=" + tTxzbWx +
+                "}";
     }
 }

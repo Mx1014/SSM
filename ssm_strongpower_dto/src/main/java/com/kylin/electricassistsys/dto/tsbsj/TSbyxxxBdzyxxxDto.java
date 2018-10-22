@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tsbsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSbyxxxBdzyxxxDto  {
+public class TSbyxxxBdzyxxxDto extends BaseDto {
 
 
     private String tBdzyxxxId;
@@ -242,31 +244,31 @@ public class TSbyxxxBdzyxxxDto  {
     @Override
     public String toString() {
         return "TSbyxxxBdzyxxx{" +
-        "tBdzyxxxId=" + tBdzyxxxId +
-        ", tBdzyxxxSjny=" + tBdzyxxxSjny +
-        ", tBdzyxxxBdzId=" + tBdzyxxxBdzId +
-        ", tBdzyxxxByqId=" + tBdzyxxxByqId +
-        ", tBdzyxxxRl=" + tBdzyxxxRl +
-        ", tBdzyxxxZdfhsk=" + tBdzyxxxZdfhsk +
-        ", tBdzyxxxYg=" + tBdzyxxxYg +
-        ", tBdzyxxxWg=" + tBdzyxxxWg +
-        ", tBdzyxxxDl=" + tBdzyxxxDl +
-        ", tBdzyxxxFzl=" + tBdzyxxxFzl +
-        ", tBdzyxxxSzgl=" + tBdzyxxxSzgl +
-        ", tBdzyxxxGlys=" + tBdzyxxxGlys +
-        ", tBdzyxxxSjlx=" + tBdzyxxxSjlx +
-        ", tBdzyxxxGZdfhsk=" + tBdzyxxxGZdfhsk +
-        ", tBdzyxxxGYg=" + tBdzyxxxGYg +
-        ", tBdzyxxxGWg=" + tBdzyxxxGWg +
-        ", tBdzyxxxGDl=" + tBdzyxxxGDl +
-        ", tBdzyxxxZZdfhsk=" + tBdzyxxxZZdfhsk +
-        ", tBdzyxxxZYg=" + tBdzyxxxZYg +
-        ", tBdzyxxxZWg=" + tBdzyxxxZWg +
-        ", tBdzyxxxZDl=" + tBdzyxxxZDl +
-        ", tBdzyxxxDZdfhsk=" + tBdzyxxxDZdfhsk +
-        ", tBdzyxxxDYg=" + tBdzyxxxDYg +
-        ", tBdzyxxxDWg=" + tBdzyxxxDWg +
-        ", tBdzyxxxDDl=" + tBdzyxxxDDl +
-        "}";
+                "tBdzyxxxId=" + tBdzyxxxId +
+                ", tBdzyxxxSjny=" + tBdzyxxxSjny +
+                ", tBdzyxxxBdzId=" + tBdzyxxxBdzId +
+                ", tBdzyxxxByqId=" + tBdzyxxxByqId +
+                ", tBdzyxxxRl=" + tBdzyxxxRl +
+                ", tBdzyxxxZdfhsk=" + tBdzyxxxZdfhsk +
+                ", tBdzyxxxYg=" + tBdzyxxxYg +
+                ", tBdzyxxxWg=" + tBdzyxxxWg +
+                ", tBdzyxxxDl=" + tBdzyxxxDl +
+                ", tBdzyxxxFzl=" + tBdzyxxxFzl +
+                ", tBdzyxxxSzgl=" + tBdzyxxxSzgl +
+                ", tBdzyxxxGlys=" + tBdzyxxxGlys +
+                ", tBdzyxxxSjlx=" + tBdzyxxxSjlx +
+                ", tBdzyxxxGZdfhsk=" + tBdzyxxxGZdfhsk +
+                ", tBdzyxxxGYg=" + tBdzyxxxGYg +
+                ", tBdzyxxxGWg=" + tBdzyxxxGWg +
+                ", tBdzyxxxGDl=" + tBdzyxxxGDl +
+                ", tBdzyxxxZZdfhsk=" + tBdzyxxxZZdfhsk +
+                ", tBdzyxxxZYg=" + tBdzyxxxZYg +
+                ", tBdzyxxxZWg=" + tBdzyxxxZWg +
+                ", tBdzyxxxZDl=" + tBdzyxxxZDl +
+                ", tBdzyxxxDZdfhsk=" + tBdzyxxxDZdfhsk +
+                ", tBdzyxxxDYg=" + tBdzyxxxDYg +
+                ", tBdzyxxxDWg=" + tBdzyxxxDWg +
+                ", tBdzyxxxDDl=" + tBdzyxxxDDl +
+                "}";
     }
 }

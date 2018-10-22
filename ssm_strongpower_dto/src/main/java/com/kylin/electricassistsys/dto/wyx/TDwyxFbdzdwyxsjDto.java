@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.wyx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDwyxFbdzdwyxsjDto {
+public class TDwyxFbdzdwyxsjDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -594,70 +596,70 @@ public class TDwyxFbdzdwyxsjDto {
     @Override
     public String toString() {
         return "TDwyxFbdzdwyxsj{" +
-        "tFbdzdwyxsjId=" + tFbdzdwyxsjId +
-        ", tFbdzdwyxsjPId=" + tFbdzdwyxsjPId +
-        ", tFbdzdwyxsjYwdw=" + tFbdzdwyxsjYwdw +
-        ", tFbdzdwyxsjBdzname=" + tFbdzdwyxsjBdzname +
-        ", tFbdzdwyxsjYear=" + tFbdzdwyxsjYear +
-        ", tFbdzdwyxsjDydjid=" + tFbdzdwyxsjDydjid +
-        ", tFbdzdwyxsjGdfqid=" + tFbdzdwyxsjGdfqid +
-        ", tFbdzdwyxsjBzZbname1=" + tFbdzdwyxsjBzZbname1 +
-        ", tFbdzdwyxsjBzZbname2=" + tFbdzdwyxsjBzZbname2 +
-        ", tFbdzdwyxsjBzZbname3=" + tFbdzdwyxsjBzZbname3 +
-        ", tFbdzdwyxsjBzGyc=" + tFbdzdwyxsjBzGyc +
-        ", tFbdzdwyxsjBzZyc=" + tFbdzdwyxsjBzZyc +
-        ", tFbdzdwyxsjBzDyc=" + tFbdzdwyxsjBzDyc +
-        ", tFbdzdwyxsjBzGycrl=" + tFbdzdwyxsjBzGycrl +
-        ", tFbdzdwyxsjBzZycrl=" + tFbdzdwyxsjBzZycrl +
-        ", tFbdzdwyxsjBzDycrl=" + tFbdzdwyxsjBzDycrl +
-        ", tFbdzdwyxsjBzZdfhsk=" + tFbdzdwyxsjBzZdfhsk +
-        ", tFbdzdwyxsjBzYg=" + tFbdzdwyxsjBzYg +
-        ", tFbdzdwyxsjBzWg=" + tFbdzdwyxsjBzWg +
-        ", tFbdzdwyxsjBzDl=" + tFbdzdwyxsjBzDl +
-        ", tFbdzdwyxsjBzGlys=" + tFbdzdwyxsjBzGlys +
-        ", tFbdzdwyxsjZdZbname1=" + tFbdzdwyxsjZdZbname1 +
-        ", tFbdzdwyxsjZdZbname2=" + tFbdzdwyxsjZdZbname2 +
-        ", tFbdzdwyxsjZdZbname3=" + tFbdzdwyxsjZdZbname3 +
-        ", tFbdzdwyxsjZdGyc=" + tFbdzdwyxsjZdGyc +
-        ", tFbdzdwyxsjZdZyc=" + tFbdzdwyxsjZdZyc +
-        ", tFbdzdwyxsjZdDyc=" + tFbdzdwyxsjZdDyc +
-        ", tFbdzdwyxsjZdGycrl=" + tFbdzdwyxsjZdGycrl +
-        ", tFbdzdwyxsjZdZycrl=" + tFbdzdwyxsjZdZycrl +
-        ", tFbdzdwyxsjZdDycrl=" + tFbdzdwyxsjZdDycrl +
-        ", tFbdzdwyxsjZdZdfhsk=" + tFbdzdwyxsjZdZdfhsk +
-        ", tFbdzdwyxsjZdYg=" + tFbdzdwyxsjZdYg +
-        ", tFbdzdwyxsjZdWg=" + tFbdzdwyxsjZdWg +
-        ", tFbdzdwyxsjZdDl=" + tFbdzdwyxsjZdDl +
-        ", tFbdzdwyxsjZdGlys=" + tFbdzdwyxsjZdGlys +
-        ", tFbdzdwyxsjGqZbname1=" + tFbdzdwyxsjGqZbname1 +
-        ", tFbdzdwyxsjGqZbname2=" + tFbdzdwyxsjGqZbname2 +
-        ", tFbdzdwyxsjGqZbname3=" + tFbdzdwyxsjGqZbname3 +
-        ", tFbdzdwyxsjGqGyc=" + tFbdzdwyxsjGqGyc +
-        ", tFbdzdwyxsjGqZyc=" + tFbdzdwyxsjGqZyc +
-        ", tFbdzdwyxsjGqDyc=" + tFbdzdwyxsjGqDyc +
-        ", tFbdzdwyxsjGqGycrl=" + tFbdzdwyxsjGqGycrl +
-        ", tFbdzdwyxsjGqZycrl=" + tFbdzdwyxsjGqZycrl +
-        ", tFbdzdwyxsjGqDycrl=" + tFbdzdwyxsjGqDycrl +
-        ", tFbdzdwyxsjGqZdfhsk=" + tFbdzdwyxsjGqZdfhsk +
-        ", tFbdzdwyxsjGqYg=" + tFbdzdwyxsjGqYg +
-        ", tFbdzdwyxsjGqWg=" + tFbdzdwyxsjGqWg +
-        ", tFbdzdwyxsjGqDl=" + tFbdzdwyxsjGqDl +
-        ", tFbdzdwyxsjGqGlys=" + tFbdzdwyxsjGqGlys +
-        ", tFbdzdwyxsjCjZbname1=" + tFbdzdwyxsjCjZbname1 +
-        ", tFbdzdwyxsjCjZbname2=" + tFbdzdwyxsjCjZbname2 +
-        ", tFbdzdwyxsjCjZbname3=" + tFbdzdwyxsjCjZbname3 +
-        ", tFbdzdwyxsjCjGyc=" + tFbdzdwyxsjCjGyc +
-        ", tFbdzdwyxsjCjZyc=" + tFbdzdwyxsjCjZyc +
-        ", tFbdzdwyxsjCjDyc=" + tFbdzdwyxsjCjDyc +
-        ", tFbdzdwyxsjCjGycrl=" + tFbdzdwyxsjCjGycrl +
-        ", tFbdzdwyxsjCjZycrl=" + tFbdzdwyxsjCjZycrl +
-        ", tFbdzdwyxsjCjDycrl=" + tFbdzdwyxsjCjDycrl +
-        ", tFbdzdwyxsjCjZdfhfssk=" + tFbdzdwyxsjCjZdfhfssk +
-        ", tFbdzdwyxsjCjYg=" + tFbdzdwyxsjCjYg +
-        ", tFbdzdwyxsjCjWg=" + tFbdzdwyxsjCjWg +
-        ", tFbdzdwyxsjCjDl=" + tFbdzdwyxsjCjDl +
-        ", tFbdzdwyxsjCjGlys=" + tFbdzdwyxsjCjGlys +
-        ", tFbdzdwyxsjRemark=" + tFbdzdwyxsjRemark +
-        "}";
+                "tFbdzdwyxsjId=" + tFbdzdwyxsjId +
+                ", tFbdzdwyxsjPId=" + tFbdzdwyxsjPId +
+                ", tFbdzdwyxsjYwdw=" + tFbdzdwyxsjYwdw +
+                ", tFbdzdwyxsjBdzname=" + tFbdzdwyxsjBdzname +
+                ", tFbdzdwyxsjYear=" + tFbdzdwyxsjYear +
+                ", tFbdzdwyxsjDydjid=" + tFbdzdwyxsjDydjid +
+                ", tFbdzdwyxsjGdfqid=" + tFbdzdwyxsjGdfqid +
+                ", tFbdzdwyxsjBzZbname1=" + tFbdzdwyxsjBzZbname1 +
+                ", tFbdzdwyxsjBzZbname2=" + tFbdzdwyxsjBzZbname2 +
+                ", tFbdzdwyxsjBzZbname3=" + tFbdzdwyxsjBzZbname3 +
+                ", tFbdzdwyxsjBzGyc=" + tFbdzdwyxsjBzGyc +
+                ", tFbdzdwyxsjBzZyc=" + tFbdzdwyxsjBzZyc +
+                ", tFbdzdwyxsjBzDyc=" + tFbdzdwyxsjBzDyc +
+                ", tFbdzdwyxsjBzGycrl=" + tFbdzdwyxsjBzGycrl +
+                ", tFbdzdwyxsjBzZycrl=" + tFbdzdwyxsjBzZycrl +
+                ", tFbdzdwyxsjBzDycrl=" + tFbdzdwyxsjBzDycrl +
+                ", tFbdzdwyxsjBzZdfhsk=" + tFbdzdwyxsjBzZdfhsk +
+                ", tFbdzdwyxsjBzYg=" + tFbdzdwyxsjBzYg +
+                ", tFbdzdwyxsjBzWg=" + tFbdzdwyxsjBzWg +
+                ", tFbdzdwyxsjBzDl=" + tFbdzdwyxsjBzDl +
+                ", tFbdzdwyxsjBzGlys=" + tFbdzdwyxsjBzGlys +
+                ", tFbdzdwyxsjZdZbname1=" + tFbdzdwyxsjZdZbname1 +
+                ", tFbdzdwyxsjZdZbname2=" + tFbdzdwyxsjZdZbname2 +
+                ", tFbdzdwyxsjZdZbname3=" + tFbdzdwyxsjZdZbname3 +
+                ", tFbdzdwyxsjZdGyc=" + tFbdzdwyxsjZdGyc +
+                ", tFbdzdwyxsjZdZyc=" + tFbdzdwyxsjZdZyc +
+                ", tFbdzdwyxsjZdDyc=" + tFbdzdwyxsjZdDyc +
+                ", tFbdzdwyxsjZdGycrl=" + tFbdzdwyxsjZdGycrl +
+                ", tFbdzdwyxsjZdZycrl=" + tFbdzdwyxsjZdZycrl +
+                ", tFbdzdwyxsjZdDycrl=" + tFbdzdwyxsjZdDycrl +
+                ", tFbdzdwyxsjZdZdfhsk=" + tFbdzdwyxsjZdZdfhsk +
+                ", tFbdzdwyxsjZdYg=" + tFbdzdwyxsjZdYg +
+                ", tFbdzdwyxsjZdWg=" + tFbdzdwyxsjZdWg +
+                ", tFbdzdwyxsjZdDl=" + tFbdzdwyxsjZdDl +
+                ", tFbdzdwyxsjZdGlys=" + tFbdzdwyxsjZdGlys +
+                ", tFbdzdwyxsjGqZbname1=" + tFbdzdwyxsjGqZbname1 +
+                ", tFbdzdwyxsjGqZbname2=" + tFbdzdwyxsjGqZbname2 +
+                ", tFbdzdwyxsjGqZbname3=" + tFbdzdwyxsjGqZbname3 +
+                ", tFbdzdwyxsjGqGyc=" + tFbdzdwyxsjGqGyc +
+                ", tFbdzdwyxsjGqZyc=" + tFbdzdwyxsjGqZyc +
+                ", tFbdzdwyxsjGqDyc=" + tFbdzdwyxsjGqDyc +
+                ", tFbdzdwyxsjGqGycrl=" + tFbdzdwyxsjGqGycrl +
+                ", tFbdzdwyxsjGqZycrl=" + tFbdzdwyxsjGqZycrl +
+                ", tFbdzdwyxsjGqDycrl=" + tFbdzdwyxsjGqDycrl +
+                ", tFbdzdwyxsjGqZdfhsk=" + tFbdzdwyxsjGqZdfhsk +
+                ", tFbdzdwyxsjGqYg=" + tFbdzdwyxsjGqYg +
+                ", tFbdzdwyxsjGqWg=" + tFbdzdwyxsjGqWg +
+                ", tFbdzdwyxsjGqDl=" + tFbdzdwyxsjGqDl +
+                ", tFbdzdwyxsjGqGlys=" + tFbdzdwyxsjGqGlys +
+                ", tFbdzdwyxsjCjZbname1=" + tFbdzdwyxsjCjZbname1 +
+                ", tFbdzdwyxsjCjZbname2=" + tFbdzdwyxsjCjZbname2 +
+                ", tFbdzdwyxsjCjZbname3=" + tFbdzdwyxsjCjZbname3 +
+                ", tFbdzdwyxsjCjGyc=" + tFbdzdwyxsjCjGyc +
+                ", tFbdzdwyxsjCjZyc=" + tFbdzdwyxsjCjZyc +
+                ", tFbdzdwyxsjCjDyc=" + tFbdzdwyxsjCjDyc +
+                ", tFbdzdwyxsjCjGycrl=" + tFbdzdwyxsjCjGycrl +
+                ", tFbdzdwyxsjCjZycrl=" + tFbdzdwyxsjCjZycrl +
+                ", tFbdzdwyxsjCjDycrl=" + tFbdzdwyxsjCjDycrl +
+                ", tFbdzdwyxsjCjZdfhfssk=" + tFbdzdwyxsjCjZdfhfssk +
+                ", tFbdzdwyxsjCjYg=" + tFbdzdwyxsjCjYg +
+                ", tFbdzdwyxsjCjWg=" + tFbdzdwyxsjCjWg +
+                ", tFbdzdwyxsjCjDl=" + tFbdzdwyxsjCjDl +
+                ", tFbdzdwyxsjCjGlys=" + tFbdzdwyxsjCjGlys +
+                ", tFbdzdwyxsjRemark=" + tFbdzdwyxsjRemark +
+                "}";
     }
 }

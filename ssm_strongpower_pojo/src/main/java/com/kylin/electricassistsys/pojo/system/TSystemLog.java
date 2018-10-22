@@ -71,6 +71,23 @@ public class TSystemLog extends Model<TSystemLog> {
     @TableField("USER_URL")
     private String userURL;
 
+    /**
+     * 模块名
+     */
+    private String moduleName;
+    /**
+     * 事件类型
+     */
+    private String eventType;
+    /**
+     * 日志类型
+     */
+    private String logType;
+    /**
+     * 描述
+     */
+    private String remark;
+
     public String getUserURL() {
         return userURL;
     }
@@ -176,22 +193,59 @@ public class TSystemLog extends Model<TSystemLog> {
         this.dataStatus = dataStatus;
     }
 
+    public String getModuleName() {
+        return moduleName;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
+    }
+
+    public String getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
+    }
+
+    public String getLogType() {
+        return logType;
+    }
+
+    public void setLogType(String logType) {
+        this.logType = logType;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
     @Override
     public String toString() {
         return "TSystemLog{" +
-        "id=" + id +
-        ", userIp=" + userIp +
-        ", userMethod=" + userMethod +
-        ", userOperationTime=" + userOperationTime +
-        ", userName=" + userName +
-        ", userOperationLegitimate=" + userOperationLegitimate +
-        ", userParameters=" + userParameters +
-        ", userResult=" + userResult +
-        ", userDuration=" + userDuration +
-        ", userId=" + userId +
-        ", userAgent=" + userAgent +
-        ", dataStatus=" + dataStatus +
-        "}";
+                "id='" + id + '\'' +
+                ", userIp='" + userIp + '\'' +
+                ", userMethod='" + userMethod + '\'' +
+                ", userOperationTime='" + userOperationTime + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userOperationLegitimate='" + userOperationLegitimate + '\'' +
+                ", userParameters='" + userParameters + '\'' +
+                ", userResult='" + userResult + '\'' +
+                ", userDuration=" + userDuration +
+                ", userId='" + userId + '\'' +
+                ", userAgent='" + userAgent + '\'' +
+                ", dataStatus=" + dataStatus +
+                ", userURL='" + userURL + '\'' +
+                ", moduleName='" + moduleName + '\'' +
+                ", eventType='" + eventType + '\'' +
+                ", logType='" + logType + '\'' +
+                ", remark='" + remark + '\'' +
+                '}';
     }
 
     protected Serializable pkVal() {

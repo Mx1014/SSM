@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.jcsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJcsjZyyhDto {
+public class TJcsjZyyhDto extends BaseDto {
 
 
     private String tZyyhIuId;
@@ -134,19 +136,19 @@ public class TJcsjZyyhDto {
     @Override
     public String toString() {
         return "TJcsjZyyh{" +
-        "tZyyhIuId=" + tZyyhIuId +
-        ", tZyyhIuYear=" + tZyyhIuYear +
-        ", tZyyhUsername=" + tZyyhUsername +
-        ", tZyyhPowerupVoltageclass=" + tZyyhPowerupVoltageclass +
-        ", tZyyhLoadlevel=" + tZyyhLoadlevel +
-        ", tZyyhSeId=" + tZyyhSeId +
-        ", tZyyhTransformercapacity=" + tZyyhTransformercapacity +
-        ", tZyyhPowersupplyone=" + tZyyhPowersupplyone +
-        ", tZyyhPowersupplytwo=" + tZyyhPowersupplytwo +
-        ", tZyyhSecurityitemsName=" + tZyyhSecurityitemsName +
-        ", tZyyhIsmakeplans=" + tZyyhIsmakeplans +
-        ", tZyyhIuEndyear=" + tZyyhIuEndyear +
-        ", tZyyhGqlx=" + tZyyhGqlx +
-        "}";
+                "tZyyhIuId=" + tZyyhIuId +
+                ", tZyyhIuYear=" + tZyyhIuYear +
+                ", tZyyhUsername=" + tZyyhUsername +
+                ", tZyyhPowerupVoltageclass=" + tZyyhPowerupVoltageclass +
+                ", tZyyhLoadlevel=" + tZyyhLoadlevel +
+                ", tZyyhSeId=" + tZyyhSeId +
+                ", tZyyhTransformercapacity=" + tZyyhTransformercapacity +
+                ", tZyyhPowersupplyone=" + tZyyhPowersupplyone +
+                ", tZyyhPowersupplytwo=" + tZyyhPowersupplytwo +
+                ", tZyyhSecurityitemsName=" + tZyyhSecurityitemsName +
+                ", tZyyhIsmakeplans=" + tZyyhIsmakeplans +
+                ", tZyyhIuEndyear=" + tZyyhIuEndyear +
+                ", tZyyhGqlx=" + tZyyhGqlx +
+                "}";
     }
 }

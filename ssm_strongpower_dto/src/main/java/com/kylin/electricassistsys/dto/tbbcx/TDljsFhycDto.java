@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tbbcx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDljsFhycDto {
+public class TDljsFhycDto extends BaseDto {
 
 
     private String tFhycId;
@@ -68,16 +70,15 @@ public class TDljsFhycDto {
     }
 
 
-
     @Override
     public String toString() {
         return "TDljsFhyc{" +
-        "tFhycId=" + tFhycId +
-        ", tFhycYhmc=" + tFhycYhmc +
-        ", tFhycDydj=" + tFhycDydj +
-        ", tFhycLsfh=" + tFhycLsfh +
-        ", tFhycYcnf=" + tFhycYcnf +
-        ", tFhycFhyc=" + tFhycFhyc +
-        "}";
+                "tFhycId=" + tFhycId +
+                ", tFhycYhmc=" + tFhycYhmc +
+                ", tFhycDydj=" + tFhycDydj +
+                ", tFhycLsfh=" + tFhycLsfh +
+                ", tFhycYcnf=" + tFhycYcnf +
+                ", tFhycFhyc=" + tFhycFhyc +
+                "}";
     }
 }

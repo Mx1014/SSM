@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.wghgl;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDwghglGybyqDto  {
+public class TDwghglGybyqDto extends BaseDto {
 
 
     private String tGybyqId;
@@ -106,16 +108,16 @@ public class TDwghglGybyqDto  {
     @Override
     public String toString() {
         return "TDwghglGybyq{" +
-        "tGybyqId=" + tGybyqId +
-        ", tBdzId=" + tBdzId +
-        ", tDwghglId=" + tDwghglId +
-        ", tGybyqName=" + tGybyqName +
-        ", tGybyqEddy=" + tGybyqEddy +
-        ", tGybyqRl=" + tGybyqRl +
-        ", tGybyqMpxh=" + tGybyqMpxh +
-        ", tGybyqMpbb=" + tGybyqMpbb +
-        ", tGybyqTyfs=" + tGybyqTyfs +
-        ", tGybyqRemark=" + tGybyqRemark +
-        "}";
+                "tGybyqId=" + tGybyqId +
+                ", tBdzId=" + tBdzId +
+                ", tDwghglId=" + tDwghglId +
+                ", tGybyqName=" + tGybyqName +
+                ", tGybyqEddy=" + tGybyqEddy +
+                ", tGybyqRl=" + tGybyqRl +
+                ", tGybyqMpxh=" + tGybyqMpxh +
+                ", tGybyqMpbb=" + tGybyqMpbb +
+                ", tGybyqTyfs=" + tGybyqTyfs +
+                ", tGybyqRemark=" + tGybyqRemark +
+                "}";
     }
 }

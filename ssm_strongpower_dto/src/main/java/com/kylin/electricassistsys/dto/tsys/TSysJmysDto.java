@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tsys;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSysJmysDto {
+public class TSysJmysDto extends BaseDto {
 
 
     private String tYmysid;
@@ -196,26 +198,26 @@ public class TSysJmysDto {
     @Override
     public String toString() {
         return "TSysJmys{" +
-        "tYmysid=" + tYmysid +
-        ", tYmysdlybt=" + tYmysdlybt +
-        ", tYmysdlytp=" + tYmysdlytp +
-        ", tYmysdlkbt=" + tYmysdlkbt +
-        ", tYmyszytp=" + tYmyszytp +
-        ", tYmysbtlbty=" + tYmysbtlbty +
-        ", tYmysbtltpy=" + tYmysbtltpy +
-        ", tYmysbtlbte=" + tYmysbtlbte +
-        ", tYmysbtltpe=" + tYmysbtltpe +
-        ", tYmysbtlbts=" + tYmysbtlbts +
-        ", tYmysbtltps=" + tYmysbtltps +
-        ", tYmysrwlbty=" + tYmysrwlbty +
-        ", tYmysrwltpy=" + tYmysrwltpy +
-        ", tYmysrwlbte=" + tYmysrwlbte +
-        ", tYmysrwltpe=" + tYmysrwltpe +
-        ", tYmysrwlbts=" + tYmysrwlbts +
-        ", tYmysrwltps=" + tYmysrwltps +
-        ", tYmysrwlbtf=" + tYmysrwlbtf +
-        ", tYmysrwltpf=" + tYmysrwltpf +
-        ", tYmysxzfa=" + tYmysxzfa +
-        "}";
+                "tYmysid=" + tYmysid +
+                ", tYmysdlybt=" + tYmysdlybt +
+                ", tYmysdlytp=" + tYmysdlytp +
+                ", tYmysdlkbt=" + tYmysdlkbt +
+                ", tYmyszytp=" + tYmyszytp +
+                ", tYmysbtlbty=" + tYmysbtlbty +
+                ", tYmysbtltpy=" + tYmysbtltpy +
+                ", tYmysbtlbte=" + tYmysbtlbte +
+                ", tYmysbtltpe=" + tYmysbtltpe +
+                ", tYmysbtlbts=" + tYmysbtlbts +
+                ", tYmysbtltps=" + tYmysbtltps +
+                ", tYmysrwlbty=" + tYmysrwlbty +
+                ", tYmysrwltpy=" + tYmysrwltpy +
+                ", tYmysrwlbte=" + tYmysrwlbte +
+                ", tYmysrwltpe=" + tYmysrwltpe +
+                ", tYmysrwlbts=" + tYmysrwlbts +
+                ", tYmysrwltps=" + tYmysrwltps +
+                ", tYmysrwlbtf=" + tYmysrwlbtf +
+                ", tYmysrwltpf=" + tYmysrwltpf +
+                ", tYmysxzfa=" + tYmysxzfa +
+                "}";
     }
 }

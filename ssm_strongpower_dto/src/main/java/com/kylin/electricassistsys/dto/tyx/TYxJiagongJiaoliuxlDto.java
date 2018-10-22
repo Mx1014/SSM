@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.tyx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 交流线路加工后的运行表
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.tyx;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TYxJiagongJiaoliuxlDto  {
+public class TYxJiagongJiaoliuxlDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -99,15 +101,15 @@ public class TYxJiagongJiaoliuxlDto  {
     @Override
     public String toString() {
         return "TYxJiagongJiaoliuxl{" +
-        "jgid=" + jgid +
-        ", jgnf=" + jgnf +
-        ", xlid=" + xlid +
-        ", yougong=" + yougong +
-        ", wugong=" + wugong +
-        ", dianliu=" + dianliu +
-        ", tqtype=" + tqtype +
-        ", zdfhfssk=" + zdfhfssk +
-        ", remark=" + remark +
-        "}";
+                "jgid=" + jgid +
+                ", jgnf=" + jgnf +
+                ", xlid=" + xlid +
+                ", yougong=" + yougong +
+                ", wugong=" + wugong +
+                ", dianliu=" + dianliu +
+                ", tqtype=" + tqtype +
+                ", zdfhfssk=" + zdfhfssk +
+                ", remark=" + remark +
+                "}";
     }
 }

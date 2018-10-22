@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.tyx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 变压器运行数据表
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.tyx;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TYxYxsjByqDto  {
+public class TYxYxsjByqDto extends BaseDto {
 
 
     private String yxid;
@@ -107,16 +109,16 @@ public class TYxYxsjByqDto  {
     @Override
     public String toString() {
         return "TYxYxsjByq{" +
-        "yxid=" + yxid +
-        ", yxtype=" + yxtype +
-        ", yxvalue=" + yxvalue +
-        ", yxnf=" + yxnf +
-        ", tqtype=" + tqtype +
-        ", cmtype=" + cmtype +
-        ", tqshijian=" + tqshijian +
-        ", sbid=" + sbid +
-        ", bdzid=" + bdzid +
-        ", remark=" + remark +
-        "}";
+                "yxid=" + yxid +
+                ", yxtype=" + yxtype +
+                ", yxvalue=" + yxvalue +
+                ", yxnf=" + yxnf +
+                ", tqtype=" + tqtype +
+                ", cmtype=" + cmtype +
+                ", tqshijian=" + tqshijian +
+                ", sbid=" + sbid +
+                ", bdzid=" + bdzid +
+                ", remark=" + remark +
+                "}";
     }
 }

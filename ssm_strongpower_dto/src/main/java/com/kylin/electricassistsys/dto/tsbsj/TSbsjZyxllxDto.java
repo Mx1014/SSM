@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.tsbsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TSbsjZyxllxDto {
+public class TSbsjZyxllxDto extends BaseDto {
 
 
     private String tZyxllxId;
@@ -44,9 +46,9 @@ public class TSbsjZyxllxDto {
     @Override
     public String toString() {
         return "TSbsjZyxllx{" +
-        "tZyxllxId=" + tZyxllxId +
-        ", tZyxllxBid=" + tZyxllxBid +
-        ", tZyxllxEid=" + tZyxllxEid +
-        "}";
+                "tZyxllxId=" + tZyxllxId +
+                ", tZyxllxBid=" + tZyxllxBid +
+                ", tZyxllxEid=" + tZyxllxEid +
+                "}";
     }
 }

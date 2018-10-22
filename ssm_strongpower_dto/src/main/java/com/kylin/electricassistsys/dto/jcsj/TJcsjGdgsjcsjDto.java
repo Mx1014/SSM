@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.jcsj;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 供电公司基础数据
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.jcsj;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJcsjGdgsjcsjDto  {
+public class TJcsjGdgsjcsjDto extends BaseDto {
 
 
     private String tGdgsjcsjId;
@@ -482,45 +484,45 @@ public class TJcsjGdgsjcsjDto  {
     @Override
     public String toString() {
         return "TJcsjGdgsjcsj{" +
-        "tGdgsjcsjId=" + tGdgsjcsjId +
-        ", tGdgsjcsjTjnf=" + tGdgsjcsjTjnf +
-        ", tGdgsjcsjXzmj=" + tGdgsjcsjXzmj +
-        ", tGdgsjcsjGdmj=" + tGdgsjcsjGdmj +
-        ", tGdgsjcsjGdrk=" + tGdgsjcsjGdrk +
-        ", tGdgsjcsjGdfq=" + tGdgsjcsjGdfq +
-        ", tGdgsjcsjQshgdl=" + tGdgsjcsjQshgdl +
-        ", tGdgsjcsjWgdl=" + tGdgsjcsjWgdl +
-        ", tGdgsjcsjZdfh=" + tGdgsjcsjZdfh +
-        ", tGdgsjcsjRzb=" + tGdgsjcsjRzb +
-        ", tGdgsjcsjSdl=" + tGdgsjcsjSdl +
-        ", tGdgsjcsjGdkkl=" + tGdgsjcsjGdkkl +
-        ", tGdgsjcsjDyhgl=" + tGdgsjcsjDyhgl +
-        ", tGdgsjcsjXsl=" + tGdgsjcsjXsl +
-        ", tGdgsjcsjYhybs=" + tGdgsjcsjYhybs +
-        ", tGdgsjcsjYhybl=" + tGdgsjcsjYhybl +
-        ", tGdgsjcsjGdhs=" + tGdgsjcsjGdhs +
-        ", tGdgsjcsjBdzzs=" + tGdgsjcsjBdzzs +
-        ", tGdgsjcsjZbts=" + tGdgsjcsjZbts +
-        ", tGdgsjcsjZbrl=" + tGdgsjcsjZbrl +
-        ", tGdgsjcsjXlhs=" + tGdgsjcsjXlhs +
-        ", tGdgsjcsjXlcd=" + tGdgsjcsjXlcd +
-        ", tGdgsjcsjYwdw=" + tGdgsjcsjYwdw +
-        ", tGdgsjcsjPid=" + tGdgsjcsjPid +
-        ", tGdgsjcsjXjzdfh=" + tGdgsjcsjXjzdfh +
-        ", tGdgsjcsjDjzdfh=" + tGdgsjcsjDjzdfh +
-        ", tGdgsjcsjZgqw=" + tGdgsjcsjZgqw +
-        ", tGdgsjcsjZdqw=" + tGdgsjcsjZdqw +
-        ", tGdgsjcsjDydj=" + tGdgsjcsjDydj +
-        ", tGdgsjcsjDyyhs=" + tGdgsjcsjDyyhs +
-        ", tGdgsjcsjEjysyhs=" + tGdgsjcsjEjysyhs +
-        ", tGdgsjcsjGztdsj=" + tGdgsjcsjGztdsj +
-        ", tGdgsjcsjAptdsj=" + tGdgsjcsjAptdsj +
-        ", tGdgsjcsjGqtxcd=" + tGdgsjcsjGqtxcd +
-        ", tGdgsjcsjGqtxsbs=" + tGdgsjcsjGqtxsbs +
-        ", tGdgsjcsjWxgws=" + tGdgsjcsjWxgws +
-        ", tGdgsjcsjZbzds=" + tGdgsjcsjZbzds +
-        ", tGdgsjcsjWxzwjzs=" + tGdgsjcsjWxzwjzs +
-        ", tGdgsjcsjWxzwzds=" + tGdgsjcsjWxzwzds +
-        "}";
+                "tGdgsjcsjId=" + tGdgsjcsjId +
+                ", tGdgsjcsjTjnf=" + tGdgsjcsjTjnf +
+                ", tGdgsjcsjXzmj=" + tGdgsjcsjXzmj +
+                ", tGdgsjcsjGdmj=" + tGdgsjcsjGdmj +
+                ", tGdgsjcsjGdrk=" + tGdgsjcsjGdrk +
+                ", tGdgsjcsjGdfq=" + tGdgsjcsjGdfq +
+                ", tGdgsjcsjQshgdl=" + tGdgsjcsjQshgdl +
+                ", tGdgsjcsjWgdl=" + tGdgsjcsjWgdl +
+                ", tGdgsjcsjZdfh=" + tGdgsjcsjZdfh +
+                ", tGdgsjcsjRzb=" + tGdgsjcsjRzb +
+                ", tGdgsjcsjSdl=" + tGdgsjcsjSdl +
+                ", tGdgsjcsjGdkkl=" + tGdgsjcsjGdkkl +
+                ", tGdgsjcsjDyhgl=" + tGdgsjcsjDyhgl +
+                ", tGdgsjcsjXsl=" + tGdgsjcsjXsl +
+                ", tGdgsjcsjYhybs=" + tGdgsjcsjYhybs +
+                ", tGdgsjcsjYhybl=" + tGdgsjcsjYhybl +
+                ", tGdgsjcsjGdhs=" + tGdgsjcsjGdhs +
+                ", tGdgsjcsjBdzzs=" + tGdgsjcsjBdzzs +
+                ", tGdgsjcsjZbts=" + tGdgsjcsjZbts +
+                ", tGdgsjcsjZbrl=" + tGdgsjcsjZbrl +
+                ", tGdgsjcsjXlhs=" + tGdgsjcsjXlhs +
+                ", tGdgsjcsjXlcd=" + tGdgsjcsjXlcd +
+                ", tGdgsjcsjYwdw=" + tGdgsjcsjYwdw +
+                ", tGdgsjcsjPid=" + tGdgsjcsjPid +
+                ", tGdgsjcsjXjzdfh=" + tGdgsjcsjXjzdfh +
+                ", tGdgsjcsjDjzdfh=" + tGdgsjcsjDjzdfh +
+                ", tGdgsjcsjZgqw=" + tGdgsjcsjZgqw +
+                ", tGdgsjcsjZdqw=" + tGdgsjcsjZdqw +
+                ", tGdgsjcsjDydj=" + tGdgsjcsjDydj +
+                ", tGdgsjcsjDyyhs=" + tGdgsjcsjDyyhs +
+                ", tGdgsjcsjEjysyhs=" + tGdgsjcsjEjysyhs +
+                ", tGdgsjcsjGztdsj=" + tGdgsjcsjGztdsj +
+                ", tGdgsjcsjAptdsj=" + tGdgsjcsjAptdsj +
+                ", tGdgsjcsjGqtxcd=" + tGdgsjcsjGqtxcd +
+                ", tGdgsjcsjGqtxsbs=" + tGdgsjcsjGqtxsbs +
+                ", tGdgsjcsjWxgws=" + tGdgsjcsjWxgws +
+                ", tGdgsjcsjZbzds=" + tGdgsjcsjZbzds +
+                ", tGdgsjcsjWxzwjzs=" + tGdgsjcsjWxzwjzs +
+                ", tGdgsjcsjWxzwzds=" + tGdgsjcsjWxzwzds +
+                "}";
     }
 }

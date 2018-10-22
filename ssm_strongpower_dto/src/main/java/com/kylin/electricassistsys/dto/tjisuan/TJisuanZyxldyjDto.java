@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.tjisuan;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 计算电压降
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.tjisuan;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TJisuanZyxldyjDto{
+public class TJisuanZyxldyjDto extends BaseDto {
 
 
     private String id;
@@ -62,11 +64,11 @@ public class TJisuanZyxldyjDto{
     @Override
     public String toString() {
         return "TJisuanZyxldyj{" +
-        "id=" + id +
-        ", xlid=" + xlid +
-        ", nf=" + nf +
-        ", value=" + value +
-        ", remark=" + remark +
-        "}";
+                "id=" + id +
+                ", xlid=" + xlid +
+                ", nf=" + nf +
+                ", value=" + value +
+                ", remark=" + remark +
+                "}";
     }
 }

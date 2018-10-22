@@ -4,24 +4,28 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.kylin.electricassistsys.pojo.system.TSystemLog">
-        <result column="ID" property="id" />
-        <result column="USER_IP" property="userIp" />
-        <result column="USER_METHOD" property="userMethod" />
-        <result column="USER_OPERATION_TIME" property="userOperationTime" />
-        <result column="USER_NAME" property="userName" />
-        <result column="USER_OPERATION_LEGITIMATE" property="userOperationLegitimate" />
-        <result column="USER_PARAMETERS" property="userParameters" />
-        <result column="USER_RESULT" property="userResult" />
-        <result column="USER_DURATION" property="userDuration" />
-        <result column="USER_ID" property="userId" />
-        <result column="USER_AGENT" property="userAgent" />
-        <result column="DATA_STATUS" property="dataStatus" />
+        <result column="ID" property="id"/>
+        <result column="USER_IP" property="userIp"/>
+        <result column="USER_METHOD" property="userMethod"/>
+        <result column="USER_OPERATION_TIME" property="userOperationTime"/>
+        <result column="USER_NAME" property="userName"/>
+        <result column="USER_OPERATION_LEGITIMATE" property="userOperationLegitimate"/>
+        <result column="USER_PARAMETERS" property="userParameters"/>
+        <result column="USER_RESULT" property="userResult"/>
+        <result column="USER_DURATION" property="userDuration"/>
+        <result column="USER_ID" property="userId"/>
+        <result column="USER_AGENT" property="userAgent"/>
+        <result column="DATA_STATUS" property="dataStatus"/>
         <result column="USER_URL" property="userURL"/>
+        <result column="MODULE_NAME" property="userURL"/>
+        <result column="EVENT_TYPE" property="userURL"/>
+        <result column="LOG_TYPE" property="userURL"/>
+        <result column="REMARK" property="userURL"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        ID, USER_IP, USER_METHOD, USER_OPERATION_TIME, USER_NAME, USER_OPERATION_LEGITIMATE, USER_PARAMETERS, USER_RESULT, USER_DURATION, USER_ID, USER_AGENT, DATA_STATUS,USER_URL
+        ID, USER_IP, USER_METHOD, USER_OPERATION_TIME, USER_NAME, USER_OPERATION_LEGITIMATE, USER_PARAMETERS, USER_RESULT, USER_DURATION, USER_ID, USER_AGENT, DATA_STATUS,USER_URL,MODULE_NAME,EVENT_TYPE,LOG_TYPE,REMARK
     </sql>
 
 </mapper>

@@ -8,7 +8,7 @@ import com.kylin.electricassistsys.dto.base.BaseDto;
  * @Description: 资源管理数据数据转换类
  */
 public class ResourceManagementDto
-extends BaseDto {
+        extends BaseDto {
     /**
      * 主键ID
      */
@@ -18,7 +18,7 @@ extends BaseDto {
      */
     private String tBdzxxDydj;
     /**
-     *变压器的名字
+     * 变压器的名字
      */
     private String tDycsName;
     /**
@@ -26,11 +26,11 @@ extends BaseDto {
      */
     private String tBdzxxName;
     /**
-     *出线间隔总数
+     * 出线间隔总数
      */
     private String tBdzxxCxjg;
     /**
-     *已用出线间隔总数
+     * 已用出线间隔总数
      */
     private String tBdzxxYy;
 
@@ -82,6 +82,7 @@ extends BaseDto {
     public void settBdzxxYy(String tBdzxxYy) {
         this.tBdzxxYy = tBdzxxYy;
     }
+
     @Override
     public String toString() {
         return "ResourceManagement{" +

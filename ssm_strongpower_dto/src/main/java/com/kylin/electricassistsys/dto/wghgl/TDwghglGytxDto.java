@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.wghgl;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDwghglGytxDto {
+public class TDwghglGytxDto extends BaseDto {
 
 
     private String tGytxId;
@@ -98,15 +100,15 @@ public class TDwghglGytxDto {
     @Override
     public String toString() {
         return "TDwghglGytx{" +
-        "tGytxId=" + tGytxId +
-        ", tDwghglId=" + tDwghglId +
-        ", tGytxName=" + tGytxName +
-        ", tGytxType=" + tGytxType +
-        ", tGytxXmtz=" + tGytxXmtz +
-        ", tGytxGlcd=" + tGytxGlcd +
-        ", tGytxGlts=" + tGytxGlts +
-        ", tGytxGsbsl=" + tGytxGsbsl +
-        ", tGytxGbsl=" + tGytxGbsl +
-        "}";
+                "tGytxId=" + tGytxId +
+                ", tDwghglId=" + tDwghglId +
+                ", tGytxName=" + tGytxName +
+                ", tGytxType=" + tGytxType +
+                ", tGytxXmtz=" + tGytxXmtz +
+                ", tGytxGlcd=" + tGytxGlcd +
+                ", tGytxGlts=" + tGytxGlts +
+                ", tGytxGsbsl=" + tGytxGsbsl +
+                ", tGytxGbsl=" + tGytxGbsl +
+                "}";
     }
 }

@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.tyx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 中压线路加工后的运行表
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.tyx;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TYxJiagongZhongyaxlDto{
+public class TYxJiagongZhongyaxlDto extends BaseDto {
 
 
     private String jgid;
@@ -98,15 +100,15 @@ public class TYxJiagongZhongyaxlDto{
     @Override
     public String toString() {
         return "TYxJiagongZhongyaxl{" +
-        "jgid=" + jgid +
-        ", jgnf=" + jgnf +
-        ", xlid=" + xlid +
-        ", yougong=" + yougong +
-        ", wugong=" + wugong +
-        ", dianliu=" + dianliu +
-        ", zdfhfssk=" + zdfhfssk +
-        ", remark=" + remark +
-        ", tqtype=" + tqtype +
-        "}";
+                "jgid=" + jgid +
+                ", jgnf=" + jgnf +
+                ", xlid=" + xlid +
+                ", yougong=" + yougong +
+                ", wugong=" + wugong +
+                ", dianliu=" + dianliu +
+                ", zdfhfssk=" + zdfhfssk +
+                ", remark=" + remark +
+                ", tqtype=" + tqtype +
+                "}";
     }
 }

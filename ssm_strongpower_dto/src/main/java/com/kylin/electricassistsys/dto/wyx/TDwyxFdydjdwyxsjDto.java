@@ -1,14 +1,16 @@
 package com.kylin.electricassistsys.dto.wyx;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TDwyxFdydjdwyxsjDto  {
+public class TDwyxFdydjdwyxsjDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
 
@@ -323,40 +325,40 @@ public class TDwyxFdydjdwyxsjDto  {
     @Override
     public String toString() {
         return "TDwyxFdydjdwyxsj{" +
-        "tFdydjdwyxsjId=" + tFdydjdwyxsjId +
-        ", tFdydjdwyxsjGdgs=" + tFdydjdwyxsjGdgs +
-        ", tFdydjdwyxsjPId=" + tFdydjdwyxsjPId +
-        ", tFdydjdwyxsjYear=" + tFdydjdwyxsjYear +
-        ", tFdydjdwyxsjGycrl=" + tFdydjdwyxsjGycrl +
-        ", tFdydjdwyxsjZycrl=" + tFdydjdwyxsjZycrl +
-        ", tFdydjdwyxsjDycrl=" + tFdydjdwyxsjDycrl +
-        ", tFdydjdwyxsjCjDydj=" + tFdydjdwyxsjCjDydj +
-        ", tFdydjdwyxsjCjZdfh=" + tFdydjdwyxsjCjZdfh +
-        ", tFdydjdwyxsjCjFssk=" + tFdydjdwyxsjCjFssk +
-        ", tFdydjdwyxsjCjZcfsxzdfh=" + tFdydjdwyxsjCjZcfsxzdfh +
-        ", tFdydjdwyxsjCjWgdl=" + tFdydjdwyxsjCjWgdl +
-        ", tFdydjdwyxsjCjXss=" + tFdydjdwyxsjCjXss +
-        ", tFdydjdwyxsjXjDydj=" + tFdydjdwyxsjXjDydj +
-        ", tFdydjdwyxsjXjZdfh=" + tFdydjdwyxsjXjZdfh +
-        ", tFdydjdwyxsjXjFssk=" + tFdydjdwyxsjXjFssk +
-        ", tFdydjdwyxsjXjZcfsxzdfh=" + tFdydjdwyxsjXjZcfsxzdfh +
-        ", tFdydjdwyxsjXjWgdl=" + tFdydjdwyxsjXjWgdl +
-        ", tFdydjdwyxsjXjXss=" + tFdydjdwyxsjXjXss +
-        ", tFdydjdwyxsjQjDydj=" + tFdydjdwyxsjQjDydj +
-        ", tFdydjdwyxsjQjZdfh=" + tFdydjdwyxsjQjZdfh +
-        ", tFdydjdwyxsjQjFssk=" + tFdydjdwyxsjQjFssk +
-        ", tFdydjdwyxsjQjGqqjzdfh=" + tFdydjdwyxsjQjGqqjzdfh +
-        ", tFdydjdwyxsjQjWgdl=" + tFdydjdwyxsjQjWgdl +
-        ", tFdydjdwyxsjQjXss=" + tFdydjdwyxsjQjXss +
-        ", tFdydjdwyxsjDjDydj=" + tFdydjdwyxsjDjDydj +
-        ", tFdydjdwyxsjDjZdfh=" + tFdydjdwyxsjDjZdfh +
-        ", tFdydjdwyxsjDjFssk=" + tFdydjdwyxsjDjFssk +
-        ", tFdydjdwyxsjDjCjzdfh=" + tFdydjdwyxsjDjCjzdfh +
-        ", tFdydjdwyxsjDjWgdl=" + tFdydjdwyxsjDjWgdl +
-        ", tFdydjdwyxsjDjXss=" + tFdydjdwyxsjDjXss +
-        ", tFdydjdwyxsjZgqw=" + tFdydjdwyxsjZgqw +
-        ", tFdydjdwyxsjZdqw=" + tFdydjdwyxsjZdqw +
-        ", tFdydjdwyxsjRemark=" + tFdydjdwyxsjRemark +
-        "}";
+                "tFdydjdwyxsjId=" + tFdydjdwyxsjId +
+                ", tFdydjdwyxsjGdgs=" + tFdydjdwyxsjGdgs +
+                ", tFdydjdwyxsjPId=" + tFdydjdwyxsjPId +
+                ", tFdydjdwyxsjYear=" + tFdydjdwyxsjYear +
+                ", tFdydjdwyxsjGycrl=" + tFdydjdwyxsjGycrl +
+                ", tFdydjdwyxsjZycrl=" + tFdydjdwyxsjZycrl +
+                ", tFdydjdwyxsjDycrl=" + tFdydjdwyxsjDycrl +
+                ", tFdydjdwyxsjCjDydj=" + tFdydjdwyxsjCjDydj +
+                ", tFdydjdwyxsjCjZdfh=" + tFdydjdwyxsjCjZdfh +
+                ", tFdydjdwyxsjCjFssk=" + tFdydjdwyxsjCjFssk +
+                ", tFdydjdwyxsjCjZcfsxzdfh=" + tFdydjdwyxsjCjZcfsxzdfh +
+                ", tFdydjdwyxsjCjWgdl=" + tFdydjdwyxsjCjWgdl +
+                ", tFdydjdwyxsjCjXss=" + tFdydjdwyxsjCjXss +
+                ", tFdydjdwyxsjXjDydj=" + tFdydjdwyxsjXjDydj +
+                ", tFdydjdwyxsjXjZdfh=" + tFdydjdwyxsjXjZdfh +
+                ", tFdydjdwyxsjXjFssk=" + tFdydjdwyxsjXjFssk +
+                ", tFdydjdwyxsjXjZcfsxzdfh=" + tFdydjdwyxsjXjZcfsxzdfh +
+                ", tFdydjdwyxsjXjWgdl=" + tFdydjdwyxsjXjWgdl +
+                ", tFdydjdwyxsjXjXss=" + tFdydjdwyxsjXjXss +
+                ", tFdydjdwyxsjQjDydj=" + tFdydjdwyxsjQjDydj +
+                ", tFdydjdwyxsjQjZdfh=" + tFdydjdwyxsjQjZdfh +
+                ", tFdydjdwyxsjQjFssk=" + tFdydjdwyxsjQjFssk +
+                ", tFdydjdwyxsjQjGqqjzdfh=" + tFdydjdwyxsjQjGqqjzdfh +
+                ", tFdydjdwyxsjQjWgdl=" + tFdydjdwyxsjQjWgdl +
+                ", tFdydjdwyxsjQjXss=" + tFdydjdwyxsjQjXss +
+                ", tFdydjdwyxsjDjDydj=" + tFdydjdwyxsjDjDydj +
+                ", tFdydjdwyxsjDjZdfh=" + tFdydjdwyxsjDjZdfh +
+                ", tFdydjdwyxsjDjFssk=" + tFdydjdwyxsjDjFssk +
+                ", tFdydjdwyxsjDjCjzdfh=" + tFdydjdwyxsjDjCjzdfh +
+                ", tFdydjdwyxsjDjWgdl=" + tFdydjdwyxsjDjWgdl +
+                ", tFdydjdwyxsjDjXss=" + tFdydjdwyxsjDjXss +
+                ", tFdydjdwyxsjZgqw=" + tFdydjdwyxsjZgqw +
+                ", tFdydjdwyxsjZdqw=" + tFdydjdwyxsjZdqw +
+                ", tFdydjdwyxsjRemark=" + tFdydjdwyxsjRemark +
+                "}";
     }
 }

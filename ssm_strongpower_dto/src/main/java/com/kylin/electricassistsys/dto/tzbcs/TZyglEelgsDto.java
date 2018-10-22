@@ -1,5 +1,7 @@
 package com.kylin.electricassistsys.dto.tzbcs;
 
+import com.kylin.electricassistsys.dto.base.BaseDto;
+
 /**
  * <p>
  * 间隔管理
@@ -8,7 +10,7 @@ package com.kylin.electricassistsys.dto.tzbcs;
  * @author 陈文旭
  * @since 2018-04-24
  */
-public class TZyglEelgsDto {
+public class TZyglEelgsDto extends BaseDto {
 
 
     /**
@@ -173,19 +175,19 @@ public class TZyglEelgsDto {
     @Override
     public String toString() {
         return "TZyglEelgs{" +
-        "tEelgsId=" + tEelgsId +
-        ", tEelgsBdzid=" + tEelgsBdzid +
-        ", tEelgsJgmc=" + tEelgsJgmc +
-        ", tEelgsSyzt=" + tEelgsSyzt +
-        ", tEelgsJxmc=" + tEelgsJxmc +
-        ", tEelgsDydj=" + tEelgsDydj +
-        ", tEelgsQnzdfh=" + tEelgsQnzdfh +
-        ", tEelgsFzl=" + tEelgsFzl +
-        ", tEelgsSj=" + tEelgsSj +
-        ", tEelgsBz=" + tEelgsBz +
-        ", tEelgsNum=" + tEelgsNum +
-        ", tEelgsType=" + tEelgsType +
-        ", facId=" + facId +
-        "}";
+                "tEelgsId=" + tEelgsId +
+                ", tEelgsBdzid=" + tEelgsBdzid +
+                ", tEelgsJgmc=" + tEelgsJgmc +
+                ", tEelgsSyzt=" + tEelgsSyzt +
+                ", tEelgsJxmc=" + tEelgsJxmc +
+                ", tEelgsDydj=" + tEelgsDydj +
+                ", tEelgsQnzdfh=" + tEelgsQnzdfh +
+                ", tEelgsFzl=" + tEelgsFzl +
+                ", tEelgsSj=" + tEelgsSj +
+                ", tEelgsBz=" + tEelgsBz +
+                ", tEelgsNum=" + tEelgsNum +
+                ", tEelgsType=" + tEelgsType +
+                ", facId=" + facId +
+                "}";
     }
 }

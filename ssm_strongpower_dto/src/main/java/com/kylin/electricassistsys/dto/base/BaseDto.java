@@ -11,6 +11,10 @@ public class BaseDto {
     private Integer page;
     private Integer limit;
     private String userRedisreQequestId;
+    /**
+     * 模块名
+     */
+    private String moduleName;
 
     public Integer getPage() {
         return page;
@@ -34,5 +38,13 @@ public class BaseDto {
 
     public void setUserRedisreQequestId(String userRedisreQequestId) {
         this.userRedisreQequestId = userRedisreQequestId;
+    }
+
+    public String getModuleName() {
+        return moduleName;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
     }
 }
