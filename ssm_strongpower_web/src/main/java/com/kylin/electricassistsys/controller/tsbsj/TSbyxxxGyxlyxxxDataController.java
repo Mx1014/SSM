@@ -24,108 +24,113 @@ import javax.ws.rs.core.MediaType;
 public class TSbyxxxGyxlyxxxDataController {
     @Resource
     private TSbyxxxGyxlyxxxDataApi tSbyxxxGyxlyxxxDataApi;
+
     /**
      * 动态查询变电站运行数据进行分页
+     *
      * @param dto
      * @return
      */
     @RequestMapping("page")
-    public JSONResult getPages(@RequestBody TSbyxxxGyxlyxxxSelDto dto){
-        JSONResult result =null;
+    public JSONResult getPages(@RequestBody TSbyxxxGyxlyxxxSelDto dto) {
+        JSONResult result = null;
         try {
-            Page page =   tSbyxxxGyxlyxxxDataApi.selectPage(new Page(dto.getPage(), dto.getLimit()),dto);
-            result=JSONResult.success(page);
-        }catch (Throwable  e){
+            Page page = tSbyxxxGyxlyxxxDataApi.selectPage(new Page(dto.getPage(), dto.getLimit()), dto);
+            result = JSONResult.success(page);
+        } catch (Throwable e) {
             e.printStackTrace();
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-        return result ;
+        return result;
     }
 
     /**
-     *
      * 添加变电站运行数据指标数据
+     *
      * @return
      */
     @RequestMapping("insert")
-    public JSONResult saveData(@RequestBody TSbyxxxGyxlyxxxDto dto){
-        JSONResult result =null;
+    public JSONResult saveData(@RequestBody TSbyxxxGyxlyxxxDto dto) {
+        JSONResult result = null;
         try {
             tSbyxxxGyxlyxxxDataApi.insert(dto);
-            result=JSONResult.success();
-        }catch (Throwable e){
+            result = JSONResult.success();
+        } catch (Throwable e) {
             e.printStackTrace();
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
         return result;
 
     }
+
     /**
-     *
      * 删除根据id变电站运行数据
+     *
      * @return
      */
     @RequestMapping("del")
-    public JSONResult delData(@RequestBody String id){
-        JSONResult result =null;
+    public JSONResult delData(@RequestBody String id) {
+        JSONResult result = null;
         try {
             tSbyxxxGyxlyxxxDataApi.delete(id);
-            result=JSONResult.success();
-        }catch (Throwable e){
+            result = JSONResult.success();
+        } catch (Throwable e) {
             e.printStackTrace();
-            JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.failure("服务器错误请联系管理员");
 
         }
         return result;
     }
+
     /**
-     *
      * 根据id进行批量删除 变电站运行数据数据
+     *
      * @return
      */
     @RequestMapping("batchDel")
-    public JSONResult batchDelData(@RequestBody String ids){
-        JSONResult result=null;
+    public JSONResult batchDelData(@RequestBody String ids) {
+        JSONResult result = null;
         try {
             tSbyxxxGyxlyxxxDataApi.deleteBatchIds(ids);
-            result=JSONResult.success();
-        }catch (Throwable e){
-            result=JSONResult.failure("服务器错误请联系管理员");
-            e.printStackTrace();
-        }
-        return result;
-    }
-    /**
-     *
-     * 更新用中压线路N-1校验数据
-     * @return
-     */
-    @RequestMapping("update")
-    public JSONResult updateData(@RequestBody TSbyxxxGyxlyxxxDto dto){
-        JSONResult result=null;
-        try {
-            tSbyxxxGyxlyxxxDataApi.update(dto);
-            result=JSONResult.success();
-        }catch (Throwable e){
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
             e.printStackTrace();
         }
         return result;
     }
 
     /**
+     * 更新用中压线路N-1校验数据
      *
+     * @return
+     */
+    @RequestMapping("update")
+    public JSONResult updateData(@RequestBody TSbyxxxGyxlyxxxDto dto) {
+        JSONResult result = null;
+        try {
+            tSbyxxxGyxlyxxxDataApi.update(dto);
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /**
      * 更新变电站运行数据
+     *
      * @return
      */
     @RequestMapping("list")
-    public JSONResult listData(){
-        JSONResult result=null;
+    public JSONResult listData() {
+        JSONResult result = null;
         try {
-            result=JSONResult.success(tSbyxxxGyxlyxxxDataApi.getList());
-        }catch (Throwable e){
+            result = JSONResult.success(tSbyxxxGyxlyxxxDataApi.getList());
+        } catch (Throwable e) {
             e.printStackTrace();
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
         return result;
     }

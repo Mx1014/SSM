@@ -24,109 +24,112 @@ import javax.ws.rs.core.MediaType;
 public class TYxGyxljfdlDataController {
     @Resource
     private TYxGyxljfdlDataApi tYxGyxljfdlDataApi;
-    
-   /**
+
+    /**
      * 动态查询高压线路电量信息进行分页
+     *
      * @param dto
      * @return
-             */
+     */
     @RequestMapping("page")
-    public JSONResult getPages(@RequestBody TYxGyxljfdlSelDto dto){
-        JSONResult result =null;
+    public JSONResult getPages(@RequestBody TYxGyxljfdlSelDto dto) {
+        JSONResult result = null;
         try {
-            Page page =   tYxGyxljfdlDataApi.selectPage(new Page(dto.getPage(), dto.getLimit()),dto);
-            result=JSONResult.success(page);
-        }catch (Throwable  e){
+            Page page = tYxGyxljfdlDataApi.selectPage(new Page(dto.getPage(), dto.getLimit()), dto);
+            result = JSONResult.success(page);
+        } catch (Throwable e) {
             e.printStackTrace();
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-        return result ;
+        return result;
     }
 
     /**
-     *
      * 添加高压线路电量信息指标数据
+     *
      * @return
      */
     @RequestMapping("insert")
-    public JSONResult saveData(@RequestBody TYxGyxljfdlDto dto){
-        JSONResult result =null;
+    public JSONResult saveData(@RequestBody TYxGyxljfdlDto dto) {
+        JSONResult result = null;
         try {
             tYxGyxljfdlDataApi.insert(dto);
-            result=JSONResult.success();
-        }catch (Throwable e){
+            result = JSONResult.success();
+        } catch (Throwable e) {
             e.printStackTrace();
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
         return result;
 
     }
+
     /**
-     *
      * 删除根据id高压线路电量信息
+     *
      * @return
      */
     @RequestMapping("del")
-    public JSONResult delData(@RequestBody String id){
-        JSONResult result =null;
+    public JSONResult delData(@RequestBody String id) {
+        JSONResult result = null;
         try {
             tYxGyxljfdlDataApi.delete(id);
-            result=JSONResult.success();
-        }catch (Throwable e){
+            result = JSONResult.success();
+        } catch (Throwable e) {
             e.printStackTrace();
-            JSONResult.failure("服务器错误请联系管理员");
-
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
         return result;
     }
+
     /**
-     *
      * 根据id进行批量删除 高压线路电量信息数据
+     *
      * @return
      */
     @RequestMapping("batchDel")
-    public JSONResult batchDelData(@RequestBody String ids){
-        JSONResult result=null;
+    public JSONResult batchDelData(@RequestBody String ids) {
+        JSONResult result = null;
         try {
             tYxGyxljfdlDataApi.deleteBatchIds(ids);
-            result=JSONResult.success();
-        }catch (Throwable e){
+            result = JSONResult.success();
+        } catch (Throwable e) {
             e.printStackTrace();
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
 
         return result;
     }
+
     /**
-     *
      * 更新用高压线路电量信息数据
+     *
      * @return
      */
     @RequestMapping("update")
-    public JSONResult updateData(@RequestBody TYxGyxljfdlDto dto){
-        JSONResult result=null;
+    public JSONResult updateData(@RequestBody TYxGyxljfdlDto dto) {
+        JSONResult result = null;
         try {
             tYxGyxljfdlDataApi.update(dto);
-            result=JSONResult.success();
-        }catch (Throwable e){
+            result = JSONResult.success();
+        } catch (Throwable e) {
             e.printStackTrace();
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
         return result;
     }
 
     /**
-     *
      * 更新高压线路电量信息
+     *
      * @return
      */
     @RequestMapping("list")
-    public JSONResult listData(){
-        JSONResult result=null;
+    public JSONResult listData() {
+        JSONResult result = null;
         try {
-            result=JSONResult.success(tYxGyxljfdlDataApi.getList());
-        }catch (Throwable e){
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.success(tYxGyxljfdlDataApi.getList());
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
         return result;
     }

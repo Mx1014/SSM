@@ -135,6 +135,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -163,6 +164,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -188,6 +190,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -217,6 +220,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -246,6 +250,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -273,6 +278,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -298,6 +304,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -326,6 +333,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -352,6 +360,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -381,6 +390,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -411,6 +421,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -441,6 +452,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -468,6 +480,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -495,6 +508,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -522,6 +536,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -641,6 +656,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
@@ -667,6 +683,7 @@ public class UserLoginDataController {
             }
             result = JSONResult.lostCode("登录验证码过期");
         } catch (Exception e) {
+            result = JSONResult.failure("服务器错误,请您联系系统管理员");
             e.printStackTrace();
         }
         return result;
