@@ -30,73 +30,74 @@ public class TJcsjDylxDataController {
     private RedisCacheService redisCacheService;
 
     @RequestMapping("page")
-    public Object getPages(@RequestBody TJcsjDylxDto tJcsjDylxSelDto) {
-        JSONResult jsonResult = null;
+    public JSONResult getPages(@RequestBody TJcsjDylxDto tJcsjDylxSelDto) {
+        JSONResult result = null;
         try {
             Page page = tJcsjDylxDataApi.getPages(new Page(tJcsjDylxSelDto.getPage(), tJcsjDylxSelDto.getLimit()), tJcsjDylxSelDto);
-            jsonResult = JSONResult.success(page);
-        } catch (Exception e) {
-            System.err.println(e);
-            jsonResult = JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.success(page);
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-        return jsonResult;
+        return result;
     }
 
     @RequestMapping(value = "update", produces = "application/json;charset=UTF-8", method = RequestMethod.POST, headers = "Accept=application/json")
-    public Object update(@RequestBody TJcsjDylxDto tJcsjDylxDto) {
+    public JSONResult update(@RequestBody TJcsjDylxDto tJcsjDylxDto) {
+        JSONResult result = null;
         try {
             tJcsjDylxDataApi.update(tJcsjDylxDto);
-            return JSONResult.success("更新成功");
-        } catch (Exception e) {
-            return JSONResult.failure("更新失败");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
-
+        return result;
     }
 
     @RequestMapping("insert")
-    public Object insert(@RequestBody TJcsjDylxDto tJcsjDylxDto) {
+    public JSONResult insert(@RequestBody TJcsjDylxDto tJcsjDylxDto) {
+        JSONResult result = null;
         try {
             tJcsjDylxDataApi.insert(tJcsjDylxDto);
-            return JSONResult.success("保存成功");
-        } catch (Exception e) {
-            return JSONResult.failure("保存失败");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
-
+        return result;
     }
 
     @RequestMapping("list")
-    public Object setList() {
+    public JSONResult setList() {
+        JSONResult result = null;
         try {
-            return JSONResult.success(tJcsjDylxDataApi.getList());
-        } catch (Exception e) {
-            return JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.success(tJcsjDylxDataApi.getList());
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
+        return result;
     }
 
 
     @RequestMapping("del")
-    public Object delete(@RequestBody String id) {
+    public JSONResult delete(@RequestBody String id) {
+        JSONResult result = null;
         try {
             tJcsjDylxDataApi.delete(id);
-            return JSONResult.success("删除成功");
-        } catch (Exception e) {
-            return JSONResult.failure("删除失败");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
-
+        return result;
     }
 
     @RequestMapping("batchDel")
-    public Object batchDelete(@RequestBody String ids) {
+    public JSONResult batchDelete(@RequestBody String ids) {
+        JSONResult result = null;
         try {
             tJcsjDylxDataApi.batchDelete(ids);
-            return JSONResult.success("批量删除成功");
-        } catch (Exception e) {
-            return JSONResult.failure("批量删除失败");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
-
+        return result;
     }
 }

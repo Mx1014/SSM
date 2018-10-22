@@ -3,6 +3,7 @@ package com.kylin.electricassistsys.controller.ddsb;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.kylin.electricassistsys.data.api.ddsb.TDdsbBdzDataApi;
 import com.kylin.electricassistsys.dto.ddsb.TDdsbBdzDto;
+import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -37,16 +38,27 @@ public class TDdsbBdzDataController {
 
     @RequestMapping("list")
     @ResponseBody
-    public List<TDdsbBdzDto> list() {
-
-        return tDdsbBdzDataApi.getList();
+    public JSONResult list() {
+        JSONResult result = null;
+        try {
+            result = JSONResult.success(tDdsbBdzDataApi.getList());
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
+        }
+        return result;
     }
 
     @RequestMapping("page")
     @ResponseBody
-    public Page getPages() {
-        Page page = new Page(1, 5);
-        return tDdsbBdzDataApi.getPages(page);
+    public JSONResult getPages() {
+        JSONResult result = null;
+        try {
+            Page page = new Page(1, 5);
+            result = JSONResult.success(tDdsbBdzDataApi.getPages(page));
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
+        }
+        return result;
     }
 
 }

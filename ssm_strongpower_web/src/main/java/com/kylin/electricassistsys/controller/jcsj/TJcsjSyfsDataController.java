@@ -2,6 +2,7 @@ package com.kylin.electricassistsys.controller.jcsj;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.kylin.electricassistsys.dto.jcsj.TJcsjSyfsDto;
+import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
 import com.kylin.electricassistsys.server.impl.jcsj.TJcsjSyfsDataServerImpl;
 import io.swagger.annotations.Api;
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 import java.util.UUID;
+
 /**
  * @Auther: whq
  * @ClassName: TJcsjSyfsDataController
@@ -30,70 +32,64 @@ public class TJcsjSyfsDataController {
     private RedisCacheService redisCacheService;
 
     @RequestMapping("page")
-    public Page getPages(@RequestBody TJcsjSyfsDto tJcsjSyfsDto) {
-        Page page1 = new Page(tJcsjSyfsDto.getPage(), tJcsjSyfsDto.getLimit());
-        return tJcsjSyfsDataServerImpl.getPages(page1, tJcsjSyfsDto);
+    public JSONResult getPages(@RequestBody TJcsjSyfsDto tJcsjSyfsDto) {
+        JSONResult result = null;
+        try {
+            Page page = new Page(tJcsjSyfsDto.getPage(), tJcsjSyfsDto.getLimit());
+            result = JSONResult.success(tJcsjSyfsDataServerImpl.getPages(page, tJcsjSyfsDto));
+        } catch (Exception e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
+        }
+        return result;
     }
 
     @RequestMapping(value = "update", produces = "application/json;charset=UTF-8", method = RequestMethod.POST, headers = "Accept=application/json")
-    public String update(@RequestBody TJcsjSyfsDto tJcsjSyfsDto) {
+    public JSONResult update(@RequestBody TJcsjSyfsDto tJcsjSyfsDto) {
+        JSONResult result = null;
         try {
             tJcsjSyfsDataServerImpl.update(tJcsjSyfsDto);
-            return "保存成功";
+            result = JSONResult.success();
         } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
-
+        return result;
     }
 
     @RequestMapping("insert")
-    public String insert(@RequestBody TJcsjSyfsDto tJcsjSyfsDto) {
+    public JSONResult insert(@RequestBody TJcsjSyfsDto tJcsjSyfsDto) {
+        JSONResult result = null;
         try {
             String uuidStr = UUID.randomUUID().toString().replace("-", "").toLowerCase();
             tJcsjSyfsDto.settSyfsId(uuidStr);
             tJcsjSyfsDataServerImpl.insert(tJcsjSyfsDto);
-            return "保存成功";
+            result = JSONResult.success();
         } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
-
+        return result;
     }
 
     @RequestMapping("list")
-    public List setList() {
+    public JSONResult setList() {
+        JSONResult result = null;
         try {
-            return tJcsjSyfsDataServerImpl.getList();
+            result = JSONResult.success(tJcsjSyfsDataServerImpl.getList());
         } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
-
+        return result;
     }
 
 
     @RequestMapping("del")
-    public String delete(@RequestBody String id) {
+    public JSONResult delete(@RequestBody String id) {
+        JSONResult result = null;
         try {
             tJcsjSyfsDataServerImpl.delete(id);
-            return "保存成功";
+            result = JSONResult.success();
         } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
-
+        return result;
     }
 }

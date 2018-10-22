@@ -2,6 +2,7 @@ package com.kylin.electricassistsys.controller.jcsj;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.kylin.electricassistsys.dto.jcsj.TJcsjCnwDto;
+import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
 import com.kylin.electricassistsys.server.impl.jcsj.TJcsjCnwDataServerImpl;
 import io.swagger.annotations.Api;
@@ -25,70 +26,64 @@ public class TJcsjCnwDataController {
     private RedisCacheService redisCacheService;
 
     @RequestMapping("page")
-    public Page getPages(@RequestBody TJcsjCnwDto tJcsjCnwDto) {
-        Page page1 = new Page(tJcsjCnwDto.getPage(), tJcsjCnwDto.getLimit());
-        return tJcsjCnwDataServerImpl.getPages(page1, tJcsjCnwDto);
+    public JSONResult getPages(@RequestBody TJcsjCnwDto tJcsjCnwDto) {
+        JSONResult result = null;
+        try {
+            Page page = new Page(tJcsjCnwDto.getPage(), tJcsjCnwDto.getLimit());
+            result = JSONResult.success(tJcsjCnwDataServerImpl.getPages(page, tJcsjCnwDto));
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
+        }
+        return result;
     }
 
     @RequestMapping(value = "update", produces = "application/json;charset=UTF-8", method = RequestMethod.POST, headers = "Accept=application/json")
-    public String update(@RequestBody TJcsjCnwDto tJcsjCnwDto) {
+    public JSONResult update(@RequestBody TJcsjCnwDto tJcsjCnwDto) {
+        JSONResult result = null;
         try {
             tJcsjCnwDataServerImpl.update(tJcsjCnwDto);
-            return "保存成功";
-        } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
-
+        return result;
     }
 
     @RequestMapping("insert")
-    public String insert(@RequestBody TJcsjCnwDto tJcsjCnwDto) {
+    public JSONResult insert(@RequestBody TJcsjCnwDto tJcsjCnwDto) {
+        JSONResult result = null;
         try {
             String uuidStr = UUID.randomUUID().toString().replace("-", "").toLowerCase();
             tJcsjCnwDto.settCnwId(uuidStr);
             tJcsjCnwDataServerImpl.insert(tJcsjCnwDto);
-            return "保存成功";
-        } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
-
+        return result;
     }
 
     @RequestMapping("list")
-    public List setList() {
+    public JSONResult setList() {
+        JSONResult result = null;
         try {
-            return tJcsjCnwDataServerImpl.getList();
-        } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.success(tJcsjCnwDataServerImpl.getList());
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
-
+        return result;
     }
 
 
     @RequestMapping("del")
-    public String delete(@RequestBody String id) {
+    public JSONResult delete(@RequestBody String id) {
+        JSONResult result = null;
         try {
             tJcsjCnwDataServerImpl.delete(id);
-            return "保存成功";
-        } catch (Exception e) {
-            System.out.println("获得一个错误：" + e.getMessage());
-            e.printStackTrace();
-            throw e;
-            //throw new Exception("保存失败");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-
-
+        return result;
     }
 }

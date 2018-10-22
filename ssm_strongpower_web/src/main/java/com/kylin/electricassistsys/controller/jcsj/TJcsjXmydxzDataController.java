@@ -26,100 +26,109 @@ public class TJcsjXmydxzDataController {
      */
     @Resource
     private TJcsjXmydxzDataApi tJcsjXmydxzDataApi;
+
     /**
      * 动态查询进行分页
+     *
      * @param dto
      * @return
      */
     @RequestMapping("page")
-    public JSONResult getPages(@RequestBody TJcsjXmydxzDto dto){
-        JSONResult result =null;
+    public JSONResult getPages(@RequestBody TJcsjXmydxzDto dto) {
+        JSONResult result = null;
         try {
-            Page page =   tJcsjXmydxzDataApi.selectPage(new Page(dto.getPage(), dto.getLimit()),dto);
-            result=JSONResult.success(page);
-        }catch (Throwable  e){
-            result=JSONResult.failure("服务器错误请联系管理员");
+            Page page = tJcsjXmydxzDataApi.selectPage(new Page(dto.getPage(), dto.getLimit()), dto);
+            result = JSONResult.success(page);
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
-        return result ;
+        return result;
     }
 
     /**
-     *
      * 添加项目用电性质数据
+     *
      * @return
      */
     @RequestMapping("insert")
-    public JSONResult saveData(@RequestBody TJcsjXmydxzDto dto){
-        JSONResult result =null;
+    public JSONResult saveData(@RequestBody TJcsjXmydxzDto dto) {
+        JSONResult result = null;
         try {
             tJcsjXmydxzDataApi.insert(dto);
-            result=JSONResult.success();
-        }catch (Throwable e){
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
         return result;
 
     }
+
     /**
      * 获取项目用电性质数据列表
+     *
      * @param
      * @return
      */
     @RequestMapping("list")
     public JSONResult getList() {
+        JSONResult result = null;
         try {
-            return JSONResult.success(tJcsjXmydxzDataApi.getList());
-        } catch (Exception e) {
-            return JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.success(tJcsjXmydxzDataApi.getList());
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
+        return result;
     }
+
     /**
-     *
      * 删除根据id项目用电性质数据
+     *
      * @return
      */
     @RequestMapping("del")
-    public JSONResult delData(@RequestBody String id){
-        JSONResult result =null;
+    public JSONResult delData(@RequestBody String id) {
+        JSONResult result = null;
         try {
             tJcsjXmydxzDataApi.delete(id);
-            result=JSONResult.success();
-        }catch (Throwable e){
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
         return result;
     }
+
     /**
-     *
      * 根据id进行批量删除 项目用电性质数据
+     *
      * @return
      */
     @RequestMapping("batchDel")
-    public JSONResult batchDelData(@RequestBody String ids){
-        JSONResult result=null;
+    public JSONResult batchDelData(@RequestBody String ids) {
+        JSONResult result = null;
         try {
             tJcsjXmydxzDataApi.deleteBatchIds(ids);
-            result=JSONResult.success();
-        }catch (Throwable e){
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
 
         return result;
 
     }
+
     /**
-     *
      * 更新项目用电性质数据
+     *
      * @return
      */
     @RequestMapping("update")
-    public JSONResult updateData(@RequestBody TJcsjXmydxzDto dto){
-        JSONResult result=null;
+    public JSONResult updateData(@RequestBody TJcsjXmydxzDto dto) {
+        JSONResult result = null;
         try {
             tJcsjXmydxzDataApi.update(dto);
-            result=JSONResult.success();
-        }catch (Throwable e){
-            result=JSONResult.failure("服务器错误请联系管理员");
+            result = JSONResult.success();
+        } catch (Throwable e) {
+            result = JSONResult.failure("服务器错误请联系管理员");
         }
         return result;
     }
