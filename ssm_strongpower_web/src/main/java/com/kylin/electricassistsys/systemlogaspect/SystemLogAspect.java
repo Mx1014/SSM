@@ -2,13 +2,16 @@ package com.kylin.electricassistsys.systemlogaspect;
 
 import com.kylin.electricassistsys.data.api.other.SysSystemsettingApi;
 import com.kylin.electricassistsys.data.api.system.SysLoginStatusDataApi;
+import com.kylin.electricassistsys.data.api.tsys.TSysModuleDataApi;
 import com.kylin.electricassistsys.data.api.tsys.TSystemLogApi;
 import com.kylin.electricassistsys.dto.base.BaseDto;
 import com.kylin.electricassistsys.dto.other.SysSystemsettingDto;
 import com.kylin.electricassistsys.dto.system.SysLoginStatusDto;
 import com.kylin.electricassistsys.dto.system.TSystemLogDto;
+import com.kylin.electricassistsys.dto.tsbsj.TSbsjBdzxxSelDto;
+import com.kylin.electricassistsys.dto.tsys.TSysModuleDto;
+import com.kylin.electricassistsys.dto.wghgl.TDwghglXmqcSelDto;
 import com.kylin.electricassistsys.mybeanutils.JSONResult;
-import com.kylin.electricassistsys.mybeanutils.ModuleName;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
 import com.kylin.electricassistsys.tools.IPHelper;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
@@ -55,12 +58,15 @@ public class SystemLogAspect {
     @Resource
     private SysSystemsettingApi systemsettingApi;
     @Resource
+    private TSysModuleDataApi tSysModuleDataApi;
+    @Resource
     private RedisCacheService redisCacheService;
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
 
     private Map<String, List<String>> userUrlMap = new HashMap<String, List<String>>();
+    private Map<String, String> moduleMap = new HashMap<String, String>();
 
 
     /**
@@ -74,6 +80,10 @@ public class SystemLogAspect {
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
         String ipAddress = IPHelper.getIpAddress(request);
+        List<TSysModuleDto> tSysModuleDtos = tSysModuleDataApi.getList();
+        for (TSysModuleDto tSysModuleDto : tSysModuleDtos) {
+            moduleMap.put(tSysModuleDto.getModuleCode(), tSysModuleDto.getModuleName());
+        }
         Object o = null;
         SysLoginStatusDto sysLoginStatusDto = null;
         long t1 = System.currentTimeMillis();
@@ -95,11 +105,11 @@ public class SystemLogAspect {
                 dto.setUserName(sysLoginStatusDto.getSysUserLoginName());
             }
             long t2 = System.currentTimeMillis();
-            if (o.toString().length() < 5000 || o.toString().length() != 0) {
+         /*   if (o.toString().length() < 5000 || o.toString().length() != 0) {
                 dto.setUserResult(o.toString());
             } else {
                 dto.setUserResult("data is too long");
-            }
+            }*/
             if (o instanceof JSONResult) {
                 JSONResult result = (JSONResult) o;
                 if (result.getCode().getCode() == "0") {
@@ -118,30 +128,83 @@ public class SystemLogAspect {
                 stringBuilder.append(request.getParameterMap().get(s)[0]);
                 stringBuilder.append(" | ");
             }
-            dto.setUserParameters(stringBuilder.toString());
+//            dto.setUserParameters(stringBuilder.toString());
             dto.setUserIp(ipAddress);
             dto.setUserURL(request.getRequestURL().toString());
-            if (request.getRequestURL().toString().contains("permissionSystem")) {
-                dto.setEventType("系统事件");
-            } else {
-                dto.setEventType("业务事件");
-            }
+            String requestUrl = request.getRequestURL().toString();
             String requestUrl_lower = request.getRequestURL().toString().toLowerCase();
             if (requestUrl_lower.contains("select") || requestUrl_lower.contains("query") || requestUrl_lower.contains("list") || requestUrl_lower.contains("page") || requestUrl_lower.contains("get")) {
-                dto.setLogType("查询");
+                if (requestUrl_lower.contains("login")) {
+                    dto.setLogType("登录");
+                }else if (requestUrl_lower.contains("logout")) {
+                    dto.setLogType("登出");
+                    dto.setDataStatus(1L);
+                    dto.setRemark("登出成功");
+                } else {
+                    dto.setLogType("查询");
+                }
+
             } else if (requestUrl_lower.contains("insert") || requestUrl_lower.contains("add")) {
                 dto.setLogType("新增");
             } else if (requestUrl_lower.contains("update") || requestUrl_lower.contains("updata") || requestUrl_lower.contains("set")) {
                 dto.setLogType("更新");
             } else if (requestUrl_lower.contains("delete") || requestUrl_lower.contains("del")) {
                 dto.setLogType("删除");
-            } else if (requestUrl_lower.contains("login")) {
-                dto.setLogType("登录");
-            } else if (requestUrl_lower.contains("logout")) {
-                dto.setLogType("注销/退出");
-            } else {
-
+            }  else {
+                dto.setLogType("查询");
+                dto.setModuleName("首页统计查询");
             }
+            if (request.getRequestURL().toString().contains("permissionSystem") || request.getRequestURL().toString().contains("systemsetting")) {
+                dto.setEventType("系统事件");
+                Object[] params = point.getArgs();
+                if (params != null && params.length > 0 && params[0] instanceof Map) {
+                    Map<String, Object> param = (Map<String, Object>) params[0];
+                    String moduleCode = param.get("moduleCode").toString();
+                    String moduleName = moduleMap.get(moduleCode);
+                    if ("登录".equals(dto.getLogType()) || "登出".equals(dto.getLogType())) {
+                        dto.setModuleName(moduleName);
+                    } else {
+                        dto.setModuleName(moduleName + dto.getLogType());
+                    }
+
+                } else {
+                    if (requestUrl_lower.contains("captchimg")) {
+                        dto.setModuleName("验证码查询");
+                        dto.setDataStatus(1L);
+                        dto.setRemark("获取成功");
+                    } else {
+                        String moduleName = moduleMap.get("systemSetting");
+                        dto.setModuleName(moduleName + dto.getLogType());
+                    }
+                }
+            } else {
+                dto.setEventType("业务事件");
+                int i = requestUrl.lastIndexOf("//");
+                String moduleCode = requestUrl.substring(requestUrl.lastIndexOf("//") + 2, requestUrl.lastIndexOf("/"));
+                if (moduleCode != null && "resourcemanagement".equals(moduleCode)) {
+                    moduleCode = requestUrl.substring(requestUrl.lastIndexOf("/") + 1);
+                    String moduleName = moduleMap.get(moduleCode);
+                    dto.setModuleName(moduleName + dto.getLogType());
+                } else if (moduleCode != null && "glxmqc".equals(moduleCode)) {
+                    Object[] params = point.getArgs();
+                    TDwghglXmqcSelDto xmqc = (TDwghglXmqcSelDto) params[0];
+                    String moduleName = xmqc.gettXmqcType();
+                    dto.setModuleName(moduleName + dto.getLogType());
+                } else if (moduleCode != null && "bdzxx".equals(moduleCode)) {
+                    Object[] params = point.getArgs();
+                    TSbsjBdzxxSelDto bdzxx = (TSbsjBdzxxSelDto) params[0];
+                    String s = bdzxx.gettBdzxxDydj();
+                    if (s != null) {
+                        moduleCode = "kbs";
+                    }
+                    String moduleName = moduleMap.get(moduleCode);
+                    dto.setModuleName(moduleName + dto.getLogType());
+                } else {
+                    String moduleName = moduleMap.get(moduleCode);
+                    dto.setModuleName(moduleName + dto.getLogType());
+                }
+            }
+
             dto.setUserAgent(request.getHeader("user-agent"));
             tSystemLogApi.insertSystem(dto);
             logger.info("request contentType:{}", request.getHeader("Accept"));
