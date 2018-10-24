@@ -13,7 +13,9 @@ import com.kylin.electricassistsys.dto.tsys.TSysModuleDto;
 import com.kylin.electricassistsys.dto.wghgl.TDwghglXmqcSelDto;
 import com.kylin.electricassistsys.mybeanutils.JSONResult;
 import com.kylin.electricassistsys.redisutils.RedisCacheService;
+import com.kylin.electricassistsys.rsas.RSATools;
 import com.kylin.electricassistsys.tools.IPHelper;
+import com.kylin.electricassistsys.tools.json.JsonUtils;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -86,17 +88,25 @@ public class SystemLogAspect {
         }
         Object o = null;
         SysLoginStatusDto sysLoginStatusDto = null;
+        String sessionId = null;
         long t1 = System.currentTimeMillis();
         try {
             Object[] args = point.getArgs();
-            o = point.proceed();
+            if (args != null && args.length > 0 && args[0] instanceof Map) {
+                Map<String, Object> param = (Map<String, Object>) args[0];
+                sessionId = (String) param.get("userRedisreQequestId");
+            }
             Cookie[] cookie = request.getCookies();
-            for (int i = 0; i < cookie.length; i++) {
-                Cookie cook = cookie[i];
-                if (cook.getName().equalsIgnoreCase("Admin-Token")) { //获取键
-                    String sessionId = cook.getValue().toString();//获取值
-                    sysLoginStatusDto = sysLoginStatusDataApi.selectSysLoginStatusBySessionId(sessionId);
+            if (cookie != null) {
+                for (int i = 0; i < cookie.length; i++) {
+                    Cookie cook = cookie[i];
+                    if (cook.getName().equalsIgnoreCase("Admin-Token")) { //获取键
+                        sessionId = cook.getValue().toString();//获取值
+                    }
                 }
+            }
+            if (sessionId != null) {
+                sysLoginStatusDto = sysLoginStatusDataApi.selectSysLoginStatusBySessionId(sessionId);
             }
             TSystemLogDto dto = new TSystemLogDto();
             if (sysLoginStatusDto != null) {
@@ -104,15 +114,17 @@ public class SystemLogAspect {
                 dto.setUserId(userId.substring(0, userId.indexOf('.')));
                 dto.setUserName(sysLoginStatusDto.getSysUserLoginName());
             }
+            o = point.proceed();
             long t2 = System.currentTimeMillis();
          /*   if (o.toString().length() < 5000 || o.toString().length() != 0) {
                 dto.setUserResult(o.toString());
             } else {
                 dto.setUserResult("data is too long");
             }*/
+            JSONResult result = null;
             if (o instanceof JSONResult) {
-                JSONResult result = (JSONResult) o;
-                if (result.getCode().getCode() == "0") {
+                result = (JSONResult) o;
+                if (result != null && result.getCode().getCode() == "0") {
                     dto.setDataStatus(1L);
                 } else {
                     dto.setDataStatus(0L);
@@ -121,22 +133,36 @@ public class SystemLogAspect {
             }
             dto.setUserDuration((t2 - t1));
             dto.setUserMethod(point.getTarget().getClass().getName() + "." + point.getSignature().getName());
-            StringBuilder stringBuilder = new StringBuilder();
+            /*StringBuilder stringBuilder = new StringBuilder();
             for (String s : request.getParameterMap().keySet()) {
                 stringBuilder.append(s);
                 stringBuilder.append(" = ");
                 stringBuilder.append(request.getParameterMap().get(s)[0]);
                 stringBuilder.append(" | ");
-            }
+            }*/
 //            dto.setUserParameters(stringBuilder.toString());
             dto.setUserIp(ipAddress);
             dto.setUserURL(request.getRequestURL().toString());
             String requestUrl = request.getRequestURL().toString();
             String requestUrl_lower = request.getRequestURL().toString().toLowerCase();
             if (requestUrl_lower.contains("select") || requestUrl_lower.contains("query") || requestUrl_lower.contains("list") || requestUrl_lower.contains("page") || requestUrl_lower.contains("get")) {
-                if (requestUrl_lower.contains("login")) {
+                if (requestUrl_lower.contains("getuserlogin")) {
                     dto.setLogType("登录");
-                }else if (requestUrl_lower.contains("logout")) {
+                    if (result != null && result.getCode().getCode() == "0") {
+                        String data = result.getData().toString();
+                        Map<String, Object> resultMap = JsonUtils.json2Map(data);
+                        String loginName = (String) resultMap.get("loginName");
+                        String userId = ((Integer) resultMap.get("id")).toString();
+                        dto.setUserName(loginName);
+                        dto.setUserId(userId);
+                    } else {
+                        if (args != null && args.length > 0 && args[0] instanceof Map) {
+                            Map<String, Object> param = (Map<String, Object>) args[0];
+                            String loginName = RSATools.decryptDataOnJava((String) param.get("loginName"));
+                            dto.setUserName(loginName);
+                        }
+                    }
+                } else if (requestUrl_lower.contains("logout")) {
                     dto.setLogType("登出");
                     dto.setDataStatus(1L);
                     dto.setRemark("登出成功");
@@ -150,7 +176,7 @@ public class SystemLogAspect {
                 dto.setLogType("更新");
             } else if (requestUrl_lower.contains("delete") || requestUrl_lower.contains("del")) {
                 dto.setLogType("删除");
-            }  else {
+            } else {
                 dto.setLogType("查询");
                 dto.setModuleName("首页统计查询");
             }
